@@ -5,9 +5,13 @@ import SectionHeader from "../_components/ui/SectionHeader";
 
 function DineIn() {
   return (
-    <section className="max-w-[100rem] p-4 flex flex-col gap-18">
+    <section className="max-w-[100rem] p-4 flex flex-col gap-20 pb-[6rem]">
       <div>
-        <Image src={dineInImg} alt="Dine-In Menu" />
+        <Image
+          src={dineInImg}
+          alt="Dine-In Menu"
+          className="object-contain aspect-2/1 saturate-75 contrast-90"
+        />
       </div>
       <div className="flex flex-col gap-4 max-w-[36rem] mx-auto">
         <SectionHeader title="Dine-In Meals" />

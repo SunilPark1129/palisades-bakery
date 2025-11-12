@@ -5,12 +5,12 @@ import groupOrderImg from "./images/bakery-group-img.jpg";
 
 function GroupOrder() {
   return (
-    <section className="flex flex-col gap-[6rem] mx-auto max-w-[100rem] p-4">
+    <section className="flex flex-col gap-[6rem] mx-auto max-w-[100rem] p-4 mb-[-1rem]">
       <div className="">
         <Image
           src={groupOrderImg}
           alt="Group & Bulk Orders"
-          className=" object-contain grayscale-65 aspect-2/1"
+          className="object-contain grayscale-65 aspect-2/1"
         />
       </div>
       <div className="flex flex-col gap-4 max-w-[36rem] mx-auto">
