@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Hero from "./homepage/Hero";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           priority
         />
       </div>
+      <Hero />
     </div>
   );
 }
