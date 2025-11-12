@@ -1,21 +1,20 @@
 import Image from "next/image";
 import Hero from "./homepage/Hero";
+import About from "./homepage/About";
+import GroupOrder from "./homepage/GroupOrder";
+import CustomOrder from "./homepage/CustomOrder";
+import Block from "./homepage/Block";
+import DineIn from "./homepage/DineIn";
 
 export default function Home() {
   return (
-    <div className="">
-      <div className="max-w-[100%] h-[30rem] relative">
-        <Image
-          className="object-cover"
-          src={
-            "https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg"
-          }
-          fill
-          alt="girl playing soccer"
-          priority
-        />
-      </div>
+    <main className="flex flex-col">
       <Hero />
-    </div>
+      <About />
+      <GroupOrder />
+      <CustomOrder />
+      <Block />
+      <DineIn />
+    </main>
   );
 }
