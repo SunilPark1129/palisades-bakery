@@ -5,7 +5,7 @@ import groupOrderImg from "./images/bakery-group-img.jpg";
 
 function GroupOrder() {
   return (
-    <section className="flex flex-col gap-18 mx-auto max-w-[100rem] p-4">
+    <section className="flex flex-col gap-[6rem] mx-auto max-w-[100rem] p-4">
       <div className="">
         <Image
           src={groupOrderImg}
