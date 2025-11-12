@@ -4,7 +4,7 @@ import heroImg from "./images/bakery-hero-img.jpg";
 
 function Hero() {
   return (
-    <div className="flex flex-col gap-[1rem]">
+    <div className="flex flex-col gap-[1rem] pt-[1.5rem]">
       <h1 className="text-4xl text-center">PALISADES PARK BAKERY</h1>
       <div className="max-w-[100%] min-h-[100vh] relative">
         <Image

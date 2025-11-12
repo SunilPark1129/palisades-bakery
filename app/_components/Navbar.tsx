@@ -16,8 +16,8 @@ const navLinks = [
 
 function Navbar({}: Props) {
   return (
-    <nav className="p-[1rem] flex justify-between">
-      <div className=" flex w-full gap-10 items-center pl-[1rem]">
+    <nav className="p-[1rem] flex justify-between pl-[2rem] pr-[2rem]">
+      <div className=" flex w-full gap-10 items-center">
         <Image
           src={logo}
           alt="Palisades Park Bakery Logo"
@@ -39,7 +39,7 @@ function Navbar({}: Props) {
         href="https://www.ubereats.com/store/palisades-park-bakery/Kia7fAM6U6K3A9EBbOpOKw?srsltid=AfmBOorONAZ0i3xJYgiPlDLlPi3qjNEjASJf71ueJLCjZ5sJoM_n9DaB"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center w-[10rem] justify-center"
+        className="flex items-center whitespace-nowrap justify-center"
       >
         Order Online
       </a>
