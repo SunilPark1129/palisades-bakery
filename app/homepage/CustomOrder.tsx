@@ -13,7 +13,7 @@ function CustomOrder() {
           className="object-contain saturate-50 contrast-90 brightness-110 min-w-[20rem]"
         />
       </div>
-      <div className="flex flex-col p-4 justify-center max-w-[30rem]">
+      <div className="flex flex-col gap-4 p-4 justify-center max-w-[30rem]">
         <SectionHeader title="Order Custom Cakes" />
         <p>
           From birthdays to weddings, we design custom cakes to your taste.
