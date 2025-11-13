@@ -8,7 +8,7 @@ import DineIn from "./homepage/DineIn";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-[6rem]">
+    <main className="flex flex-col">
       <Hero />
       <About />
       <GroupOrder />

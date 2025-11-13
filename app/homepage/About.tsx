@@ -4,9 +4,9 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function About() {
   return (
     <div className="wrapper">
-      <section className="flex mx-auto p-4 gap-16 max-w-[60rem]">
+      <section className="flex mx-auto px-4 py-16 gap-6 w-full max-w-[50rem] justify-between">
         <SectionHeader title={"About Us"} />
-        <p>
+        <p className="max-w-[36rem]">
           Palisades Park Bakery is located at 325 Broad Ave in Palisades Park,
           NJ. We take pride in our quality and fresh bread every morning. All of
           our cakes and breads are handcrafted daily by our in-house
