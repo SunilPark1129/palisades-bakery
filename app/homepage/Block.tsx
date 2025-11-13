@@ -1,6 +1,3 @@
-import React from "react";
-import SectionHeader from "../_components/ui/SectionHeader";
-
 function Block() {
   return (
     <section className="bg-gray-100 py-40">
