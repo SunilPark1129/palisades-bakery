@@ -16,34 +16,41 @@ const navLinks = [
 
 function Navbar({}: Props) {
   return (
-    <nav className="p-[1rem] flex justify-between">
-      <div className=" flex w-full gap-10 items-center">
-        <Image
-          src={logo}
-          alt="Palisades Park Bakery Logo"
-          priority
-          className="w-[2rem] aspect-square rounded-full"
-        />
-        <ul className="flex gap-5">
-          {navLinks.map((links) => {
-            return (
-              <li key={links.label}>
-                <Link href={links.path}>{links.label}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+    <header>
+      <div className="wrapper">
+        <nav className="flex p-4 gap-4 items-center">
+          <div className="flex w-full gap-12 items-center">
+            <Link href={"/"}>
+              <Image
+                src={logo}
+                alt="Palisades Park Bakery Logo"
+                priority
+                width={42}
+                height={42}
+              />
+            </Link>
+            <ul className="flex gap-6">
+              {navLinks.map((links) => {
+                return (
+                  <li key={links.label}>
+                    <Link href={links.path}>{links.label}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-      <a
-        href="https://www.ubereats.com/store/palisades-park-bakery/Kia7fAM6U6K3A9EBbOpOKw?srsltid=AfmBOorONAZ0i3xJYgiPlDLlPi3qjNEjASJf71ueJLCjZ5sJoM_n9DaB"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center whitespace-nowrap justify-center"
-      >
-        Order Online
-      </a>
-    </nav>
+          <Link
+            href="https://www.ubereats.com/store/palisades-park-bakery/Kia7fAM6U6K3A9EBbOpOKw?srsltid=AfmBOorONAZ0i3xJYgiPlDLlPi3qjNEjASJf71ueJLCjZ5sJoM_n9DaB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0"
+          >
+            Order Online
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 }
 

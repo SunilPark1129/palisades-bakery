@@ -15,3 +15,8 @@ body {
   background: var(--clr-background);
   font-family: var(--font-lora), serif;
 }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
