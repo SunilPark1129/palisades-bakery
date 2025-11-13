@@ -1,21 +1,20 @@
 import Image from "next/image";
-import React from "react";
 import heroImg from "./images/bakery-hero-img.jpg";
 
 function Hero() {
   return (
-    <div className="flex flex-col gap-[1rem] pt-[1.5rem]">
-      <h1 className="text-4xl text-center">PALISADES PARK BAKERY</h1>
-      <div className="max-w-[100%] min-h-[100vh] relative">
+    <section className="flex flex-col">
+      <h1 className="text-3xl text-center p-4">PALISADES PARK BAKERY</h1>
+      <div className="w-full aspect-16/9 max-h-[700px] min-h-[340px] relative">
         <Image
-          className="object-cover absolute max-w-[100%] max-h-[100%] "
+          className="object-cover"
           src={heroImg}
           fill
           alt="Palisades Park Bakery Banner"
           priority
         />
       </div>
-    </div>
+    </section>
   );
 }
 
