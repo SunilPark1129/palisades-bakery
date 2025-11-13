@@ -5,7 +5,7 @@ function Block() {
   return (
     <section className="bg-gray-100 py-40">
       <div className="wrapper">
-        <div className="flex flex-col gap-4 p-4 mx-auto max-w-[30rem]">
+        <div className="flex flex-col gap-4 p-4 mx-auto max-w-120">
           <h2 className="text-3xl">
             Enjoy our freshly handcrafted{" "}
             <span className="font-semibold">Cookies</span> &{" "}
