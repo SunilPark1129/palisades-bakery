@@ -3,7 +3,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 
 function About() {
   return (
-    <section className="flex justify-center max-w-[100rem] p-4">
+    <section className="justify-center max-w-[100rem] p-4">
       <div className="flex gap-[5rem] max-w-[60rem]">
         <SectionHeader title={"About Us"} />
         <p>
