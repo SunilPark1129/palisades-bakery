@@ -16,7 +16,7 @@ const navLinks = [
 
 function Navbar({}: Props) {
   return (
-    <nav className="p-[1rem] flex justify-between pl-[2rem] pr-[2rem]">
+    <nav className="p-[1rem] flex justify-between">
       <div className=" flex w-full gap-10 items-center">
         <Image
           src={logo}
