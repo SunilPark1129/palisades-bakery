@@ -17,7 +17,7 @@ export async function GET(
         (entry) => String(entry.title.toLowerCase()) === slug.toLowerCase()
       );
       res(item!);
-    }, 500)
+    }, 0)
   );
 
   return NextResponse.json({

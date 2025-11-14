@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const data = await new Promise<CakeType[]>((res, rej) =>
-    setTimeout(() => res(cakes), 500)
+    setTimeout(() => res(cakes), 0)
   );
   return NextResponse.json({
     success: true,
