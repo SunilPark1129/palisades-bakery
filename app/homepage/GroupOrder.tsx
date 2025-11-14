@@ -5,8 +5,8 @@ import groupOrderImg from "./images/bakery-group-img.jpg";
 function GroupOrder() {
   return (
     <div className="wrapper">
-      <section className="flex p-4">
-        <div className="flex-1">
+      <section className="flex p-4 gap-4">
+        <div className="flex-2">
           <div className="flex flex-col gap-4 p-4 h-full justify-center mx-auto max-w-[420px]">
             <SectionHeader title="Group & Bulk Bread Orders" />
             <p className="">
@@ -18,7 +18,7 @@ function GroupOrder() {
           </div>
         </div>
 
-        <div className="relative flex-1 aspect-3/4">
+        <div className="relative flex-3 aspect-3/4">
           <Image
             src={groupOrderImg}
             alt="Group & Bulk Orders"
