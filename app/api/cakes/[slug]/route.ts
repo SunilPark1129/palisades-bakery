@@ -6,14 +6,15 @@ import { cakes, CakeType } from "@/lib/mockData";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const { id } = await params;
+  const { slug } = await params;
+  console.log(123123, slug);
 
   const data: CakeType = await new Promise((res, rej) =>
     setTimeout(() => {
       const item = cakes.find(
-        (entry) => String(entry.title.toLowerCase()) === id.toLowerCase()
+        (entry) => String(entry.title.toLowerCase()) === slug.toLowerCase()
       );
       res(item!);
     }, 500)

@@ -1,4 +1,5 @@
 import { CakeType } from "@/lib/mockData";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -12,9 +13,14 @@ async function ProductList({ category }: Props) {
   return (
     <main>
       <h1></h1>
-      <div>
+      <div className="grid">
         {data.map((entry: CakeType) => (
-          <div key={entry.id}>{entry.title}</div>
+          <Link
+            key={entry.id}
+            href={`http://localhost:3000/cakes/${entry.title}`}
+          >
+            {entry.title}
+          </Link>
         ))}
       </div>
     </main>
