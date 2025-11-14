@@ -1,6 +1,7 @@
 import { CakeType } from "@/lib/mockData";
 import Link from "next/link";
 import React from "react";
+import MainHeader from "./ui/MainHeader";
 
 type Props = {
   category: string;

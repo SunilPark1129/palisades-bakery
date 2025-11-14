@@ -1,7 +1,11 @@
 import React from "react";
 
 function MainHeader() {
-  return <h1 className="text-3xl text-center p-4">PALISADES PARK BAKERY</h1>;
+  return (
+    <div className="text-3xl text-center p-4 mt-[74px]">
+      PALISADES PARK BAKERY
+    </div>
+  );
 }
 
 export default MainHeader;
