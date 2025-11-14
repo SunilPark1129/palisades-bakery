@@ -1,21 +1,32 @@
+import { cakes, CakeType } from "@/lib/mockData";
 import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  try {
-    await connectDB();
-    const cakes = await Cake.find({}).sort({ createdAt: -1 });
+  const data = await new Promise<CakeType[]>((res, rej) =>
+    setTimeout(() => res(cakes), 500)
+  );
+  return NextResponse.json({
+    success: true,
+    status: 200,
+    data: data,
+  });
 
-    return NextResponse.json({ success: true, data: cakes });
-  } catch (error: any) {
-    return NextResponse.json({
-      success: false,
-      message: "view request failed",
-      error: error.message,
-      status: 500,
-    });
-  }
+  //   // mongoDB
+  // try {
+  //   await connectDB();
+  //   const cakes = await Cake.find({}).sort({ createdAt: -1 });
+
+  //   return NextResponse.json({ success: true, data: cakes });
+  // } catch (error: any) {
+  //   return NextResponse.json({
+  //     success: false,
+  //     message: "view request failed",
+  //     error: error.message,
+  //     status: 500,
+  //   });
+  // }
 }
 
 export async function POST(request: Request) {
