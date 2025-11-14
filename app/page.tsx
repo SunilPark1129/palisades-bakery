@@ -8,12 +8,12 @@ import DineIn from "./homepage/DineIn";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col gap-8">
       <Hero />
       <About />
-      <GroupOrder />
       <CustomOrder />
       <Block />
+      <GroupOrder />
       <DineIn />
     </main>
   );

@@ -5,7 +5,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function DineIn() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col items-center gap-20 p-4 pb-20">
+      <section className="flex flex-col p-4">
         <div className="relative w-full aspect-7/3">
           <Image
             src={dineInImg}
@@ -14,7 +14,7 @@ function DineIn() {
             className="object-cover saturate-75 contrast-90"
           />
         </div>
-        <div className="flex flex-col gap-4 max-w-lg mx-auto">
+        <div className="flex flex-col gap-4 max-w-120 mx-auto py-12">
           <SectionHeader title="Dine-In Meals" />
           <p>
             Enjoy more than just cakes and breads—our café also offers a variety
@@ -22,7 +22,7 @@ function DineIn() {
             bites, everything is available for dine-in. Visit our Menu page for
             the full selection.
           </p>
-          <button className="p-2 border w-fit mx-auto cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background)">
+          <button className="py-2 px-4 border w-fit mx-auto cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background)">
             View Menu
           </button>
         </div>

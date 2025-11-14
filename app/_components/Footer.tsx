@@ -3,9 +3,9 @@ import logo from "./images/bakery-footer-logo.png";
 
 function Footer() {
   return (
-    <footer className="px-4 py-16 bg-(--clr-primary) text-(--clr-background)">
+    <footer className="bg-(--clr-primary) text-(--clr-background)">
       <div className="wrapper">
-        <div className="flex flex-col gap-16 items-center">
+        <div className="flex flex-col gap-16 items-center px-4 py-16">
           <div className="flex flex-col gap-2 items-center text-center">
             <Image
               src={logo}
@@ -24,7 +24,9 @@ function Footer() {
             </div>
             <div>
               <h3 className="font-semibold">Address</h3>
-              <p>325 Broad Ave, Palisades Park, NJ</p>
+              <address className="not-italic">
+                325 Broad Ave, Palisades Park, NJ
+              </address>
             </div>
             <div>
               <h3 className="font-semibold">Phone</h3>

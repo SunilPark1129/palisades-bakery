@@ -6,8 +6,8 @@ function GroupOrder() {
   return (
     <div className="wrapper">
       <section className="flex p-4">
-        <div className="flex-3">
-          <div className="flex flex-1 flex-col gap-4 p-4 h-full justify-center mx-auto max-w-[410px]">
+        <div className="flex-1">
+          <div className="flex flex-col gap-4 p-4 h-full justify-center mx-auto max-w-[420px]">
             <SectionHeader title="Group & Bulk Bread Orders" />
             <p className="">
               Planning an office meeting or a gathering? We prepare assortments
@@ -18,7 +18,7 @@ function GroupOrder() {
           </div>
         </div>
 
-        <div className="relative flex-2 aspect-7/8">
+        <div className="relative flex-1 aspect-3/4">
           <Image
             src={groupOrderImg}
             alt="Group & Bulk Orders"
