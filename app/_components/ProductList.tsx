@@ -1,4 +1,5 @@
 import { CakeType } from "@/lib/mockData";
+import { log } from "console";
 import Link from "next/link";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import { cakes, CakeType } from "@/lib/mockData";
-import connectDB from "@/lib/mongodb";
+// import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
 import { NextResponse } from "next/server";
 
@@ -7,6 +7,8 @@ export async function GET() {
   const data = await new Promise<CakeType[]>((res, rej) =>
     setTimeout(() => res(cakes), 0)
   );
+  console.log(data);
+
   return NextResponse.json({
     success: true,
     status: 200,
@@ -29,18 +31,18 @@ export async function GET() {
   // }
 }
 
-export async function POST(request: Request) {
-  try {
-    await connectDB();
-    const body = await request.json();
+// export async function POST(request: Request) {
+//   try {
+//     await connectDB();
+//     const body = await request.json();
 
-    const cake = await Cake.create(body);
+//     const cake = await Cake.create(body);
 
-    return NextResponse.json({ success: true, data: cake }, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json(
-      { success: false, error: error.message },
-      { status: 400 }
-    );
-  }
-}
+//     return NextResponse.json({ success: true, data: cake }, { status: 201 });
+//   } catch (error: any) {
+//     return NextResponse.json(
+//       { success: false, error: error.message },
+//       { status: 400 }
+//     );
+//   }
+// }
