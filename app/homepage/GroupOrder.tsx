@@ -23,6 +23,7 @@ function GroupOrder() {
             src={groupOrderImg}
             alt="Group & Bulk Orders"
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover grayscale-65"
           />
         </div>

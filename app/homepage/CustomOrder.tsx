@@ -11,6 +11,7 @@ function CustomOrder() {
             src={customCakeImg}
             alt="Custom Cake Ordering"
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover saturate-50 contrast-90 brightness-110"
           />
         </div>
