@@ -10,7 +10,7 @@ type Props = {
 async function ProductList({ category }: Props) {
   const data = await fetch(`http://localhost:3000/api/${category}`)
     .then((res) => res.json())
-    .then((data) => data.data);
+    .then((data) => data.data as CakeType[]);
   return (
     <main>
       <h1></h1>
