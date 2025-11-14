@@ -11,6 +11,7 @@ function DineIn() {
             src={dineInImg}
             alt="Dine-In Menu"
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover saturate-75 contrast-90"
           />
         </div>
