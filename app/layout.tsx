@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lora.variable} antialiased`}>
+      <body className={`${lora.variable} ${lora.className} antialiased`}>
         <Navbar />
         <MainHeader />
         {children}

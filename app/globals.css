@@ -12,10 +12,13 @@
   --navbar-height: 64px;
 }
 
+html {
+  font-family: var(--font-lora), serif;
+}
+
 body {
   color: var(--clr-primary);
   background: var(--clr-background);
-  font-family: var(--font-lora), serif;
 }
 
 .wrapper {
