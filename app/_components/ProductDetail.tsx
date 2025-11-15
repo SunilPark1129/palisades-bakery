@@ -2,6 +2,7 @@ import { CakeType } from "@/lib/mockData";
 import Image from "next/image";
 import cakeImg from "./images/bakery-cake.png";
 import Link from "next/link";
+import ButtonCakeSize from "./ButtonCakeSize";
 
 export default async function ProductDetail({
   slug,
