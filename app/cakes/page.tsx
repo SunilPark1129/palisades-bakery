@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ProductList from "../_components/ProductList";
+import { CakeType } from "@/lib/mockData";
 
 type Props = {};
 
@@ -9,7 +10,11 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  return <ProductList category="cakes" />;
+  const data = await fetch(`http://localhost:3000/api/cakes`)
+    .then((res) => res.json())
+    .then((data) => data.data as CakeType[]);
+
+  return <ProductList category="cakes" data={data} />;
 }
 
 export default page;

@@ -8,6 +8,8 @@
   --clr-primary-text: #574d6c;
   --clr-heading: #2e273e; /* a slightly darker tone if needed */
   --clr-accent: #d8c7e4; /* lighter complementary shade */
+
+  --navbar-height: 64px;
 }
 
 body {
@@ -20,6 +22,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+}
+
+.aside-top {
+  top: calc(var(--navbar-height) + 24px);
 }
 
 main {

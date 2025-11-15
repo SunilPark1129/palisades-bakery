@@ -2,7 +2,7 @@ import { CakeType } from "@/lib/mockData";
 import Image from "next/image";
 import cakeImg from "./images/bakery-cake.png";
 import Link from "next/link";
-import ButtonCakeSize from "./ButtonCakeSize";
+import PriceDetail from "./PriceDetail";
 
 export default async function ProductDetail({
   slug,
@@ -21,11 +21,11 @@ export default async function ProductDetail({
     <div className="wrapper">
       <main className="flex flex-col gap-4 p-4 pb-16">
         <div className="flex gap-2">
-          <Link href={"/"} className="hover:underline">
+          <Link href={"/"} className="underline">
             Home
           </Link>
           {" > "}
-          <Link href={`/${category}`} className="hover:underline">
+          <Link href={`/${category}`} className="underline">
             {category.slice(0, 1).toUpperCase() + category.slice(1)}
           </Link>
           {" > "}
@@ -33,42 +33,27 @@ export default async function ProductDetail({
         </div>
 
         <div className="flex gap-8">
-          <div className="relative flex-1 w-full aspect-square">
-            <Image src={cakeImg} alt="Cake" fill className="object-cover" />
+          <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem]">
+            <Image
+              src={cakeImg}
+              alt="Cake"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
 
-          <div className="flex flex-col flex-1 gap-8">
+          <div className="flex flex-col flex-1 gap-8 max-w-[36rem]">
             <div className="flex flex-col gap-4">
-              <h2 className="text-2xl">{data.title}</h2>
-              <p>$ {data.price[0]}</p>
-              <div className="flex flex-col gap-2">
-                <p>Size:</p>
-                {data.price.length === 1 ? (
-                  <button className="border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer">
-                    {data.size[0]}
-                  </button>
-                ) : (
-                  <div className="flex gap-4">
-                    {data.size.map((item, idx) => {
-                      return (
-                        <button
-                          key={idx}
-                          className="border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer"
-                        >
-                          {item}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
+              <h1 className="text-2xl">{data.title}</h1>
+              <PriceDetail data={data} />
               <p>{data.description}</p>
             </div>
 
-            <div className="w-1/2 border-b-[2px] border-b-gray-200 mx-auto"></div>
+            <div className="w-full border-b border-b-gray-200 mx-auto"></div>
 
             <div className="bg-gray-100 p-4">
-              <div className="flex flex-col gap-4 max-w-120">
+              <div className="flex flex-col gap-4">
                 <p>Did you find something you like?</p>
                 <p>We're happy to serve you!</p>
                 <ul className="list-disc list-outside pl-6">
