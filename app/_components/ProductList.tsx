@@ -1,4 +1,4 @@
-import { CakeType } from "@/lib/mockData";
+import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import cakeImg from "./images/bakery-cake.png";
@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {
   category: string;
-  data: any[];
+  data: EntryType[];
 };
 
 async function ProductList({ category, data }: Props) {
@@ -31,7 +31,7 @@ async function ProductList({ category, data }: Props) {
             <div>{category.slice(0, 1).toUpperCase() + category.slice(1)}</div>
           </div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2">
-            {data.map((entry: CakeType) => (
+            {data.map((entry: EntryType) => (
               <section key={entry.id}>
                 <Link
                   href={`http://localhost:3000/cakes/${entry.title}`}

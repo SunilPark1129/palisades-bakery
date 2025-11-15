@@ -1,13 +1,13 @@
-export type CakeType = {
+export type EntryType = {
   id: number;
   title: string;
-  size: string[];
+  size?: string[];
   description: string;
-  price: string[];
+  price: string[] | string;
   category: string;
 };
 
-export const cakes: CakeType[] = [
+export const cakes: EntryType[] = [
   {
     id: 1,
     title: "Strawberry Shortcake",

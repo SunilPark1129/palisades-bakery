@@ -1,4 +1,4 @@
-import { CakeType } from "@/lib/mockData";
+import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import cakeImg from "./images/bakery-cake.png";
 import Link from "next/link";
@@ -11,7 +11,7 @@ export default async function ProductDetail({
   slug: string;
   category: string;
 }) {
-  const data: CakeType = await fetch(
+  const data: EntryType = await fetch(
     `http://localhost:3000/api/${category}/${slug}`
   )
     .then((res) => res.json())

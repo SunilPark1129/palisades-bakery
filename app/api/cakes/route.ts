@@ -1,10 +1,10 @@
-import { cakes, CakeType } from "@/lib/mockData";
+import { cakes, EntryType } from "@/lib/mockData";
 // import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const data = await new Promise<CakeType[]>((res, rej) =>
+  const data = await new Promise<EntryType[]>((res, rej) =>
     setTimeout(() => res(cakes), 0)
   );
   console.log(data);
