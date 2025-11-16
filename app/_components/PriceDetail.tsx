@@ -1,33 +1,44 @@
 "use client";
 
 import { EntryType } from "@/lib/mockData";
+import { useState } from "react";
 
 type Props = { data: EntryType };
 
 function PriceDetail({ data }: Props) {
+  const [price, setPrice] = useState(data.price[0]);
+  const [selectedSize, setSelectedSize] = useState(0);
+
+  function getProductPrice(index: number) {
+    setSelectedSize(index);
+    setPrice(data.price[index]);
+    // missing 3rd price!! just for 2
+  }
+
   return (
-    <>
-      <p className="text-xl">$ {data.price[0]}</p>
+    <div>
+      <p className="text-xl">$ {price}</p>
       <div className="flex flex-col gap-2">
+        <div>Size:</div>
         {data.size && (
-          <>
-            <div>Size:</div>
-            <div className="flex gap-4">
-              {data.size.map((item, idx) => {
-                return (
-                  <button
-                    key={idx}
-                    className="border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer"
-                  >
-                    {item}
-                  </button>
-                );
-              })}
-            </div>
-          </>
+          <div className="flex gap-4">
+            {data.size.map((item, idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => getProductPrice(idx)}
+                  className={`border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer ${
+                    selectedSize === idx ? "bg-(--clr-accent)" : "bg-none"
+                  }`}
+                >
+                  {item}
+                </button>
+              );
+            })}
+          </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

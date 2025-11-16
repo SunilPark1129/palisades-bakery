@@ -22,7 +22,7 @@ export const cakes: EntryType[] = [
     title: "Chocolate Mousse Cake",
     size: ['6"', '7"', '8"'],
     description: "Rich chocolate mousse layered with airy chocolate sponge.",
-    price: ["32.99", "38.99"],
+    price: ["32.99", "38.99", "42.99"],
     category: "Mousse Cake",
   },
   {
@@ -78,7 +78,7 @@ export const cakes: EntryType[] = [
     title: "Tiramisu Mousse Cake",
     size: ['6"', '7"', '8"'],
     description: "Coffee-soaked sponge with mascarpone mousse.",
-    price: ["33.99", "39.99"],
+    price: ["33.99", "39.99", "42.99"],
     category: "Mousse Cake",
   },
   {

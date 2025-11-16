@@ -1,27 +1,58 @@
+"use client";
+
 import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import cakeImg from "./images/bakery-cake.png";
-import React from "react";
+import { useState } from "react";
+import { cakeCategory } from "@/lib/categoryData";
 
 type Props = {
   category: string;
   data: EntryType[];
 };
 
-async function ProductList({ category, data }: Props) {
+function ProductList({ category, data }: Props) {
+  const [list, setList] = useState(data);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  function getFilteredItems(temp: string) {
+    setSelectedCategory(temp);
+    if (temp === "All") {
+      setList(data);
+    } else {
+      setList(data.filter((item) => item.category === temp));
+    }
+  }
+
   return (
     <div className="wrapper">
       <main className="flex p-4 gap-4">
-        <aside className="sticky h-full aside-top flex flex-col gap-1 max-w-48 mt-8 w-full">
+        <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-48 mt-8 w-full">
           <div>Filter</div>
-          <div>All</div>
-          <div>Fresh Cream Cake</div>
-          <div>Mousse Cake</div>
-          <div>Special Cake</div>
-          <div>Character Cake</div>
-          <div>Slice Cake</div>
+          <div className="flex flex-col gap-1 pl-1">
+            <button
+              onClick={() => getFilteredItems("All")}
+              className={`flex cursor-pointer ${
+                selectedCategory === "All" ? "bg-(--clr-accent)" : "bg-none"
+              }`}
+            >
+              All
+            </button>
+            {cakeCategory.map((item) => (
+              <button
+                onClick={() => getFilteredItems(item)}
+                key={item}
+                className={`flex cursor-pointer ${
+                  selectedCategory === item ? "bg-(--clr-accent)" : "bg-none"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </aside>
+
         <div className="flex flex-col gap-2 w-full">
           <div className="flex gap-2">
             <Link href={"/"} className="underline">
@@ -30,8 +61,9 @@ async function ProductList({ category, data }: Props) {
             {" > "}
             <div>{category.slice(0, 1).toUpperCase() + category.slice(1)}</div>
           </div>
+
           <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2">
-            {data.map((entry: EntryType) => (
+            {list.map((entry: EntryType) => (
               <section key={entry.id}>
                 <Link
                   href={`http://localhost:3000/cakes/${entry.title}`}
