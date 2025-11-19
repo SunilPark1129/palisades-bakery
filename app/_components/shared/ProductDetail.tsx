@@ -1,6 +1,5 @@
 import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
-import cakeImg from "./images/bakery-cake.png";
 import Link from "next/link";
 import PriceDetail from "./PriceDetail";
 
@@ -35,8 +34,8 @@ export default async function ProductDetail({
         <div className="flex gap-8">
           <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem]">
             <Image
-              src={cakeImg}
-              alt="Cake"
+              src={data.url}
+              alt={data.title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

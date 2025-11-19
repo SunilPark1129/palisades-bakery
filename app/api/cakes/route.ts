@@ -7,7 +7,6 @@ export async function GET() {
   const data = await new Promise<EntryType[]>((res, rej) =>
     setTimeout(() => res(cakes), 0)
   );
-  console.log(data);
 
   return NextResponse.json({
     success: true,

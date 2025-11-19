@@ -6,13 +6,12 @@ import { useState } from "react";
 type Props = { data: EntryType };
 
 function PriceDetail({ data }: Props) {
-  const [price, setPrice] = useState(data.price[0]);
-  const [selectedSize, setSelectedSize] = useState(0);
+  const [price, setPrice] = useState<string>(data.price[0]);
+  const [selectedSize, setSelectedSize] = useState<number>(0);
 
   function getProductPrice(index: number) {
     setSelectedSize(index);
     setPrice(data.price[index]);
-    // missing 3rd price!! just for 2
   }
 
   return (

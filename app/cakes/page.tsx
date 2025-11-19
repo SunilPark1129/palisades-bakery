@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import ProductList from "../_components/ProductList";
 import { EntryType } from "@/lib/mockData";
+import { cakeCategory } from "@/lib/categoryData";
+import ProductList from "../_components/shared/ProductList";
 
 type Props = {};
 
@@ -14,7 +15,9 @@ async function page({}: Props) {
     .then((res) => res.json())
     .then((data) => data.data as EntryType[]);
 
-  return <ProductList category="cakes" data={data} />;
+  return (
+    <ProductList category="cakes" data={data} asideCategories={cakeCategory} />
+  );
 }
 
 export default page;

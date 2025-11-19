@@ -9,5 +9,5 @@ export default async function CakeDetail({
 
   const decodedSlug = decodeURIComponent(slug);
 
-  return <ProductDetail slug={decodedSlug} category="cakes" />;
+  return <ProductDetail slug={decodedSlug} category="breads" />;
 }

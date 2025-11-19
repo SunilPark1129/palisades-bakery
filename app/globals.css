@@ -30,6 +30,3 @@ body {
 .aside-top {
   top: calc(var(--navbar-height) + 24px);
 }
-
-main {
-}
