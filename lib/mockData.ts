@@ -3,6 +3,11 @@ import a2 from "./test/a2.jpg";
 import a3 from "./test/a3.jpg";
 import a4 from "./test/a4.jpg";
 import a5 from "./test/a5.jpg";
+import a11 from "./test/a1.jpg";
+import a22 from "./test/a2.jpg";
+import a33 from "./test/a3.jpg";
+import a44 from "./test/a4.jpg";
+import a55 from "./test/a5.jpg";
 import b1 from "./test/b1.jpg";
 import b2 from "./test/b2.jpg";
 import b3 from "./test/b3.jpg";
@@ -81,6 +86,52 @@ export const cakes: EntryType[] = [
     url: a5,
     category: "Special Cake",
   },
+  // {
+  //   id: 6,
+  //   title: "Strawberry Shortcake",
+  //   size: ['7"', '8"'],
+  //   description:
+  //     "Soft sponge layered with fresh strawberries and whipped cream.",
+  //   price: ["29.99", "34.99"],
+  //   url: a11,
+  //   category: "Fresh Cream Cake",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Chocolate Mousse Cake",
+  //   size: ['6"', '7"', '8"'],
+  //   description: "Rich chocolate mousse layered with airy chocolate sponge.",
+  //   price: ["32.99", "38.99", "42.99"],
+  //   url: a22,
+  //   category: "Mousse Cake",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Unicorn Cream Cake",
+  //   size: ['7"'],
+  //   description: "Colorful unicorn-themed cake with pastel whipped cream.",
+  //   price: ["45.99"],
+  //   url: a33,
+  //   category: "Character Cake",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Blueberry Mousse Cake",
+  //   size: ['6"', '8"'],
+  //   description: "Airy blueberry mousse paired with vanilla sponge.",
+  //   price: ["31.99", "37.99"],
+  //   url: a44,
+  //   category: "Mousse Cake",
+  // },
+  // {
+  //   id: 10,
+  //   title: "Red Velvet Cake",
+  //   size: ['8"'],
+  //   description: "Classic red velvet with rich cream cheese frosting.",
+  //   price: ["42.99"],
+  //   url: a55,
+  //   category: "Special Cake",
+  // },
 ];
 
 export const bread: EntryType[] = [
@@ -249,10 +300,10 @@ export const bread: EntryType[] = [
   },
   {
     id: 19,
-    title: "Triple Chocolate Cake",
-    size: ['8"'],
-    description: "Layers of milk, dark, and white chocolate.",
-    price: ["45.99"],
+    title: "Chocolate Ganache Cake",
+    size: ['6"', '7"', '8"'],
+    description: "Deep chocolate sponge covered in silky ganache.",
+    price: ["35.99", "40.99", "45.99"],
     url: b19,
     category: "Special Cake",
   },

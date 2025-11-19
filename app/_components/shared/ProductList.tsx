@@ -65,7 +65,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             {list.map((entry: EntryType) => (
               <section key={entry.id}>
                 <Link
-                  href={`http://localhost:3000/${category}/${entry.title}`}
+                  href={`http://localhost:3000/${category}/${entry.id}`}
                   className=""
                 >
                   <div className="relative w-full aspect-square">
@@ -74,7 +74,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                       src={entry.url}
                       alt={entry.title}
                       fill
-                      sizes="400px"
+                      sizes="(max-width: 600px) 100vw, 600px"
                       className="object-cover"
                     />
                   </div>

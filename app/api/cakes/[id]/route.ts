@@ -2,19 +2,17 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
-import { bread, EntryType } from "@/lib/mockData";
+import { cakes, EntryType } from "@/lib/mockData";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { slug } = await params;
+  const { id } = await params;
 
   const data: EntryType = await new Promise((res, rej) =>
     setTimeout(() => {
-      const item = bread.find(
-        (entry) => String(entry.title.toLowerCase()) === slug.toLowerCase()
-      );
+      const item = cakes.find((entry) => String(entry.id) === id);
       res(item!);
     }, 0)
   );

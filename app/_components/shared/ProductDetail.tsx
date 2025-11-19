@@ -4,14 +4,14 @@ import Link from "next/link";
 import PriceDetail from "./PriceDetail";
 
 export default async function ProductDetail({
-  slug,
+  id,
   category,
 }: {
-  slug: string;
+  id: string;
   category: string;
 }) {
   const data: EntryType = await fetch(
-    `http://localhost:3000/api/${category}/${slug}`
+    `http://localhost:3000/api/${category}/${id}`
   )
     .then((res) => res.json())
     .then((data) => data.data);
@@ -28,7 +28,7 @@ export default async function ProductDetail({
             {category.slice(0, 1).toUpperCase() + category.slice(1)}
           </Link>
           {" > "}
-          <div>{slug}</div>
+          <div>{data.title}</div>
         </div>
 
         <div className="flex gap-8">
