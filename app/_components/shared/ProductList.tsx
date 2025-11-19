@@ -26,7 +26,7 @@ function ProductList({ category, data, asideCategories }: Props) {
 
   return (
     <div className="wrapper">
-      <main className="flex p-4 gap-4">
+      <main className="flex p-4 max-sm:p-2 gap-4">
         <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-48 mt-8 w-full max-[900px]:hidden">
           <div>Filter</div>
           <div className="flex flex-col gap-1 pl-1">
@@ -61,7 +61,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             <div>{category.slice(0, 1).toUpperCase() + category.slice(1)}</div>
           </div>
 
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-2">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: EntryType) => (
               <section key={entry.id}>
                 <Link

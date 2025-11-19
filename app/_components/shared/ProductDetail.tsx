@@ -18,7 +18,7 @@ export default async function ProductDetail({
 
   return (
     <div className="wrapper">
-      <main className="flex flex-col gap-4 p-4 pb-16">
+      <main className="flex flex-col gap-4 p-4 max-sm:p-2 pb-16">
         <div className="flex gap-2">
           <Link href={"/"} className="underline">
             Home

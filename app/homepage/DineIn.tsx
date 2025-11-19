@@ -5,7 +5,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function DineIn() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col p-4">
+      <section className="flex flex-col p-4 max-sm:p-2">
         <div className="relative w-full aspect-7/3">
           <Image
             src={dineInImg}
