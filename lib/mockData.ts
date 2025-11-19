@@ -1,3 +1,29 @@
+import a1 from "./test/a1.jpg";
+import a2 from "./test/a2.jpg";
+import a3 from "./test/a3.jpg";
+import a4 from "./test/a4.jpg";
+import a5 from "./test/a5.jpg";
+import b1 from "./test/b1.jpg";
+import b2 from "./test/b2.jpg";
+import b3 from "./test/b3.jpg";
+import b4 from "./test/b4.jpg";
+import b5 from "./test/b5.jpg";
+import b6 from "./test/b6.jpg";
+import b7 from "./test/b7.jpg";
+import b8 from "./test/b8.jpg";
+import b9 from "./test/b9.jpg";
+import b10 from "./test/b10.jpg";
+import b11 from "./test/b11.jpg";
+import b12 from "./test/b12.jpg";
+import b13 from "./test/b13.jpg";
+import b14 from "./test/b14.jpg";
+import b15 from "./test/b15.jpg";
+import b16 from "./test/b16.jpg";
+import b17 from "./test/b17.jpg";
+import b18 from "./test/b18.jpg";
+import b19 from "./test/b19.jpg";
+import { StaticImageData } from "next/image";
+
 export type EntryType = {
   id: number;
   title: string;
@@ -5,6 +31,7 @@ export type EntryType = {
   description: string;
   price: string[] | string;
   category: string;
+  url: string | StaticImageData;
 };
 
 export const cakes: EntryType[] = [
@@ -15,6 +42,7 @@ export const cakes: EntryType[] = [
     description:
       "Soft sponge layered with fresh strawberries and whipped cream.",
     price: ["29.99", "34.99"],
+    url: a1,
     category: "Fresh Cream Cake",
   },
   {
@@ -23,6 +51,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '7"', '8"'],
     description: "Rich chocolate mousse layered with airy chocolate sponge.",
     price: ["32.99", "38.99", "42.99"],
+    url: a2,
     category: "Mousse Cake",
   },
   {
@@ -31,6 +60,7 @@ export const cakes: EntryType[] = [
     size: ['7"'],
     description: "Colorful unicorn-themed cake with pastel whipped cream.",
     price: ["45.99"],
+    url: a3,
     category: "Character Cake",
   },
   {
@@ -39,6 +69,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '8"'],
     description: "Airy blueberry mousse paired with vanilla sponge.",
     price: ["31.99", "37.99"],
+    url: a4,
     category: "Mousse Cake",
   },
   {
@@ -47,6 +78,56 @@ export const cakes: EntryType[] = [
     size: ['8"'],
     description: "Classic red velvet with rich cream cheese frosting.",
     price: ["42.99"],
+    url: a5,
+    category: "Special Cake",
+  },
+];
+
+export const bread: EntryType[] = [
+  {
+    id: 1,
+    title: "Strawberry Shortcake",
+    size: ['7"', '8"'],
+    description:
+      "Soft sponge layered with fresh strawberries and whipped cream.",
+    price: ["29.99", "34.99"],
+    url: b1,
+    category: "Fresh Cream Cake",
+  },
+  {
+    id: 2,
+    title: "Chocolate Mousse Cake",
+    size: ['6"', '7"', '8"'],
+    description: "Rich chocolate mousse layered with airy chocolate sponge.",
+    price: ["32.99", "38.99", "42.99"],
+    url: b2,
+    category: "Mousse Cake",
+  },
+  {
+    id: 3,
+    title: "Unicorn Cream Cake",
+    size: ['7"'],
+    description: "Colorful unicorn-themed cake with pastel whipped cream.",
+    price: ["45.99"],
+    url: b3,
+    category: "Character Cake",
+  },
+  {
+    id: 4,
+    title: "Blueberry Mousse Cake",
+    size: ['6"', '8"'],
+    description: "Airy blueberry mousse paired with vanilla sponge.",
+    price: ["31.99", "37.99"],
+    url: b4,
+    category: "Mousse Cake",
+  },
+  {
+    id: 5,
+    title: "Red Velvet Cake",
+    size: ['8"'],
+    description: "Classic red velvet with rich cream cheese frosting.",
+    price: ["42.99"],
+    url: b5,
     category: "Special Cake",
   },
   {
@@ -55,6 +136,7 @@ export const cakes: EntryType[] = [
     size: ["Single"],
     description: "Matcha sponge slice with earthy matcha cream.",
     price: ["5.99"],
+    url: b6,
     category: "Slice Cake",
   },
   {
@@ -63,6 +145,7 @@ export const cakes: EntryType[] = [
     size: ['6"'],
     description: "Vanilla sponge with fresh mango and cream.",
     price: ["30.99"],
+    url: b7,
     category: "Fresh Cream Cake",
   },
   {
@@ -71,6 +154,7 @@ export const cakes: EntryType[] = [
     size: ['7"', '8"'],
     description: "Race car–inspired chocolate birthday cake.",
     price: ["54.99", "64.99"],
+    url: b8,
     category: "Character Cake",
   },
   {
@@ -79,6 +163,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '7"', '8"'],
     description: "Coffee-soaked sponge with mascarpone mousse.",
     price: ["33.99", "39.99", "42.99"],
+    url: b9,
     category: "Mousse Cake",
   },
   {
@@ -87,6 +172,7 @@ export const cakes: EntryType[] = [
     size: ["Single"],
     description: "Classic creamy cheesecake slice.",
     price: ["6.99"],
+    url: b10,
     category: "Slice Cake",
   },
   {
@@ -95,6 +181,7 @@ export const cakes: EntryType[] = [
     size: ['7"'],
     description: "Light cream cake topped with seasonal grapes.",
     price: ["35.99"],
+    url: b11,
     category: "Fresh Cream Cake",
   },
   {
@@ -103,6 +190,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '8"'],
     description: "Smooth milk tea mousse with tea-infused sponge.",
     price: ["32.99", "38.99"],
+    url: b12,
     category: "Mousse Cake",
   },
   {
@@ -111,6 +199,7 @@ export const cakes: EntryType[] = [
     size: ['8"'],
     description: "Fun dinosaur-themed chocolate cake.",
     price: ["54.99"],
+    url: b13,
     category: "Character Cake",
   },
   {
@@ -119,6 +208,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '8"'],
     description: "Dense baked cheesecake with a graham crust.",
     price: ["35.99", "44.99"],
+    url: b14,
     category: "Special Cake",
   },
   {
@@ -127,6 +217,7 @@ export const cakes: EntryType[] = [
     size: ["Single"],
     description: "Soft sponge slice filled with vanilla custard.",
     price: ["5.49"],
+    url: b15,
     category: "Slice Cake",
   },
   {
@@ -135,6 +226,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '7"', '8"'],
     description: "Fluffy sponge with blueberry compote and cream.",
     price: ["29.99", "34.99", "38.99"],
+    url: b16,
     category: "Fresh Cream Cake",
   },
   {
@@ -143,6 +235,7 @@ export const cakes: EntryType[] = [
     size: ['7"'],
     description: "Strawberry cake decorated with princess toppers.",
     price: ["56.99"],
+    url: b17,
     category: "Character Cake",
   },
   {
@@ -151,6 +244,7 @@ export const cakes: EntryType[] = [
     size: ['6"', '7"', '8"'],
     description: "Deep chocolate sponge covered in silky ganache.",
     price: ["35.99", "40.99", "45.99"],
+    url: b18,
     category: "Special Cake",
   },
   {
@@ -159,254 +253,7 @@ export const cakes: EntryType[] = [
     size: ['8"'],
     description: "Layers of milk, dark, and white chocolate.",
     price: ["45.99"],
+    url: b19,
     category: "Special Cake",
-  },
-  {
-    id: 20,
-    title: "Strawberry Slice Cake",
-    size: ["Single"],
-    description: "Vanilla sponge slice topped with fresh strawberries.",
-    price: ["5.99"],
-    category: "Slice Cake",
-  },
-  {
-    id: 21,
-    title: "Vanilla Ice Cream Cake",
-    size: ['6"', '8"'],
-    description: "Vanilla sponge with ice cream and whipped cream.",
-    price: ["28.99", "32.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 22,
-    title: "Lemon Cream Cake",
-    size: ['7"', '8"'],
-    description: "Bright lemon sponge balanced with lemon cream.",
-    price: ["33.99", "40.99"],
-    category: "Special Cake",
-  },
-  {
-    id: 23,
-    title: "Panda Mousse Cake",
-    size: ['6"', '7"'],
-    description: "Cute panda-themed chocolate mousse cake.",
-    price: ["46.99", "52.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 24,
-    title: "Oreo Cheesecake",
-    size: ['6"', '8"'],
-    description: "Oreo crust with creamy cheesecake blended with cookies.",
-    price: ["36.99", "45.99"],
-    category: "Special Cake",
-  },
-  {
-    id: 25,
-    title: "Chocolate Fudge Slice",
-    size: ["Single"],
-    description: "Moist chocolate slice with fudge frosting.",
-    price: ["5.99"],
-    category: "Slice Cake",
-  },
-  {
-    id: 26,
-    title: "Banana Fresh Cream Cake",
-    size: ['6"'],
-    description: "Vanilla sponge with banana slices and cream.",
-    price: ["28.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 27,
-    title: "Hazelnut Mousse Cake",
-    size: ['7"', '8"'],
-    description: "Hazelnut mousse layered with chocolate sponge.",
-    price: ["33.99", "40.99"],
-    category: "Mousse Cake",
-  },
-  {
-    id: 28,
-    title: "Mermaid Cream Cake",
-    size: ['8"'],
-    description: "Ocean-themed mermaid cake with pastel colors.",
-    price: ["55.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 29,
-    title: "Carrot Cake Slice",
-    size: ["Single"],
-    description: "Moist carrot cake slice with cream cheese frosting.",
-    price: ["5.99"],
-    category: "Slice Cake",
-  },
-  {
-    id: 30,
-    title: "Raspberry Mousse Cake",
-    size: ['6"', '7"', '8"'],
-    description: "Tangy raspberry mousse with soft sponge.",
-    price: ["32.99", "37.99", "42.99"],
-    category: "Mousse Cake",
-  },
-  {
-    id: 31,
-    title: "Bear Fresh Cream Cake",
-    size: ['6"', '7"'],
-    description: "Cute bear-shaped vanilla cream cake.",
-    price: ["45.99", "52.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 32,
-    title: "Mango Mousse Cake",
-    size: ['7"', '8"'],
-    description: "Smooth mango mousse layered with soft sponge.",
-    price: ["31.99", "38.99"],
-    category: "Mousse Cake",
-  },
-  {
-    id: 33,
-    title: "Blueberry Cheesecake",
-    size: ['6"', '7"', '8"'],
-    description: "Creamy cheesecake topped with blueberry compote.",
-    price: ["33.99", "39.99", "42.99"],
-    category: "Special Cake",
-  },
-  {
-    id: 34,
-    title: "Cartoon Bunny Cake",
-    size: ['7"'],
-    description: "Adorable bunny-themed cream cake.",
-    price: ["55.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 35,
-    title: "Raspberry Chocolate Cake",
-    size: ['6"'],
-    description: "Dark chocolate layers with raspberry cream.",
-    price: ["35.99"],
-    category: "Special Cake",
-  },
-  {
-    id: 36,
-    title: "Blueberry Mousse Slice",
-    size: ["Single"],
-    description: "Light blueberry mousse on soft sponge.",
-    price: ["6.49"],
-    category: "Slice Cake",
-  },
-  {
-    id: 37,
-    title: "Peach Fresh Cream Cake",
-    size: ['6"', '8"'],
-    description: "Sweet peaches layered with fresh whipped cream.",
-    price: ["30.99", "36.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 38,
-    title: "Robot Birthday Cake",
-    size: ['8"'],
-    description: "Robot design cake perfect for kids' birthdays.",
-    price: ["54.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 39,
-    title: "Green Tea Fresh Cream Cake",
-    size: ['7"', '8"'],
-    description: "Matcha sponge paired with light matcha cream.",
-    price: ["31.99", "37.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 40,
-    title: "Tiramisu Slice",
-    size: ["Single"],
-    description: "Coffee-soaked sponge slice with mascarpone cream.",
-    price: ["6.49"],
-    category: "Slice Cake",
-  },
-  {
-    id: 41,
-    title: "Oreo Cream Slice",
-    size: ["Single"],
-    description: "Vanilla cake slice blended with crushed Oreo cream.",
-    price: ["5.99"],
-    category: "Slice Cake",
-  },
-  {
-    id: 42,
-    title: "Salted Caramel Cake",
-    size: ['6"', '7"', '8"'],
-    description: "Caramel sponge with salted caramel cream.",
-    price: ["36.99", "42.99", "45.99"],
-    category: "Special Cake",
-  },
-  {
-    id: 43,
-    title: "Chocolate Fresh Cream Cake",
-    size: ['6"', '8"'],
-    description: "Chocolate sponge with chocolate cream and whipped topping.",
-    price: ["30.99", "36.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 44,
-    title: "Soccer Ball Cake",
-    size: ['7"'],
-    description: "Round soccer ball–themed cake.",
-    price: ["54.99"],
-    category: "Character Cake",
-  },
-  {
-    id: 45,
-    title: "Green Tea Mousse Cake",
-    size: ['6"'],
-    description: "Creamy matcha mousse with soft sponge.",
-    price: ["32.99"],
-    category: "Mousse Cake",
-  },
-  {
-    id: 46,
-    title: "Blueberry Yogurt Cake",
-    size: ['6"', '7"'],
-    description: "Vanilla sponge filled with blueberry yogurt cream.",
-    price: ["29.99", "35.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 47,
-    title: "Raspberry Slice Cake",
-    size: ["Single"],
-    description: "Light sponge slice topped with raspberry cream.",
-    price: ["5.99"],
-    category: "Slice Cake",
-  },
-  {
-    id: 48,
-    title: "Vanilla Mousse Cake",
-    size: ['6"', '7"', '8"'],
-    description: "Light vanilla mousse paired with classic sponge.",
-    price: ["31.99", "35.99", "39.99"],
-    category: "Mousse Cake",
-  },
-  {
-    id: 49,
-    title: "Custard Cream Cake",
-    size: ['7"'],
-    description: "Soft sponge filled with sweet house-made custard.",
-    price: ["33.99"],
-    category: "Fresh Cream Cake",
-  },
-  {
-    id: 50,
-    title: "Lemon Cream Slice",
-    size: ["Single"],
-    description: "Bright lemon sponge slice with smooth lemon cream.",
-    price: ["5.49"],
-    category: "Slice Cake",
   },
 ];
