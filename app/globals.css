@@ -30,3 +30,9 @@ body {
 .aside-top {
   top: calc(var(--navbar-height) + 24px);
 }
+
+@media (max-width: 720px) {
+  body {
+    font-size: 0.9rem;
+  }
+}

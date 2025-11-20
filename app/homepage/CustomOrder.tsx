@@ -5,7 +5,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function CustomOrder() {
   return (
     <div className="wrapper">
-      <section className="flex p-4 max-sm:p-2 gap-4">
+      <section className="flex p-4 max-sm:p-2 gap-4 max-[720px]:flex-col">
         <div className="relative flex-3 aspect-3/4">
           <Image
             src={customCakeImg}
