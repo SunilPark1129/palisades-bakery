@@ -17,7 +17,7 @@ function Footer() {
               <p>Your Local Bakery & Brunch Cafe</p>
             </div>
           </div>
-          <div className="flex w-full justify-between gap-4">
+          <div className="flex w-full justify-between gap-4 max-[830px]:flex-col max-[830px]:items-center max-[830px]:text-center ">
             <div>
               <h3 className="font-semibold">Open Hours</h3>
               <p>6:30 AM - 11 PM</p>

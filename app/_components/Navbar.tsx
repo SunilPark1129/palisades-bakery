@@ -18,7 +18,7 @@ function Navbar({}: Props) {
   return (
     <header className="fixed left-0 top-0 w-full z-100 bg-[var(--clr-background)]">
       <div className="wrapper">
-        <nav className="flex h-(--navbar-height) gap-4 items-center">
+        <nav className="flex h-(--navbar-height) gap-4 items-center px-4">
           <div className="flex w-full gap-12 items-center">
             <Link href={"/"}>
               <Image
