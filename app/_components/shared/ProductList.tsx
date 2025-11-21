@@ -63,19 +63,19 @@ function ProductList({ category, data, asideCategories }: Props) {
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: EntryType) => (
-              <section key={entry.id}>
+              <section key={entry.id} className="group">
                 <Link
                   href={`http://localhost:3000/${category}/${entry.id}`}
                   className=""
                 >
-                  <div className="relative w-full aspect-square">
+                  <div className="relative w-full aspect-square overflow-hidden">
                     <Image
                       // src={cakeImg}
                       src={entry.url}
                       alt={entry.title}
                       fill
                       sizes="(max-width: 600px) 100vw, 600px"
-                      className="object-cover"
+                      className="object-cover group-hover:scale-110 transition-transform"
                     />
                   </div>
                 </Link>
