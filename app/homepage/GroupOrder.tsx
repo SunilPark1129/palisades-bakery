@@ -18,7 +18,7 @@ function GroupOrder() {
           </div>
         </div>
 
-        <div className="relative flex-3 aspect-3/4">
+        <div className="relative flex-3 aspect-3/2">
           <Image
             src={groupOrderImg}
             alt="Group & Bulk Orders"
