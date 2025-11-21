@@ -9,7 +9,8 @@ import ArrowDown from "./svg/ArrowDown";
 const navLinks = [
   { label: "Dine-In", path: "/dine-In" },
   { label: "Catering", path: "/catering" },
-  { label: "Location", path: "/location" },
+  { label: "Custom Cakes", path: "/custom-cakes" },
+  // { label: "Location", path: "/location" },
 ];
 
 const cafeLinks = [
