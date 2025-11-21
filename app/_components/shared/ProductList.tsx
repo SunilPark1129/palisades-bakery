@@ -61,7 +61,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             <div>{category.slice(0, 1).toUpperCase() + category.slice(1)}</div>
           </div>
 
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: EntryType) => (
               <section key={entry.id} className="group">
                 <Link
