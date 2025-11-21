@@ -27,7 +27,7 @@ function ProductList({ category, data, asideCategories }: Props) {
 
   return (
     <div className="wrapper">
-      <main className="flex p-4 max-sm:p-2 gap-4">
+      <main className="flex p-4 pt-0 max-sm:p-2 gap-4">
         <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-48 mt-8 w-full max-[900px]:hidden">
           <div>Filter</div>
           <div className="flex flex-col gap-1 pl-1">
