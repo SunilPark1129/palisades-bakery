@@ -5,16 +5,20 @@ import GroupOrder from "./homepage/GroupOrder";
 import CustomOrder from "./homepage/CustomOrder";
 import Block from "./homepage/Block";
 import DineIn from "./homepage/DineIn";
+import Categories from "./homepage/Categories";
+import BestSeller from "./homepage/BestSeller";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col gap-4">
       <Hero />
-      <About />
+      <BestSeller />
+      <Categories />
+      {/* <About />
       <CustomOrder />
       <GroupOrder />
       <Block />
-      <DineIn />
+      <DineIn /> */}
     </main>
   );
 }

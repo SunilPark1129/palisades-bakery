@@ -51,6 +51,10 @@ function Navbar() {
       if (!isInsideNavbar || link) {
         setIsMenuOn(false);
       }
+
+      if (isMobileMenu && link) {
+        setIsMobileMenu(false);
+      }
     }
 
     document.addEventListener("click", handleTargetClick);
@@ -58,34 +62,26 @@ function Navbar() {
     return () => {
       document.removeEventListener("click", handleTargetClick);
     };
-  }, []);
+  }, [isMobileMenu]);
+
+  useEffect(() => {
+    if (isMobileMenu) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isMobileMenu]);
 
   function mobileMenuClick() {
     setIsMobileMenu((prev) => !prev);
   }
 
   return (
-    <header
-      id="navbar"
-      className="fixed left-0 top-0 w-full z-100 bg-(--clr-background) h-[4rem] border-[#e8e8e8] border-b-1"
-    >
-      {isMobileMenu ? (
-        <div className="fixed top-0 left-0 z-1000 bg-(--clr-primary) h-full w-full">
-          <div className="flex justify-end p-4">
-            <button
-              onClick={mobileMenuClick}
-              className="cursor-pointer text-(--clr-background)"
-            >
-              <MobileMenu />
-            </button>
-          </div>
-          <ul className="flex flex-col text-[1.2rem] items-center gap-4 bg-(--clr-primary) text-(--clr-background)">
-            {combinedLinks.map((item) => (
-              <Link href={item.path}>{item.label}</Link>
-            ))}
-          </ul>
-        </div>
-      ) : (
+    <>
+      <header
+        id="navbar"
+        className="fixed left-0 top-0 w-full z-100 bg-(--clr-background) h-[4rem] border-[#e8e8e8] border-b-1"
+      >
         <div className="wrapper">
           <nav className="flex h-(--navbar-height) gap-4 items-center px-4">
             <div className="flex w-full gap-12 items-center h-full">
@@ -147,14 +143,46 @@ function Navbar() {
 
             <button
               onClick={mobileMenuClick}
-              className="hidden cursor-pointer max-[600px]:flex"
+              className="hidden cursor-pointer max-[600px]:flex text-(--clr-logo)"
             >
               <MobileMenu />
             </button>
           </nav>
         </div>
+      </header>
+      {isMobileMenu && (
+        <div
+          onClick={() => setIsMobileMenu(false)}
+          className="fixed top-0 left-0 z-1000 h-full w-full flex flex-col overflow-y-auto backdrop-brightness-25 cursor-pointer"
+        >
+          <div className="absolute right-4 top-4">
+            <button
+              onClick={mobileMenuClick}
+              className="cursor-pointer text-(--clr-background)"
+            >
+              <MobileMenu />
+            </button>
+          </div>
+          <div
+            className="flex py-12 bg-(--clr-primary) cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
+              {combinedLinks.map((item) => (
+                <li key={item.label} className="w-full">
+                  <Link
+                    className="block px-8 py-2 hover:underline w-fit"
+                    href={item.path}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
-    </header>
+    </>
   );
 }
 
