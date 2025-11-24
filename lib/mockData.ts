@@ -39,8 +39,8 @@ import b28 from "./test/b28.png";
 import b29 from "./test/b29.png";
 import b30 from "./test/b30.png";
 import b31 from "./test/b31.png";
-import bb32 from "./test/32.png";
-import bb10 from "./test/3.png";
+import r10 from "./test/rr10.png";
+import r11 from "./test/r11.png";
 
 import { StaticImageData } from "next/image";
 
