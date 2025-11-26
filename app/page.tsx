@@ -21,8 +21,8 @@ export default function Home() {
       {/* <Social /> */}
       {/* <CustomOrder />
       <GroupOrder /> */}
+      <Block />
       <DineIn />
-      {/* <Block /> */}
       {/*
       <DineIn /> */}
     </main>
