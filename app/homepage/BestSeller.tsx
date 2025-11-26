@@ -31,13 +31,14 @@ function BestSeller({}: Props) {
       <section className="flex max-[700px]:flex-col px-4">
         <div className="flex flex-col gap-4 py-8 justify-center w-full flex-1">
           <p className="text-xs uppercase tracking-wider">Best-Seller</p>
-          <h2 className="text-3xl font-semibold">Made Fresh, Loved my Many</h2>
+          <h2 className="text-3xl font-semibold">Made Fresh, Loved by Many</h2>
           <p className="text-gray-600">
             Discover the treats that bring smiles to our customers every day.
           </p>
         </div>
 
         <div className="relative w-full max-w-[36rem] flex-2 rounded-2xl">
+          <div className="absolute w-full h-full z-20 bg-[linear-gradient(to_right,transparent_96%,var(--clr-background)_98%)] pointer-events-none"></div>
           <Swiper
             grabCursor
             slidesPerView={"auto"}

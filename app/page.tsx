@@ -7,6 +7,8 @@ import Block from "./homepage/Block";
 import DineIn from "./homepage/DineIn";
 import Categories from "./homepage/Categories";
 import BestSeller from "./homepage/BestSeller";
+import Social from "./homepage/Social";
+import Special from "./homepage/Special";
 
 export default function Home() {
   return (
@@ -14,10 +16,14 @@ export default function Home() {
       <Hero />
       <BestSeller />
       <Categories />
-      {/* <About />
-      <CustomOrder />
-      <GroupOrder />
-      <Block />
+      <About />
+      <Special />
+      {/* <Social /> */}
+      {/* <CustomOrder />
+      <GroupOrder /> */}
+      <DineIn />
+      {/* <Block /> */}
+      {/*
       <DineIn /> */}
     </main>
   );
