@@ -27,7 +27,7 @@ function CustomOrder() {
           everything fresh. Bring a reference photo or simply share your
           idea—please order in advance so we can make it perfect.
         </p>
-        <Link href="/custom-cake" className="text-blue-600 w-fit">
+        <Link href="/custom-cakes" className="text-blue-600 w-fit">
           Read detail
         </Link>
       </div>
