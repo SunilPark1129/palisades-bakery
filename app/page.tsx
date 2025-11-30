@@ -12,7 +12,7 @@ import Special from "./homepage/Special";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-4">
+    <main className="flex flex-col gap-12">
       <Hero />
       <BestSeller />
       <Categories />
