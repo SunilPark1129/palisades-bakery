@@ -8,7 +8,7 @@ import ArrowDown from "./svg/ArrowDown";
 import MobileMenu from "./svg/MobileMenu";
 
 const navLinks = [
-  { label: "Dine-In", path: "/dine-In" },
+  { label: "Dine-In", path: "/dine-in" },
   { label: "Catering", path: "/catering" },
   { label: "Custom Cakes", path: "/custom-cakes" },
   // { label: "Location", path: "/location" },

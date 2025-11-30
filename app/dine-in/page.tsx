@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 function page({}: Props) {
-  return <div>page</div>;
+  return <main>page</main>;
 }
 
 export default page;
