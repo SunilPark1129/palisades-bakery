@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { EntryType } from "@/lib/mockData";
-import { cakeCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
+import { cakeCategory } from "@/lib/categoryData";
 
 type Props = {};
 

@@ -39,8 +39,39 @@ import b28 from "./test/b28.png";
 import b29 from "./test/b29.png";
 import b30 from "./test/b30.png";
 import b31 from "./test/b31.png";
-import r10 from "./test/rr10.png";
-import r11 from "./test/r11.png";
+import b32 from "./test/b32.png";
+import b33 from "./test/b33.png";
+import b34 from "./test/b34.png";
+import b35 from "./test/b35.png";
+import b36 from "./test/b36.png";
+import b37 from "./test/b37.png";
+import b38 from "./test/b38.png";
+import b39 from "./test/b39.png";
+import b40 from "./test/b40.png";
+import b41 from "./test/b41.png";
+
+import c1 from "./test/c1.png";
+import c2 from "./test/c2.png";
+import c3 from "./test/c3.png";
+import c4 from "./test/c4.png";
+import c5 from "./test/c5.png";
+import c6 from "./test/c6.png";
+import c7 from "./test/c7.png";
+import c8 from "./test/c8.png";
+import c9 from "./test/c9.png";
+import c10 from "./test/c10.png";
+import c11 from "./test/c11.png";
+
+import d1 from "./test/d1.png";
+import d2 from "./test/d2.png";
+import d3 from "./test/d3.png";
+import d4 from "./test/d4.png";
+import d5 from "./test/d5.png";
+import d6 from "./test/d6.png";
+import d7 from "./test/d7.png";
+import d8 from "./test/d8.png";
+import d9 from "./test/d9.png";
+import d10 from "./test/d10.png";
 
 import { StaticImageData } from "next/image";
 
@@ -111,7 +142,7 @@ export const cakes: EntryType[] = [
     description:
       "A rich and smooth classic cheesecake with a buttery graham cracker crust.",
     price: ["20.00"],
-    url: a3,
+    url: c1,
     category: "Special Cake",
   },
   {
@@ -120,7 +151,7 @@ export const cakes: EntryType[] = [
     description:
       "A creamy cheesecake topped with sweet strawberry sauce and fresh strawberry slices.",
     price: ["30.00"],
-    url: a2,
+    url: c2,
     category: "Special Cake",
   },
   {
@@ -129,7 +160,7 @@ export const cakes: EntryType[] = [
     description:
       "A seven-layer cake with alternating chocolate cream and vanilla sponge layers for a rich and creamy flavor combination.",
     price: ["19.00"],
-    url: a1,
+    url: c3,
     category: "Special Cake",
   },
   {
@@ -138,7 +169,7 @@ export const cakes: EntryType[] = [
     description:
       "A soft, fluffy sponge cake rolled with light, sweet cream for a classic treat.",
     price: ["12.00"],
-    url: a4,
+    url: c4,
     category: "Special Cake",
   },
   {
@@ -147,7 +178,7 @@ export const cakes: EntryType[] = [
     description:
       "A tender sponge cake infused with mocha flavor and rolled with smooth coffee cream.",
     price: ["12.00"],
-    url: a1,
+    url: c5,
     category: "Special Cake",
   },
   {
@@ -156,7 +187,7 @@ export const cakes: EntryType[] = [
     description:
       "A soft green tea-flavored sponge cake rolled with sweet, creamy filling for a delicate taste.",
     price: ["12.00"],
-    url: a3,
+    url: c6,
     category: "Special Cake",
   },
   {
@@ -165,7 +196,7 @@ export const cakes: EntryType[] = [
     description:
       "A light, fluffy cake slice layered with sweet strawberry cream and fresh strawberry pieces.",
     price: ["8.00"],
-    url: a3,
+    url: c7,
     category: "Special Cake",
   },
   {
@@ -174,7 +205,7 @@ export const cakes: EntryType[] = [
     description:
       "A soft cake slice layered with blueberry cream and dotted with juicy blueberries.",
     price: ["8.00"],
-    url: a3,
+    url: c8,
     category: "Special Cake",
   },
   {
@@ -183,7 +214,7 @@ export const cakes: EntryType[] = [
     description:
       "A rich chocolate cake slice layered with sweet strawberry cream and fresh strawberries.",
     price: ["8.00"],
-    url: a3,
+    url: c9,
     category: "Special Cake",
   },
   {
@@ -192,7 +223,7 @@ export const cakes: EntryType[] = [
     description:
       "A moist mocha-flavored cake slice layered with creamy Lotus Biscoff spread and coffee cream.",
     price: ["8.00"],
-    url: a3,
+    url: c10,
     category: "Special Cake",
   },
   {
@@ -201,7 +232,7 @@ export const cakes: EntryType[] = [
     description:
       "A tender cake slice infused with nutty black sesame flavor and a smooth, subtly sweet cream.",
     price: ["8.00"],
-    url: a3,
+    url: c11,
     category: "Special Cake",
   },
   {
@@ -546,7 +577,7 @@ export const bread: EntryType[] = [
     description:
       "Crisp, oblong, twice-baked cookie, generously packed with toasted almond slices, often finished with a light sugar coating.",
     price: ["6.00"],
-    url: b28,
+    url: b32,
     category: "Bread",
   },
   {
@@ -555,7 +586,7 @@ export const bread: EntryType[] = [
     description:
       "Crisp, oblong, twice-baked cookie, generously packed with toasted almond slices, often finished with a light sugar coating.",
     price: ["6.00"],
-    url: b29,
+    url: b33,
     category: "Bread",
   },
   {
@@ -564,7 +595,7 @@ export const bread: EntryType[] = [
     description:
       "Crisp, oblong, twice-baked cookie, generously packed with toasted almond slices, often finished with a light sugar coating.",
     price: ["6.00"],
-    url: b30,
+    url: b34,
     category: "Bread",
   },
   {
@@ -573,7 +604,7 @@ export const bread: EntryType[] = [
     description:
       "A soft, pillowy bun filled with light, sweet whipped cream for a simple, classic treat.",
     price: ["3.50"],
-    url: b1,
+    url: b35,
     category: "Bread",
   },
   {
@@ -582,7 +613,7 @@ export const bread: EntryType[] = [
     description:
       "A flaky, golden pastry studded with crunchy walnuts and sweet raisins for a rich, hearty bite.",
     price: ["4.00"],
-    url: b1,
+    url: b36,
     category: "Bread",
   },
   {
@@ -591,7 +622,7 @@ export const bread: EntryType[] = [
     description:
       "A crispy, golden croquette filled with creamy mashed potatoes and savory meat or vegetables.",
     price: ["4.00"],
-    url: b1,
+    url: b37,
     category: "Bread",
   },
   {
@@ -600,7 +631,7 @@ export const bread: EntryType[] = [
     description:
       "A soft, fluffy bread wrapped around a savory sausage, often brushed with a light glaze.",
     price: ["3.00"],
-    url: b1,
+    url: b38,
     category: "Bread",
   },
   {
@@ -609,7 +640,7 @@ export const bread: EntryType[] = [
     description:
       "A moist, buttery pound cake with a fine, tender crumb, sliced for easy serving.",
     price: ["2.00"],
-    url: b1,
+    url: b39,
     category: "Bread",
   },
   {
@@ -618,7 +649,7 @@ export const bread: EntryType[] = [
     description:
       "A moist, tender pound cake with a swirl of chocolate and vanilla creating a marbled pattern.",
     price: ["2.00"],
-    url: b1,
+    url: b40,
     category: "Bread",
   },
   {
@@ -627,7 +658,7 @@ export const bread: EntryType[] = [
     description:
       "A soft, slightly sweet bread made with cornmeal for a tender, golden loaf.",
     price: ["3.00"],
-    url: b1,
+    url: b41,
     category: "Bread",
   },
   {
@@ -791,7 +822,7 @@ export const cookies: EntryType[] = [
       "An assortment of cookies with various flavors and textures, perfect for sharing.",
     size: ["1LB", "1/2LB"],
     price: ["18.00", "10.00"],
-    url: b1,
+    url: d1,
     category: "Cookies",
   },
   {
@@ -800,7 +831,7 @@ export const cookies: EntryType[] = [
     description:
       "A slightly crumbly, buttery cookie with a tender texture, similar to a classic scone.",
     price: ["5.00"],
-    url: b1,
+    url: d2,
     category: "Cookies",
   },
   {
@@ -809,7 +840,7 @@ export const cookies: EntryType[] = [
     description:
       "A thick, chewy cookie loaded with rich chocolate chips for a classic indulgence.",
     price: ["5.00"],
-    url: b1,
+    url: d3,
     category: "Cookies",
   },
   {
@@ -818,7 +849,7 @@ export const cookies: EntryType[] = [
     description:
       "A delicate cookie infused with Earl Grey tea and zesty lemon, filled with smooth ganache.",
     price: ["5.00"],
-    url: b1,
+    url: d4,
     category: "Cookies",
   },
   {
@@ -827,7 +858,7 @@ export const cookies: EntryType[] = [
     description:
       "A soft cookie layered with chocolate, marshmallow, and graham flavors for a campfire-inspired treat.",
     price: ["5.00"],
-    url: b1,
+    url: d5,
     category: "Cookies",
   },
   {
@@ -836,7 +867,7 @@ export const cookies: EntryType[] = [
     description:
       "A rich, fudgy cookie filled or topped with smooth chocolate ganache.",
     price: ["5.00"],
-    url: b1,
+    url: d6,
     category: "Cookies",
   },
   {
@@ -845,7 +876,7 @@ export const cookies: EntryType[] = [
     description:
       "A crunchy cookie mixed with colorful cereal pieces for a fun, sweet texture.",
     price: ["5.00"],
-    url: b1,
+    url: d7,
     category: "Cookies",
   },
   {
@@ -854,7 +885,7 @@ export const cookies: EntryType[] = [
     description:
       "A soft cookie flavored with earthy matcha and studded with crunchy pistachios.",
     price: ["5.00"],
-    url: b1,
+    url: d8,
     category: "Cookies",
   },
   {
@@ -863,7 +894,7 @@ export const cookies: EntryType[] = [
     description:
       "A buttery cookie infused with the sweet, caramelized flavor of Lotus Biscoff spread.",
     price: ["5.00"],
-    url: b1,
+    url: d9,
     category: "Cookies",
   },
   {
@@ -872,7 +903,7 @@ export const cookies: EntryType[] = [
     description:
       "A mix of crunchy nuts coated in rich chocolate for a satisfying treat.",
     price: ["10.00"],
-    url: b1,
+    url: d10,
     category: "Cookies",
   },
   {
