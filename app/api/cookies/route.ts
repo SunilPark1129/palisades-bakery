@@ -1,4 +1,4 @@
-import { cakes, cookies, EntryType } from "@/lib/mockData";
+import { cookies, EntryType } from "@/lib/mockData";
 // import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
 import { NextResponse } from "next/server";

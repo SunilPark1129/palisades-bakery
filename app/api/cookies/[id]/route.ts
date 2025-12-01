@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
-import { cakes, EntryType } from "@/lib/mockData";
+import { cookies, EntryType } from "@/lib/mockData";
 
 export async function GET(
   request: Request,
@@ -12,7 +12,7 @@ export async function GET(
 
   const data: EntryType = await new Promise((res, rej) =>
     setTimeout(() => {
-      const item = cakes.find((entry) => String(entry.id) === id);
+      const item = cookies.find((entry) => String(entry.id) === id);
       res(item!);
     }, 0)
   );
