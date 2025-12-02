@@ -12,19 +12,17 @@ import Special from "./homepage/Special";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-12">
+    <main className="flex flex-col gap-16">
       <Hero />
-      <BestSeller />
       <Categories />
-      <About />
+      <BestSeller />
+      <Block />
       <Special />
-      {/* <Social /> */}
       {/* <CustomOrder />
       <GroupOrder /> */}
-      <Block />
       <DineIn />
-      {/*
-      <DineIn /> */}
+      <Social />
+      {/* <About /> */}
     </main>
   );
 }

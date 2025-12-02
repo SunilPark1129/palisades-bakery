@@ -43,6 +43,7 @@ body {
 
 .swiper-slide {
   width: 50%;
+  /* right: 0%; */
 }
 
 .swiper-slide {

@@ -72,6 +72,7 @@ import d7 from "./test/d7.png";
 import d8 from "./test/d8.png";
 import d9 from "./test/d9.png";
 import d10 from "./test/d10.png";
+import d11 from "./test/d11.png";
 
 import { StaticImageData } from "next/image";
 
@@ -912,7 +913,7 @@ export const cookies: EntryType[] = [
     description:
       "Soft, subtly sweet cookies made with smooth white bean paste.",
     price: ["7.00"],
-    url: b1,
+    url: d11,
     category: "Cookies",
   },
   {
