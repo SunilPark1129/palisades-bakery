@@ -1,4 +1,4 @@
-export type EntryType = {
+export type DishType = {
   id: number;
   title: string;
   koTitle: string;
@@ -7,7 +7,7 @@ export type EntryType = {
   category: string;
 };
 
-export const brunch: EntryType[] = [
+export const brunch: DishType[] = [
   {
     id: 1,
     title: "American Breakfast Platter",
@@ -96,7 +96,7 @@ export const brunch: EntryType[] = [
   },
 ];
 
-export const sandwich: EntryType[] = [
+export const sandwich: DishType[] = [
   {
     id: 1,
     title: "Smashed Cheeseburger on Brioche",
@@ -167,7 +167,7 @@ export const sandwich: EntryType[] = [
   },
 ];
 
-export const pizza: EntryType[] = [
+export const pizza: DishType[] = [
   {
     id: 1,
     title: "Margherita Pizza",
@@ -194,7 +194,7 @@ export const pizza: EntryType[] = [
   },
 ];
 
-export const pastaAndSteak: EntryType[] = [
+export const pastaAndSteak: DishType[] = [
   {
     id: 1,
     title: "Aglio Olio",
@@ -289,7 +289,7 @@ export const pastaAndSteak: EntryType[] = [
   },
 ];
 
-export const salad: EntryType[] = [
+export const salad: DishType[] = [
   {
     id: 1,
     title: "House Garden Salad",
@@ -337,7 +337,7 @@ export const salad: EntryType[] = [
   },
 ];
 
-export const soup: EntryType[] = [
+export const soup: DishType[] = [
   {
     id: 1,
     title: "Beef and Vegetable",
@@ -372,7 +372,7 @@ export const soup: EntryType[] = [
   },
 ];
 
-export const side: EntryType[] = [
+export const side: DishType[] = [
   {
     id: 1,
     title: "Extra Noodles",
