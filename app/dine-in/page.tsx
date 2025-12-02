@@ -1,4 +1,4 @@
-import { brunch } from "@/lib/dineMockData";
+import { brunch, pastaAndSteak } from "@/lib/dineMockData";
 import { Metadata } from "next";
 import React from "react";
 
@@ -29,7 +29,7 @@ function page({}: Props) {
 
       <section className="flex flex-col gap-8">
         <h2 className="text-[1.4rem] font-bold">Pasta & Steak</h2>
-        {brunch.map((item) => (
+        {pastaAndSteak.map((item) => (
           <div key={item.id} className="flex flex-col">
             <div className="flex">
               <h3 className="w-full text-[1.1rem]">{item.title}</h3>
