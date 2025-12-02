@@ -24,11 +24,21 @@ function BestSeller({}: Props) {
       img: "/images/best/b3.png",
       price: "20.99",
     },
+    {
+      title: "Strawberry Cake",
+      img: "/images/best/b3.png",
+      price: "20.99",
+    },
+    {
+      title: "Strawberry Cake",
+      img: "/images/best/b3.png",
+      price: "20.99",
+    },
   ];
 
   return (
     <div className="wrapper">
-      <section className="flex max-[700px]:flex-col px-4">
+      <section className="flex max-[700px]:flex-col px-4 -my-4">
         <div className="flex flex-col gap-4 py-8 justify-center w-full flex-1">
           <p className="text-xs uppercase tracking-wider">Best-Seller</p>
           <h2 className="text-3xl font-semibold">Made Fresh, Loved by Many</h2>
@@ -38,12 +48,13 @@ function BestSeller({}: Props) {
         </div>
 
         <div className="relative w-full max-w-[36rem] flex-2 rounded-2xl">
-          <div className="absolute w-full h-full z-20 bg-[linear-gradient(to_right,transparent_96%,var(--clr-background)_98%)] pointer-events-none"></div>
+          <div className="absolute w-full h-full z-20 bg-[linear-gradient(to_right,var(--clr-background)_1%,transparent_2%,transparent_98%,var(--clr-background)_99%)] pointer-events-none"></div>
           <Swiper
             grabCursor
-            slidesPerView={"auto"}
+            loop
+            slidesPerView={2.2}
             centeredSlides={true}
-            spaceBetween={10}
+            spaceBetween={12}
             pagination={{
               clickable: true,
             }}
@@ -51,7 +62,7 @@ function BestSeller({}: Props) {
           >
             {items.map((item, idx) => (
               <SwiperSlide key={idx} className="!h-auto !flex py-4">
-                <div className="relative flex flex-col bg-[#f5f5f0] rounded-2xl shadow-[0px_4px_24px_-12px] overflow-hidden w-full">
+                <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
                   <div className="relative w-full aspect-16/9 flex-shrink-0">
                     <div className="absolute right-2 bottom-2 z-10 py-0.5 px-2 text-xs uppercase bg-[#f1f1f1] rounded">
                       Best

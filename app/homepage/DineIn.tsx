@@ -5,7 +5,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function DineIn() {
   return (
     <div className="wrapper">
-      <section className="flex px-4 gap-4 max-sm:p-2 mb-16">
+      <section className="flex flex-row-reverse px-4 gap-4 max-sm:p-2">
         <div className="flex flex-col gap-4 mx-auto py-20 flex-1">
           <p className="text-xs uppercase tracking-wider">Dine-In</p>
           <h2 className="text-3xl font-semibold">High Quality Dine-In Meals</h2>

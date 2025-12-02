@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 function page({}: Props) {
   return (
-    <main className="flex flex-col gap-10 p-4">
+    <main className="wrapper flex flex-col gap-10 p-4">
       <section className="flex flex-col gap-6">
         <h2 className="text-[1.4rem] font-bold">Brunch</h2>
         {brunch.map((item) => (
