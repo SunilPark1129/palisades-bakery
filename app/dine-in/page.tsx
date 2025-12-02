@@ -1,3 +1,4 @@
+import { brunch } from "@/lib/dineMockData";
 import { Metadata } from "next";
 import React from "react";
 
@@ -9,7 +10,38 @@ export const metadata: Metadata = {
 };
 
 function page({}: Props) {
-  return <main>page</main>;
+  return (
+    <main className="flex flex-col gap-10 p-4">
+      <section className="flex flex-col gap-6">
+        <h2 className="text-[1.4rem] font-bold">Brunch</h2>
+        {brunch.map((item) => (
+          <div key={item.id} className="flex flex-col">
+            <div className="flex">
+              <h3 className="w-full text-[1.1rem]">{item.title}</h3>
+              <div className="w-full mx-auto border-b border-dashed border-gray-300"></div>
+              <p className="text-[1.1rem] whitespace-nowrap">$ {item.price}</p>
+            </div>
+            <div>{item.koTitle}</div>
+            <p className="text-[.9rem] italic">{item.description}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="flex flex-col gap-8">
+        <h2 className="text-[1.4rem] font-bold">Pasta & Steak</h2>
+        {brunch.map((item) => (
+          <div key={item.id} className="flex flex-col">
+            <div className="flex">
+              <h3 className="w-full text-[1.1rem]">{item.title}</h3>
+              <p className="text-[1.1rem] whitespace-nowrap">$ {item.price}</p>
+            </div>
+            <div>{item.koTitle}</div>
+            <p className="text-[.9rem] italic">{item.description}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
 }
 
 export default page;
