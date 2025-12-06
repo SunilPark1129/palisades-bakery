@@ -9,19 +9,26 @@ import Categories from "./homepage/Categories";
 import BestSeller from "./homepage/BestSeller";
 import Social from "./homepage/Social";
 import Special from "./homepage/Special";
+import GradientMask from "./_components/ui/GradientMask";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-8">
       <Hero />
       <Categories />
-      <Block />
+      <div>
+        <GradientMask top />
+        <div className="flex flex-col gap-8 bg-[#efefea]">
+          <DineIn />
+        </div>
+        <GradientMask />
+      </div>
       <BestSeller />
-      <DineIn />
       <Special />
+      <Block />
+      <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}
-      <Social />
       {/* <About /> */}
     </main>
   );

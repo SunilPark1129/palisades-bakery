@@ -20,75 +20,56 @@ const images = [f1, f2, f3, f4, f5, f6];
 
 function Social({}: Props) {
   return (
-    <section className="relative bg-[#f2f2f2]">
+    <section className="relative">
       <div className="wrapper">
-        <div className="flex p-4 items-center">
-          <div className="">
-            <Image
-              className="scale-100"
-              src={moibleImage}
-              alt="mobile"
-              width={400}
-            />
-          </div>
-          <div className="flex w-full gap-4">
-            <div className="grid grid-cols-3 w-full gap-1">
-              {images.map((item, idx) => (
-                <div key={idx} className="relative w-full aspect-3/4">
-                  <Image
-                    src={item}
-                    alt="sns image"
-                    fill
-                    className="w-full h-full object-cover rounded"
-                  />
+        <div className="flex p-4 justify-center">
+          <Image
+            className="scale-100"
+            src={moibleImage}
+            alt="mobile"
+            width={400}
+          />
+          <div className="flex flex-col gap-4 my-auto p-4">
+            <p className="text-xs uppercase tracking-wider">Follow-Us</p>
+            <h2 className="text-3xl font-semibold">Follow Your Local Bakery</h2>
+            <p>See our fresh bakes, daily specials, and behind-the-scenes.</p>
+
+            <div className="flex flex-col items-center w-full gap-2 m-auto">
+              {/* Instagram */}
+              <Link
+                href="https://instagram.com/yourbakery"
+                target="_blank"
+                className="group flex items-center w-full bg-gradient-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
+              >
+                Instagram
+                <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
+                  <SVGInstagram />
                 </div>
-              ))}
-            </div>
-            <div className="w-full flex flex-col gap-4">
-              <div className="m-auto p-4">
-                <p className="text-xs uppercase tracking-wider">Follow-Us</p>
-                <h2 className="text-3xl font-semibold">
-                  Follow Your Local Bakery
-                </h2>
-                <p>
-                  See our fresh bakes, daily specials, and behind-the-scenes.
-                </p>
+              </Link>
 
-                <div className="flex items-center mt-4 px-2 bg-[#fff] w-fit rounded-2xl">
-                  {/* Instagram */}
-                  <Link
-                    href="https://instagram.com/yourbakery"
-                    target="_blank"
-                    className="group"
-                  >
-                    <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
-                      <SVGInstagram />
-                    </div>
-                  </Link>
-
-                  {/* Facebook */}
-                  <Link
-                    href="https://facebook.com/yourbakery"
-                    target="_blank"
-                    className="group"
-                  >
-                    <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
-                      <SVGFacebook />
-                    </div>
-                  </Link>
-
-                  {/* Twitter/X */}
-                  <Link
-                    href="https://twitter.com/yourbakery"
-                    target="_blank"
-                    className="group"
-                  >
-                    <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
-                      <SVGTwitter />
-                    </div>
-                  </Link>
+              {/* Facebook */}
+              <Link
+                href="https://facebook.com/yourbakery"
+                target="_blank"
+                className="group flex items-center w-full bg-[#1877F2] text-white rounded justify-center"
+              >
+                Facebook
+                <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
+                  <SVGFacebook />
                 </div>
-              </div>
+              </Link>
+
+              {/* Twitter/X */}
+              <Link
+                href="https://twitter.com/yourbakery"
+                target="_blank"
+                className="group flex items-center w-full bg-[#1DA1F2] text-white rounded justify-center"
+              >
+                Twitter
+                <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
+                  <SVGTwitter />
+                </div>
+              </Link>
             </div>
           </div>
         </div>
