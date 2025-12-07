@@ -48,12 +48,11 @@ function BestSeller({}: Props) {
         </div>
 
         <div className="relative w-full max-w-[36rem] flex-2 rounded-2xl">
-          <div className="absolute w-full h-full z-20 bg-[linear-gradient(to_right,var(--clr-background)_1%,transparent_2%,transparent_98%,var(--clr-background)_99%)] pointer-events-none"></div>
+          <div className="absolute w-full h-full z-20 pointer-events-none"></div>
           <Swiper
             grabCursor
             loop
-            slidesPerView={2.2}
-            centeredSlides={true}
+            slidesPerView={1.8}
             spaceBetween={12}
             pagination={{
               clickable: true,
@@ -64,7 +63,7 @@ function BestSeller({}: Props) {
               <SwiperSlide key={idx} className="!h-auto !flex py-4">
                 <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
                   <div className="relative w-full aspect-16/9 flex-shrink-0">
-                    <div className="absolute right-2 bottom-2 z-10 py-0.5 px-2 text-xs uppercase bg-[#f1f1f1] rounded">
+                    <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-xs uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best
                     </div>
                     <Image

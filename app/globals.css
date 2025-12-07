@@ -45,8 +45,8 @@ body {
 }
 
 .swiper-slide {
+  left: 10px;
   width: 50%;
-  /* right: 20%; */
 }
 
 .swiper-slide {
