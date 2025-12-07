@@ -22,10 +22,10 @@ const dineMenu = [
   { menuTitle: "Pasta & Steak", data: pastaAndSteak },
   { menuTitle: "Sandwich", data: sandwich },
   // { menuTitle: "Pizza & Salad", data: pizzaAndSalad },
-  { menuTitle: "Pizza", data: pizza },
   { menuTitle: "Salad", data: salad },
-  { menuTitle: "Side Order", data: side },
+  { menuTitle: "Pizza", data: pizza },
   { menuTitle: "Soup", data: soup },
+  { menuTitle: "Side Order", data: side },
 ];
 
 function page({}: Props) {
