@@ -3,7 +3,7 @@
 import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bakeImg from "../../homepage/images/bakery-hero-img.jpg";
 import ArrowDown from "../svg/ArrowDown";
 import { cakeCategory } from "@/lib/categoryData";
@@ -31,6 +31,8 @@ function ProductList({ category, data, asideCategories }: Props) {
   function mobileFilteredItems() {
     setIsMenuOn((prev) => !prev);
   }
+
+  useEffect(() => {}, []);
 
   return (
     <div className="wrapper">
@@ -83,7 +85,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             </div>
             <div
               onClick={mobileFilteredItems}
-              className="relative cursor-pointer hidden max-[900px]:flex items-center gap-1 w-full justify-end"
+              className="relative cursor-pointer hidden max-[900px]:flex items-center gap-1 w-fit ml-auto"
             >
               <div>Filter</div>
               <ArrowDown isMenuOn={isMenuOn} />
@@ -94,7 +96,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                     <button
                       onClick={() => getFilteredItems(item)}
                       key={item}
-                      className="flex justify-start cursor-pointer bg-(--clr-background) px-4 py-2"
+                      className="flex justify-start cursor-pointer bg-(--clr-background) px-4 py-2 hover:bg-(--clr-accent)"
                     >
                       {item}
                     </button>
