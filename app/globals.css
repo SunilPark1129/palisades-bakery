@@ -6,7 +6,9 @@
 :root {
   --clr-background: #fcfdfe;
   /* #e6ddcc; */
-  --clr-background2: #e6ddcc;
+  /* #efefea */
+  --clr-background2: #e9dfcc;
+  --clr-background3: #efefea;
   --clr-primary: #574d6c;
   --clr-logo: #7a6d92;
 

@@ -16,16 +16,16 @@ export default function Home() {
     <main className="flex flex-col gap-8">
       <Hero />
       <Categories />
+      <Block />
+      <BestSeller />
       <div>
         <GradientMask top />
-        <div className="flex flex-col gap-8 bg-[#efefea]">
-          <DineIn />
+        <div className="flex flex-col gap-8 bg-(--clr-background2)">
+          <Special />
         </div>
         <GradientMask />
       </div>
-      <BestSeller />
-      <Special />
-      <Block />
+      <DineIn />
       <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}
