@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import bakeImg from "../../homepage/images/bakery-hero-img.jpg";
+import ArrowDown from "../svg/ArrowDown";
+import { cakeCategory } from "@/lib/categoryData";
 
 type Props = {
   category: string;
@@ -15,6 +17,7 @@ type Props = {
 function ProductList({ category, data, asideCategories }: Props) {
   const [list, setList] = useState<EntryType[]>(data);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [isMenuOn, setIsMenuOn] = useState(false);
 
   function getFilteredItems(str: string) {
     setSelectedCategory(str);
@@ -23,6 +26,10 @@ function ProductList({ category, data, asideCategories }: Props) {
     } else {
       setList(data.filter((item) => item.category === str));
     }
+  }
+
+  function mobileFilteredItems() {
+    setIsMenuOn((prev) => !prev);
   }
 
   return (
@@ -64,12 +71,37 @@ function ProductList({ category, data, asideCategories }: Props) {
             />
           </div>
 
-          <div className="flex gap-2">
-            <Link href={"/"} className="underline">
-              Home
-            </Link>
-            {" > "}
-            <div>{category.slice(0, 1).toUpperCase() + category.slice(1)}</div>
+          <div className="flex">
+            <div className="flex gap-2">
+              <Link href={"/"} className="underline">
+                Home
+              </Link>
+              {" > "}
+              <div>
+                {category.slice(0, 1).toUpperCase() + category.slice(1)}
+              </div>
+            </div>
+            <div
+              onClick={mobileFilteredItems}
+              className="relative cursor-pointer hidden max-[900px]:flex items-center gap-1 w-full justify-end"
+            >
+              <div>Filter</div>
+              <ArrowDown isMenuOn={isMenuOn} />
+
+              {isMenuOn && (
+                <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
+                  {cakeCategory.map((item) => (
+                    <button
+                      onClick={() => getFilteredItems(item)}
+                      key={item}
+                      className="flex justify-start cursor-pointer bg-(--clr-background) px-4 py-2"
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
