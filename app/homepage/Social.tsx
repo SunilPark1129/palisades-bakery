@@ -39,6 +39,7 @@ function Social({}: Props) {
               <Link
                 href="https://instagram.com/yourbakery"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center w-full bg-gradient-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
               >
                 Instagram
@@ -51,6 +52,7 @@ function Social({}: Props) {
               <Link
                 href="https://facebook.com/yourbakery"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center w-full bg-[#1877F2] text-white rounded justify-center"
               >
                 Facebook
@@ -63,6 +65,7 @@ function Social({}: Props) {
               <Link
                 href="https://twitter.com/yourbakery"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center w-full bg-[#1DA1F2] text-white rounded justify-center"
               >
                 Twitter

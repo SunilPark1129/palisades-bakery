@@ -1,5 +1,7 @@
 import Image from "next/image";
 import logo from "./images/bakery-footer-logo.png";
+import { SVGFacebook, SVGInstagram, SVGTwitter } from "./svg/social";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -33,11 +35,36 @@ function Footer() {
               <p>(201) 347-6696</p>
             </div>
             <div>
-              <h3 className="font-semibold">Email</h3>
-              <p>palisadesparkbakery@gmail.com</p>
+              <h3 className="font-semibold">Follow Us</h3>
+              <div className="flex gap-1">
+                <Link
+                  href="https://twitter.com/yourbakery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  <SVGInstagram />
+                </Link>
+                <Link
+                  href="https://twitter.com/yourbakery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  <SVGFacebook />
+                </Link>
+                <Link
+                  href="https://twitter.com/yourbakery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  <SVGTwitter />
+                </Link>
+              </div>
             </div>
           </div>
-          <div>
+          <div className="text-center">
             &copy; 2025 Palisades Park Bakery, Palisades Park, NJ. All Rights
             Reserved.
           </div>
