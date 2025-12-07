@@ -239,6 +239,81 @@ export const pizzaAndSalad: DishType[] = [
   },
 ];
 
+export const pizza: DishType[] = [
+  {
+    id: 1,
+    title: "Margherita Pizza",
+    koTitle: "마르게리타 피자",
+    description: "",
+    price: "15.99",
+    category: "Pizza",
+  },
+  {
+    id: 2,
+    title: "Pepperoni Pizza",
+    koTitle: "페파로니 피자",
+    description: "",
+    price: "16.99",
+    category: "Pizza",
+  },
+  {
+    id: 3,
+    title: "Gorgonzola Pizza",
+    koTitle: "고르곤졸라치즈 피자",
+    description: "",
+    price: "18.99",
+    category: "Pizza",
+  },
+];
+
+export const salad: DishType[] = [
+  {
+    id: 1,
+    title: "House Garden Salad",
+    koTitle: "하우스 샐러드",
+    description:
+      "Grilled Chicken Breast, Avocado, Cherry Tomatoes, Paprika, Cucumber, Mixed Green, Red Onion, Balsamic Dressing",
+    price: "18.99",
+    category: "Salad",
+  },
+  {
+    id: 2,
+    title: "Farro Salad",
+    koTitle: "파로 샐러드",
+    description:
+      "Farro, Chick Pea, Black Olives, Red Onion, Corn, Cherry Tomatoes, Mini Paprika, Feta Cheese, Lemon Oregano Dressing",
+    price: "18.99",
+    category: "Salad",
+  },
+  {
+    id: 3,
+    title: "Chicken Caesar Salad",
+    koTitle: "치킨시저 샐러드",
+    description:
+      "Grilled Chicken, Romaine Lettuce, Cherry Tomatoes, Garlic Gruton, Caesar Dressing",
+    price: "18.99",
+    category: "Salad",
+  },
+  {
+    id: 4,
+    title: "Spicy Shrimp w/ Quinoa Salad",
+    koTitle: "매콤한 새우 샐러드",
+    description:
+      "Spicy Shrimp, Arugula, Shallot, Tomatoes, Pine Nuts, Avocados, Champagne Vinaigrette",
+    price: "19.99",
+    category: "Salad",
+  },
+  {
+    id: 5,
+    title: "Beet Salad",
+    koTitle: "비트 샐러드",
+    description:
+      "Roasted Beet, Goat Cheese, Arugula, Toasted Almond Raisins, Tomatoes, Mini Paprika, Balsamic Dressing",
+    price: "18.99",
+    category: "Salad",
+  },
+];
+
 export const pastaAndSteak: DishType[] = [
   {
     id: 1,

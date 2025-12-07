@@ -1,7 +1,9 @@
 import {
   brunch,
   pastaAndSteak,
+  pizza,
   pizzaAndSalad,
+  salad,
   sandwich,
   side,
   soup,
@@ -19,7 +21,9 @@ const dineMenu = [
   { menuTitle: "Brunch", data: brunch },
   { menuTitle: "Pasta & Steak", data: pastaAndSteak },
   { menuTitle: "Sandwich", data: sandwich },
-  { menuTitle: "Pizza & Salad", data: pizzaAndSalad },
+  // { menuTitle: "Pizza & Salad", data: pizzaAndSalad },
+  { menuTitle: "Pizza", data: pizza },
+  { menuTitle: "Salad", data: salad },
   { menuTitle: "Side Order", data: side },
   { menuTitle: "Soup", data: soup },
 ];
