@@ -20,7 +20,7 @@ export default function Home() {
       <BestSeller />
       <div>
         <GradientMask top />
-        <div className="flex flex-col gap-8 bg-[#e9e8e3]">
+        <div className="flex flex-col gap-8 bg-(--clr-background2)">
           <Special />
         </div>
         <GradientMask />
