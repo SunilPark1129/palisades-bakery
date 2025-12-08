@@ -1,9 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-
-import React from "react";
 
 type Props = {};
 
@@ -80,8 +77,8 @@ function BestSeller({}: Props) {
                       {item.title}
                     </h3>
                     <p>$ {item.price}</p>
-                    <button className="mt-auto w-full px-4 py-2 text-sm bg-(--clr-primary) text-white rounded-lg hover:bg-gray-800 cursor-pointer">
-                      View Item
+                    <button className="mt-auto w-full px-4 py-2 text-sm bg-[#dd832e] text-white rounded-lg hover:bg-gray-800 cursor-pointer">
+                      View Detail
                     </button>
                   </div>
                 </div>
