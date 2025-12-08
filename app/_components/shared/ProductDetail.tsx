@@ -18,7 +18,9 @@ export default async function ProductDetail({
 
   return (
     <div className="wrapper">
-      <main className="flex flex-col gap-4 p-4 max-sm:p-2 pb-16">
+      {/* why max-sm:p-2 ??*/}
+
+      <main className="flex flex-col gap-4 p-4 max-sm:p-2 mb-8">
         <div className="flex gap-2">
           <Link href={"/"} className="underline">
             Home
@@ -31,8 +33,8 @@ export default async function ProductDetail({
           <div>{data.title}</div>
         </div>
 
-        <div className="flex gap-8">
-          <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem]">
+        <div className="flex gap-8 max-md:flex-col">
+          <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem] max-md:max-w-full">
             <Image
               src={data.url}
               alt={data.title}
@@ -42,7 +44,7 @@ export default async function ProductDetail({
             />
           </div>
 
-          <div className="flex flex-col flex-1 gap-8 max-w-[36rem]">
+          <div className="flex flex-col flex-1 gap-8 max-w-[36rem] max-md:px-4 max-md:max-w-full">
             <div className="flex flex-col gap-4">
               <h1 className="text-2xl">{data.title}</h1>
               <PriceDetail data={data} />

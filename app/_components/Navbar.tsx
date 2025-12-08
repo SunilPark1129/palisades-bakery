@@ -70,6 +70,11 @@ function Navbar() {
     } else {
       document.body.classList.remove("overflow-hidden");
     }
+
+    // brooooo
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
   }, [isMobileMenu]);
 
   function mobileMenuClick() {
