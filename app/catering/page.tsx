@@ -12,7 +12,58 @@ function page({}: Props) {
           take care of the treats while you enjoy the moment.
         </p>
       </header>
+
       <section>
+        <h2>Large Orders Made Easy</h2>
+        <p>
+          Whether you're planning a lunch, gathering, or special event, our
+          bakery offers flexible group ordering on any item we make — from
+          breads and cakes to brunch dishes and sandwiches.
+        </p>
+      </section>
+
+      <section>
+        <h2>Ordering Guidelines</h2>
+        <div>
+          <div>
+            <div>Order at least 2 days in advance</div>
+            <p>
+              This gives our team time to prepare fresh items in the quantities
+              you need.
+            </p>
+          </div>
+          <div>
+            <div>Place your order by phone or in-person</div>
+            <p>Just call or visit to speak with a staff member.</p>
+          </div>
+          <div>
+            <div>Provide basic information</div>
+            <div>
+              <p>Items wanted</p>
+              <p>Quantity</p>
+              <p>Date & time of pickup</p>
+              <p>Any allergy or customization needs</p>
+            </div>
+            <p></p>
+          </div>
+          <div>
+            <div>Pay in advance</div>
+            <p>
+              Once payment is confirmed, the order will be made ready for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Place Your Group Order Today</h2>
+        <p>We'll prepare everything fresh and ready for your event</p>
+        <div>
+          <button>Call Now</button>
+          <button>View Location</button>
+        </div>
+      </section>
+      {/* <section>
         <h2>Our Catering Menu</h2>
         <section>
           <h3>Breakfast & Brunch</h3>
@@ -106,7 +157,7 @@ function page({}: Props) {
             Broad Ave, Palisades Park, NJ 07650. We are excited to help you!
           </p>
         </details>
-      </section>
+      </section> */}
     </main>
   );
 }
