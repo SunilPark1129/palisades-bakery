@@ -5,7 +5,9 @@ type Props = { top?: boolean };
 function GradientMask({ top }: Props) {
   return (
     <div
-      className={`relative w-full overflow-hidden ${top ? "-mt-8" : "-mb-8"}`}
+      className={`relative w-full overflow-hidden ${
+        top ? "-mt-0 md:-mt-8" : "-mb-0 md:-mb-8"
+      }`}
     >
       <div className={`absolute w-full h-full ${top ? "" : "rotate-180"}`}>
         <svg
