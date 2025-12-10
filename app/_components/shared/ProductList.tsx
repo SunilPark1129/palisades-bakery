@@ -4,7 +4,6 @@ import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import bakeImg from "../../homepage/images/bakery-hero-img.jpg";
 import ArrowDown from "../svg/ArrowDown";
 import { cakeCategory } from "@/lib/categoryData";
 
@@ -63,16 +62,6 @@ function ProductList({ category, data, asideCategories }: Props) {
         </aside>
 
         <div className="flex flex-col gap-2 w-full">
-          <div className="relative flex aspect-4/1">
-            <Image
-              alt="baking"
-              src={bakeImg}
-              fill
-              sizes="(max-width: 600px) 100vw, 600px"
-              className="object-cover"
-            />
-          </div>
-
           <div className="flex">
             <div className="flex gap-2">
               <Link href={"/"} className="underline">

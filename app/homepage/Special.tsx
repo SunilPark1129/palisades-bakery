@@ -13,14 +13,14 @@ function Special({}: Props) {
           {/* <p className="text-xs uppercase tracking-wider">Special-Orders</p> */}
           <div className="flex gap-4 items-center">
             <h2 className="text-3xl font-semibold">Make Custom Order</h2>
-            <div className="w-fit rounded-full">
+            {/* <div className="w-fit rounded-full">
               <Image
                 src="/images/custome-cake2.png"
                 alt="cake"
                 width={64}
                 height={64}
               />
-            </div>
+            </div> */}
           </div>
           <p>See what services we can offer to make your special day.</p>
         </header>

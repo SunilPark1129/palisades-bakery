@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImg from "./images/bakery-hero-img.jpg";
+import heroImg from "./images/i10.jpg";
 
 function Hero() {
   return (

@@ -1,7 +1,8 @@
 import { homeCategories } from "@/lib/homeData";
 import Image from "next/image";
 import Link from "next/link";
-import bake from "./images/bread.jpg";
+// import bake from "./images/bread.jpg";
+import bake from "./images/i13.jpg";
 
 function Categories() {
   return (
@@ -24,13 +25,13 @@ function Categories() {
               Select the bread photo below you like
             </small>
           </div>
-          <div className="relative w-full overflow-hidden rounded-2xl">
+          <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
               src={bake}
               alt={"bake"}
               width={600}
               priority
-              className="absoulte w-full h-full object-cover saturate-75"
+              className="absoulte w-full h-full object-cover"
             />
           </div>
         </div>

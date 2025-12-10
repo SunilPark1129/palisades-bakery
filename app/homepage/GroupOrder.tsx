@@ -1,18 +1,20 @@
 import Image from "next/image";
-import groupOrderImg from "./images/bakery-group-img.jpg";
+// import groupOrderImg from "./images/bakery-group-img.jpg";
+import groupOrderImg from "./images/f6.jpg";
+// import groupOrderImg from "./images/i22.jpg";
 import { SVGNumberTwo } from "../_components/svg/Numbers";
 import Link from "next/link";
 
 function GroupOrder() {
   return (
     <section className="flex flex-row-reverse w-full max-sm:p-2 max-[720px]:flex-col">
-      <div className="relative w-full max-w-[40rem] aspect-16/9 rounded overflow-hidden">
+      <div className="relative w-full max-w-[40rem] aspect-12/9 rounded overflow-hidden">
         <Image
           src={groupOrderImg}
           alt="Group & Bulk Orders"
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover grayscale-65"
+          className="object-cover"
         />
       </div>
       <div className="flex flex-col p-8 gap-4 w-full h-auto justify-center">
