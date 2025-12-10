@@ -8,47 +8,94 @@ import a22 from "./test/a2.jpg";
 import a33 from "./test/a3.jpg";
 import a44 from "./test/a4.jpg";
 import a55 from "./test/a5.jpg";
-import b1 from "./test/b1.png";
-import b2 from "./test/b2.png";
-import b3 from "./test/b3.png";
-import b4 from "./test/b4.png";
-import b5 from "./test/b5.png";
-import b6 from "./test/b6.png";
-import b7 from "./test/b7.png";
-import b8 from "./test/b8.png";
-import b9 from "./test/b9.png";
-import b10 from "./test/b10.png";
-import b11 from "./test/b11.png";
-import b12 from "./test/b12.png";
-import b13 from "./test/b13.png";
-import b14 from "./test/b14.png";
-import b15 from "./test/b15.png";
-import b16 from "./test/b16.png";
-import b17 from "./test/b17.png";
-import b18 from "./test/b18.png";
-import b19 from "./test/b19.png";
-import b20 from "./test/b20.png";
-import b21 from "./test/b21.png";
-import b22 from "./test/b22.png";
-import b23 from "./test/b23.png";
-import b24 from "./test/b24.png";
-import b25 from "./test/b25.png";
-import b26 from "./test/b26.png";
-import b27 from "./test/b27.png";
-import b28 from "./test/b28.png";
-import b29 from "./test/b29.png";
-import b30 from "./test/b30.png";
-import b31 from "./test/b31.png";
-import b32 from "./test/b32.png";
-import b33 from "./test/b33.png";
-import b34 from "./test/b34.png";
-import b35 from "./test/b35.png";
-import b36 from "./test/b36.png";
-import b37 from "./test/b37.png";
-import b38 from "./test/b38.png";
-import b39 from "./test/b39.png";
-import b40 from "./test/b40.png";
-import b41 from "./test/b41.png";
+
+import b1 from "../app/_components/images/v2/b1.jpg";
+import b2 from "../app/_components/images/v2/b2.jpg";
+import b3 from "../app/_components/images/v2/b3.jpg";
+import b4 from "../app/_components/images/v2/b4.jpg";
+import b5 from "../app/_components/images/v2/b5.jpg";
+import b6 from "../app/_components/images/v2/b6.jpg";
+import b7 from "../app/_components/images/v2/b7.jpg";
+import b8 from "../app/_components/images/v2/b8.jpg";
+import b9 from "../app/_components/images/v2/b9.jpg";
+import b10 from "../app/_components/images/v2/b10.jpg";
+import b11 from "../app/_components/images/v2/b11.jpg";
+import b12 from "../app/_components/images/v2/b12.jpg";
+import b13 from "../app/_components/images/v2/b13.jpg";
+import b14 from "../app/_components/images/v2/b14.jpg";
+import b15 from "../app/_components/images/v2/b15.jpg";
+import b16 from "../app/_components/images/v2/b16.jpg";
+import b17 from "../app/_components/images/v2/b17.jpg";
+import b18 from "../app/_components/images/v2/b18.jpg";
+import b19 from "../app/_components/images/v2/b19.jpg";
+import b20 from "../app/_components/images/v2/b20.jpg";
+import b21 from "../app/_components/images/v2/b21.jpg";
+import b22 from "../app/_components/images/v2/b22.jpg";
+import b23 from "../app/_components/images/v2/b23.jpg";
+import b24 from "../app/_components/images/v2/b24.jpg";
+import b25 from "../app/_components/images/v2/b25.jpg";
+import b26 from "../app/_components/images/v2/b26.jpg";
+import b27 from "../app/_components/images/v2/b27.jpg";
+import b28 from "../app/_components/images/v2/b28.jpg";
+import b29 from "../app/_components/images/v2/b29.jpg";
+import b30 from "../app/_components/images/v2/b30.jpg";
+import b31 from "../app/_components/images/v2/b31.jpg";
+import b32 from "../app/_components/images/v2/b32.jpg";
+import b33 from "../app/_components/images/v2/b33.jpg";
+import b34 from "../app/_components/images/v2/b34.jpg";
+import b35 from "../app/_components/images/v2/b35.jpg";
+import b36 from "../app/_components/images/v2/b36.jpg";
+import b37 from "../app/_components/images/v2/b37.jpg";
+import b38 from "../app/_components/images/v2/b38.jpg";
+import b39 from "../app/_components/images/v2/b39.jpg";
+import b40 from "../app/_components/images/v2/b40.jpg";
+import b41 from "../app/_components/images/v2/b41.jpg";
+
+import b42 from "../app/_components/images/v2/b42.jpg";
+import b43 from "../app/_components/images/v2/b43.jpg";
+import b44 from "../app/_components/images/v2/b44.jpg";
+
+// import b1 from "./test/b1.png";
+// import b2 from "./test/b2.png";
+// import b3 from "./test/b3.png";
+// import b4 from "./test/b4.png";
+// import b5 from "./test/b5.png";
+// import b6 from "./test/b6.png";
+// import b7 from "./test/b7.png";
+// import b8 from "./test/b8.png";
+// import b9 from "./test/b9.png";
+// import b10 from "./test/b10.png";
+// import b11 from "./test/b11.png";
+// import b12 from "./test/b12.png";
+// import b13 from "./test/b13.png";
+// import b14 from "./test/b14.png";
+// import b15 from "./test/b15.png";
+// import b16 from "./test/b16.png";
+// import b17 from "./test/b17.png";
+// import b18 from "./test/b18.png";
+// import b19 from "./test/b19.png";
+// import b20 from "./test/b20.png";
+// import b21 from "./test/b21.png";
+// import b22 from "./test/b22.png";
+// import b23 from "./test/b23.png";
+// import b24 from "./test/b24.png";
+// import b25 from "./test/b25.png";
+// import b26 from "./test/b26.png";
+// import b27 from "./test/b27.png";
+// import b28 from "./test/b28.png";
+// import b29 from "./test/b29.png";
+// import b30 from "./test/b30.png";
+// import b31 from "./test/b31.png";
+// import b32 from "./test/b32.png";
+// import b33 from "./test/b33.png";
+// import b34 from "./test/b34.png";
+// import b35 from "./test/b35.png";
+// import b36 from "./test/b36.png";
+// import b37 from "./test/b37.png";
+// import b38 from "./test/b38.png";
+// import b39 from "./test/b39.png";
+// import b40 from "./test/b40.png";
+// import b41 from "./test/b41.png";
 
 import c1 from "./test/c1.png";
 import c2 from "./test/c2.png";
@@ -668,7 +715,7 @@ export const bread: EntryType[] = [
     description:
       "A moist pound cake studded with ripe bananas and crunchy nuts for a rich, flavorful treat.",
     price: ["8.00"],
-    url: b1,
+    url: b42,
     category: "Bread",
   },
   {
@@ -676,7 +723,7 @@ export const bread: EntryType[] = [
     title: "Original Pound Cake",
     description: "A classic buttery pound cake with a fine, tender crumb.",
     price: ["8.00"],
-    url: b1,
+    url: b43,
     category: "Bread",
   },
   {
@@ -685,7 +732,7 @@ export const bread: EntryType[] = [
     description:
       "A moist, flavorful pound cake studded with sweet chestnuts for a nutty twist.",
     price: ["10.00"],
-    url: b1,
+    url: b44,
     category: "Bread",
   },
   {
