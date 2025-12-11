@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import groupOrderImg from "./images/bakery-group-img.jpg";
-import groupOrderImg from "./images/f6.jpg";
-// import groupOrderImg from "./images/i22.jpg";
+// import groupOrderImg from "./images/f6.jpg";
+import groupOrderImg from "./images/i24.jpg";
 import { SVGNumberTwo } from "../_components/svg/Numbers";
 import Link from "next/link";
 
