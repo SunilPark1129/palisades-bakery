@@ -52,7 +52,7 @@ body {
 }
 
 .swiper-slide {
-  opacity: 0.5;
+  opacity: 1;
   transition: 0.3s;
   user-select: none;
 }
@@ -67,6 +67,7 @@ body {
 
 .swiper-slide-active {
   opacity: 1;
+  filter: brightness(100%);
 }
 
 .swiper-slide-active a {
@@ -81,7 +82,7 @@ body {
   pointer-events: all;
 }
 
-.swiper-slide-active ~ .swiper-slide {
+.swiper-slide-active ~ .swiper-slide .swiper-shadow {
 }
 
 @media (max-width: 720px) {
