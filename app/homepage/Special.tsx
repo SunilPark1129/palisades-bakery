@@ -10,7 +10,7 @@ function Special({}: Props) {
     <div className="wrapper">
       <section className="p-4 flex flex-col gap-4">
         <header className="flex flex-col gap-4">
-          {/* <p className="text-xs uppercase tracking-wider">Special-Orders</p> */}
+          <p className="text-xs uppercase tracking-wider">Special-Orders</p>
           <div className="flex gap-4 items-center">
             <h2 className="text-3xl font-semibold">Make Custom Order</h2>
             {/* <div className="w-fit rounded-full">
