@@ -23,10 +23,10 @@ export default function Home() {
         </div>
         <GradientMask />
       </div>
-      <About />
       <DineIn />
-      <Block />
       <Special />
+      <Block />
+      <About />
       <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}
