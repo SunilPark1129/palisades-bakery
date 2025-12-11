@@ -52,9 +52,13 @@ body {
 }
 
 .swiper-slide {
-  opacity: 0.4;
+  opacity: 0.5;
   transition: 0.3s;
   user-select: none;
+}
+
+.swiper-slide a {
+  display: none;
 }
 
 .swiper-slide div {
@@ -63,6 +67,10 @@ body {
 
 .swiper-slide-active {
   opacity: 1;
+}
+
+.swiper-slide-active a {
+  display: block;
 }
 
 .swiper-slide-active .swiper-shadow {

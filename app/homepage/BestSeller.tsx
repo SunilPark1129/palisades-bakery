@@ -1,6 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -77,9 +78,10 @@ function BestSeller({}: Props) {
                       {item.title}
                     </h3>
                     <p>$ {item.price}</p>
-                    <button className="mt-auto w-full px-4 py-2 text-sm bg-[#dd832e] text-white rounded-lg hover:bg-gray-800 cursor-pointer">
-                      View Detail
-                    </button>
+                    <div className="mt-auto"></div>
+                    <Link href={"/"} className="text-sm">
+                      See Detail
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>

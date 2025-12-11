@@ -16,20 +16,20 @@ export default function Home() {
     <main className="flex flex-col gap-8">
       <Hero />
       <Categories />
-      <Block />
-      <BestSeller />
       <div>
         <GradientMask top />
         <div className="flex flex-col gap-8 bg-(--clr-background2)">
-          <Special />
+          <BestSeller />
         </div>
         <GradientMask />
       </div>
+      <About />
       <DineIn />
+      <Block />
+      <Special />
       <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}
-      {/* <About /> */}
     </main>
   );
 }

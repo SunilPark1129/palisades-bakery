@@ -7,16 +7,13 @@ import bake from "./images/i13.jpg";
 function Categories() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col w-full px-4 gap-4">
+      <section className="flex flex-col w-full px-4 gap-8">
         <h2 className="sr-only">Categories</h2>
-        <div className="flex flex-row-reverse w-full items-center gap-8">
-          <div className="flex flex-col gap-4 max-w-[36rem] w-full">
+        <div className="flex justify-center w-full items-center gap-8">
+          <div className="flex flex-col gap-4 w-fit">
             <p className="text-xs uppercase tracking-wider">Categories</p>
-            <p className="text-xl font-semibold text-gray-600">
-              What are you{" "}
-              <span className="font-bold text-4xl whitespace-nowrap">
-                Craving Today?
-              </span>
+            <p className="text-3xl font-semibold text-gray-600">
+              What are you Craving Today?
             </p>
             <p className="">
               Find your favorite treat among our handcrafted selection.
@@ -25,7 +22,7 @@ function Categories() {
               Select the bread photo below you like
             </small>
           </div>
-          <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl">
+          {/* <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
               src={bake}
               alt={"bake"}
@@ -33,15 +30,15 @@ function Categories() {
               priority
               className="absoulte w-full h-full object-cover"
             />
-          </div>
+          </div> */}
         </div>
-        <ul className="grid grid-cols-6 gap-2 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2">
+        <ul className="grid grid-cols-6 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2">
           {homeCategories.map((item) => (
             <li
               key={item.title}
-              className="flex flex-col gap-1 rounded-2xl overflow-hidden"
+              className="flex gap-1 rounded-full overflow-hidden"
             >
-              <div className="relative aspect-square group">
+              <div className="relative w-full aspect-square group">
                 <Link href={`/${item.title.toLowerCase()}`}>
                   {/* <div className="absolute left-0 left-[50%] -translate-x-1/2 bottom-2 rounded z-10 px-2 py-1 bg-[#fff] text-sm text-center">
                   {item.title}

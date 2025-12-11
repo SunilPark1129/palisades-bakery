@@ -7,13 +7,13 @@ import Image from "next/image";
 function CustomOrder() {
   return (
     <section className="flex w-full max-sm:p-2 max-[720px]:flex-col">
-      <div className="relative w-full max-w-[40rem] aspect-12/9 rounded overflow-hidden">
+      <div className="relative w-full max-w-[40rem] aspect-16/9 rounded overflow-hidden">
         <Image
           src={customCakeImg}
           alt="Custom Cake Ordering"
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover"
+          className="object-cover saturate-50"
         />
       </div>
       <div className="flex flex-col p-8 gap-4 w-full h-auto justify-center">
