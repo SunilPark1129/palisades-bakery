@@ -240,57 +240,57 @@ export const cakes: EntryType[] = [
   },
   {
     id: 12,
-    title: "Strawberry Slice",
+    title: "Strawberry Slice Cake",
     description:
       "A light, fluffy cake slice layered with sweet strawberry cream and fresh strawberry pieces.",
     price: ["8.00"],
     url: c7,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 13,
-    title: "Blueberry Slice",
+    title: "Blueberry Slice Cake",
     description:
       "A soft cake slice layered with blueberry cream and dotted with juicy blueberries.",
     price: ["8.00"],
     url: c8,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 14,
-    title: "Chocolate Strawberry Slice",
+    title: "Chocolate Strawberry Slice Cake",
     description:
       "A rich chocolate cake slice layered with sweet strawberry cream and fresh strawberries.",
     price: ["8.00"],
     url: c9,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 15,
-    title: "Lotus Mocha Slice",
+    title: "Lotus Mocha Slice Cake",
     description:
       "A moist mocha-flavored cake slice layered with creamy Lotus Biscoff spread and coffee cream.",
     price: ["8.00"],
     url: c10,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 16,
-    title: "Black Sesame Slice",
+    title: "Black Sesame Slice Cake",
     description:
       "A tender cake slice infused with nutty black sesame flavor and a smooth, subtly sweet cream.",
     price: ["8.00"],
     url: c11,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 17,
-    title: "Cheesecake Slice",
+    title: "Cheesecake Slice Cake",
     description:
       "A creamy, rich cheesecake slice with a buttery graham cracker crust for a classic indulgence.",
     price: ["8.00"],
     url: a3,
-    category: "Cake Slices",
+    category: "Slice Cakes",
   },
   {
     id: 18,
@@ -299,7 +299,7 @@ export const cakes: EntryType[] = [
       "A light sponge cake layered with sweet cream and fresh strawberries in a convenient square portion.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 19,
@@ -308,7 +308,7 @@ export const cakes: EntryType[] = [
       "A moist, spiced cake with grated carrots and nuts, topped with creamy frosting.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 20,
@@ -317,7 +317,7 @@ export const cakes: EntryType[] = [
       "A rich chocolate cake layered with smooth, airy chocolate mousse for a decadent bite.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 21,
@@ -326,7 +326,7 @@ export const cakes: EntryType[] = [
       "A crisp, flaky pastry layered with sweet cream for a classic, delicate dessert.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 22,
@@ -335,7 +335,7 @@ export const cakes: EntryType[] = [
       "A soft sponge cake soaked in three kinds of milk, topped with light whipped cream for a moist, sweet treat.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 23,
@@ -344,7 +344,7 @@ export const cakes: EntryType[] = [
       "A soft sponge cake soaked in three kinds of milk, topped with light whipped cream for a moist, sweet treat.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 24,
@@ -353,7 +353,7 @@ export const cakes: EntryType[] = [
       "A soft sponge cake soaked in three kinds of milk, topped with light whipped cream for a moist, sweet treat.",
     price: ["8.00"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Mini Cakes",
   },
   {
     id: 25,
@@ -362,7 +362,7 @@ export const cakes: EntryType[] = [
       "A soft sponge cake soaked in three kinds of milk, topped with light whipped cream for a moist, sweet treat.",
     price: ["2.50"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Cupcakes",
   },
   {
     id: 26,
@@ -371,7 +371,7 @@ export const cakes: EntryType[] = [
       "A soft sponge cake soaked in three kinds of milk, topped with light whipped cream for a moist, sweet treat.",
     price: ["2.50"],
     url: a3,
-    category: "Square Cakes & Cupcakes",
+    category: "Cupcakes",
   },
 ];
 
@@ -484,7 +484,7 @@ export const bread: EntryType[] = [
       "Soft bread roll with rich butter flavor inside, topped with coarse salt crystals.",
     price: ["3.00"],
     url: b13,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 13,
@@ -493,7 +493,7 @@ export const bread: EntryType[] = [
       "Soft bread roll with sweet mocha crust, finished with savory sea salt crystals.",
     price: ["3.00"],
     url: b14,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 14,
@@ -502,7 +502,7 @@ export const bread: EntryType[] = [
       "Soft bread roll with garlic-butter glaze, topped with coarse sea salt and dried parsley.",
     price: ["4.00"],
     url: b15,
-    category: "Savory Breads",
+    category: "Daily Breads",
   },
   {
     id: 15,
@@ -510,7 +510,7 @@ export const bread: EntryType[] = [
     description: "Sweet, soft bread, finished with a crunchy, crumbly topping.",
     price: ["3.50"],
     url: b16,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 16,
@@ -572,7 +572,7 @@ export const bread: EntryType[] = [
       "Soft, elongated yeast roll, a dark chocolate filling, covered in a sweet streusel crumb and dark chocolate drizzle.",
     price: ["4.00"],
     url: b23,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 23,
@@ -581,7 +581,7 @@ export const bread: EntryType[] = [
       "A soft, fluffy sponge cake with a moist, tender crumb and a delicate honey sweetness.",
     price: ["10.00"],
     url: b24,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 24,
@@ -608,7 +608,7 @@ export const bread: EntryType[] = [
       "A soft, fluffy bread infused with rich mocha flavor and a lightly sweet coffee aroma.",
     price: ["5.00"],
     url: b27,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 27,
@@ -617,7 +617,7 @@ export const bread: EntryType[] = [
       "A soft, mocha-flavored bread filled with smooth, sweet cream and a gentle coffee aroma.",
     price: ["6.00"],
     url: b28,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
 
   {
@@ -627,7 +627,7 @@ export const bread: EntryType[] = [
       "A soft, pillowy bun filled with light, sweet whipped cream for a simple, classic treat.",
     price: ["3.50"],
     url: b35,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 29,
@@ -636,7 +636,7 @@ export const bread: EntryType[] = [
       "A flaky, golden pastry studded with crunchy walnuts and sweet raisins for a rich, hearty bite.",
     price: ["4.00"],
     url: b36,
-    category: "Sweet Breads",
+    category: "Daily Breads",
   },
   {
     id: 30,
@@ -645,7 +645,7 @@ export const bread: EntryType[] = [
       "A crispy, golden croquette filled with creamy mashed potatoes and savory meat or vegetables.",
     price: ["4.00"],
     url: b37,
-    category: "Savory Breads",
+    category: "Daily Breads",
   },
   {
     id: 31,
@@ -654,7 +654,7 @@ export const bread: EntryType[] = [
       "A soft, fluffy bread wrapped around a savory sausage, often brushed with a light glaze.",
     price: ["3.00"],
     url: b38,
-    category: "Savory Breads",
+    category: "Daily Breads",
   },
   {
     id: 32,
@@ -834,6 +834,33 @@ export const bread: EntryType[] = [
     url: b1,
     category: "Loaf Breads & Rolls",
   },
+  {
+    id: 52,
+    title: "Eclairs",
+    description:
+      "Light, airy choux pastry filled with smooth cream and topped with a glossy chocolate glaze.",
+    price: ["2.50"],
+    url: b1,
+    category: "Pastries",
+  },
+  {
+    id: 53,
+    title: "Lobster Tail Pastry",
+    description:
+      "A flaky, layered pastry shaped like a lobster tail, often filled with sweet cream or custard.",
+    price: ["5.50"],
+    url: b1,
+    category: "Pastries",
+  },
+  {
+    id: 54,
+    title: "Cannoli",
+    description:
+      "Crispy pastry shells filled with sweet, creamy ricotta filling, often with chocolate chips or nuts.",
+    price: ["5.00"],
+    url: b1,
+    category: "Pastries",
+  },
 ];
 
 export const cookies: EntryType[] = [
@@ -1010,7 +1037,7 @@ export const pies: EntryType[] = [
       "A classic pie with tender apple slices spiced with cinnamon and encased in a buttery crust.",
     price: ["16.00"],
     url: b1,
-    category: "Pies",
+    category: "Pies & Tarts",
   },
   {
     id: 2,
@@ -1019,7 +1046,7 @@ export const pies: EntryType[] = [
       "A rich, sweet pie filled with crunchy pecans and a gooey caramel-like filling.",
     price: ["18.00"],
     url: b1,
-    category: "Pies",
+    category: "Pies & Tarts",
   },
   {
     id: 3,
@@ -1028,39 +1055,8 @@ export const pies: EntryType[] = [
       "A flaky, golden crust filled with a mix of sweet, juicy fruits.",
     price: ["30.00"],
     url: b1,
-    category: "Pies",
+    category: "Pies & Tarts",
   },
-];
-
-export const desserts: EntryType[] = [
-  {
-    id: 1,
-    title: "Eclairs",
-    description:
-      "Light, airy choux pastry filled with smooth cream and topped with a glossy chocolate glaze.",
-    price: ["2.50"],
-    url: b1,
-    category: "European Pastries",
-  },
-  {
-    id: 2,
-    title: "Lobster Tail Pastry",
-    description:
-      "A flaky, layered pastry shaped like a lobster tail, often filled with sweet cream or custard.",
-    price: ["5.50"],
-    url: b1,
-    category: "European Pastries",
-  },
-  {
-    id: 3,
-    title: "Cannoli",
-    description:
-      "Crispy pastry shells filled with sweet, creamy ricotta filling, often with chocolate chips or nuts.",
-    price: ["5.00"],
-    url: b1,
-    category: "European Pastries",
-  },
-
   {
     id: 4,
     title: "Mixed Fruit Tart",
@@ -1068,7 +1064,7 @@ export const desserts: EntryType[] = [
       "A crisp tart shell filled with creamy custard and topped with a colorful assortment of fresh fruits.",
     price: ["10.00"],
     url: b1,
-    category: "Tarts",
+    category: "Pies & Tarts",
   },
   {
     id: 5,
@@ -1077,7 +1073,7 @@ export const desserts: EntryType[] = [
       "A tangy and zesty yuja lemon custard nestled in a buttery tart crust.",
     price: ["8.00"],
     url: b1,
-    category: "Tarts",
+    category: "Pies & Tarts",
   },
   {
     id: 6,
@@ -1086,7 +1082,7 @@ export const desserts: EntryType[] = [
       "A rich chocolate mousse layered in a crisp tart shell for a decadent chocolate treat.",
     price: ["8.00"],
     url: b1,
-    category: "Tarts",
+    category: "Pies & Tarts",
   },
   {
     id: 7,
@@ -1095,6 +1091,73 @@ export const desserts: EntryType[] = [
       "A creamy, slightly caramelized Basque-style cheesecake infused with fragrant vanilla bean.",
     price: ["10.00"],
     url: b1,
-    category: "Tarts",
+    category: "Pies & Tarts",
   },
 ];
+
+// export const desserts: EntryType[] = [
+//   {
+//     id: 1,
+//     title: "Eclairs",
+//     description:
+//       "Light, airy choux pastry filled with smooth cream and topped with a glossy chocolate glaze.",
+//     price: ["2.50"],
+//     url: b1,
+//     category: "European Pastries",
+//   },
+//   {
+//     id: 2,
+//     title: "Lobster Tail Pastry",
+//     description:
+//       "A flaky, layered pastry shaped like a lobster tail, often filled with sweet cream or custard.",
+//     price: ["5.50"],
+//     url: b1,
+//     category: "European Pastries",
+//   },
+//   {
+//     id: 3,
+//     title: "Cannoli",
+//     description:
+//       "Crispy pastry shells filled with sweet, creamy ricotta filling, often with chocolate chips or nuts.",
+//     price: ["5.00"],
+//     url: b1,
+//     category: "European Pastries",
+//   },
+
+//   {
+//     id: 4,
+//     title: "Mixed Fruit Tart",
+//     description:
+//       "A crisp tart shell filled with creamy custard and topped with a colorful assortment of fresh fruits.",
+//     price: ["10.00"],
+//     url: b1,
+//     category: "Tarts",
+//   },
+//   {
+//     id: 5,
+//     title: "Yuja Lemon Tart",
+//     description:
+//       "A tangy and zesty yuja lemon custard nestled in a buttery tart crust.",
+//     price: ["8.00"],
+//     url: b1,
+//     category: "Tarts",
+//   },
+//   {
+//     id: 6,
+//     title: "Pave Chocolate Mousse Tart",
+//     description:
+//       "A rich chocolate mousse layered in a crisp tart shell for a decadent chocolate treat.",
+//     price: ["8.00"],
+//     url: b1,
+//     category: "Tarts",
+//   },
+//   {
+//     id: 7,
+//     title: "Basque Cheesecake w/ Vanilla Bean",
+//     description:
+//       "A creamy, slightly caramelized Basque-style cheesecake infused with fragrant vanilla bean.",
+//     price: ["10.00"],
+//     url: b1,
+//     category: "Tarts",
+//   },
+// ];

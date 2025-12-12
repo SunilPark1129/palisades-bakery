@@ -36,13 +36,15 @@ function ProductList({ category, data, asideCategories }: Props) {
   return (
     <div className="wrapper">
       <main className="flex p-4 pt-0 max-sm:p-2 gap-4">
-        <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-48 mt-8 w-full max-[900px]:hidden">
+        <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-44 mt-8 w-full max-[900px]:hidden">
           <div>Filter</div>
           <div className="flex flex-col gap-1 pl-1">
             <button
               onClick={() => getFilteredItems("All")}
               className={`flex cursor-pointer ${
-                selectedCategory === "All" ? "bg-(--clr-accent)" : "bg-none"
+                selectedCategory === "All"
+                  ? "bg-(--clr-accent) font-semibold"
+                  : "bg-none"
               }`}
             >
               All
@@ -52,7 +54,9 @@ function ProductList({ category, data, asideCategories }: Props) {
                 onClick={() => getFilteredItems(item)}
                 key={item}
                 className={`flex cursor-pointer ${
-                  selectedCategory === item ? "bg-(--clr-accent)" : "bg-none"
+                  selectedCategory === item
+                    ? "bg-(--clr-accent) font-semibold"
+                    : "bg-none"
                 }`}
               >
                 {item}

@@ -1,14 +1,14 @@
 export const cakeCategory = [
   "Whole Cakes",
-  "Cake Slices",
+  "Slice Cakes",
   "Roll Cakes",
-  "Square Cakes & Cupcakes",
+  "Mini Cakes",
+  "Cupcakes",
 ];
 
 export const breadCategory = [
+  "Daily Breads",
   "Pastries",
-  "Sweet Breads",
-  "Savory Breads",
   "Donuts",
   "Pound Cakes",
   "Loaf Breads & Rolls",
@@ -20,6 +20,4 @@ export const cookieCategory = [
   "Madelines & Biscotti",
 ];
 
-export const pieCategory = [];
-
-export const dessertCategory = ["Tarts", "European Pastries"];
+export const pieCategory = ["Pies", "Tarts"];
