@@ -19,7 +19,7 @@ export default async function ProductDetail({
   return (
     <div className="wrapper">
       <main className="flex flex-col gap-4 p-4 mb-8 max-md:p-0">
-        <div className="flex gap-2">
+        <div className="flex gap-2 max-md:px-2">
           <Link href={"/"} className="underline">
             Home
           </Link>
@@ -43,8 +43,8 @@ export default async function ProductDetail({
           </div>
 
           <div className="flex flex-col flex-1 gap-8 max-w-[36rem] max-md:px-4 max-md:max-w-full">
-            <div className="flex flex-col gap-4">
-              <h1 className="text-2xl">{data.title}</h1>
+            <div className="flex flex-col gap-4 max-md:gap-2">
+              <h1 className="text-2xl max-md:text-xl">{data.title}</h1>
               <PriceDetail data={data} />
               <p>{data.description}</p>
             </div>

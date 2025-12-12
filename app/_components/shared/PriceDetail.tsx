@@ -16,7 +16,7 @@ function PriceDetail({ data }: Props) {
 
   return (
     <div>
-      <p className="text-xl">$ {price}</p>
+      <p className="text-xl  max-md:text-lg">$ {price}</p>
       <div className="flex flex-col gap-2">
         {data.size && (
           <>
