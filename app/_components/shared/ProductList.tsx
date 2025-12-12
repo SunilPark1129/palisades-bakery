@@ -78,18 +78,21 @@ function ProductList({ category, data, asideCategories }: Props) {
             </div>
             <div
               onClick={mobileFilteredItems}
-              className="relative cursor-pointer hidden max-[900px]:flex items-center gap-1 w-fit ml-auto"
+              className="cursor-pointer hidden max-[900px]:flex flex-col gap-1 w-fit px-4 ml-auto"
             >
-              <div>Filter</div>
-              <ArrowDown isMenuOn={isMenuOn} />
+              <div className="flex items-center gap-1">
+                <div className="ml-auto">Filter</div>
+                <ArrowDown isMenuOn={isMenuOn} />
+              </div>
 
               {isMenuOn && (
-                <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
-                  {cakeCategory.map((item) => (
+                // <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
+                <div className="flex flex-col">
+                  {asideCategories.map((item) => (
                     <button
                       onClick={() => getFilteredItems(item)}
                       key={item}
-                      className="flex justify-start cursor-pointer bg-(--clr-background) px-4 py-2 hover:bg-(--clr-accent)"
+                      className="flex justify-start cursor-pointer px-4 py-2 hover:bg-(--clr-accent)"
                     >
                       {item}
                     </button>
