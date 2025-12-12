@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { EntryType } from "@/lib/mockData";
 import ProductList from "../_components/shared/ProductList";
-import { cakeCategory } from "@/lib/categoryData";
+import { cookieCategory } from "@/lib/categoryData";
 
 type Props = {};
 
@@ -22,7 +22,7 @@ async function page({}: Props) {
     <ProductList
       category="cookies"
       data={data}
-      asideCategories={cakeCategory}
+      asideCategories={cookieCategory}
     />
   );
 }

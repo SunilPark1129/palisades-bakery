@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { EntryType } from "@/lib/mockData";
-import { cakeCategory } from "@/lib/categoryData";
+import { breadCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
 
 type Props = {};
@@ -16,7 +16,11 @@ async function page({}: Props) {
     .then((data) => data.data as EntryType[]);
 
   return (
-    <ProductList category="breads" data={data} asideCategories={cakeCategory} />
+    <ProductList
+      category="breads"
+      data={data}
+      asideCategories={breadCategory}
+    />
   );
 }
 

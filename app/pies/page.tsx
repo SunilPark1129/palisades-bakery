@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { EntryType } from "@/lib/mockData";
-import { cakeCategory } from "@/lib/categoryData";
+import { pieCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
 
 type Props = {};
@@ -19,7 +19,7 @@ async function page({}: Props) {
   if (!data) return <div>no data..</div>;
 
   return (
-    <ProductList category="pies" data={data} asideCategories={cakeCategory} />
+    <ProductList category="pies" data={data} asideCategories={pieCategory} />
   );
 }
 
