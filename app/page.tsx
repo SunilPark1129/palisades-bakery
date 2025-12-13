@@ -13,7 +13,7 @@ import GradientMask from "./_components/ui/GradientMask";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-8">
+    <main className="flex flex-col gap-8 mb-8">
       <Hero />
       <Categories />
       <div>

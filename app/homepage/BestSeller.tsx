@@ -36,8 +36,8 @@ function BestSeller({}: Props) {
 
   return (
     <div className="wrapper">
-      <section className="flex max-[700px]:flex-col px-4 -my-4">
-        <div className="flex flex-col gap-4 py-8 justify-center w-full flex-1">
+      <section className="flex max-[860px]:flex-col items-center p-4 py-8 -my-4">
+        <div className="flex flex-col gap-4 justify-center flex-1">
           <p className="text-xs uppercase tracking-wider">Best-Seller</p>
           <h2 className="text-3xl font-semibold">Made Fresh, Loved by Many</h2>
           <p className="text-gray-600">
@@ -45,7 +45,7 @@ function BestSeller({}: Props) {
           </p>
         </div>
 
-        <div className="relative w-full max-w-[36rem] flex-2 rounded-2xl">
+        <div className="relative max-w-[36rem] w-full flex-1 rounded-2xl">
           <div className="absolute w-full h-full z-20 pointer-events-none"></div>
           <Swiper
             grabCursor

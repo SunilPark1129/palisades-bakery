@@ -24,12 +24,12 @@ function Social({}: Props) {
       <div className="wrapper">
         <div className="flex p-4 justify-center">
           <Image
-            className="scale-100"
+            className="scale-100 max-[600px]:hidden"
             src={moibleImage}
             alt="mobile"
             width={400}
           />
-          <div className="flex flex-col gap-4 my-auto p-4">
+          <div className="flex flex-col gap-4 my-auto">
             <p className="text-xs uppercase tracking-wider">Follow-Us</p>
             <h2 className="text-3xl font-semibold">Follow Your Local Bakery</h2>
             <p>See our fresh bakes, daily specials, and behind-the-scenes.</p>

@@ -29,7 +29,7 @@ function Categories() {
             />
           </div> */}
         </div>
-        <ul className="grid grid-cols-6 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2">
+        <ul className="grid grid-cols-6 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">
           {homeCategories.map((item) => (
             <li key={item.title}>
               <Link
@@ -42,7 +42,7 @@ function Categories() {
                   width={280}
                   height={280}
                   priority
-                  className="aspect-square rounded-full w-full h-full object-cover group-hover:brightness-110"
+                  className="aspect-square rounded-full w-full h-full object-cover group-hover:brightness-110 max-[800px]:rounded-md"
                 />
                 <div className="text-center text-xs uppercase tracking-wider">
                   {item.title}
