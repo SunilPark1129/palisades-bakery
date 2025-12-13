@@ -1,4 +1,5 @@
 export const cakeCategory = [
+  "All",
   "Whole Cakes",
   "Slice Cakes",
   "Roll Cakes",
@@ -7,6 +8,7 @@ export const cakeCategory = [
 ];
 
 export const breadCategory = [
+  "All",
   "Daily Breads",
   "Pastries",
   "Donuts",
@@ -15,9 +17,10 @@ export const breadCategory = [
 ];
 
 export const cookieCategory = [
+  "All",
   "Signature Cookies",
   "Packaged Cookies",
   "Madelines & Biscotti",
 ];
 
-export const pieCategory = ["Pies", "Tarts"];
+export const pieCategory = ["All", "Pies", "Tarts"];

@@ -25,6 +25,7 @@ function ProductList({ category, data, asideCategories }: Props) {
     } else {
       setList(data.filter((item) => item.category === str));
     }
+    setIsMenuOn(false);
   }
 
   function mobileFilteredItems() {
@@ -39,16 +40,6 @@ function ProductList({ category, data, asideCategories }: Props) {
         <aside className="sticky h-full aside-top flex flex-col gap-2 max-w-44 mt-8 w-full max-[900px]:hidden">
           <div>Filter</div>
           <div className="flex flex-col gap-1 pl-1">
-            <button
-              onClick={() => getFilteredItems("All")}
-              className={`flex cursor-pointer ${
-                selectedCategory === "All"
-                  ? "bg-(--clr-accent) font-semibold"
-                  : "bg-none"
-              }`}
-            >
-              All
-            </button>
             {asideCategories.map((item) => (
               <button
                 onClick={() => getFilteredItems(item)}
@@ -78,29 +69,32 @@ function ProductList({ category, data, asideCategories }: Props) {
             </div>
             <div
               onClick={mobileFilteredItems}
-              className="cursor-pointer hidden max-[900px]:flex flex-col gap-1 w-fit px-4 ml-auto"
+              className="cursor-pointer hidden max-[900px]:flex flex-col gap-1 w-fit ml-auto"
             >
               <div className="flex items-center gap-1">
-                <div className="ml-auto">Filter</div>
+                <div className="ml-auto">
+                  <span className="text-sm">{selectedCategory}</span>
+                </div>
                 <ArrowDown isMenuOn={isMenuOn} />
               </div>
-
-              {isMenuOn && (
-                // <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
-                <div className="flex flex-col">
-                  {asideCategories.map((item) => (
-                    <button
-                      onClick={() => getFilteredItems(item)}
-                      key={item}
-                      className="flex justify-start cursor-pointer px-4 py-2 hover:bg-(--clr-accent)"
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
+          {isMenuOn && (
+            // <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
+            <div className="flex flex-col w-full border-t-1 border-[#dedede] min-[900px]:hidden">
+              {asideCategories.map((item) => (
+                <button
+                  onClick={() => getFilteredItems(item)}
+                  key={item}
+                  className={`flex justify-end cursor-pointer px-4 py-2 hover:bg-(--clr-accent) w-full text-sm ${
+                    selectedCategory === item ? "hidden" : ""
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: EntryType) => (
