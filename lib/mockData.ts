@@ -1019,7 +1019,7 @@ export const cookies: EntryType[] = [
     category: "Madelines & Biscotti",
   },
   {
-    id: 2,
+    id: 18,
     title: "Macarons",
     description:
       "Delicate, colorful almond meringue cookies with a smooth, flavorful filling sandwiched in between.",

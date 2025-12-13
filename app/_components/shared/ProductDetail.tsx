@@ -11,7 +11,7 @@ export default async function ProductDetail({
   category: string;
 }) {
   const data: EntryType = await fetch(
-    `http://localhost:3000/api/${category}/${id}`
+    `http://localhost:3000/api/categories/${category}/${id}`
   )
     .then((res) => res.json())
     .then((data) => data.data);

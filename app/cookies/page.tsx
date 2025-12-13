@@ -11,12 +11,11 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  const data = await fetch(`http://localhost:3000/api/cookies`)
+  const data: EntryType[] = await fetch(
+    `http://localhost:3000/api/categories/cookies`
+  )
     .then((res) => res.json())
-    .then((data) => data.data as EntryType[])
-    .catch((err) => console.log(err));
-
-  if (!data) return <div>no data..</div>;
+    .then((data) => data.data);
 
   return (
     <ProductList

@@ -2,18 +2,25 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
-import { bread, EntryType } from "@/lib/mockData";
+import { bread, cakes, cookies, EntryType, pies } from "@/lib/mockData";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string; slug: string }> }
 ) {
-  const { id } = await params;
+  const { id, slug } = await params;
 
   const data: EntryType = await new Promise((res, rej) =>
     setTimeout(() => {
-      const item = bread.find((entry) => String(entry.id) === id);
-      res(item!);
+      let item;
+      if (slug === "breads") item = bread;
+      else if (slug === "cakes") item = cakes;
+      else if (slug === "cookies") item = cookies;
+      else if (slug === "pies") item = pies;
+      else rej(new Error("Invalid slug"));
+
+      const result = item!.find((entry) => String(entry.id) === id);
+      res(result!);
     }, 0)
   );
 

@@ -11,9 +11,11 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  const data = await fetch(`http://localhost:3000/api/breads`)
+  const data: EntryType[] = await fetch(
+    `http://localhost:3000/api/categories/breads`
+  )
     .then((res) => res.json())
-    .then((data) => data.data as EntryType[]);
+    .then((data) => data.data);
 
   return (
     <ProductList
