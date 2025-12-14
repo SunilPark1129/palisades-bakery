@@ -7,5 +7,5 @@ export default async function CakeDetail({
 }) {
   const { id } = await params;
 
-  return <ProductDetail id={id} category="cakes" />;
+  return <ProductDetail id={id} category="cake" />;
 }

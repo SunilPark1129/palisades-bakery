@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import Cake from "@/models/Cake";
 import { bread, cakes, cookies, EntryType, pies } from "@/lib/mockData";
+import { IProduct, Product } from "@/models/Product";
 
 export async function GET(
   request: Request,
@@ -10,16 +11,16 @@ export async function GET(
 ) {
   const { id, slug } = await params;
 
-  const data: EntryType = await new Promise((res, rej) =>
+  const data: IProduct = await new Promise((res, rej) =>
     setTimeout(() => {
       let item;
-      if (slug === "breads") item = bread;
-      else if (slug === "cakes") item = cakes;
-      else if (slug === "cookies") item = cookies;
-      else if (slug === "pies") item = pies;
+      if (slug === "bread") item = bread;
+      else if (slug === "cake") item = cakes;
+      else if (slug === "cookie") item = cookies;
+      else if (slug === "pie") item = pies;
       else rej(new Error("Invalid slug"));
 
-      const result = item!.find((entry) => String(entry.id) === id);
+      const result = item!.find((entry) => entry._id === id);
       res(result!);
     }, 0)
   );
@@ -30,19 +31,19 @@ export async function GET(
     data: data,
   });
 
-  // mongoDB
   // try {
   //   await connectDB();
-  //   const cake = await Cake.findById(params.id);
 
-  //   if (!cake) {
+  //   const products = await Product.find({ _id: id });
+
+  //   if (products.length === 0) {
   //     return NextResponse.json(
   //       { success: false, error: "cannot find page" },
   //       { status: 404 }
   //     );
   //   }
 
-  //   return NextResponse.json({ success: true, data: cake });
+  //   return NextResponse.json({ success: true, data: products });
   // } catch (error) {
   //   return NextResponse.json(
   //     { success: false, error: "view request failed" },

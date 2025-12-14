@@ -1,6 +1,6 @@
 import mongoose, { Model, Schema } from "mongoose";
 
-export interface ICake {
+export interface ICookie {
   title: string;
   size?: string[];
   description: string;
@@ -10,7 +10,7 @@ export interface ICake {
   createdAt: Date;
 }
 
-const CakeSchema = new Schema<ICake>(
+const CookieSchema = new Schema<ICookie>(
   {
     title: {
       type: String,
@@ -39,7 +39,7 @@ const CakeSchema = new Schema<ICake>(
   },
   { timestamps: true }
 );
-const Cake: Model<ICake> =
-  mongoose.models.Cake || mongoose.model<ICake>("Cake", CakeSchema);
+const Cookie: Model<ICookie> =
+  mongoose.models.Cookie || mongoose.model<ICookie>("Cookie", CookieSchema);
 
-export default Cake;
+export default Cookie;

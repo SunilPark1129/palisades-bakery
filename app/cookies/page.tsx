@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { EntryType } from "@/lib/mockData";
 import ProductList from "../_components/shared/ProductList";
 import { cookieCategory } from "@/lib/categoryData";
+import { IProduct } from "@/models/Product";
 
 type Props = {};
 
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  const data: EntryType[] = await fetch(
-    `http://localhost:3000/api/categories/cookies`
+  const data: IProduct[] = await fetch(
+    `http://localhost:3000/api/categories/cookie`
   )
     .then((res) => res.json())
     .then((data) => data.data);

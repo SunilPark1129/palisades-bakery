@@ -1,6 +1,6 @@
 import mongoose, { Model, Schema } from "mongoose";
 
-export interface ICake {
+export interface ICategory {
   title: string;
   size?: string[];
   description: string;
@@ -10,7 +10,7 @@ export interface ICake {
   createdAt: Date;
 }
 
-const CakeSchema = new Schema<ICake>(
+const BreadSchema = new Schema<ICategory>(
   {
     title: {
       type: String,
@@ -39,7 +39,7 @@ const CakeSchema = new Schema<ICake>(
   },
   { timestamps: true }
 );
-const Cake: Model<ICake> =
-  mongoose.models.Cake || mongoose.model<ICake>("Cake", CakeSchema);
+const Bread: Model<ICategory> =
+  mongoose.models.Bread || mongoose.model<ICategory>("Bread", BreadSchema);
 
-export default Cake;
+export default Bread;

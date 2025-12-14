@@ -2,6 +2,7 @@ import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import PriceDetail from "./PriceDetail";
+import { IProduct } from "@/models/Product";
 
 export default async function ProductDetail({
   id,
@@ -10,7 +11,7 @@ export default async function ProductDetail({
   id: string;
   category: string;
 }) {
-  const data: EntryType = await fetch(
+  const data: IProduct = await fetch(
     `http://localhost:3000/api/categories/${category}/${id}`
   )
     .then((res) => res.json())
@@ -35,6 +36,7 @@ export default async function ProductDetail({
           <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem] max-md:max-w-full">
             <Image
               src={data.url}
+              // src={"/images/custome-cake.png"}
               alt={data.title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

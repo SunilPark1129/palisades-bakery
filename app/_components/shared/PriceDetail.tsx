@@ -1,9 +1,10 @@
 "use client";
 
 import { EntryType } from "@/lib/mockData";
+import { IProduct } from "@/models/Product";
 import { useState } from "react";
 
-type Props = { data: EntryType };
+type Props = { data: IProduct };
 
 function PriceDetail({ data }: Props) {
   const [price, setPrice] = useState<string>(data.price[0]);
