@@ -10,8 +10,6 @@ export async function GET(
 ) {
   const { slug } = await params;
 
-  console.log("are you here?");
-
   const data: IProduct[] = await new Promise((res, rej) =>
     setTimeout(() => {
       if (slug === "bread") res(bread);
