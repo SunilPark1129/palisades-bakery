@@ -1,7 +1,6 @@
 // src/app/api/users/[id]/route.ts
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
-import Cake from "@/models/Cake";
 import { bread, cakes, cookies, EntryType, pies } from "@/lib/mockData";
 import { IProduct, Product } from "@/models/Product";
 

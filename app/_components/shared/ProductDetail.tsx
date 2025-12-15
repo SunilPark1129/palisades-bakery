@@ -1,4 +1,3 @@
-import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import PriceDetail from "./PriceDetail";

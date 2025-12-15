@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
+import bread from "../../lib/test/3.png";
 
 type Props = {};
 
@@ -9,27 +10,27 @@ function BestSeller({}: Props) {
   const items = [
     {
       title: "Butter Croissant",
-      img: "/images/best/b1.png",
+      img: bread,
       price: "5.99",
     },
     {
       title: "Chocolate Chip Cookie",
-      img: "/images/best/b2.png",
+      img: bread,
       price: "4.99",
     },
     {
       title: "Strawberry Cake",
-      img: "/images/best/b3.png",
+      img: bread,
       price: "20.99",
     },
     {
       title: "Strawberry Cake",
-      img: "/images/best/b3.png",
+      img: bread,
       price: "20.99",
     },
     {
       title: "Strawberry Cake",
-      img: "/images/best/b3.png",
+      img: bread,
       price: "20.99",
     },
   ];

@@ -1,11 +1,9 @@
 "use client";
 
-import { EntryType } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ArrowDown from "../svg/ArrowDown";
-import { cakeCategory } from "@/lib/categoryData";
 import { IProduct } from "@/models/Product";
 
 type Props = {
