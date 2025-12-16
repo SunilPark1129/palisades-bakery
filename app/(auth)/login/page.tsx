@@ -1,5 +1,6 @@
 "use client";
 import React, { FormEvent } from "react";
+import Login from "./Login";
 
 type Props = {};
 
@@ -25,24 +26,11 @@ function page({}: Props) {
       console.log(error);
     }
   }
+
   return (
-    <div>
-      <form onSubmit={handleLogin}>
-        <input
-          name="nickname"
-          type="text"
-          required
-          placeholder="Nickname"
-          autoComplete="off"
-        />
-        <input
-          name="password"
-          type="password"
-          required
-          placeholder="Password"
-          autoComplete="off"
-        />
-        <button type="submit">Login</button>
+    <div className="wrapper p-4 pb-16">
+      <form onSubmit={handleLogin} className="flex justify-center p-4 py-8">
+        <Login />
       </form>
     </div>
   );
