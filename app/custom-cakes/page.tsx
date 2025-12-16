@@ -1,31 +1,39 @@
+import Image from "next/image";
 import React from "react";
+import f9 from "../homepage/images/f9.jpg";
 
 type Props = {};
 
 function page({}: Props) {
   return (
-    <div className="wrapper">
-      <main className="flex flex-col gap-6 p-4">
-        <header>
-          <h1 className="text-[1.4rem] font-bold">Custom Cakes</h1>
-          <p>
-            Every celebration is unique and your cake should be too. From
-            birthdays to weddings, we create fully customized cakes designed to
-            match your vision, theme, and taste.
-          </p>
-        </header>
+    <main className="flex flex-col gap-6">
+      <header className="flex">
+        <div className="relative w-3/5">
+          <Image
+            src={f9}
+            alt="Palisades Park Bakery Custom Cake"
+            className="object-cover saturate-80 contrast-80"
+          />
+        </div>
+        <div className="w-2/5 p-6 bg-(--clr-background4)">
+          <div className="flex flex-col h-full justify-center gap-4 max-w-100 mx-auto">
+            <h1 className="text-4xl font-semibold">Custom Cakes</h1>
+            <section className="flex flex-col gap-2">
+              <h2 className="text-[1.1rem] italic">
+                Bring Any Design. Celebrate Any Moment
+              </h2>
+              <p>
+                From birthday celebrations to weddings and milestones, Palisades
+                Park Bakery brings your custom cake ideas to life with fresh
+                ingredients, any flavor you love, and fully personalized
+                designs.
+              </p>
+            </section>
+          </div>
+        </div>
+      </header>
 
-        <section>
-          <h2 className="text-[1.1rem] italic">
-            Bring Any Design. Celebrate Any Moment
-          </h2>
-          <p>
-            From birthday celebrations to weddings and milestones, Palisades
-            Park Bakery brings your custom cake ideas to life with fresh
-            ingredients, any flavor you love, and fully personalized designs.
-          </p>
-        </section>
-
+      <div className="wrapper p-4">
         <section>
           <h2 className="text-[1.1rem] italic">Ordering Guidelines</h2>
           <div className="grid grid-cols-2 gap-4">
@@ -181,8 +189,8 @@ function page({}: Props) {
             <p>Yes! Please notify us of any allergies when placing your order.</p>
           </dialog>
         </section> */}
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
 
