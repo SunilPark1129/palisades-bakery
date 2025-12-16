@@ -3,35 +3,53 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import bread from "../../lib/test/3.png";
+import b4 from "../../lib/test/b4.png";
+import b14 from "../../lib/test/b14.png";
+import b15 from "../../lib/test/b15.png";
+import b18 from "../../lib/test/b18.png";
+import b21 from "../../lib/test/b21.png";
+// import b28 from "../../lib/test/b28.png";
+import b31 from "../../lib/test/b31.png";
+import b39 from "../../lib/test/b39.png";
 
 type Props = {};
 
 function BestSeller({}: Props) {
   const items = [
     {
-      title: "Butter Croissant",
-      img: bread,
-      price: "5.99",
+      title: "Pearl Salt Bread",
+      img: b4,
+      price: "3.00",
     },
     {
-      title: "Chocolate Chip Cookie",
-      img: bread,
-      price: "4.99",
+      title: "Apple Turnover",
+      img: b21,
+      price: "3.50",
     },
     {
-      title: "Strawberry Cake",
-      img: bread,
-      price: "20.99",
+      title: "Koroke",
+      img: b15,
+      price: "4.00",
     },
     {
-      title: "Strawberry Cake",
-      img: bread,
-      price: "20.99",
+      title: "Pecan Custard",
+      img: b18,
+      price: "20.00",
     },
     {
-      title: "Strawberry Cake",
-      img: bread,
-      price: "20.99",
+      title: "Lobster Tail Pastry",
+      img: b31,
+      price: "5.50",
+    },
+    {
+      title: "Red Bean Donut",
+      img: b14,
+      price: "3.50",
+    },
+    {
+      title: "Castella",
+      img: b39,
+      price: "10.00",
     },
   ];
 

@@ -1,33 +1,29 @@
-import c1 from "../assets/images/b1.png";
-import c2 from "../assets/images/b2.png";
-import c3 from "../assets/images/b3.png";
-import c4 from "../assets/images/b4.png";
-import c5 from "../assets/images/b5.png";
-import c6 from "../assets/images/b6.png";
+// import a6 from "./test/a6.png";
+import c2 from "./test/c2.png";
+import b11 from "./test/b11.png";
+import d3 from "./test/d3.png";
+import p1 from "./test/p1.png";
+import dine2 from "./test/dine2.png";
 
 export const homeCategories = [
   {
-    url: c1,
+    url: c2,
     title: "Cakes",
   },
   {
-    url: c2,
+    url: b11,
     title: "Breads",
   },
   {
-    url: c3,
+    url: d3,
     title: "Cookies",
   },
   {
-    url: c4,
+    url: p1,
     title: "Pies",
   },
   {
-    url: c5,
-    title: "Desserts",
-  },
-  {
-    url: c6,
+    url: dine2,
     title: "Dine-In",
   },
 ];

@@ -7,7 +7,7 @@ import bake from "./images/i13.jpg";
 function Categories() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col w-full p-4 gap-4">
+      <section className="flex flex-col w-full p-4 gap-8">
         <h2 className="sr-only">Categories</h2>
         <div className="flex justify-center w-full items-center">
           <div className="flex flex-col gap-4 w-fit">
@@ -29,7 +29,7 @@ function Categories() {
             />
           </div> */}
         </div>
-        <ul className="grid grid-cols-6 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">
+        <ul className="grid grid-cols-5 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">
           {homeCategories.map((item) => (
             <li key={item.title}>
               <Link

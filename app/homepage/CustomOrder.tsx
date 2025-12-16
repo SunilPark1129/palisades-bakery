@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SVGNumberOne } from "../_components/svg/Numbers";
 // import customCakeImg from "./images/i23.jpg";
-import customCakeImg from "./images/f7.jpg";
+import customCakeImg from "./images/f8.jpg";
 import Image from "next/image";
 
 function CustomOrder() {
@@ -13,7 +13,7 @@ function CustomOrder() {
           alt="Custom Cake Ordering"
           fill
           sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover saturate-50"
+          className="object-cover saturate-80"
         />
       </div>
       <div className="flex flex-col max-[720px]:p-0 m-auto max-[720px]:max-w-full gap-4 w-full h-auto justify-center max-w-[30rem]">
