@@ -104,8 +104,8 @@ function ProductList({ category, data, asideCategories }: Props) {
                 >
                   <div className="relative w-full aspect-square overflow-hidden">
                     <Image
-                      src={entry.url}
-                      // src={"/images/custome-cake.png"}
+                      // src={entry.url}
+                      src={"/images/custome-cake.png"}
                       alt={entry.title}
                       fill
                       sizes="(max-width: 600px) 100vw, 600px"

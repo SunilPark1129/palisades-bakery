@@ -34,8 +34,8 @@ export default async function ProductDetail({
         <div className="flex gap-8 max-md:flex-col max-md:gap-4">
           <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem] max-md:max-w-full">
             <Image
-              src={data.url}
-              // src={"/images/custome-cake.png"}
+              // src={data.url}
+              src={"/images/custome-cake.png"}
               alt={data.title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
