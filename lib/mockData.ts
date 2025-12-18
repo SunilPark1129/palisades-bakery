@@ -568,6 +568,16 @@ export const bread: IProduct[] = [
     product: "bread",
   },
   {
+    _id: "56",
+    title: "Melon Soboro Cream Bread",
+    description: "Sweet, soft bread, finished with a crunchy, crumbly topping.",
+    price: ["3.50"],
+    url: b1,
+    // no image
+    category: "Daily Breads",
+    product: "bread",
+  },
+  {
     _id: "16",
     title: "Boston Donut",
     description:
