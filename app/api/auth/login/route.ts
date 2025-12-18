@@ -1,6 +1,6 @@
 import { createToken } from "@/lib/auth";
 import connectDB from "@/lib/mongodb";
-import { IUser, User } from "@/models/User";
+import { User } from "@/models/User";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
