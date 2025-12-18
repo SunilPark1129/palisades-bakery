@@ -78,8 +78,8 @@ export const brunch: DishType[] = [
   },
   {
     id: 9,
-    title: "Eggs Royale [Smoked Salmon]",
-    koTitle: "에그 로얄 [훈제 연어]",
+    title: "Eggs Royale (Smoked Salmon)",
+    koTitle: "에그 로얄 (훈제 연어)",
     description:
       "Smoked Salmon, Poached Egg, Tomatoes, Avocados, Hollandaise Sauce",
     price: "21.99",
@@ -378,7 +378,7 @@ export const pastaAndSteak: DishType[] = [
     title: "Grilled Chicken & Mushroom Risotto",
     koTitle: "치킨 리조또",
     description:
-      "Grilled Cihcken, Cremini Mushrooms, Truffle flavored Parmesan Cheese Cream Sauce",
+      "Grilled Chicken, Cremini Mushrooms, Truffle flavored Parmesan Cheese Cream Sauce",
     price: "24.99",
     category: "Pasta And Steak",
   },
