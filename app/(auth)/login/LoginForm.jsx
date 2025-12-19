@@ -6,7 +6,7 @@ function LoginForm() {
         <label className="flex flex-col gap-2">
           Username
           <input
-            name="nickname"
+            name="username"
             type="text"
             required
             autoComplete="off"

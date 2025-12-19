@@ -4,8 +4,8 @@ import { User } from "@/models/User";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { nickname, password } = await req.json();
-  const email = `${nickname}@test.local`;
+  const { username, password } = await req.json();
+  const email = `${username}@test.local`;
 
   await connectDB();
 

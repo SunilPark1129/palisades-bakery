@@ -13,13 +13,14 @@ function page() {
 
       const formData = new FormData(e.currentTarget);
 
-      const nickname = formData.get("nickname");
+      const username = formData.get("username");
       const password = formData.get("password");
 
       const res = await fetch("/api/auth/login", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nickname, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (!res.ok) {
