@@ -8,11 +8,12 @@ import Link from "next/link";
 function GroupOrder() {
   return (
     <section className="flex flex-row-reverse w-full max-[720px]:flex-col gap-4">
-      <div className="relative w-full max-w-[36rem] min-h-[20rem] max-[720px]:max-w-full aspect-16/9 rounded overflow-hidden">
+      <div className="relative w-full max-w-[36rem] min-h-[16rem] max-[720px]:max-w-full aspect-16/9 rounded overflow-hidden">
         <Image
           src={groupOrderImg}
           alt="Group & Bulk Orders"
           fill
+          loading="lazy"
           sizes="(max-width: 768px) 100vw, 60vw"
           className="object-cover saturate-50"
         />

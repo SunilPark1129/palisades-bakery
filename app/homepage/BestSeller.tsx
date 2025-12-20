@@ -79,7 +79,7 @@ function BestSeller({}: Props) {
             {items.map((item, idx) => (
               <SwiperSlide key={idx} className="!h-auto !flex py-4">
                 <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
-                  <div className="relative w-full aspect-16/9 flex-shrink-0">
+                  <div className="relative w-full aspect-square sm:aspect-16/9 flex-shrink-0">
                     <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-xs uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best
                     </div>
@@ -92,11 +92,11 @@ function BestSeller({}: Props) {
                       className="absolute w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex flex-col p-4 flex-1 min-h-[10rem] justify-between gap-2">
-                    <h3 className="text-lg font-semibold line-clamp-2">
+                  <div className="flex flex-col p-4 flex-1 justify-between gap-2">
+                    <h3 className="sm:text-[1em] font-semibold line-clamp-2">
                       {item.title}
                     </h3>
-                    <p>$ {item.price}</p>
+                    <p className="sm:text-[.9em]">$ {item.price}</p>
                     <div className="mt-auto"></div>
                     <Link href={"/"} className="text-sm">
                       See Detail

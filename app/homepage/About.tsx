@@ -5,9 +5,9 @@ import f6 from "./images/f6.jpg";
 
 function About() {
   return (
-    <section className="py-24 max-[600px]:p-4">
+    <section className="p-4">
       <div className="wrapper !max-w-[60rem]">
-        <header className="flex mx-auto p-4 max-sm:p-2 gap-16 w-full justify-between max-[720]:flex-col max-[720px]:p-8">
+        <header className="flex mx-auto gap-16 w-full justify-between max-[720]:flex-col max-[720px]:p-8">
           {/* <p className="text-xs uppercase tracking-wider">About-Us</p> */}
           <h2 className="sr-only">About Us</h2>
           <p className="max-w-[48rem] m-auto">
