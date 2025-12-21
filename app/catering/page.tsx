@@ -1,67 +1,124 @@
-import React from "react";
+import Image from "next/image";
+import t1 from "./images/t1.jpg";
+// import t2 from "./images/t2.jpg";
+// import t3 from "./images/t3.jpg";
+// import t4 from "./images/t4.jpg";
+// import t5 from "./images/t5.jpg";
 
 type Props = {};
+
+const layout = [
+  {
+    h3: "Order at least 2 days in advance",
+    p: [
+      "  This gives our team time to prepare fresh items in the quantities you need.",
+    ],
+  },
+  {
+    h3: "Place your order by phone or in-person",
+    p: ["Just call or visit to speak with a staff member."],
+  },
+  {
+    h3: "Provide basic information",
+    p: ["Items wanted", "Quantity", "Any allergies", "Date & time of pickup"],
+  },
+  {
+    h3: "Pay in advance",
+    p: ["Once payment is confirmed, the order will be made ready for you."],
+  },
+];
 
 function page({}: Props) {
   return (
     <div className="wrapper">
       <main className="flex flex-col gap-6 p-4">
-        <header>
-          <h1 className="text-[1.4rem] font-bold">Catering</h1>
-          <p>
-            We provide handcrafted baked goods made fresh for your event. Let us
-            take care of the treats while you enjoy the moment.
-          </p>
+        <header className="flex mb-8">
+          <div className="flex flex-1 justify-center gap-4 h-full">
+            <div>
+              <Image
+                src={
+                  "https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg"
+                }
+                alt="Bread Slices"
+                height={500}
+                width={500}
+                className="object-cover w-56 aspect-4/7"
+              />
+            </div>
+            <div className="translate-y-14">
+              <Image
+                src={t1}
+                alt="Fruit Tarts"
+                height={500}
+                width={500}
+                className="object-cover w-56 aspect-4/7"
+              />
+            </div>
+          </div>
+          <div className="flex-1 p-4 flex justify-center">
+            <div className="flex flex-col gap-2 justify-center h-full max-w-140">
+              <h1 className="text-[2.25rem] font-semibold">Catering</h1>
+              <div className="flex flex-col gap-2">
+                <h2 className="text-[1.4rem] italic">Large Orders Made Easy</h2>
+                <p>
+                  Whether you're planning a lunch, gathering, or special event,
+                  our bakery offers flexible group ordering on any item we make
+                  — from breads and cakes to brunch dishes and sandwiches.
+                </p>
+              </div>
+            </div>
+          </div>
         </header>
 
-        <section>
-          <h2 className="text-[1.1rem] italic">Large Orders Made Easy</h2>
-          <p>
-            Whether you're planning a lunch, gathering, or special event, our
-            bakery offers flexible group ordering on any item we make — from
-            breads and cakes to brunch dishes and sandwiches.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-[1.1rem] italic">Ordering Guidelines</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="">Order at least 2 days in advance</div>
-              <p>
-                This gives our team time to prepare fresh items in the
-                quantities you need.
-              </p>
-            </div>
-            <div>
-              <div>Place your order by phone or in-person</div>
-              <p>Just call or visit to speak with a staff member.</p>
-            </div>
-            <div>
-              <div>Provide basic information</div>
-              <ul className="list-disc list-inside pl-4">
-                <li>Items wanted</li>
-                <li>Quantity</li>
-                <li>Date & time of pickup</li>
-                <li>Any allergy or customization needs</li>
-              </ul>
-              <p></p>
-            </div>
-            <div>
-              <div>Pay in advance</div>
-              <p>
-                Once payment is confirmed, the order will be made ready for you.
-              </p>
-            </div>
+        <section className="flex flex-col gap-8 max-w-[60rem] m-auto w-full sm:py-12">
+          <div className="text-center py-4">
+            <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {layout.map(({ h3, p }) => (
+              <section
+                key={h3}
+                className="flex flex-col gap-2 list-decimal list-outside"
+              >
+                <div className="flex items-center">
+                  <h3 className="text-[1.2em]">{h3}</h3>
+                </div>
+                <ul className="flex flex-col gap-2 list-disc list-inside px-4">
+                  {p.map((item, idx) => (
+                    <li className="text-[#58595d]" key={idx}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
           </div>
         </section>
 
-        <section>
-          <h2 className="text-[1.1rem] italic">Place Your Group Order Today</h2>
-          <p>We'll prepare everything fresh and ready for your event</p>
-          <div>Call or Visit Us Now</div>
+        <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full sm:py-12">
+          <div className="text-center py-4">
+            <h2 className="text-[1.5em] font-bold">
+              Place Your Group Order Today
+            </h2>
+            <p>We'll help create the perfect cake for your celebration.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex w-full flex-col gap-2 justify-center items-center">
+              <div>Call or Visit Us Now</div>
+              <div>(201) 347-6696</div>
+              <div>325 Broad Ave, Palisades Park, NJ</div>
+            </div>
+            <div className="w-full">
+              <Image
+                src={"/images/building.png"}
+                width={500}
+                height={500}
+                alt="palisades park building"
+                className="w-full aspect-[16/13] object-cover"
+              />
+            </div>
+          </div>
         </section>
-
         {/* <section>
           <h2>Our Catering Menu</h2>
           <section>
