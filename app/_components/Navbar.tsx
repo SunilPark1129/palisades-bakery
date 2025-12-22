@@ -28,6 +28,9 @@ const combinedLinks = [
   { label: "Cookies", path: "/cookies" },
   { label: "Pies", path: "/pies" },
   { label: "Desserts", path: "/desserts" },
+];
+
+const otherLinks = [
   { label: "Dine-In", path: "/dine-In" },
   { label: "Catering", path: "/catering" },
   { label: "Custom Cakes", path: "/custom-cakes" },
@@ -167,18 +170,34 @@ function Navbar() {
             className="flex py-12 bg-(--clr-primary) cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
-            <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
-              {combinedLinks.map((item) => (
-                <li key={item.label} className="w-full">
-                  <Link
-                    className="block px-8 py-2 hover:underline w-fit"
-                    href={item.path}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
+                {combinedLinks.map((item) => (
+                  <li key={item.label} className="w-full">
+                    <Link
+                      className="block px-8 py-2 hover:underline w-fit"
+                      href={item.path}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
+                {otherLinks.map((item) => (
+                  <li key={item.label} className="w-full">
+                    <Link
+                      className="block px-8 py-2 hover:underline w-fit"
+                      href={item.path}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       )}
