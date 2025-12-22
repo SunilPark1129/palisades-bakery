@@ -79,7 +79,7 @@ function BestSeller({}: Props) {
             {items.map((item, idx) => (
               <SwiperSlide key={idx} className="!h-auto !flex py-4">
                 <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
-                  <div className="relative w-full aspect-square sm:aspect-16/9 flex-shrink-0">
+                  <div className="relative w-full aspect-4/3 flex-shrink-0">
                     <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-xs uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best
                     </div>

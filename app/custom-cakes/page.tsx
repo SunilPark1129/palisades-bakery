@@ -49,7 +49,7 @@ const layout = [
 
 function page() {
   return (
-    <main className="flex flex-col gap-6">
+    <main className="flex flex-col">
       <header className="flex max-h-[40rem] max-[550px]:flex-col max-[550px]:max-h-full">
         <div className="relative felx-1 w-full">
           <Image
@@ -77,12 +77,12 @@ function page() {
       </header>
 
       <div className="wrapper p-4">
-        <div className="flex flex-col gap-8">
-          <section className="flex flex-col gap-8 max-w-[60rem] m-auto w-full sm:py-12">
-            <div className="text-center py-4">
+        <div className="flex flex-col gap-4">
+          <section className="flex flex-col gap-4 sm:gap-8 max-w-[60rem] m-auto w-full py-12">
+            <div className="text-center">
               <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
               {layout.map(({ h3, p }) => (
                 <section
                   key={h3}
@@ -91,7 +91,7 @@ function page() {
                   <div className="flex items-center">
                     <h3 className="text-[1.2em]">{h3}</h3>
                   </div>
-                  <ul className="flex flex-col gap-2 list-disc list-inside px-4">
+                  <ul className="flex flex-col gap-2 list-disc list-inside sm:px-4">
                     {p.map((item, idx) => (
                       <li className="text-[#58595d]" key={idx}>
                         {item}
@@ -102,15 +102,15 @@ function page() {
               ))}
             </div>
           </section>
-          <section className="flex flex-col gap-4 p-4 py-12 bg-(--clr-background4) rounded-2xl">
-            <div className="text-center py-4">
-              <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
+          <section className="flex flex-col gap-4 sm:gap-8 py-4 rounded-2xl">
+            <div className="text-center">
+              <h2 className="text-[1.5em] font-bold">Pick Your Styles</h2>
               <p>Choose your desired custom cake</p>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4 sm:gap-16">
               <section className="flex flex-col gap-4 items-center">
                 <h3 className="font-semibold text-lg">1. Pick your size</h3>
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-4">
                   <div className="flex flex-col gap-2">
                     <div className="relative flex w-full h-full rounded-full overflow-hidden">
                       <svg
@@ -211,7 +211,7 @@ function page() {
               </section>
               <section className="flex flex-col gap-4 items-center">
                 <h3 className="font-semibold text-lg">2. Pick your flavor</h3>
-                <div className="grid grid-cols-4 gap-6 max-md:grid-cols-2">
+                <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2">
                   <div className="relative">
                     <Image
                       src={
@@ -281,7 +281,7 @@ function page() {
                 <h2 className="font-semibold text-lg">
                   3. Pick your customization
                 </h2>
-                <div className="grid grid-cols-4 gap-6 flex-2 max-md:grid-cols-2">
+                <div className="grid grid-cols-4 gap-4 flex-2 max-md:grid-cols-2">
                   <div className="flex flex-col gap-2">
                     <div className="relative">
                       <Image
@@ -351,27 +351,16 @@ function page() {
             </div>
           </section>
 
-          <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full sm:py-12">
-            <div className="text-center py-4">
-              <h2 className="text-[1.5em] font-bold">
-                Place Your Group Order Today
-              </h2>
+          <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full py-16">
+            <div className="sm:text-center">
+              <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
               <p>We'll help create the perfect cake for your celebration.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex w-full flex-col gap-2 justify-center items-center">
+              <div className="flex w-full flex-col gap-2 justify-center sm:items-center">
                 <div>Call or Visit Us Now</div>
                 <div>(201) 347-6696</div>
                 <div>325 Broad Ave, Palisades Park, NJ</div>
-              </div>
-              <div className="w-full">
-                <Image
-                  src={"/images/building.png"}
-                  width={500}
-                  height={500}
-                  alt="palisades park building"
-                  className="w-full aspect-[16/13] object-cover"
-                />
               </div>
             </div>
           </section>

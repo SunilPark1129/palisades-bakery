@@ -31,10 +31,10 @@ const layout = [
 function page({}: Props) {
   return (
     <div className="wrapper">
-      <main className="flex flex-col gap-6 p-4">
-        <header className="flex mb-8">
-          <div className="flex flex-1 justify-center gap-4 h-full">
-            <div>
+      <main className="flex flex-col p-4">
+        <header className="flex mb-8 flex-col md:flex-row gap-4">
+          <div className="flex flex-1 justify-center gap-4 h-full md:min-w-[20rem]">
+            <div className="pb-12">
               <Image
                 src={
                   "https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg"
@@ -42,24 +42,26 @@ function page({}: Props) {
                 alt="Bread Slices"
                 height={500}
                 width={500}
+                priority
                 className="object-cover w-56 aspect-4/7"
               />
             </div>
-            <div className="translate-y-14">
+            <div className="pt-12">
               <Image
                 src={t1}
                 alt="Fruit Tarts"
                 height={500}
                 width={500}
+                priority
                 className="object-cover w-56 aspect-4/7"
               />
             </div>
           </div>
-          <div className="flex-1 p-4 flex justify-center">
+          <div className="flex-1 flex justify-center">
             <div className="flex flex-col gap-2 justify-center h-full max-w-140">
-              <h1 className="text-[2.25rem] font-semibold">Catering</h1>
+              <h1 className="text-[2.25em] font-semibold">Catering</h1>
               <div className="flex flex-col gap-2">
-                <h2 className="text-[1.4rem] italic">Large Orders Made Easy</h2>
+                <h2 className="text-[1.4em] italic">Large Orders Made Easy</h2>
                 <p>
                   Whether you're planning a lunch, gathering, or special event,
                   our bakery offers flexible group ordering on any item we make
@@ -70,56 +72,46 @@ function page({}: Props) {
           </div>
         </header>
 
-        <section className="flex flex-col gap-8 max-w-[60rem] m-auto w-full sm:py-12">
-          <div className="text-center py-4">
-            <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {layout.map(({ h3, p }) => (
-              <section
-                key={h3}
-                className="flex flex-col gap-2 list-decimal list-outside"
-              >
-                <div className="flex items-center">
-                  <h3 className="text-[1.2em]">{h3}</h3>
-                </div>
-                <ul className="flex flex-col gap-2 list-disc list-inside px-4">
-                  {p.map((item, idx) => (
-                    <li className="text-[#58595d]" key={idx}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
-        </section>
+        <div className="flex flex-col gap-4">
+          <section className="flex flex-col gap-4 sm:gap-8 max-w-[60rem] m-auto w-full py-12">
+            <div className="text-center">
+              <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {layout.map(({ h3, p }) => (
+                <section
+                  key={h3}
+                  className="flex flex-col gap-2 list-decimal list-outside"
+                >
+                  <div className="flex items-center">
+                    <h3 className="text-[1.2em]">{h3}</h3>
+                  </div>
+                  <ul className="flex flex-col gap-2 list-disc list-inside px-4">
+                    {p.map((item, idx) => (
+                      <li className="text-[#58595d]" key={idx}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </section>
 
-        <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full sm:py-12">
-          <div className="text-center py-4">
-            <h2 className="text-[1.5em] font-bold">
-              Place Your Group Order Today
-            </h2>
-            <p>We'll help create the perfect cake for your celebration.</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex w-full flex-col gap-2 justify-center items-center">
-              <div>Call or Visit Us Now</div>
-              <div>(201) 347-6696</div>
-              <div>325 Broad Ave, Palisades Park, NJ</div>
+          <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full py-4 pb-16">
+            <div className="sm:text-center">
+              <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
+              <p>We'll help create the perfect bread for your celebration.</p>
             </div>
-            <div className="w-full">
-              <Image
-                src={"/images/building.png"}
-                width={500}
-                height={500}
-                alt="palisades park building"
-                className="w-full aspect-[16/13] object-cover"
-              />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex w-full flex-col gap-2 justify-center sm:items-center">
+                <div>Call or Visit Us Now</div>
+                <div>(201) 347-6696</div>
+                <div>325 Broad Ave, Palisades Park, NJ</div>
+              </div>
             </div>
-          </div>
-        </section>
-        {/* <section>
+          </section>
+          {/* <section>
           <h2>Our Catering Menu</h2>
           <section>
             <h3>Breakfast & Brunch</h3>
@@ -214,6 +206,7 @@ function page({}: Props) {
             </p>
           </details>
         </section> */}
+        </div>
       </main>
     </div>
   );
