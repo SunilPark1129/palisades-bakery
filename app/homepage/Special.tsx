@@ -12,7 +12,9 @@ function Special({}: Props) {
         <header className="flex flex-col gap-4">
           <p className="text-xs uppercase tracking-wider">Special-Orders</p>
           <div className="flex gap-4 items-center">
-            <h2 className="text-3xl font-semibold">Make Custom Order</h2>
+            <h2 className="text-[1.8em] leading-tight font-semibold">
+              Make Custom Order
+            </h2>
             {/* <div className="w-fit rounded-full">
               <Image
                 src="/images/custome-cake2.png"

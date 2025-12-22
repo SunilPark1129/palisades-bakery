@@ -12,22 +12,13 @@ function Categories() {
         <div className="flex justify-center w-full items-center">
           <div className="flex flex-col gap-4 w-fit">
             <p className="text-xs uppercase tracking-wider">Categories</p>
-            <p className="text-3xl font-semibold text-gray-600">
+            <p className="text-[1.8em] leading-tight font-semibold text-gray-600">
               What are you Craving Today?
             </p>
             <p className="">
               Find your favorite treat among our handcrafted selection.
             </p>
           </div>
-          {/* <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl">
-            <Image
-              src={bake}
-              alt={"bake"}
-              width={600}
-              priority
-              className="absoulte w-full h-full object-cover"
-            />
-          </div> */}
         </div>
         <ul className="grid grid-cols-5 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">
           {homeCategories.map((item) => (

@@ -58,7 +58,9 @@ function BestSeller({}: Props) {
       <section className="flex max-[860px]:flex-col items-center p-4 py-8 -my-4">
         <div className="flex flex-col gap-4 justify-center flex-1">
           <p className="text-xs uppercase tracking-wider">Best-Seller</p>
-          <h2 className="text-3xl font-semibold">Made Fresh, Loved by Many</h2>
+          <h2 className="text-[1.8em] leading-tight font-semibold">
+            Made Fresh, Loved by Many
+          </h2>
           <p className="text-gray-600">
             Discover the treats that bring smiles to our customers every day.
           </p>
@@ -88,7 +90,6 @@ function BestSeller({}: Props) {
                       alt={item.title}
                       width={800}
                       height={800}
-                      loading="lazy"
                       className="absolute w-full h-full object-cover"
                     />
                   </div>

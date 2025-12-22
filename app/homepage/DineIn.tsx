@@ -15,7 +15,9 @@ function DineIn() {
             className="w-[100px] h-[64px] object-contain"
           />
           <p className="text-xs uppercase tracking-wider">Dine-In</p>
-          <h2 className="text-3xl font-semibold">High Quality Dine-In Meals</h2>
+          <h2 className="text-[1.8em] leading-tight font-semibold">
+            High Quality Dine-In Meals
+          </h2>
           <p className="max-w-[30rem] max-[600px]:max-w-full">
             Enjoy more than just cakes and breads—our café also offers a variety
             of freshly prepared meals and beverages. From warm dishes to light
