@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Dine-In", path: "/dine-in" },
   { label: "Catering", path: "/catering" },
   { label: "Custom Cakes", path: "/custom-cakes" },
-  // { label: "Location", path: "/location" },
 ];
 
 const cafeLinks = [
@@ -19,21 +18,6 @@ const cafeLinks = [
   { label: "Breads", path: "/breads" },
   { label: "Cookies", path: "/cookies" },
   { label: "Pies", path: "/pies" },
-  { label: "Desserts", path: "/desserts" },
-];
-
-const combinedLinks = [
-  { label: "Cakes", path: "/cakes" },
-  { label: "Breads", path: "/breads" },
-  { label: "Cookies", path: "/cookies" },
-  { label: "Pies", path: "/pies" },
-  { label: "Desserts", path: "/desserts" },
-];
-
-const otherLinks = [
-  { label: "Dine-In", path: "/dine-In" },
-  { label: "Catering", path: "/catering" },
-  { label: "Custom Cakes", path: "/custom-cakes" },
 ];
 
 function Navbar() {
@@ -172,7 +156,7 @@ function Navbar() {
           >
             <div>
               <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
-                {combinedLinks.map((item) => (
+                {cafeLinks.map((item) => (
                   <li key={item.label} className="w-full">
                     <Link
                       className="block px-8 py-2 hover:underline w-fit"
@@ -186,7 +170,7 @@ function Navbar() {
             </div>
             <div>
               <ul className="flex flex-col bg-(--clr-primary) text-(--clr-background)">
-                {otherLinks.map((item) => (
+                {navLinks.map((item) => (
                   <li key={item.label} className="w-full">
                     <Link
                       className="block px-8 py-2 hover:underline w-fit"

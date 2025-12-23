@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import { StaticImageData } from "next/image";
 
 export interface IProduct {
-  _id: string;
+  _id?: string;
   title: string;
   description: string;
   size?: string[];
