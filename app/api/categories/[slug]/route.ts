@@ -10,22 +10,6 @@ export async function GET(
 ) {
   const { slug } = await params;
 
-  // const data: IProduct[] = await new Promise((res, rej) =>
-  //   setTimeout(() => {
-  //     if (slug === "bread") res(bread);
-  //     else if (slug === "cake") res(cakes);
-  //     else if (slug === "cookie") res(cookies);
-  //     else if (slug === "pie") res(pies);
-  //     else rej(new Error("Invalid slug"));
-  //   }, 0)
-  // );
-
-  // return NextResponse.json({
-  //   success: true,
-  //   status: 200,
-  //   data: data,
-  // });
-
   try {
     await connectDB();
 

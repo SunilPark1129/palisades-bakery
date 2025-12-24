@@ -16,26 +16,45 @@ type AddFormProperty = {
 
 // const product = ["cakes", "breads", "cookies", "pies"];
 const category = {
-  cakes: ["Whole Cakes", "Slice Cakes", "Roll Cakes", "Mini Cakes", "Cupcakes"],
-  breads: [
+  cake: ["Whole Cakes", "Slice Cakes", "Roll Cakes", "Mini Cakes", "Cupcakes"],
+  bread: [
     "Daily Breads",
     "Pastries",
     "Donuts",
     "Pound Cakes",
     "Loaf Breads & Rolls",
   ],
-  cookies: ["Signature Cookies", "Packaged Cookies", "Madelines & Biscotti"],
-  pies: ["Pies", "Tarts"],
+  cookie: ["Signature Cookies", "Packaged Cookies", "Madelines & Biscotti"],
+  pie: ["Pies", "Tarts"],
 };
 
-type ProductType = "cakes" | "breads" | "cookies" | "pies";
+type ProductType = "cake" | "bread" | "cookie" | "pie";
 
 function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
-  const [selectedProduct, setSelectedProduct] = useState<ProductType>("cakes");
+  const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {}
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const product = formData.get("product");
+    const category = formData.get("category");
+    const title = formData.get("title");
+    const description = formData.get("description");
+    const price = formData.getAll("price");
+    const size = formData.getAll("size");
+
+    const payload = {
+      product,
+      category,
+      title,
+      description,
+      price,
+      size,
+      url: "/images/custome-cake.png",
+    };
+  }
 
   function handleCancel() {
     setIsModalOn(false);

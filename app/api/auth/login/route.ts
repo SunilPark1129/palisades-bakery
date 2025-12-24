@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
-  const token = await createToken({ userId: user._id });
+  const token = await createToken({ userId: user._id.toString() });
 
   const response = NextResponse.json({ success: true });
 
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
     value: token,
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "strict",
     path: "/",
     maxAge: 60 * 60 * 24 * 7, // 7일
   });
