@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { payload } = body;
 
-    await Product.insertMany(payload);
+    await Product.create(payload);
 
     return NextResponse.json({
       success: true,
