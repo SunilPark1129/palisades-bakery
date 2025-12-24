@@ -39,33 +39,35 @@ function page({}: Props) {
   }, [selectedProduct]);
 
   return (
-    <div>
-      <button onClick={handleAddNew}>Add New</button>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="wrapper">
       <div>
-        {isModalOn && (
-          <AddForm setProducts={setProducts} setIsModalOn={setIsModalOn} />
-        )}
-      </div>
-      <div className="flex gap-4">
-        {productTitles.map((item) => (
-          <button
-            key={item}
-            className="p-2 bg-[#e8e8e8]"
-            onClick={() => setSelectedProduct(item as ProductType)}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-      <div className="grid gap-4">
-        {products.map((item) => (
-          <div key={item._id}>
-            <div>{item.title}</div>
-            <button>edit</button>
-            <button>delete</button>
-          </div>
-        ))}
+        <button onClick={handleAddNew}>Add New</button>
+        <button onClick={handleLogout}>Logout</button>
+        <div>
+          {isModalOn && (
+            <AddForm setProducts={setProducts} setIsModalOn={setIsModalOn} />
+          )}
+        </div>
+        <div className="flex gap-4">
+          {productTitles.map((item) => (
+            <button
+              key={item}
+              className="p-2 bg-[#e8e8e8]"
+              onClick={() => setSelectedProduct(item as ProductType)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {products.map((item) => (
+            <div key={item._id}>
+              <div>{item.title}</div>
+              <button>edit</button>
+              <button>delete</button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
