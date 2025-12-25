@@ -38,11 +38,11 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { payload } = body;
 
-    await Product.create(payload);
+    const createdProduct = await Product.create(payload);
 
     return NextResponse.json({
       success: true,
-      message: "uploaded successfully.",
+      data: createdProduct,
     });
   } catch (error) {
     console.error("Bulk Insert Error:", error);
@@ -82,11 +82,63 @@ export async function DELETE(req: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "delected successfully.",
+      data: deletedProduct,
     });
   } catch (error) {
     return NextResponse.json(
       { error: "error has found while delecting a product" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(req: Request) {
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get("token")?.value;
+    if (!token)
+      return NextResponse.json(
+        { error: "Require to login before you continue." },
+        { status: 401 }
+      );
+
+    const decoded = await verifyToken(token);
+    if (!decoded)
+      return NextResponse.json({ error: "Failed Verify" }, { status: 401 });
+
+    const { payload } = await req.json();
+    const { _id, product, category, title, description, price, size, url } =
+      payload;
+
+    if (!payload?._id) {
+      return NextResponse.json(
+        { error: "Product id is required" },
+        { status: 400 }
+      );
+    }
+
+    await connectDB();
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+      _id,
+      { _id, product, category, title, description, price, size, url },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedProduct) {
+      return NextResponse.json(
+        { error: "Could not find the product id" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: updatedProduct,
+    });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "error has found while updating a product" },
       { status: 500 }
     );
   }
