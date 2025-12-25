@@ -23,6 +23,17 @@ function page({}: Props) {
     setIsModalOn(true);
   }
 
+  async function handleDeleteItem(id: string) {
+    await fetch("/api/categories", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+      credentials: "include",
+    });
+  }
+
   useEffect(() => {
     async function getProducts() {
       try {
@@ -60,11 +71,16 @@ function page({}: Props) {
           ))}
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {products.map((item) => (
+          {products.map((item, idx) => (
             <div key={item._id}>
               <div>{item.title}</div>
-              <button>edit</button>
-              <button>delete</button>
+              <button className="cursor-pointer">edit</button>
+              <button
+                onClick={() => handleDeleteItem(item._id!)}
+                className="cursor-pointer"
+              >
+                delete
+              </button>
             </div>
           ))}
         </div>

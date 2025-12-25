@@ -90,7 +90,7 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
     sizeIdRef.current++;
   }
 
-  function handleDeleteSize(i: Number) {
+  function handleDeleteSize(i: number) {
     setSizeCount((prev) => prev.filter((_, idx) => idx !== i));
   }
 
