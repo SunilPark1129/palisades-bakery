@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import Trash from "../_components/svg/Trash";
 
 type AddFormProperty = {
   setProducts: Dispatch<SetStateAction<IProduct[]>>;
@@ -36,24 +37,43 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
   const sizeIdRef = useRef(1);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const product = formData.get("product");
-    const category = formData.get("category");
-    const title = formData.get("title");
-    const description = formData.get("description");
-    const price = formData.getAll("price");
-    const size = formData.getAll("size");
+    try {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+      const product = formData.get("product");
+      const category = formData.get("category");
+      const title = formData.get("title");
+      const description = formData.get("description");
+      const price = formData.getAll("price");
+      const size = formData.getAll("size");
 
-    const payload = {
-      product,
-      category,
-      title,
-      description,
-      price,
-      size,
-      url: "/images/custome-cake.png",
-    };
+      const payload = {
+        product,
+        category,
+        title,
+        description,
+        price,
+        size,
+        url: "/images/custome-cake.png",
+      };
+
+      const res = await fetch("/api/categories", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ payload }),
+        credentials: "include",
+      });
+
+      if (!res.ok) {
+        throw new Error("error");
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
+
+    setIsModalOn(false);
   }
 
   function handleCancel() {
@@ -70,19 +90,21 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
     sizeIdRef.current++;
   }
 
-  function handleDeleteSize() {}
+  function handleDeleteSize(i: number) {
+    setSizeCount((prev) => prev.filter((_, idx) => idx !== i));
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <select name="product" onChange={handleProductChange}>
+        <select name="product" required onChange={handleProductChange}>
           {Object.keys(category).map((key) => (
             <option value={key} key={key}>
               {key}
             </option>
           ))}
         </select>
-        <select name="category">
+        <select name="category" required>
           {category[selectedProduct].map((value) => (
             <option value={value} key={value}>
               {value}
@@ -91,11 +113,11 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
         </select>
         <label>
           Title:
-          <input type="text" name="title" autoComplete="off" />
+          <input type="text" name="title" required autoComplete="off" />
         </label>
         <label>
           Description:
-          <textarea name="description" rows={4}></textarea>
+          <textarea name="description" required rows={4}></textarea>
         </label>
         <div>
           <button type="button" onClick={handleAddSize}>
@@ -104,24 +126,29 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
         </div>
         {sizeCount.length === 0 ? (
           <div>
-            <input type="text" name="price" placeholder="price" />
+            <input type="text" name="price" required placeholder="price" />
           </div>
         ) : (
           <div>
-            {sizeCount.map((id) => (
+            {sizeCount.map((id, idx) => (
               <div key={id}>
                 <input
                   type="text"
                   name="size"
+                  required
                   autoComplete="off"
                   placeholder="size"
                 />
                 <input
                   type="text"
                   name="price"
+                  required
                   autoComplete="off"
                   placeholder="price"
                 />
+                <button onClick={() => handleDeleteSize(idx)}>
+                  <Trash />
+                </button>
               </div>
             ))}
           </div>
