@@ -63,10 +63,22 @@ function page({}: Props) {
 
   return (
     <div className="wrapper">
-      <div className="flex flex-col gap-4 p-4">
-        <div>
-          <button onClick={handleAddNew}>Add New</button>
-          <button onClick={handleLogout}>Logout</button>
+      <div className="flex flex-col gap-6 p-4">
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-4">
+            <button
+              onClick={handleAddNew}
+              className="bg-(--clr-primary) text-(--clr-background) w-28 p-2 rounded cursor-pointer"
+            >
+              Add New
+            </button>
+            <button
+              onClick={handleLogout}
+              className="bg-(--clr-accent) w-28 p-2 rounded cursor-pointer"
+            >
+              Logout
+            </button>
+          </div>
           <div>
             {isModalOn && (
               <AddForm setProducts={setProducts} setIsModalOn={setIsModalOn} />
@@ -78,7 +90,7 @@ function page({}: Props) {
           {productTitles.map((item) => (
             <button
               key={item}
-              className="p-2 bg-[#e8e8e8]"
+              className="py-1 bg-[#e8e8e8] w-20 rounded cursor-pointer"
               onClick={() => setSelectedProduct(item as ProductType)}
             >
               {item}
@@ -115,16 +127,16 @@ function page({}: Props) {
             </div>
             <div className="flex gap-8 mt-2">
               <button
-                onClick={() => setIsDeleteModalOpen(false)}
-                className="w-20 bg-gray-300 p-1 rounded cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
                 onClick={() => handleConfirmDelete(itemId)}
-                className="w-20 bg-red-500 text-(--clr-background) p-1 rounded cursor-pointer"
+                className="w-22 bg-red-500 text-(--clr-background) p-1 rounded cursor-pointer"
               >
                 Delete
+              </button>
+              <button
+                onClick={() => setIsDeleteModalOpen(false)}
+                className="w-22 bg-gray-300 p-1 rounded cursor-pointer"
+              >
+                Cancel
               </button>
             </div>
           </div>

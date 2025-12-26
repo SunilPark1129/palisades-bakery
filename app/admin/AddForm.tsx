@@ -33,6 +33,7 @@ type ProductType = "cake" | "bread" | "cookie" | "pie";
 
 function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
+  const [isAddModalOn, setIsAddModalOn] = useState(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
 
@@ -74,6 +75,7 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
     }
 
     setIsModalOn(false);
+    setIsAddModalOn(false);
   }
 
   function handleCancel() {
@@ -95,70 +97,155 @@ function AddForm({ setProducts, setIsModalOn }: AddFormProperty) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <select name="product" required onChange={handleProductChange}>
-          {Object.keys(category).map((key) => (
-            <option value={key} key={key}>
-              {key}
-            </option>
-          ))}
-        </select>
-        <select name="category" required>
-          {category[selectedProduct].map((value) => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
+    <form onSubmit={handleSubmit} className="mb-4">
+      <div className="flex flex-col gap-4">
+        <label>
+          Product:
+          <select
+            name="product"
+            required
+            onChange={handleProductChange}
+            className="w-fit cursor-pointer ml-1"
+          >
+            {Object.keys(category).map((key) => (
+              <option value={key} key={key}>
+                {key}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Category:
+          <select
+            name="category"
+            required
+            className="w-fit cursor-pointer ml-1"
+          >
+            {category[selectedProduct].map((value) => (
+              <option value={value} key={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+        </label>
+
         <label>
           Title:
-          <input type="text" name="title" required autoComplete="off" />
+          <input
+            type="text"
+            name="title"
+            required
+            autoComplete="off"
+            className="outline rounded ml-2 pl-1"
+          />
         </label>
+
         <label>
           Description:
-          <textarea name="description" required rows={4}></textarea>
+          <textarea
+            name="description"
+            required
+            rows={3}
+            className="outline rounded ml-2 pl-1"
+          ></textarea>
         </label>
-        <div>
-          <button type="button" onClick={handleAddSize}>
-            Add Size
-          </button>
-        </div>
+
         {sizeCount.length === 0 ? (
-          <div>
-            <input type="text" name="price" required placeholder="price" />
-          </div>
+          <label>
+            Price:
+            <input
+              type="text"
+              name="price"
+              required
+              className="outline rounded ml-2 pl-1"
+            />
+          </label>
         ) : (
           <div>
             {sizeCount.map((id, idx) => (
-              <div key={id}>
-                <input
-                  type="text"
-                  name="size"
-                  required
-                  autoComplete="off"
-                  placeholder="size"
-                />
-                <input
-                  type="text"
-                  name="price"
-                  required
-                  autoComplete="off"
-                  placeholder="price"
-                />
-                <button onClick={() => handleDeleteSize(idx)}>
+              <div key={id} className="flex items-center gap-4">
+                <label>
+                  Size:
+                  <input
+                    type="text"
+                    name="size"
+                    required
+                    autoComplete="off"
+                    className="outline rounded ml-2 pl-1"
+                  />
+                </label>
+                <label>
+                  Price:
+                  <input
+                    type="text"
+                    name="price"
+                    required
+                    autoComplete="off"
+                    className="outline rounded ml-2 pl-1"
+                  />
+                </label>
+                <button
+                  onClick={() => handleDeleteSize(idx)}
+                  className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
+                >
                   <Trash />
                 </button>
               </div>
             ))}
           </div>
         )}
-      </div>
-      <div>
-        <button type="submit">Add</button>
-        <button type="button" onClick={handleCancel}>
-          Cancel
-        </button>
+
+        <div>
+          <button
+            type="button"
+            onClick={handleAddSize}
+            className="bg-gray-200 p-1 w-24 rounded cursor-pointer"
+          >
+            Add Size
+          </button>
+        </div>
+        <div className="flex gap-4">
+          <button
+            type="button"
+            onClick={() => setIsAddModalOn(true)}
+            className="bg-(--clr-primary) text-(--clr-background) w-28 p-2 rounded cursor-pointer"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            onClick={handleCancel}
+            className="bg-(--clr-accent) w-28 p-2 rounded cursor-pointer"
+          >
+            Cancel
+          </button>
+        </div>
+
+        {isAddModalOn && (
+          <div className="fixed left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 bg-gray-100 p-10 rounded-xl">
+            <div className="font-semibold">ADD [추가]</div>
+            <div className="flex flex-col gap-1 text-center">
+              <div>Are you sure you want to add this item?</div>
+              <div>이 항목을 추가하시겠습니까?</div>
+            </div>
+            <div className="flex gap-8 mt-2">
+              <button
+                type="submit"
+                className="w-22 bg-(--clr-primary) text-(--clr-background)  p-1 rounded cursor-pointer"
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                onClick={handleCancel}
+                className="w-22 bg-gray-300 p-1 rounded cursor-pointer"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </form>
   );

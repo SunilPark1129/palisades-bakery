@@ -26,7 +26,7 @@ function LoginForm() {
       </div>
       <button
         type="submit"
-        className="flex justify-center bg-(--clr-logo) text-(--clr-background) w-full py-2 cursor-pointer rounded-[4px]"
+        className="flex justify-center bg-(--clr-logo) text-(--clr-background) w-full py-2 cursor-pointer rounded"
       >
         Login
       </button>
