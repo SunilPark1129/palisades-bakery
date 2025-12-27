@@ -79,11 +79,7 @@ function page({}: Props) {
               Logout
             </button>
           </div>
-          <div>
-            {isModalOn && (
-              <AddForm setProducts={setProducts} setIsModalOn={setIsModalOn} />
-            )}
-          </div>
+          <div>{isModalOn && <AddForm setIsModalOn={setIsModalOn} />}</div>
         </div>
 
         <div className="flex gap-4">
@@ -116,9 +112,16 @@ function page({}: Props) {
             </div>
           ))}
         </div>
-
-        {isDeleteModalOpen && (
-          <div className="fixed left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 bg-gray-100 p-10 rounded-xl">
+      </div>
+      {isDeleteModalOpen && (
+        <div
+          onClick={() => setIsDeleteModalOpen(false)}
+          className="fixed left-0 top-0 w-full h-full bg-[#00000064] flex justify-center items-center cursor-pointer z-[9999]"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="flex flex-col items-center gap-4 bg-gray-100 p-10 rounded-xl cursor-auto"
+          >
             <Alert />
             <div className="font-semibold">DELETE [삭제]</div>
             <div className="flex flex-col gap-1 text-center">
@@ -140,8 +143,8 @@ function page({}: Props) {
               </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

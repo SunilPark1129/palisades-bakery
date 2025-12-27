@@ -12,7 +12,7 @@ function Alert() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="cursor-pointer stroke-rose-500 bg-red-100 rounded-full p-1"
+      className="stroke-rose-500 bg-red-100 rounded-full p-1"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
