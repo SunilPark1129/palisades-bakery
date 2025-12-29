@@ -98,13 +98,13 @@ function page({}: Props) {
             </div>
           </section>
 
-          <section className="flex flex-col gap-4 max-w-[60rem] m-auto w-full py-4 pb-16">
-            <div className="sm:text-center">
+          <section className="flex sm:flex-row flex-col gap-4 max-w-[60rem] m-auto w-full py-4 py-16">
+            <div className="flex flex-col gap-2">
               <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
               <p>We'll help create the perfect bread for your celebration.</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex w-full flex-col gap-2 justify-center sm:items-center">
+            <div className="flex flex-col gap-4 sm:m-auto">
+              <div className="flex w-full flex-col gap-4 justify-center">
                 <div>Call or Visit Us Now</div>
                 <div>(201) 347-6696</div>
                 <div>325 Broad Ave, Palisades Park, NJ</div>
