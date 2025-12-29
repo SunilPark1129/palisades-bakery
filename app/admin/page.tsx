@@ -1,11 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import AddForm from "./AddForm";
+import AddForm from "./add/AddForm";
 import { IProduct } from "@/models/Product";
 import Trash from "../_components/svg/Trash";
 import Edit from "../_components/svg/Edit";
 import Alert from "../_components/svg/Alert";
+import Link from "next/link";
 
 type Props = {};
 type ProductType = "cake" | "bread" | "cookie" | "pie";
@@ -66,12 +67,12 @@ function page({}: Props) {
       <div className="flex flex-col gap-6 p-4">
         <div className="flex flex-col gap-4">
           <div className="flex gap-4">
-            <button
-              onClick={handleAddNew}
-              className="bg-(--clr-primary) text-(--clr-background) w-28 p-2 rounded cursor-pointer"
+            <Link
+              href={"/admin/add"}
+              className="bg-(--clr-primary) text-center text-(--clr-background) w-28 p-2 rounded cursor-pointer"
             >
               Add New
-            </button>
+            </Link>
             <button
               onClick={handleLogout}
               className="bg-(--clr-accent) w-28 p-2 rounded cursor-pointer"
@@ -79,7 +80,6 @@ function page({}: Props) {
               Logout
             </button>
           </div>
-          <div>{isModalOn && <AddForm setIsModalOn={setIsModalOn} />}</div>
         </div>
 
         <div className="flex gap-4">

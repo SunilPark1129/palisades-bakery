@@ -8,11 +8,10 @@ import React, {
   useRef,
   useState,
 } from "react";
-import Trash from "../_components/svg/Trash";
+import Trash from "../../_components/svg/Trash";
+import { useRouter } from "next/navigation";
 
-type AddFormProperty = {
-  setIsModalOn: Dispatch<SetStateAction<boolean>>;
-};
+type AddFormProperty = {};
 
 // const product = ["cakes", "breads", "cookies", "pies"];
 const category = {
@@ -30,7 +29,8 @@ const category = {
 
 type ProductType = "cake" | "bread" | "cookie" | "pie";
 
-function AddForm({ setIsModalOn }: AddFormProperty) {
+function AddForm() {
+  const router = useRouter();
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isAddModalOn, setIsAddModalOn] = useState<boolean>(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
@@ -80,13 +80,15 @@ function AddForm({ setIsModalOn }: AddFormProperty) {
       console.log(error.message);
     }
 
-    setIsModalOn(false);
     setIsAddModalOn(false);
+    router.push("/admin");
   }
 
-  function handleCancel(cb: Dispatch<SetStateAction<boolean>>) {
-    cb(false);
+  function handleBack() {
+    router.push("/admin");
   }
+
+  function handleCancel(e: any) {}
 
   function handleProductChange(e: ChangeEvent<HTMLSelectElement>) {
     setSelectedProduct(e.target.value as ProductType);
@@ -220,8 +222,8 @@ function AddForm({ setIsModalOn }: AddFormProperty) {
               Add
             </button>
             <button
-              type="button"
-              onClick={() => handleCancel(setIsModalOn)}
+              type="reset"
+              onClick={handleBack}
               className="bg-(--clr-accent) w-28 p-2 rounded cursor-pointer"
             >
               Cancel
@@ -246,7 +248,7 @@ function AddForm({ setIsModalOn }: AddFormProperty) {
             </button>
             <button
               type="button"
-              onClick={() => handleCancel(setIsAddModalOn)}
+              onClick={() => setIsAddModalOn(false)}
               className="w-22 bg-gray-300 p-1 rounded cursor-pointer"
             >
               Cancel
