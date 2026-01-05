@@ -6,6 +6,28 @@ import { User } from "@/models/User";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
+export async function GET(req: Request) {
+  try {
+    await connectDB();
+
+    const products = await Product.find({});
+
+    if (products.length === 0) {
+      return NextResponse.json(
+        { success: false, error: "cannot find page" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ success: true, data: products });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, error: "view request failed" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(req: Request) {
   const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value;

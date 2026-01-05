@@ -57,27 +57,41 @@ function page({}: Props) {
   useEffect(() => {
     async function getProducts() {
       try {
-        const res = await fetch(
-          `http://localhost:3000/api/categories/` + selectedProduct
-        );
+        const res = await fetch(`http://localhost:3000/api/categories/`);
         const data = await res.json();
-        setProducts(data.data as IProduct[]);
-        setDisplayProducts(data.data as IProduct[]);
+        const resProducts = data.data as IProduct[];
+        setProducts(resProducts);
+        setDisplayProducts(
+          resProducts.filter((item) => item.product === selectedProduct)
+        );
       } catch (error) {
         console.log(error);
       }
     }
     getProducts();
+  }, []);
+
+  useEffect(() => {
+    setDisplayProducts(
+      products.filter((item) => item.product === selectedProduct)
+    );
   }, [selectedProduct]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.value.trim() === "") {
-      setDisplayProducts(products);
+      setDisplayProducts(
+        products.filter((item) => item.product === selectedProduct)
+      );
       return;
     }
     const value = e.target.value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(`\\b${value}.*\\b`, "i");
-    setDisplayProducts(products.filter((product) => regex.test(product.title)));
+    setDisplayProducts(
+      products.filter(
+        (product) =>
+          regex.test(product.title) && product.product === selectedProduct
+      )
+    );
   }
 
   return (
