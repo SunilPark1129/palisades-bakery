@@ -1,20 +1,20 @@
 "use client";
+import Modal from "@/app/_components/shared/Modal";
+import Trash from "@/app/_components/svg/Trash";
 import { IProduct } from "@/models/Product";
+import { useParams, useRouter } from "next/navigation";
 import React, {
   ChangeEvent,
-  Dispatch,
   FormEvent,
-  SetStateAction,
+  useEffect,
   useRef,
   useState,
 } from "react";
-import Trash from "../../_components/svg/Trash";
-import { useRouter } from "next/navigation";
-import Modal from "@/app/_components/shared/Modal";
 
-type AddFormProperty = {};
+// type Props = { params: Promise<{ id: string }> };
 
-// const product = ["cakes", "breads", "cookies", "pies"];
+type ProductType = "cake" | "bread" | "cookie" | "pie";
+
 const category = {
   cake: ["Whole Cakes", "Slice Cakes", "Roll Cakes", "Mini Cakes", "Cupcakes"],
   bread: [
@@ -28,16 +28,34 @@ const category = {
   pie: ["Pies", "Tarts"],
 };
 
-type ProductType = "cake" | "bread" | "cookie" | "pie";
+function page() {
+  const { id } = useParams();
 
-function AddForm() {
+  // const { id } = await params;
+
   const router = useRouter();
+  const [item, setItem] = useState<IProduct | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isAddModalOn, setIsAddModalOn] = useState<boolean>(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
 
+  const [keepPreviewPrice, setKeepPreviewPrice] = useState<boolean>(false);
+
   const [newItem, setNewItem] = useState<any>({});
+
+  useEffect(() => {
+    async function getProduct() {
+      try {
+        const res = await fetch("http://localhost:3000/api/category/" + id);
+        const data = await res.json();
+
+        setItem(data.data);
+      } catch (error) {}
+    }
+
+    getProduct();
+  }, [id]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -46,10 +64,11 @@ function AddForm() {
     const category = formData.get("category");
     const title = formData.get("title");
     const description = formData.get("description");
-    const price = formData.getAll("price");
-    const size = formData.getAll("size");
+    const price = keepPreviewPrice ? item?.price : formData.getAll("price");
+    const size = keepPreviewPrice ? item?.size : formData.getAll("size");
 
     const payload = {
+      _id: item?._id,
       product,
       category,
       title,
@@ -66,7 +85,7 @@ function AddForm() {
   async function handlePost() {
     try {
       const res = await fetch("/api/categories", {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -89,8 +108,6 @@ function AddForm() {
     router.push("/admin");
   }
 
-  function handleCancel(e: any) {}
-
   function handleProductChange(e: ChangeEvent<HTMLSelectElement>) {
     setSelectedProduct(e.target.value as ProductType);
   }
@@ -105,10 +122,14 @@ function AddForm() {
     setSizeCount((prev) => prev.filter((_, idx) => idx !== i));
   }
 
+  if (item === null) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="wrapper p-4">
       <h1 className="text-center text-xl bg-(--clr-primary) text-[#fff]">
-        New Item (추가 할 물건)
+        Edit Item (수정 할 물건)
       </h1>
       <form onSubmit={handleSubmit} className="max-w-[30rem] m-auto py-8">
         <div className="flex flex-col gap-4">
@@ -119,6 +140,7 @@ function AddForm() {
               required
               onChange={handleProductChange}
               className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              defaultValue={item.product}
             >
               {Object.keys(category).map((key) => (
                 <option value={key} key={key}>
@@ -134,6 +156,7 @@ function AddForm() {
               name="category"
               required
               className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              defaultValue={item.category}
             >
               {category[selectedProduct].map((value) => (
                 <option value={value} key={value}>
@@ -152,6 +175,7 @@ function AddForm() {
               autoComplete="off"
               className="px-2 py-1 border-1 border-[#b8b8b8]"
               placeholder="Strawberry Cake"
+              defaultValue={item.title}
             />
           </label>
 
@@ -163,16 +187,24 @@ function AddForm() {
               rows={3}
               className="px-2 py-1 border-1 border-[#b8b8b8]"
               placeholder="Fluffy cake layered with sweet strawberry cream..."
+              defaultValue={item.description}
             ></textarea>
           </label>
 
-          <div className="flex flex-col gap-2">
+          <div
+            className={`flex flex-col gap-2 ${
+              !keepPreviewPrice
+                ? "bg-[#fff]"
+                : "bg-[#e4e4e4] text-[#595959] p-2"
+            }`}
+          >
             <div className="flex justify-between">
               <div>Price:</div>
               <button
                 type="button"
                 onClick={handleAddSize}
                 className="bg-gray-200 px-2 py-1 text-sm rounded-full w-6 h-6 flex justify-center items-center"
+                disabled={keepPreviewPrice}
               >
                 +
               </button>
@@ -186,6 +218,7 @@ function AddForm() {
                 autoComplete="off"
                 className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
                 placeholder="4.99"
+                readOnly={keepPreviewPrice}
               />
             ) : (
               <div>
@@ -200,6 +233,7 @@ function AddForm() {
                         autoComplete="off"
                         className="px-2 py-1 border-1 border-[#b8b8b8]"
                         placeholder="7''"
+                        readOnly={keepPreviewPrice}
                       />
                     </label>
                     <label>
@@ -211,14 +245,51 @@ function AddForm() {
                         autoComplete="off"
                         className="px-2 py-1 border-1 border-[#b8b8b8]"
                         placeholder="4.99"
+                        readOnly={keepPreviewPrice}
                       />
                     </label>
                     <button
                       onClick={() => handleDeleteSize(idx)}
                       className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
+                      disabled={keepPreviewPrice}
                     >
                       <Trash />
                     </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div
+            className={`${
+              keepPreviewPrice ? "bg-[#fff]" : "bg-[#e4e4e4] text-[#595959] p-2"
+            }`}
+          >
+            <label className="flex items-center gap-2">
+              Keep the preview price (전에 사용한 가격 사용하기)
+              <input
+                type="checkbox"
+                onChange={(e) => setKeepPreviewPrice(e.target.checked)}
+              />
+            </label>
+
+            <div>Past Price:</div>
+            {item.size.length === 0 ? (
+              <div className="w-full">
+                <div>{item.price[0]}</div>
+              </div>
+            ) : (
+              <div>
+                {item.size.map((id, idx) => (
+                  <div key={id} className="flex items-center gap-4">
+                    <div className="w-full">
+                      Size:
+                      <div>{item.size[idx]}</div>
+                    </div>
+                    <div className="w-full">
+                      Price:
+                      <div>{item.price[idx]}</div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -230,7 +301,7 @@ function AddForm() {
               type="submit"
               className="bg-(--clr-primary) text-(--clr-background) w-full p-2 rounded cursor-pointer text-sm"
             >
-              Add
+              Edit
             </button>
             <button
               type="reset"
@@ -244,17 +315,17 @@ function AddForm() {
       </form>
 
       <Modal isOpen={isAddModalOn} setIsOpen={setIsAddModalOn}>
-        <div className="font-semibold">ADD [추가]</div>
+        <div className="font-semibold">EDIT [수정]</div>
         <div className="flex flex-col gap-1 text-center">
-          <div>Are you sure you want to add this item?</div>
-          <div>이 항목을 추가하시겠습니까?</div>
+          <div>Are you sure you want to edit this item?</div>
+          <div>이 항목을 수정하시겠습니까?</div>
         </div>
         <div className="flex gap-8 mt-2">
           <button
             onClick={handlePost}
             className="w-22 bg-(--clr-primary) text-(--clr-background)  p-1 rounded cursor-pointer"
           >
-            Add
+            Edit
           </button>
           <button
             type="button"
@@ -269,4 +340,4 @@ function AddForm() {
   );
 }
 
-export default AddForm;
+export default page;

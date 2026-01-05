@@ -151,17 +151,20 @@ function page({}: Props) {
                 height={100}
                 loading="lazy"
               />
-              <div>
+              <div className="flex flex-col gap-2">
                 <div>{item.title}</div>
-                <div>
-                  <button className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)">
-                    <Edit />
-                  </button>
+                <div className="flex flex-col gap-2">
+                  <Link
+                    className="cursor-pointer rounded-full flex text-sm items-center gap-2 w-fit"
+                    href={`/admin/edit/${item._id}`}
+                  >
+                    <Edit /> EDIT
+                  </Link>
                   <button
                     onClick={() => handleDeleteItem(item._id!)}
-                    className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
+                    className="cursor-pointer rounded-full flex text-sm items-center gap-2 w-fit"
                   >
-                    <Trash />
+                    <Trash /> DELETE
                   </button>
                 </div>
               </div>

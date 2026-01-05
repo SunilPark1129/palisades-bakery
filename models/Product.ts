@@ -5,7 +5,7 @@ export interface IProduct {
   _id?: string;
   title: string;
   description: string;
-  size?: string[];
+  size: string[];
   price: string[];
   product: "bread" | "cake" | "cookie" | "pie";
   category: string;
@@ -31,6 +31,7 @@ const ProductSchema = new Schema<IProduct>(
     },
     size: {
       type: [String],
+      required: true,
     },
     product: {
       type: String,
