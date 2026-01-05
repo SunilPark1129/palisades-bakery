@@ -51,6 +51,7 @@ function page() {
         const data = await res.json();
 
         setItem(data.data);
+        setSelectedProduct(data.data.product);
       } catch (error) {}
     }
 
