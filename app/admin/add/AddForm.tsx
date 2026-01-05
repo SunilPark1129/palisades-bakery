@@ -10,6 +10,7 @@ import React, {
 } from "react";
 import Trash from "../../_components/svg/Trash";
 import { useRouter } from "next/navigation";
+import Modal from "@/app/_components/shared/Modal";
 
 type AddFormProperty = {};
 
@@ -105,16 +106,17 @@ function AddForm() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="mb-4">
+    <div className="wrapper p-4">
+      <h1 className="text-center text-xl">New Item (추가할 물건)</h1>
+      <form onSubmit={handleSubmit} className="max-w-[30rem] m-auto py-8">
         <div className="flex flex-col gap-4">
-          <label>
+          <label className="flex flex-col">
             Product:
             <select
               name="product"
               required
               onChange={handleProductChange}
-              className="w-fit cursor-pointer ml-1"
+              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
             >
               {Object.keys(category).map((key) => (
                 <option value={key} key={key}>
@@ -124,12 +126,12 @@ function AddForm() {
             </select>
           </label>
 
-          <label>
+          <label className="flex flex-col">
             Category:
             <select
               name="category"
               required
-              className="w-fit cursor-pointer ml-1"
+              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
             >
               {category[selectedProduct].map((value) => (
                 <option value={value} key={value}>
@@ -139,92 +141,99 @@ function AddForm() {
             </select>
           </label>
 
-          <label>
+          <label className="flex flex-col">
             Title:
             <input
               type="text"
               name="title"
               required
               autoComplete="off"
-              className="outline rounded ml-2 pl-1"
+              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              placeholder="Strawberry Cake"
             />
           </label>
 
-          <label>
+          <label className="flex flex-col">
             Description:
             <textarea
               name="description"
               required
               rows={3}
-              className="outline rounded ml-2 pl-1"
+              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              placeholder="Fluffy cake layered with sweet strawberry cream..."
             ></textarea>
           </label>
 
-          {sizeCount.length === 0 ? (
-            <label>
-              Price:
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-between">
+              <div>Price:</div>
+              <button
+                type="button"
+                onClick={handleAddSize}
+                className="bg-gray-200 px-2 py-1 text-sm rounded-full w-6 h-6 flex justify-center items-center"
+              >
+                +
+              </button>
+            </div>
+
+            {sizeCount.length === 0 ? (
               <input
                 type="text"
                 name="price"
                 required
-                className="outline rounded ml-2 pl-1"
+                autoComplete="off"
+                className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
+                placeholder="4.99"
               />
-            </label>
-          ) : (
-            <div>
-              {sizeCount.map((id, idx) => (
-                <div key={id} className="flex items-center gap-4">
-                  <label>
-                    Size:
-                    <input
-                      type="text"
-                      name="size"
-                      required
-                      autoComplete="off"
-                      className="outline rounded ml-2 pl-1"
-                    />
-                  </label>
-                  <label>
-                    Price:
-                    <input
-                      type="text"
-                      name="price"
-                      required
-                      autoComplete="off"
-                      className="outline rounded ml-2 pl-1"
-                    />
-                  </label>
-                  <button
-                    onClick={() => handleDeleteSize(idx)}
-                    className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
-                  >
-                    <Trash />
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-
-          <div>
-            <button
-              type="button"
-              onClick={handleAddSize}
-              className="bg-gray-200 p-1 w-24 rounded cursor-pointer"
-            >
-              Add Size
-            </button>
+            ) : (
+              <div>
+                {sizeCount.map((id, idx) => (
+                  <div key={id} className="flex items-center gap-4">
+                    <label>
+                      Size:
+                      <input
+                        type="text"
+                        name="size"
+                        required
+                        autoComplete="off"
+                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        placeholder="7''"
+                      />
+                    </label>
+                    <label>
+                      Price:
+                      <input
+                        type="text"
+                        name="price"
+                        required
+                        autoComplete="off"
+                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        placeholder="4.99"
+                      />
+                    </label>
+                    <button
+                      onClick={() => handleDeleteSize(idx)}
+                      className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
+                    >
+                      <Trash />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
+
           <div className="flex gap-4">
             <button
               type="submit"
-              className="bg-(--clr-primary) text-(--clr-background) w-28 p-2 rounded cursor-pointer"
+              className="bg-(--clr-primary) text-(--clr-background) w-full p-2 rounded cursor-pointer text-sm"
             >
               Add
             </button>
             <button
               type="reset"
               onClick={handleBack}
-              className="bg-(--clr-accent) w-28 p-2 rounded cursor-pointer"
+              className="bg-(--clr-accent) w-full p-2 rounded cursor-pointer text-sm"
             >
               Cancel
             </button>
@@ -232,31 +241,29 @@ function AddForm() {
         </div>
       </form>
 
-      {isAddModalOn && (
-        <div className="fixed left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 bg-gray-100 p-10 rounded-xl">
-          <div className="font-semibold">ADD [추가]</div>
-          <div className="flex flex-col gap-1 text-center">
-            <div>Are you sure you want to add this item?</div>
-            <div>이 항목을 추가하시겠습니까?</div>
-          </div>
-          <div className="flex gap-8 mt-2">
-            <button
-              onClick={handlePost}
-              className="w-22 bg-(--clr-primary) text-(--clr-background)  p-1 rounded cursor-pointer"
-            >
-              Add
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsAddModalOn(false)}
-              className="w-22 bg-gray-300 p-1 rounded cursor-pointer"
-            >
-              Cancel
-            </button>
-          </div>
+      <Modal isOpen={isAddModalOn} setIsOpen={setIsAddModalOn}>
+        <div className="font-semibold">ADD [추가]</div>
+        <div className="flex flex-col gap-1 text-center">
+          <div>Are you sure you want to add this item?</div>
+          <div>이 항목을 추가하시겠습니까?</div>
         </div>
-      )}
-    </>
+        <div className="flex gap-8 mt-2">
+          <button
+            onClick={handlePost}
+            className="w-22 bg-(--clr-primary) text-(--clr-background)  p-1 rounded cursor-pointer"
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsAddModalOn(false)}
+            className="w-22 bg-gray-300 p-1 rounded cursor-pointer"
+          >
+            Cancel
+          </button>
+        </div>
+      </Modal>
+    </div>
   );
 }
 
