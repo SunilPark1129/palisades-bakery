@@ -107,7 +107,9 @@ function AddForm() {
 
   return (
     <div className="wrapper p-4">
-      <h1 className="text-center text-xl">New Item (추가할 물건)</h1>
+      <h1 className="text-center text-xl bg-(--clr-primary) text-[#fff]">
+        New Item (추가할 물건)
+      </h1>
       <form onSubmit={handleSubmit} className="max-w-[30rem] m-auto py-8">
         <div className="flex flex-col gap-4">
           <label className="flex flex-col">

@@ -96,44 +96,49 @@ function page({}: Props) {
 
   return (
     <div className="wrapper">
-      <div className="flex flex-col gap-6 p-4">
-        <h1 className="text-center text-xl">Admin Page (관리자 페이지)</h1>
-        <div className="flex gap-4">
-          <div>
+      <div className="flex flex-col gap-2 p-4">
+        <h1 className="text-center text-xl bg-(--clr-primary) text-[#fff]">
+          Admin Page (관리자 페이지)
+        </h1>
+        <div className="flex gap-2 items-center sm:flex-row flex-col-reverse">
+          <label className="flex flex-1 gap-2 w-full items-center text-sm">
+            Product:
+            <select
+              name="category"
+              required
+              className="w-full max-w-full sm:max-w-[10rem] cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              onChange={(e) =>
+                setSelectedProduct(e.target.value as ProductType)
+              }
+            >
+              {productTitles.map((value) => (
+                <option value={value} key={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
+          <div className="flex w-full gap-2 flex-2">
             <input
               type="text"
-              className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
-              placeholder="Search Product"
+              className="px-2 py-1 border-1 border-[#b8b8b8] w-full text-sm"
+              placeholder="Search Item"
               autoComplete="off"
               onChange={handleChange}
             />
-          </div>
-          <Link
-            href={"/admin/add"}
-            className="bg-(--clr-primary) text-sm text-center text-(--clr-background) p-2 px-4 rounded cursor-pointer"
-          >
-            Add New
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="bg-(--clr-accent) text-sm p-2 px-4 rounded cursor-pointer"
-          >
-            Logout
-          </button>
-        </div>
-
-        <div className="flex gap-4">
-          {productTitles.map((item) => (
-            <button
-              key={item}
-              className={`py-1 w-20 rounded cursor-pointer border-1 ${
-                selectedProduct === item ? "border-[#a1a1a1]" : "border-[#fff]"
-              }`}
-              onClick={() => setSelectedProduct(item as ProductType)}
+            <Link
+              href={"/admin/add"}
+              className="bg-(--clr-primary) text-sm text-center text-(--clr-background) py-1 px-2 rounded cursor-pointer min-w-fit"
             >
-              {item}
+              Add New
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="bg-(--clr-accent) text-sm py-1 px-2 rounded cursor-pointer"
+            >
+              Logout
             </button>
-          ))}
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
