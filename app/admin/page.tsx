@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import AddForm from "./add/AddForm";
 import { IProduct } from "@/models/Product";
 import Trash from "../_components/svg/Trash";
@@ -17,6 +17,7 @@ const productTitles = ["cake", "bread", "cookie", "pie"];
 function page({}: Props) {
   const router = useRouter();
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [displayProducts, setDisplayProducts] = useState<IProduct[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
 
@@ -43,6 +44,7 @@ function page({}: Props) {
         credentials: "include",
       });
       setProducts((prev) => prev.filter(({ _id }) => _id !== id));
+      setDisplayProducts((prev) => prev.filter(({ _id }) => _id !== id));
       if (!res.ok) {
         throw new Error("error");
       }
@@ -60,6 +62,7 @@ function page({}: Props) {
         );
         const data = await res.json();
         setProducts(data.data as IProduct[]);
+        setDisplayProducts(data.data as IProduct[]);
       } catch (error) {
         console.log(error);
       }
@@ -67,11 +70,30 @@ function page({}: Props) {
     getProducts();
   }, [selectedProduct]);
 
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.value.trim() === "") {
+      setDisplayProducts(products);
+      return;
+    }
+    const value = e.target.value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`\\b${value}.*\\b`, "i");
+    setDisplayProducts(products.filter((product) => regex.test(product.title)));
+  }
+
   return (
     <div className="wrapper">
       <div className="flex flex-col gap-6 p-4">
-        <h1>Admin Page (관리자 페이지)</h1>
+        <h1 className="text-center text-xl">Admin Page (관리자 페이지)</h1>
         <div className="flex gap-4">
+          <div>
+            <input
+              type="text"
+              className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              placeholder="Search Product"
+              autoComplete="off"
+              onChange={handleChange}
+            />
+          </div>
           <Link
             href={"/admin/add"}
             className="bg-(--clr-primary) text-sm text-center text-(--clr-background) p-2 px-4 rounded cursor-pointer"
@@ -101,7 +123,7 @@ function page({}: Props) {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {products.map((item) => (
+          {displayProducts.map((item) => (
             <div key={item._id} className="flex gap-4">
               <Image
                 src={"/images/custome-cake.png"}
