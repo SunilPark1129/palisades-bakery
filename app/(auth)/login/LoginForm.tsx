@@ -1,8 +1,8 @@
-function LoginForm() {
+function LoginForm({ error }: { error: string }) {
   return (
-    <div className="flex flex-col items-center gap-8 p-2 w-50">
-      <div className="text-3xl font-semibold text-center w-full">Login</div>
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center gap-8">
+      <h1 className="text-3xl font-semibold text-center">Login</h1>
+      <div className="flex flex-col gap-4 w-full">
         <label className="flex flex-col gap-2">
           Username
           <input
@@ -10,7 +10,7 @@ function LoginForm() {
             type="text"
             required
             autoComplete="off"
-            className="border border-[#998bb1] focus:outline-none px-2 py-1 text-sm"
+            className="border border-[#998bb1] px-2 py-1 text-sm"
           />
         </label>
         <label className="flex flex-col gap-2">
@@ -20,7 +20,7 @@ function LoginForm() {
             type="password"
             required
             autoComplete="off"
-            className="border border-[#998bb1] focus:outline-none px-2 py-1 text-sm"
+            className="border border-[#998bb1] px-2 py-1 text-sm"
           />
         </label>
       </div>
@@ -30,6 +30,7 @@ function LoginForm() {
       >
         Login
       </button>
+      <div className="text-[#f70f0f]">{error}</div>
     </div>
   );
 }

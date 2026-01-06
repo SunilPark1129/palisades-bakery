@@ -4,6 +4,7 @@ import LoginForm from "./LoginForm";
 import { useRouter } from "next/navigation";
 
 function page() {
+  const [error, setError] = useState<string>("");
   const router = useRouter();
 
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
@@ -23,19 +24,21 @@ function page() {
       });
 
       if (!res.ok) {
-        throw new Error("uh oh there is an error");
+        const data = await res.json();
+        throw Error(data.error);
       }
 
       router.push("/admin");
     } catch (error: any) {
       console.log(error.message);
+      setError(error.message);
     }
   }
 
   return (
     <div className="wrapper pb-16">
       <form onSubmit={handleLogin} className="flex justify-center p-4 py-8">
-        <LoginForm />
+        <LoginForm error={error} />
       </form>
     </div>
   );

@@ -12,13 +12,19 @@ export async function POST(req: Request) {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    return NextResponse.json(
+      { error: "The username and password are not matching." },
+      { status: 401 }
+    );
   }
 
   const isMatch = await user.comparePassword(password);
 
   if (!isMatch) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    return NextResponse.json(
+      { error: "The username and password are not matching." },
+      { status: 401 }
+    );
   }
 
   const token = await createToken({ userId: user._id.toString() });
