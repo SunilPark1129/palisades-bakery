@@ -11,6 +11,9 @@ import b21 from "../../lib/test/b21.png";
 // import b28 from "../../lib/test/b28.png";
 import b31 from "../../lib/test/b31.png";
 import b39 from "../../lib/test/b39.png";
+import { useEffect, useState } from "react";
+
+import heroImg from "./images/i10.jpg";
 
 type Props = {};
 
@@ -55,24 +58,42 @@ function BestSeller({}: Props) {
 
   return (
     <div className="wrapper">
-      <section className="flex max-[860px]:flex-col items-center p-4 py-8 -my-4">
-        <div className="flex flex-col gap-4 justify-center flex-1">
-          <p className="text-xs uppercase tracking-wider">Best-Seller</p>
-          <h2 className="text-[1.8em] leading-tight font-semibold">
-            Made Fresh, Loved by Many
-          </h2>
-          <p className="text-gray-600">
-            Discover the treats that bring smiles to our customers every day.
-          </p>
+      <section className="flex flex-col gap-4 max-[860px]:flex-col p-4">
+        <div className="flex gap-4">
+          <div className="relative h-[16rem] flex-1 sm:flex hidden">
+            <Image
+              src={heroImg}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt=""
+              className="object-cover rounded-lg saturate-75 contrast-75"
+            />
+          </div>
+          <div className="flex flex-col gap-4 flex-1 w-full sm:justify-end sm:items-end text-left sm:text-right sm:p-4">
+            {/* <p className="uppercase tracking-wider text-[3em] text-[#1e1d26] p-4">
+            Best-Seller
+          </p> */}
+            <h2 className="text-[2em] leading-tight font-semibold">
+              BEST-SELLER
+            </h2>
+            <p className="text-gray-600">
+              Discover the treats that bring smiles to our customers every day.
+            </p>
+          </div>
         </div>
 
-        <div className="relative max-w-[36rem] w-full flex-1 rounded-2xl">
+        <div className="relative w-full flex-1 rounded-2xl -my-2">
           <div className="absolute w-full h-full z-20 pointer-events-none"></div>
           <Swiper
             grabCursor
-            loop
-            slidesPerView={1.8}
-            spaceBetween={12}
+            slidesPerView={4.5}
+            breakpoints={{
+              0: { slidesPerView: 1.2 },
+              480: { slidesPerView: 2.2 },
+              768: { slidesPerView: 3.2 },
+              1024: { slidesPerView: 4.5 },
+            }}
+            spaceBetween={18}
             pagination={{
               clickable: true,
             }}
@@ -88,6 +109,7 @@ function BestSeller({}: Props) {
                     <Image
                       src={item.img}
                       alt={item.title}
+                      priority
                       width={800}
                       height={800}
                       className="absolute w-full h-full object-cover"
@@ -97,7 +119,7 @@ function BestSeller({}: Props) {
                     <h3 className="sm:text-[1em] font-semibold line-clamp-2">
                       {item.title}
                     </h3>
-                    <p className="sm:text-[.9em]">$ {item.price}</p>
+                    {/* <p className="sm:text-[.9em]">$ {item.price}</p> */}
                     <div className="mt-auto"></div>
                     <Link href={"/"} className="text-sm">
                       See Detail

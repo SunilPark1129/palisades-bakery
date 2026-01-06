@@ -13,20 +13,19 @@ import GradientMask from "./_components/ui/GradientMask";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-8 mb-8">
+    <main className="flex flex-col mb-8">
       <Hero />
+      <About />
       <Categories />
+      <BestSeller />
+      <DineIn />
       <div>
         <GradientMask top />
-        <div className="flex flex-col gap-8 bg-(--clr-background2)">
-          <BestSeller />
-        </div>
+        <Block />
         <GradientMask />
       </div>
-      <DineIn />
       <Special />
-      <Block />
-      <About />
+
       <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}

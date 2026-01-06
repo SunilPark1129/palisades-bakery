@@ -8,7 +8,8 @@
   /* #e6ddcc; */
   /* #efefea */
   --clr-background2: #f9f7f3;
-  --clr-background3: #efefea;
+  --clr-background3: #ebebeb;
+  /* --clr-background3: #efefea; */
   /* --clr-background3: #eee8dd; */
   --clr-background4: #f6f5f5;
 
@@ -48,8 +49,8 @@ body {
 }
 
 .swiper-slide {
-  left: 10px;
-  width: 50%;
+  /* left: 10px; */
+  /* width: 50%; */
 }
 
 .swiper-slide {
@@ -59,11 +60,11 @@ body {
 }
 
 .swiper-slide a {
-  display: none;
+  /* display: none; */
 }
 
 .swiper-slide div {
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .swiper-slide-active {
@@ -72,7 +73,7 @@ body {
 }
 
 .swiper-slide-active a {
-  display: block;
+  /* display: block; */
 }
 
 .swiper-shadow {
@@ -80,7 +81,7 @@ body {
 }
 
 .swiper-slide-active div {
-  pointer-events: all;
+  /* pointer-events: all; */
 }
 
 .swiper-slide-active ~ .swiper-slide .swiper-shadow {

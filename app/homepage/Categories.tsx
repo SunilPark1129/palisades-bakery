@@ -7,12 +7,12 @@ import bake from "./images/i13.jpg";
 function Categories() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col w-full p-4 gap-8">
+      <section className="flex flex-col w-full p-4 sm:pb-0 gap-8">
         <h2 className="sr-only">Categories</h2>
-        <div className="flex justify-center w-full items-center">
+        <div className="flex w-full items-center">
           <div className="flex flex-col gap-4 w-fit">
             <p className="text-xs uppercase tracking-wider">Categories</p>
-            <p className="text-[1.8em] leading-tight font-semibold text-gray-600">
+            <p className="text-[2.6em] leading-tight font-semibold text-gray-600">
               What are you Craving Today?
             </p>
             <p className="">
@@ -33,7 +33,7 @@ function Categories() {
                   width={280}
                   height={280}
                   priority
-                  className="aspect-square rounded-full w-full h-full object-cover group-hover:brightness-110 max-[800px]:rounded-md"
+                  className="aspect-square w-full h-full object-cover group-hover:brightness-110 rounded-md"
                 />
                 <div className="text-center text-xs uppercase tracking-wider">
                   {item.title}
