@@ -40,6 +40,8 @@ function page() {
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const [keepPreviewPrice, setKeepPreviewPrice] = useState<boolean>(false);
 
   const [newItem, setNewItem] = useState<any>({});
@@ -47,12 +49,20 @@ function page() {
   useEffect(() => {
     async function getProduct() {
       try {
+        setErrorMessage(null);
         const res = await fetch("http://localhost:3000/api/category/" + id);
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.error);
+        }
         const data = await res.json();
 
         setItem(data.data);
         setSelectedProduct(data.data.product);
-      } catch (error) {}
+      } catch (error: any) {
+        setErrorMessage(error.message);
+        console.error(error.message);
+      }
     }
 
     getProduct();
@@ -85,6 +95,7 @@ function page() {
 
   async function handlePost() {
     try {
+      setErrorMessage(null);
       const res = await fetch("/api/categories", {
         method: "PUT",
         headers: {
@@ -95,14 +106,16 @@ function page() {
       });
 
       if (!res.ok) {
-        throw new Error("error");
+        const data = await res.json();
+        throw new Error(data.error);
       }
+      router.push("/admin");
     } catch (error: any) {
+      setErrorMessage(error.message);
       console.log(error.message);
     }
 
     setIsAddModalOn(false);
-    router.push("/admin");
   }
 
   function handleBack() {
@@ -121,6 +134,10 @@ function page() {
 
   function handleDeleteSize(i: number) {
     setSizeCount((prev) => prev.filter((_, idx) => idx !== i));
+  }
+
+  if (errorMessage) {
+    return <div>{errorMessage}</div>;
   }
 
   if (item === null) {

@@ -21,6 +21,8 @@ function page({}: Props) {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
 
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
   const [itemId, setItemId] = useState<string>("");
 
   async function handleLogout() {
@@ -35,6 +37,7 @@ function page({}: Props) {
 
   async function handleConfirmDelete(id: string) {
     try {
+      setErrorMessage("");
       const res = await fetch("/api/categories", {
         method: "DELETE",
         headers: {
@@ -46,10 +49,12 @@ function page({}: Props) {
       setProducts((prev) => prev.filter(({ _id }) => _id !== id));
       setDisplayProducts((prev) => prev.filter(({ _id }) => _id !== id));
       if (!res.ok) {
-        throw new Error("error");
+        const data = await res.json();
+        throw new Error(data.error);
       }
     } catch (error: any) {
       console.log(error.message);
+      setErrorMessage(error.message);
     }
     setIsDeleteModalOpen(false);
   }
@@ -57,15 +62,21 @@ function page({}: Props) {
   useEffect(() => {
     async function getProducts() {
       try {
+        setErrorMessage("");
         const res = await fetch(`http://localhost:3000/api/categories/`);
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.error);
+        }
         const data = await res.json();
         const resProducts = data.data as IProduct[];
         setProducts(resProducts);
         setDisplayProducts(
           resProducts.filter((item) => item.product === selectedProduct)
         );
-      } catch (error) {
+      } catch (error: any) {
         console.log(error);
+        setErrorMessage(error.message);
       }
     }
     getProducts();
@@ -140,6 +151,8 @@ function page({}: Props) {
             </button>
           </div>
         </div>
+
+        <div className="text-[#f00]">{errorMessage}</div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {displayProducts.map((item) => (

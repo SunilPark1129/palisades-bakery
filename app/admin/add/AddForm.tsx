@@ -37,6 +37,8 @@ function AddForm() {
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
 
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
   const [newItem, setNewItem] = useState<any>({});
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -65,6 +67,7 @@ function AddForm() {
 
   async function handlePost() {
     try {
+      setErrorMessage("");
       const res = await fetch("/api/categories", {
         method: "POST",
         headers: {
@@ -75,21 +78,21 @@ function AddForm() {
       });
 
       if (!res.ok) {
-        throw new Error("error");
+        const data = await res.json();
+        throw new Error(data.error);
       }
+      router.push("/admin");
     } catch (error: any) {
       console.log(error.message);
+      setErrorMessage(error.message);
     }
 
     setIsAddModalOn(false);
-    router.push("/admin");
   }
 
   function handleBack() {
     router.push("/admin");
   }
-
-  function handleCancel(e: any) {}
 
   function handleProductChange(e: ChangeEvent<HTMLSelectElement>) {
     setSelectedProduct(e.target.value as ProductType);
@@ -110,6 +113,7 @@ function AddForm() {
       <h1 className="text-center text-xl bg-(--clr-primary) text-[#fff]">
         New Item (추가 할 물건)
       </h1>
+      <div className="text-[#f00]">{errorMessage}</div>
       <form onSubmit={handleSubmit} className="max-w-[30rem] m-auto py-8">
         <div className="flex flex-col gap-4">
           <label className="flex flex-col">

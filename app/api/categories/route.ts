@@ -14,7 +14,7 @@ export async function GET(req: Request) {
 
     if (products.length === 0) {
       return NextResponse.json(
-        { success: false, error: "cannot find page" },
+        { success: false, error: "Error code: 404. Cannot find data." },
         { status: 404 }
       );
     }
@@ -22,7 +22,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ success: true, data: products });
   } catch (error) {
     return NextResponse.json(
-      { success: false, error: "view request failed" },
+      { success: false, error: "Error code: 500. View request failed." },
       { status: 500 }
     );
   }
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     const decoded = await verifyToken(token);
     if (!decoded) {
       return NextResponse.json(
-        { error: "Unauthorized token." },
+        { error: "Error code: 401. Unauthorized token." },
         { status: 401 }
       );
     }
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     const userExists = await User.findById(decoded.userId);
     if (!userExists) {
       return NextResponse.json(
-        { error: "User no longer exists" },
+        { error: "Error code: 401. User no longer exists." },
         { status: 401 }
       );
     }
@@ -69,7 +69,9 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Bulk Insert Error:", error);
     return NextResponse.json(
-      { error: "error has found while uploading new product." },
+      {
+        error: "Error code: 500. Error has found while uploading new product.",
+      },
       { status: 500 }
     );
   }
@@ -87,7 +89,10 @@ export async function DELETE(req: Request) {
 
     const decoded = await verifyToken(token);
     if (!decoded)
-      return NextResponse.json({ error: "Failed Verify" }, { status: 401 });
+      return NextResponse.json(
+        { error: "Failed to Verify your authrization." },
+        { status: 401 }
+      );
 
     const { id } = await req.json();
 
