@@ -58,7 +58,7 @@ function BestSeller({}: Props) {
 
   return (
     <div className="wrapper">
-      <section className="flex flex-col gap-4 max-[860px]:flex-col p-4">
+      <section className="flex flex-col gap-4 max-[860px]:flex-col p-4 py-8">
         <div className="flex gap-4">
           <div className="relative h-[16rem] flex-1 sm:flex hidden">
             <Image
@@ -101,7 +101,7 @@ function BestSeller({}: Props) {
           >
             {items.map((item, idx) => (
               <SwiperSlide key={idx} className="!h-auto !flex py-4">
-                <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
+                <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-lg transition-shadow overflow-hidden w-full">
                   <div className="relative w-full aspect-4/3 flex-shrink-0">
                     <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-xs uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best

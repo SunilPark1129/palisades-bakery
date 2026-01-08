@@ -16,14 +16,14 @@ export default function Home() {
     <main className="flex flex-col mb-8">
       <Hero />
       <About />
+
       <Categories />
       <BestSeller />
+      <GradientMask top />
+      <Block />
+      <GradientMask />
       <DineIn />
-      <div>
-        <GradientMask top />
-        <Block />
-        <GradientMask />
-      </div>
+
       <Special />
 
       <Social />

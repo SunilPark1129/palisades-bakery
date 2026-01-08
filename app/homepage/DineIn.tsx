@@ -5,7 +5,7 @@ import SectionHeader from "../_components/ui/SectionHeader";
 function DineIn() {
   return (
     <div className="wrapper">
-      <section className="flex p-4 md:py-0 gap-4 max-[600px]:flex-col">
+      <section className="flex p-4 pb-6 gap-4 max-[600px]:flex-col">
         <div className="flex flex-col gap-4 mx-auto flex-1 m-auto w-full min-w-[16rem]">
           <Image
             src={"/images/dinein.png"}
