@@ -130,6 +130,13 @@ function BestSeller({}: Props) {
             ))}
           </Swiper>
         </div>
+        <Image
+          src={"/images/dragleft3.png"}
+          width={85}
+          height={85}
+          alt="drag left image"
+          className="object-contain ml-auto z-10 pointer-events-none select-none animate-pulse"
+        />
       </section>
     </div>
   );
