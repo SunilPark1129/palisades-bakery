@@ -1,5 +1,6 @@
 import Image from "next/image";
 import t1 from "./images/t1.jpg";
+import CheckSVG from "../_components/svg/CheckSVG";
 // import t2 from "./images/t2.jpg";
 // import t3 from "./images/t3.jpg";
 // import t4 from "./images/t4.jpg";
@@ -73,18 +74,21 @@ function page({}: Props) {
         </header>
 
         <div className="flex flex-col gap-4">
-          <section className="flex flex-col gap-4 sm:gap-8 max-w-[60rem] m-auto w-full py-12">
-            <div className="text-center">
-              <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
+          <section className="flex flex-col gap-4 sm:gap-8 m-auto w-full py-12">
+            <div>
+              <h2 className="text-[1.8em] font-bold">Ordering Guidelines</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-4 sm:gap-8">
               {layout.map(({ h3, p }) => (
                 <section
                   key={h3}
                   className="flex flex-col gap-2 list-decimal list-outside"
                 >
                   <div className="flex items-center">
-                    <h3 className="text-[1.2em]">{h3}</h3>
+                    <h3 className="text-[1.2em] flex gap-4 items-center">
+                      <CheckSVG />
+                      {h3}
+                    </h3>
                   </div>
                   <ul className="flex flex-col gap-2 list-disc list-inside px-4">
                     {p.map((item, idx) => (
@@ -98,12 +102,12 @@ function page({}: Props) {
             </div>
           </section>
 
-          <section className="flex sm:flex-row flex-col gap-4 max-w-[60rem] m-auto w-full py-4 py-16">
+          <section className="flex flex-col gap-4 py-16">
             <div className="flex flex-col gap-2">
               <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
               <p>We'll help create the perfect bread for your celebration.</p>
             </div>
-            <div className="flex flex-col gap-4 sm:m-auto">
+            <div className="flex flex-col gap-4">
               <div className="flex w-full flex-col gap-4 justify-center">
                 <div>Call or Visit Us Now</div>
                 <div>(201) 347-6696</div>

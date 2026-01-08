@@ -18,6 +18,7 @@ import round from "./images/round.jpg";
 import round2 from "./images/round2.jpg";
 import tier from "./images/tier.jpg";
 import BulletPoint from "../_components/svg/BulletPoint";
+import CheckSVG from "../_components/svg/CheckSVG";
 // import tier2 from "./images/tier2.webp";
 
 const layout = [
@@ -78,18 +79,21 @@ function page() {
 
       <div className="wrapper p-4">
         <div className="flex flex-col gap-4">
-          <section className="flex flex-col gap-4 sm:gap-8 max-w-[60rem] m-auto w-full py-12">
-            <div className="text-center">
-              <h2 className="text-[1.5em] font-bold">Ordering Guidelines</h2>
+          <section className="flex flex-col gap-4 sm:gap-8 m-auto w-full py-12">
+            <div>
+              <h2 className="text-[1.8em] font-bold">Ordering Guidelines</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
+            <div className="grid gap-4 sm:gap-8">
               {layout.map(({ h3, p }) => (
                 <section
                   key={h3}
                   className="flex flex-col gap-2 list-decimal list-outside"
                 >
                   <div className="flex items-center">
-                    <h3 className="text-[1.2em]">{h3}</h3>
+                    <h3 className="text-[1.2em] flex gap-4 items-center">
+                      <CheckSVG />
+                      {h3}
+                    </h3>
                   </div>
                   <ul className="flex flex-col gap-2 list-disc list-inside sm:px-4">
                     {p.map((item, idx) => (
@@ -103,148 +107,134 @@ function page() {
             </div>
           </section>
           <section className="flex flex-col gap-4 sm:gap-8 py-4 rounded-2xl">
-            <div className="text-center">
-              <h2 className="text-[1.5em] font-bold">Pick Your Styles</h2>
-              <p>Choose your desired custom cake</p>
+            <div className="">
+              <h2 className="text-[1.8em] font-bold">Pick Your Styles</h2>
+              {/* <p>Choose your desired custom cake</p> */}
             </div>
             <div className="flex flex-col gap-4 sm:gap-16">
-              <section className="flex flex-col gap-4 items-center">
-                <h3 className="font-semibold text-lg">1. Pick your size</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="flex flex-col gap-2">
-                    <div className="relative flex w-full h-full rounded-full overflow-hidden">
-                      <svg
-                        className="w-full h-full"
-                        width="100"
-                        height="100"
-                        viewBox="0 0 100 100"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width="100" height="100" fill="white" />
-                        <rect
-                          x="18.5"
-                          y="29.5"
-                          width="63"
-                          height="41"
-                          fill="white"
-                          stroke="black"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      up to full sheet
-                    </div>
+              <section className="flex flex-col gap-4">
+                <h3 className="font-semibold text-lg flex gap-4 items-center">
+                  <CheckSVG /> Pick your size
+                </h3>
+                <div className="grid grid-cols-3 gap-4 sm:gap-8 max-md:m-auto mr-auto">
+                  <div className="flex flex-col gap-2 items-center">
+                    <svg
+                      className="w-full h-full max-w-32 rounded-full"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="100" height="100" fill="white" />
+                      <rect
+                        x="18.5"
+                        y="29.5"
+                        width="63"
+                        height="41"
+                        fill="white"
+                        stroke="black"
+                      />
+                    </svg>
+                    <div className="text-center text-sm">up to full sheet</div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative flex w-full h-full rounded-full overflow-hidden">
-                      <svg
-                        className="w-full h-full"
-                        width="100"
-                        height="100"
-                        viewBox="0 0 100 100"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width="100" height="100" fill="white" />
-                        <rect
-                          x="18.5"
-                          y="18.5"
-                          width="63"
-                          height="63"
-                          rx="31.5"
-                          fill="white"
-                          stroke="black"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      up to 10" round
-                    </div>
+                  <div className="flex flex-col gap-2 items-center">
+                    <svg
+                      className="w-full h-full max-w-32 rounded-full"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="100" height="100" fill="white" />
+                      <rect
+                        x="18.5"
+                        y="18.5"
+                        width="63"
+                        height="63"
+                        rx="31.5"
+                        fill="white"
+                        stroke="black"
+                      />
+                    </svg>
+                    <div className="text-center text-sm">up to 10" round</div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative flex w-full h-full rounded-full overflow-hidden">
-                      <svg
-                        className="w-full h-full"
-                        width="100"
-                        height="100"
-                        viewBox="0 0 100 100"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width="100" height="100" fill="white" />
-                        <path
-                          d="M81.5 50.5V72C81.5 76.1421 78.1421 79.5 74 79.5H26C21.8579 79.5 18.5 76.1421 18.5 72V50.5H81.5Z"
-                          fill="white"
-                          stroke="black"
-                        />
-                        <rect
-                          x="18.5"
-                          y="38.5"
-                          width="63"
-                          height="23"
-                          rx="11.5"
-                          fill="white"
-                          stroke="black"
-                        />
-                        <path
-                          d="M73.5 27.5V46C73.5 50.1421 70.1421 53.5 66 53.5H34C29.8579 53.5 26.5 50.1421 26.5 46V27.5H73.5Z"
-                          fill="white"
-                          stroke="black"
-                        />
-                        <rect
-                          x="26.5"
-                          y="17.5"
-                          width="47"
-                          height="23"
-                          rx="11.5"
-                          fill="white"
-                          stroke="black"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      up to 2 tiers
-                    </div>
+                  <div className="flex flex-col gap-2 items-center">
+                    <svg
+                      className="w-full h-full max-w-32 rounded-full"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="100" height="100" fill="white" />
+                      <path
+                        d="M81.5 50.5V72C81.5 76.1421 78.1421 79.5 74 79.5H26C21.8579 79.5 18.5 76.1421 18.5 72V50.5H81.5Z"
+                        fill="white"
+                        stroke="black"
+                      />
+                      <rect
+                        x="18.5"
+                        y="38.5"
+                        width="63"
+                        height="23"
+                        rx="11.5"
+                        fill="white"
+                        stroke="black"
+                      />
+                      <path
+                        d="M73.5 27.5V46C73.5 50.1421 70.1421 53.5 66 53.5H34C29.8579 53.5 26.5 50.1421 26.5 46V27.5H73.5Z"
+                        fill="white"
+                        stroke="black"
+                      />
+                      <rect
+                        x="26.5"
+                        y="17.5"
+                        width="47"
+                        height="23"
+                        rx="11.5"
+                        fill="white"
+                        stroke="black"
+                      />
+                    </svg>
+                    <div className="text-center text-sm">up to 2 tiers</div>
                   </div>
                 </div>
               </section>
-              <section className="flex flex-col gap-4 items-center">
-                <h3 className="font-semibold text-lg">2. Pick your flavor</h3>
-                <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2">
-                  <div className="relative">
-                    <Image
-                      src={
-                        "https://images.unsplash.com/photo-1594282241894-4da286138f44?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
-                      alt="strawberry"
-                      width={150}
-                      height={150}
-                      className="object-cover rounded-full w-32 aspect-square"
-                    />
-                  </div>
-                  <div className="relative">
-                    <Image
-                      src={
-                        "https://images.unsplash.com/photo-1633782330753-a346e5303840?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
-                      width={150}
-                      height={150}
-                      alt="chocolate"
-                      className="object-cover rounded-full w-32 aspect-square"
-                    />
-                  </div>
-                  <div className="relative">
-                    <Image
-                      src={
-                        "https://images.pexels.com/photos/4023132/pexels-photo-4023132.jpeg"
-                      }
-                      width={150}
-                      height={150}
-                      alt="mango"
-                      className="object-cover rounded-full w-32 aspect-square"
-                    />
-                  </div>
+              <section className="flex flex-col gap-4">
+                <h3 className="font-semibold text-lg flex gap-4 items-center">
+                  <CheckSVG /> Pick your flavor
+                </h3>
+                <div className="grid grid-cols-4 max-md:m-auto max-md:grid-cols-2 gap-4 sm:gap-8 mr-auto">
+                  <Image
+                    src={
+                      "https://images.unsplash.com/photo-1594282241894-4da286138f44?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    alt="strawberry"
+                    width={150}
+                    height={150}
+                    className="object-cover rounded-full w-32 aspect-square m-auto"
+                  />
+                  <Image
+                    src={
+                      "https://images.unsplash.com/photo-1633782330753-a346e5303840?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    width={150}
+                    height={150}
+                    alt="chocolate"
+                    className="object-cover rounded-full w-32 aspect-square m-auto"
+                  />
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/4023132/pexels-photo-4023132.jpeg"
+                    }
+                    width={150}
+                    height={150}
+                    alt="mango"
+                    className="object-cover rounded-full w-32 aspect-square m-auto"
+                  />
                   <div className="relative">
                     <svg
                       width="150"
@@ -271,92 +261,80 @@ function page() {
                     </svg>
                   </div>
                 </div>
-                <div className="text-[#f47f7f] text-sm">
+                <div className="text-[#ff0000] text-sm pt-4">
                   *We make custom cakes in many different flavors. If you're
                   looking for a particular flavor, please call us to see if it's
                   available.
                 </div>
               </section>
-              <div className="flex flex-col gap-4 items-center">
-                <h2 className="font-semibold text-lg">
-                  3. Pick your customization
-                </h2>
-                <div className="grid grid-cols-4 gap-4 flex-2 max-md:grid-cols-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="relative">
-                      <Image
-                        src={
-                          "https://images.unsplash.com/photo-1552084117-56a987666449?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        }
-                        width={150}
-                        height={150}
-                        alt="colors"
-                        className="object-cover rounded-full w-32 aspect-square"
-                      />
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      color
-                    </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-semibold text-lg flex gap-4 items-center">
+                  <CheckSVG /> Pick your customization
+                </h3>
+                <div className="grid grid-cols-4 flex-2 max-md:grid-cols-2 gap-4 sm:gap-8 max-md:m-auto mr-auto">
+                  <div className="flex flex-col gap-2 items-center">
+                    <Image
+                      src={
+                        "https://images.unsplash.com/photo-1552084117-56a987666449?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      }
+                      width={150}
+                      height={150}
+                      alt="colors"
+                      className="object-cover rounded-full w-32 aspect-square"
+                    />
+                    <div className="text-sm">color</div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative">
-                      <Image
-                        src={
-                          "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        }
-                        width={150}
-                        height={150}
-                        alt="writing on the cake"
-                        className="object-cover rounded-full w-32 aspect-square"
-                      />
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      writing
-                    </div>
+                  <div className="flex flex-col gap-2 items-center">
+                    <Image
+                      src={
+                        "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      }
+                      width={150}
+                      height={150}
+                      alt="writing on the cake"
+                      className="object-cover rounded-full w-32 aspect-square"
+                    />
+                    <div className="text-sm">writing</div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative">
-                      <Image
-                        src={
-                          "https://images.unsplash.com/photo-1600566209579-dd9691ed2ff0?q=80&w=814&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        }
-                        width={150}
-                        height={150}
-                        alt="birthday candles"
-                        className="object-cover rounded-full w-32 aspect-square"
-                      />
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      decoration
-                    </div>
+                  <div className="flex flex-col gap-2 items-center">
+                    <Image
+                      src={
+                        "https://images.unsplash.com/photo-1600566209579-dd9691ed2ff0?q=80&w=814&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      }
+                      width={150}
+                      height={150}
+                      alt="birthday candles"
+                      className="object-cover rounded-full w-32 aspect-square"
+                    />
+                    <div className="text-sm">decoration</div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative">
-                      <Image
-                        src={
-                          "https://images.unsplash.com/photo-1684741892149-e741a75f8f71?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        }
-                        width={150}
-                        height={150}
-                        alt="photos displayed on the wall"
-                        className="object-cover rounded-full w-32 aspect-square"
-                      />
-                    </div>
-                    <div className="text-center text-sm text-(--clr-logo)">
-                      printed photos
-                    </div>
+                  <div className="flex flex-col gap-2 items-center">
+                    <Image
+                      src={
+                        "https://images.unsplash.com/photo-1684741892149-e741a75f8f71?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      }
+                      width={150}
+                      height={150}
+                      alt="photos displayed on the wall"
+                      className="object-cover rounded-full w-32 aspect-square"
+                    />
+                    <div className="text-sm">printed photos</div>
                   </div>
+                </div>
+                <div className="text-[#ff0000] text-sm pt-4">
+                  *You can call to ask about the cake style or decoration you
+                  want.
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="flex sm:flex-row flex-col gap-4 max-w-[60rem] m-auto w-full py-4 py-16">
+          <section className="flex flex-col gap-4 py-16">
             <div className="flex flex-col gap-2">
-              <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
+              <h2 className="text-[1.8em] font-bold">Place Your Order Today</h2>
               <p>We'll help create the perfect cake for your celebration.</p>
             </div>
-            <div className="flex flex-col gap-4 sm:m-auto">
+            <div className="flex flex-col gap-4">
               <div className="flex w-full flex-col gap-4 justify-center">
                 <div>Call or Visit Us Now</div>
                 <div>(201) 347-6696</div>
