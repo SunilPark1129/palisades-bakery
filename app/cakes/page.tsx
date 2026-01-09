@@ -11,11 +11,12 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  const data: IProduct[] = await fetch(
-    `http://localhost:3000/api/categories/cake`
-  )
-    .then((res) => res.json())
-    .then((data) => data.data);
+  const res = await fetch(`http://localhost:3000/api/categories/cake`);
+  if (!res.ok) {
+    const data = await res.json();
+    throw new Error(data.error);
+  }
+  const { data }: { data: IProduct[] } = await res.json();
 
   return (
     <ProductList category="cakes" data={data} asideCategories={cakeCategory} />
