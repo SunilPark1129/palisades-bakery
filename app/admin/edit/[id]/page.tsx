@@ -39,6 +39,7 @@ function page() {
   const [isAddModalOn, setIsAddModalOn] = useState<boolean>(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -49,6 +50,7 @@ function page() {
   useEffect(() => {
     async function getProduct() {
       try {
+        setLoading(true);
         setErrorMessage(null);
         const res = await fetch("http://localhost:3000/api/category/" + id);
         if (!res.ok) {
@@ -62,6 +64,8 @@ function page() {
       } catch (error: any) {
         setErrorMessage(error.message);
         console.error(error.message);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -143,6 +147,13 @@ function page() {
   if (item === null) {
     return <div>Loading...</div>;
   }
+
+  if (loading)
+    return (
+      <div className="min-h-[30rem] w-full flex justify-center items-center">
+        Loading...
+      </div>
+    );
 
   return (
     <div className="wrapper p-4">

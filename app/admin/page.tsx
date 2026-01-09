@@ -19,6 +19,7 @@ function page({}: Props) {
   const [displayProducts, setDisplayProducts] = useState<IProduct[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const [itemId, setItemId] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -60,6 +61,7 @@ function page({}: Props) {
   useEffect(() => {
     async function getProducts() {
       try {
+        setLoading(true);
         setErrorMessage("");
         const res = await fetch(`http://localhost:3000/api/categories/`);
         if (!res.ok) {
@@ -75,6 +77,8 @@ function page({}: Props) {
       } catch (error: any) {
         console.log(error);
         setErrorMessage(error.message);
+      } finally {
+        setLoading(false);
       }
     }
     getProducts();
@@ -151,6 +155,7 @@ function page({}: Props) {
         </div>
 
         <div className="text-[#f00]">{errorMessage}</div>
+        <div>{loading && "Loading..."}</div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {displayProducts.map((item) => (
