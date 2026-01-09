@@ -2,7 +2,6 @@ import {
   brunch,
   pastaAndSteak,
   pizza,
-  pizzaAndSalad,
   salad,
   sandwich,
   side,
@@ -21,7 +20,6 @@ const dineMenu = [
   { menuTitle: "Brunch", data: brunch },
   { menuTitle: "Pasta & Steak", data: pastaAndSteak },
   { menuTitle: "Sandwich", data: sandwich },
-  // { menuTitle: "Pizza & Salad", data: pizzaAndSalad },
   { menuTitle: "Salad", data: salad },
   { menuTitle: "Pizza", data: pizza },
   { menuTitle: "Soup", data: soup },
@@ -39,7 +37,6 @@ function page({}: Props) {
               <div key={item.id} className="flex w-full justify-between gap-4">
                 <div className="flex flex-col">
                   <h3 className="w-full text-[1.1rem]">{item.title}</h3>
-                  {/* <div className="w-full mx-auto border-b border-dashed border-gray-300"></div> */}
                   <div>{item.koTitle}</div>
                   <p className="text-[.9rem] italic">{item.description}</p>
                 </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { EntryType } from "@/lib/mockData";
 import { IProduct } from "@/models/Product";
 import { useState } from "react";
 

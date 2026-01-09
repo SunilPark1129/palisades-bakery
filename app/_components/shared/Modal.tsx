@@ -26,7 +26,7 @@ function Modal({ isOpen, setIsOpen, children }: Props) {
 
   return (
     <div
-      className="flex justify-center items-center fixed left-0 top-0 w-full h-full bg-[#000000ab] z-[9999] cursor-pointer"
+      className="flex justify-center items-center fixed left-0 top-0 w-full h-full bg-[#000000ab] z-9999 cursor-pointer"
       onClick={handleCancel}
     >
       <div

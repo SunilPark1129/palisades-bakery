@@ -67,7 +67,7 @@ function Navbar() {
     <>
       <header
         id="navbar"
-        className="fixed left-0 top-0 w-full z-100 bg-(--clr-background) h-[4rem] border-[#e8e8e8] border-b-1"
+        className="fixed left-0 top-0 w-full z-100 bg-(--clr-background) h-16 border-[#e8e8e8] border-b"
       >
         <div className="wrapper">
           <nav className="flex h-(--navbar-height) gap-4 items-center px-4">
@@ -91,7 +91,7 @@ function Navbar() {
                     Bakery <ArrowDown isMenuOn={isMenuOn} />
                   </button>
                   {isMenuOn && (
-                    <div className="bg-(--clr-background) absolute left-0 top-[calc(100%_-_1px)] w-[14rem] border-b-1 border-l-1 border-r-1 border-[#e8e8e8] rounded-b-lg overflow-hidden">
+                    <div className="bg-(--clr-background) absolute left-0 top-[calc(100%-1px)] w-56 border-b border-l border-r border-[#e8e8e8] rounded-b-lg overflow-hidden">
                       <ul className="flex flex-col w-full">
                         {cafeLinks.map((links) => {
                           return (

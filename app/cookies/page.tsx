@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { EntryType } from "@/lib/mockData";
 import ProductList from "../_components/shared/ProductList";
 import { cookieCategory } from "@/lib/categoryData";
 import { IProduct } from "@/models/Product";

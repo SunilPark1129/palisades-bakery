@@ -115,7 +115,7 @@ function page({}: Props) {
             <select
               name="category"
               required
-              className="w-full max-w-full sm:max-w-[10rem] cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="w-full max-w-full sm:max-w-40 cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
               onChange={(e) =>
                 setSelectedProduct(e.target.value as ProductType)
               }
@@ -130,7 +130,7 @@ function page({}: Props) {
           <div className="flex w-full gap-2 flex-2">
             <input
               type="text"
-              className="px-2 py-1 border-1 border-[#b8b8b8] w-full text-sm"
+              className="px-2 py-1 border border-[#b8b8b8] w-full text-sm"
               placeholder="Search Item"
               autoComplete="off"
               onChange={handleChange}

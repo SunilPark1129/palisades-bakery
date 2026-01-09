@@ -51,7 +51,7 @@ const layout = [
 function page() {
   return (
     <main className="flex flex-col">
-      <header className="flex max-h-[40rem] max-[550px]:flex-col max-[550px]:max-h-full">
+      <header className="flex max-h-160 max-[550px]:flex-col max-[550px]:max-h-full">
         <div className="relative felx-1 w-full">
           <Image
             src={f9}

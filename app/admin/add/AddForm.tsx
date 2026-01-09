@@ -14,7 +14,6 @@ import Modal from "@/app/_components/shared/Modal";
 
 type AddFormProperty = {};
 
-// const product = ["cakes", "breads", "cookies", "pies"];
 const category = {
   cake: ["Whole Cakes", "Slice Cakes", "Roll Cakes", "Mini Cakes", "Cupcakes"],
   bread: [
@@ -110,11 +109,11 @@ function AddForm() {
 
   return (
     <div className="wrapper p-4">
-      <h1 className="text-center text-xl bg-(--clr-primary) text-[#fff]">
+      <h1 className="text-center text-xl bg-(--clr-primary) text-white">
         New Item (추가 할 물건)
       </h1>
       <div className="text-[#f00]">{errorMessage}</div>
-      <form onSubmit={handleSubmit} className="max-w-[30rem] m-auto py-8">
+      <form onSubmit={handleSubmit} className="max-w-120 m-auto py-8">
         <div className="flex flex-col gap-4">
           <label className="flex flex-col">
             Product:
@@ -122,7 +121,7 @@ function AddForm() {
               name="product"
               required
               onChange={handleProductChange}
-              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="cursor-pointer px-2 py-1 border border-[#b8b8b8] w-full"
             >
               {Object.keys(category).map((key) => (
                 <option value={key} key={key}>
@@ -137,7 +136,7 @@ function AddForm() {
             <select
               name="category"
               required
-              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="cursor-pointer px-2 py-1 border border-[#b8b8b8] w-full"
             >
               {category[selectedProduct].map((value) => (
                 <option value={value} key={value}>
@@ -154,7 +153,7 @@ function AddForm() {
               name="title"
               required
               autoComplete="off"
-              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              className="px-2 py-1 border border-[#b8b8b8]"
               placeholder="Strawberry Cake"
             />
           </label>
@@ -165,7 +164,7 @@ function AddForm() {
               name="description"
               required
               rows={3}
-              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              className="px-2 py-1 border border-[#b8b8b8]"
               placeholder="Fluffy cake layered with sweet strawberry cream..."
             ></textarea>
           </label>
@@ -188,7 +187,7 @@ function AddForm() {
                 name="price"
                 required
                 autoComplete="off"
-                className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
+                className="px-2 py-1 border border-[#b8b8b8] w-full"
                 placeholder="4.99"
               />
             ) : (
@@ -202,7 +201,7 @@ function AddForm() {
                         name="size"
                         required
                         autoComplete="off"
-                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        className="px-2 py-1 border border-[#b8b8b8]"
                         placeholder="7''"
                       />
                     </label>
@@ -213,7 +212,7 @@ function AddForm() {
                         name="price"
                         required
                         autoComplete="off"
-                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        className="px-2 py-1 border border-[#b8b8b8]"
                         placeholder="4.99"
                       />
                     </label>
