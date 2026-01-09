@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <main className="flex flex-col mb-8">
       <Hero />
-      <About />
       <Categories />
+      <About />
       <BestSeller />
       <GradientMask top />
       <Block />

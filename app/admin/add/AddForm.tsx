@@ -11,6 +11,7 @@ import React, {
 import Trash from "../../_components/svg/Trash";
 import { useRouter } from "next/navigation";
 import Modal from "@/app/_components/shared/Modal";
+import UploadImagekit from "@/app/_components/imagekit/UploadImagekit";
 
 type AddFormProperty = {};
 
@@ -227,6 +228,8 @@ function AddForm() {
               </div>
             )}
           </div>
+
+          <UploadImagekit />
 
           <div className="flex gap-4">
             <button
