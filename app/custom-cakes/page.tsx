@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 // import f11 from "../homepage/images/f11.png";
 import f9 from "../homepage/images/f9.jpg";
 import strawberry from "./images/strawberry.jpg";
