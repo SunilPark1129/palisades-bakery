@@ -5,21 +5,15 @@
 
 :root {
   --clr-background: #fcfdfe;
-  /* #e6ddcc; */
-  /* #efefea */
   --clr-background2: #f9f7f3;
   --clr-background3: #ebebeb;
-  /* --clr-background3: #efefea; */
-  /* --clr-background3: #eee8dd; */
   --clr-background4: #f6f5f5;
 
   --clr-primary: #574d6c;
   --clr-logo: #7a6d92;
-
-  /* other suggestions below */
   --clr-primary-text: #574d6c;
-  --clr-heading: #2e273e; /* a slightly darker tone if needed */
-  --clr-accent: #e8eaf9; /* lighter complementary shade */
+  --clr-heading: #2e273e;
+  --clr-accent: #e8eaf9;
 
   --navbar-height: 64px;
 }
@@ -49,22 +43,9 @@ body {
 }
 
 .swiper-slide {
-  /* left: 10px; */
-  /* width: 50%; */
-}
-
-.swiper-slide {
   opacity: 1;
   transition: 0.3s;
   user-select: none;
-}
-
-.swiper-slide a {
-  /* display: none; */
-}
-
-.swiper-slide div {
-  /* pointer-events: none; */
 }
 
 .swiper-slide-active {
@@ -72,19 +53,8 @@ body {
   filter: brightness(100%);
 }
 
-.swiper-slide-active a {
-  /* display: block; */
-}
-
 .swiper-shadow {
   box-shadow: 0px 4px 18px -8px #0000007c;
-}
-
-.swiper-slide-active div {
-  /* pointer-events: all; */
-}
-
-.swiper-slide-active ~ .swiper-slide .swiper-shadow {
 }
 
 @media (max-width: 720px) {

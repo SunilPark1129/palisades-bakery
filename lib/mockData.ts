@@ -126,6 +126,7 @@ import p1 from "./test/p1.png";
 import { StaticImageData } from "next/image";
 import { IProduct } from "@/models/Product";
 
+// delete EntryType?
 export type EntryType = {
   id: string;
   title: string;

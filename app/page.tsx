@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "./homepage/Hero";
 import About from "./homepage/About";
 import GroupOrder from "./homepage/GroupOrder";
@@ -16,16 +15,13 @@ export default function Home() {
     <main className="flex flex-col mb-8">
       <Hero />
       <About />
-
       <Categories />
       <BestSeller />
       <GradientMask top />
       <Block />
       <GradientMask />
       <DineIn />
-
       <Special />
-
       <Social />
       {/* <CustomOrder />
       <GroupOrder /> */}

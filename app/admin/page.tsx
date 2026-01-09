@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import AddForm from "./add/AddForm";
+import { ChangeEvent, useEffect, useState } from "react";
 import { IProduct } from "@/models/Product";
 import Trash from "../_components/svg/Trash";
 import Edit from "../_components/svg/Edit";
@@ -21,9 +20,8 @@ function page({}: Props) {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
 
-  const [errorMessage, setErrorMessage] = useState<string>("");
-
   const [itemId, setItemId] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
