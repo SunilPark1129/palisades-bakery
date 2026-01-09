@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  Dispatch,
-  MouseEvent,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+import { Dispatch, MouseEvent, ReactNode, SetStateAction } from "react";
 
 type Props = {
   isOpen: boolean;

@@ -1,4 +1,3 @@
-import React from "react";
 import CustomOrder from "./CustomOrder";
 import GroupOrder from "./GroupOrder";
 import Image from "next/image";

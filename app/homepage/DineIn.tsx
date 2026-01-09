@@ -18,7 +18,7 @@ function DineIn() {
           <h2 className="text-[1.8em] leading-tight font-semibold">
             High Quality Dine-In Meals
           </h2>
-          <p className="max-w-[30rem] max-[600px]:max-w-full">
+          <p className="max-w-120 max-[600px]:max-w-full">
             Enjoy more than just cakes and breads—our café also offers a variety
             of freshly prepared meals and beverages. From warm dishes to light
             bites, everything is available for dine-in. Visit our Menu page for
@@ -28,7 +28,7 @@ function DineIn() {
             View Menu
           </button>
         </div>
-        <div className="relative w-full sm:max-w-[30rem] m-auto aspect-square max-[600px]:aspect-[16/9]">
+        <div className="relative w-full sm:max-w-120 m-auto aspect-square max-[600px]:aspect-[16/9]">
           <Image
             src={
               "https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

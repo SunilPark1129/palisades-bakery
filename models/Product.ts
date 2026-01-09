@@ -5,7 +5,7 @@ export interface IProduct {
   _id?: string;
   title: string;
   description: string;
-  size?: string[];
+  size: string[];
   price: string[];
   product: "bread" | "cake" | "cookie" | "pie";
   category: string;

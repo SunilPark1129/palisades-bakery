@@ -157,7 +157,7 @@ function page() {
               name="product"
               required
               onChange={handleProductChange}
-              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="cursor-pointer px-2 py-1 border border-[#b8b8b8] w-full"
               defaultValue={item.product}
             >
               {Object.keys(category).map((key) => (
@@ -173,7 +173,7 @@ function page() {
             <select
               name="category"
               required
-              className="cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="cursor-pointer px-2 py-1 border border-[#b8b8b8] w-full"
               defaultValue={item.category}
             >
               {category[selectedProduct].map((value) => (
@@ -191,7 +191,7 @@ function page() {
               name="title"
               required
               autoComplete="off"
-              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              className="px-2 py-1 border border-[#b8b8b8]"
               placeholder="Strawberry Cake"
               defaultValue={item.title}
             />
@@ -203,7 +203,7 @@ function page() {
               name="description"
               required
               rows={3}
-              className="px-2 py-1 border-1 border-[#b8b8b8]"
+              className="px-2 py-1 border border-[#b8b8b8]"
               placeholder="Fluffy cake layered with sweet strawberry cream..."
               defaultValue={item.description}
             ></textarea>
@@ -234,7 +234,7 @@ function page() {
                 name="price"
                 required
                 autoComplete="off"
-                className="px-2 py-1 border-1 border-[#b8b8b8] w-full"
+                className="px-2 py-1 border border-[#b8b8b8] w-full"
                 placeholder="4.99"
                 readOnly={keepPreviewPrice}
               />
@@ -249,7 +249,7 @@ function page() {
                         name="size"
                         required
                         autoComplete="off"
-                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        className="px-2 py-1 border border-[#b8b8b8]"
                         placeholder="7''"
                         readOnly={keepPreviewPrice}
                       />
@@ -261,7 +261,7 @@ function page() {
                         name="price"
                         required
                         autoComplete="off"
-                        className="px-2 py-1 border-1 border-[#b8b8b8]"
+                        className="px-2 py-1 border border-[#b8b8b8]"
                         placeholder="4.99"
                         readOnly={keepPreviewPrice}
                       />

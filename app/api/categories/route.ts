@@ -1,7 +1,6 @@
 import { verifyToken } from "@/lib/auth";
-import { mockProduct } from "@/lib/mockProduct";
 import connectDB from "@/lib/mongodb";
-import { IProduct, Product } from "@/models/Product";
+import { Product } from "@/models/Product";
 import { User } from "@/models/User";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";

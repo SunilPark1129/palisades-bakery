@@ -11,7 +11,6 @@ import b21 from "../../lib/test/b21.png";
 // import b28 from "../../lib/test/b28.png";
 import b31 from "../../lib/test/b31.png";
 import b39 from "../../lib/test/b39.png";
-import { useEffect, useState } from "react";
 
 import heroImg from "./images/i10.jpg";
 
@@ -97,12 +96,12 @@ function BestSeller({}: Props) {
             pagination={{
               clickable: true,
             }}
-            className="!flex !items-stretch"
+            className="flex! items-stretch!"
           >
             {items.map((item, idx) => (
-              <SwiperSlide key={idx} className="!h-auto !flex py-4">
+              <SwiperSlide key={idx} className="h-auto! flex! py-4">
                 <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-lg transition-shadow overflow-hidden w-full">
-                  <div className="relative w-full aspect-4/3 flex-shrink-0">
+                  <div className="relative w-full aspect-4/3 shrink-0">
                     <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-xs uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best
                     </div>
