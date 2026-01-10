@@ -1,6 +1,5 @@
 import CustomOrder from "./CustomOrder";
 import GroupOrder from "./GroupOrder";
-import Image from "next/image";
 
 type Props = {};
 
@@ -14,14 +13,6 @@ function Special({}: Props) {
             <h2 className="text-[1.8em] leading-tight font-semibold">
               Make Custom Order
             </h2>
-            {/* <div className="w-fit rounded-full">
-              <Image
-                src="/images/custome-cake2.png"
-                alt="cake"
-                width={64}
-                height={64}
-              />
-            </div> */}
           </div>
           <p>See what services we can offer to make your special day.</p>
         </header>

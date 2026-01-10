@@ -7,7 +7,7 @@ import Image from "next/image";
 function CustomOrder() {
   return (
     <section className="flex w-full max-[720px]:flex-col gap-4">
-      <div className="relative w-full max-w-xl min-h-64 max-[720px]:max-w-full aspect-16/9 rounded overflow-hidden">
+      <div className="relative w-full max-w-xl min-h-64 max-[720px]:max-w-full aspect-video rounded overflow-hidden">
         <Image
           src={customCakeImg}
           alt="Custom Cake Ordering"

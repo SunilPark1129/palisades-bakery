@@ -5,9 +5,9 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-(--clr-primary) text-(--clr-background)">
+    <footer className="mt-16 bg-(--clr-primary) text-(--clr-background)">
       <div className="wrapper">
-        <div className="flex flex-col gap-16 items-center px-4 py-16">
+        <div className="flex flex-col gap-14 items-center px-4 py-16">
           <div className="flex flex-col gap-2 items-center text-center">
             <Image
               src={logo}
@@ -65,7 +65,7 @@ function Footer() {
             </div>
           </div>
           <div className="text-center">
-            &copy; 2025 Palisades Park Bakery, Palisades Park, NJ. All Rights
+            &copy; 2026 Palisades Park Bakery, Palisades Park, NJ. All Rights
             Reserved.
           </div>
         </div>

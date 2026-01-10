@@ -79,8 +79,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             </div>
           </div>
           {isMenuOn && (
-            // <div className="absolute right-0 top-0 z-99 translate-y-7 flex flex-col w-[14rem] h-full bg-(--clr-background)">
-            <div className="flex flex-col w-full border-t-1 border-[#dedede] min-[900px]:hidden">
+            <div className="flex flex-col w-full border-t border-[#dedede] min-[900px]:hidden">
               {asideCategories.map((item) => (
                 <button
                   onClick={() => getFilteredItems(item)}

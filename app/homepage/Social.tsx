@@ -36,7 +36,6 @@ function Social({}: Props) {
             <p>See our fresh bakes, daily specials, and behind-the-scenes.</p>
 
             <div className="flex flex-col items-center w-full gap-2 m-auto">
-              {/* Instagram */}
               <Link
                 href="https://instagram.com/yourbakery"
                 target="_blank"
@@ -49,7 +48,6 @@ function Social({}: Props) {
                 </div>
               </Link>
 
-              {/* Facebook */}
               <Link
                 href="https://facebook.com/yourbakery"
                 target="_blank"
@@ -62,7 +60,6 @@ function Social({}: Props) {
                 </div>
               </Link>
 
-              {/* Twitter/X */}
               <Link
                 href="https://twitter.com/yourbakery"
                 target="_blank"

@@ -59,7 +59,7 @@ function BestSeller({}: Props) {
     <div className="wrapper">
       <section className="flex flex-col gap-4 max-[860px]:flex-col p-4 py-8">
         <div className="flex gap-4">
-          <div className="relative h-[16rem] flex-1 sm:flex hidden">
+          <div className="relative h-64 flex-1 sm:flex hidden">
             <Image
               src={heroImg}
               fill
@@ -69,9 +69,6 @@ function BestSeller({}: Props) {
             />
           </div>
           <div className="flex flex-col gap-4 flex-1 w-full sm:justify-end sm:items-end text-left sm:text-right sm:p-4">
-            {/* <p className="uppercase tracking-wider text-[3em] text-[#1e1d26] p-4">
-            Best-Seller
-          </p> */}
             <h2 className="text-[2em] leading-tight font-semibold">
               BEST-SELLER
             </h2>
@@ -118,7 +115,6 @@ function BestSeller({}: Props) {
                     <h3 className="sm:text-[1em] font-semibold line-clamp-2">
                       {item.title}
                     </h3>
-                    {/* <p className="sm:text-[.9em]">$ {item.price}</p> */}
                     <div className="mt-auto"></div>
                     <Link href={"/"} className="text-sm">
                       See Detail

@@ -29,7 +29,7 @@ const dineMenu = [
 function page({}: Props) {
   return (
     <main className="wrapper p-4">
-      <div className="grid grid-cols-2 gap-12 mb-12 max-sm:flex max-sm:flex-col">
+      <div className="grid grid-cols-2 gap-12 max-sm:flex max-sm:flex-col">
         {dineMenu.map((menu) => (
           <section key={menu.menuTitle} className="flex flex-col gap-6">
             <h2 className="text-[1.4rem] font-bold">{menu.menuTitle}</h2>

@@ -1,12 +1,10 @@
-import React from "react";
-
 type Props = { top?: boolean };
 
 function GradientMask({ top }: Props) {
   return (
     <div
       className={`relative w-full overflow-hidden ${
-        top ? "-mt-0 md:-mt-8" : "-mb-0 md:-mb-8"
+        top ? "mt-0 md:-mt-8" : "mb-0 md:-mb-8"
       }`}
     >
       <div className={`absolute w-full h-full ${top ? "" : "rotate-180"}`}>
@@ -15,7 +13,6 @@ function GradientMask({ top }: Props) {
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
           className="fill-(--clr-background3)"
-          // className="fill-[#c4bfcc]"
         >
           <path
             d="

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import dineInImg from "./images/bakery-food-img.jpg";
-import SectionHeader from "../_components/ui/SectionHeader";
 
 function DineIn() {
   return (
@@ -12,7 +11,7 @@ function DineIn() {
             width={100}
             height={64}
             alt="food character"
-            className="w-[100px] h-[64px] object-contain"
+            className="w-25 h-16 object-contain"
           />
           <p className="text-xs uppercase tracking-wider">Dine-In</p>
           <h2 className="text-[1.8em] leading-tight font-semibold">
@@ -28,7 +27,7 @@ function DineIn() {
             View Menu
           </button>
         </div>
-        <div className="relative w-full sm:max-w-120 m-auto aspect-square max-[600px]:aspect-[16/9]">
+        <div className="relative w-full sm:max-w-120 m-auto aspect-square max-[600px]:aspect-video">
           <Image
             src={
               "https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

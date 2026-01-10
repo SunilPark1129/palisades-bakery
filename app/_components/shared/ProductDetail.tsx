@@ -32,9 +32,8 @@ export default async function ProductDetail({
         </div>
 
         <div className="flex gap-8 max-md:flex-col max-md:gap-4">
-          <div className="relative flex-1 w-full aspect-square mb-auto max-w-[30rem] max-md:max-w-full">
+          <div className="relative flex-1 w-full aspect-square mb-auto max-w-120 max-md:max-w-full">
             <Image
-              // src={data.url}
               src={"/images/custome-cake.png"}
               alt={data.title}
               fill
@@ -43,7 +42,7 @@ export default async function ProductDetail({
             />
           </div>
 
-          <div className="flex flex-col flex-1 gap-8 max-w-[36rem] max-md:px-4 max-md:max-w-full">
+          <div className="flex flex-col flex-1 gap-8 max-w-xl max-md:px-4 max-md:max-w-full">
             <div className="flex flex-col gap-4 max-md:gap-2">
               <h1 className="text-2xl max-md:text-xl">{data.title}</h1>
               <PriceDetail data={data} />

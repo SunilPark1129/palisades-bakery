@@ -36,7 +36,7 @@ function page() {
   }
 
   return (
-    <div className="wrapper pb-16">
+    <div className="wrapper">
       <form onSubmit={handleLogin} className="flex justify-center p-4 py-8">
         <LoginForm error={error} />
       </form>

@@ -119,7 +119,7 @@ function page({}: Props) {
             <select
               name="category"
               required
-              className="w-full max-w-full sm:max-w-40 cursor-pointer px-2 py-1 border-1 border-[#b8b8b8] w-full"
+              className="w-full max-w-full sm:max-w-40 cursor-pointer px-2 py-1 border border-[#b8b8b8]"
               onChange={(e) =>
                 setSelectedProduct(e.target.value as ProductType)
               }

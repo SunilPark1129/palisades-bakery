@@ -4,7 +4,7 @@ import heroImg from "./images/i8.jpg";
 function Hero() {
   return (
     <section className="flex flex-col">
-      <div className="w-full aspect-16/9 max-h-[600px] min-h-[340px] relative">
+      <div className="w-full aspect-video max-h-150 min-h-85 relative">
         <Image
           // className="object-cover saturate-50 contrast-35"
           className="object-cover"

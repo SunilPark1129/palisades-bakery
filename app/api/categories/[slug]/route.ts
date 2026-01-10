@@ -1,7 +1,7 @@
 import { bread, cakes, cookies, pies, EntryType } from "@/lib/mockData";
 import { mockProduct } from "@/lib/mockProduct";
 import connectDB from "@/lib/mongodb";
-import { IProduct, Product } from "@/models/Product";
+import { Product } from "@/models/Product";
 import { NextResponse } from "next/server";
 
 export async function GET(

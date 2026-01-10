@@ -15,9 +15,7 @@ function Categories() {
             <p className="text-[2.6em] leading-tight font-semibold text-gray-600">
               What are you Craving Today?
             </p>
-            <p className="">
-              Find your favorite treat among our handcrafted selection.
-            </p>
+            <p>Find your favorite treat among our handcrafted selection.</p>
           </div>
         </div>
         <ul className="grid grid-cols-5 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">

@@ -1,13 +1,8 @@
-import SectionHeader from "../_components/ui/SectionHeader";
-import Image from "next/image";
-import f6 from "./images/f6.jpg";
-
 function About() {
   return (
     <section className="p-4">
       <div className="wrapper max-w-240!">
         <header className="flex mx-auto gap-16 w-full justify-between max-[720]:flex-col p-8">
-          {/* <p className="text-xs uppercase tracking-wider">About-Us</p> */}
           <h2 className="sr-only">About Us</h2>
           <p className="max-w-3xl m-auto">
             Palisade Park Bakery is located at 325 Broad Ave in Palisadess Park,
