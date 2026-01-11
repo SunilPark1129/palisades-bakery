@@ -22,6 +22,7 @@ function page({}: Props) {
   const [loading, setLoading] = useState<boolean>(true);
 
   const [itemId, setItemId] = useState<string>("");
+  const [fileId, setFileId] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   async function handleLogout() {
@@ -29,9 +30,10 @@ function page({}: Props) {
     router.push("/login");
   }
 
-  function handleDeleteItem(id: string) {
+  function handleDeleteItem(id: string, fileId: string) {
     setIsDeleteModalOpen(true);
     setItemId(id);
+    setFileId(fileId);
   }
 
   async function handleConfirmDelete(id: string) {
@@ -47,6 +49,17 @@ function page({}: Props) {
       });
       setProducts((prev) => prev.filter(({ _id }) => _id !== id));
       setDisplayProducts((prev) => prev.filter(({ _id }) => _id !== id));
+
+      console.log(fileId);
+
+      await fetch("/api/imagekit-auth", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileId: fileId,
+        }),
+      });
+
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.error);
@@ -177,7 +190,7 @@ function page({}: Props) {
                     <Edit /> EDIT
                   </Link>
                   <button
-                    onClick={() => handleDeleteItem(item._id!)}
+                    onClick={() => handleDeleteItem(item._id!, item.fileId)}
                     className="cursor-pointer rounded-full flex text-sm items-center gap-2 w-fit"
                   >
                     <Trash /> DELETE
