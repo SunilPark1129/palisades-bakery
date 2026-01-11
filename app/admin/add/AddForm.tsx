@@ -11,7 +11,10 @@ import React, {
 import Trash from "../../_components/svg/Trash";
 import { useRouter } from "next/navigation";
 import Modal from "@/app/_components/shared/Modal";
-import UploadImagekit from "@/app/_components/imagekit/UploadImagekit";
+import UploadImagekit, {
+  UploadImagekitHandle,
+  UploadResult,
+} from "@/app/_components/imagekit/UploadImagekit";
 
 type AddFormProperty = {};
 
@@ -36,10 +39,14 @@ function AddForm() {
   const [isAddModalOn, setIsAddModalOn] = useState<boolean>(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
+  const [title, setTitle] = useState<string>("");
 
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const [newItem, setNewItem] = useState<any>({});
+
+  const imagekitRef = useRef<UploadImagekitHandle>(null);
+  const [uploadedImage, setUploadedImage] = useState<UploadResult>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -58,7 +65,6 @@ function AddForm() {
       description,
       price,
       size,
-      url: "/images/custome-cake.png",
     };
 
     setNewItem(payload);
@@ -68,12 +74,22 @@ function AddForm() {
   async function handlePost() {
     try {
       setErrorMessage("");
+      const imageUrl = await imagekitRef.current?.uploadImage();
+      setUploadedImage(imageUrl as UploadResult);
+      const payload = {
+        ...newItem,
+        url: imageUrl?.url,
+        fileId: imageUrl?.fileId,
+      };
+
+      console.log(payload);
+
       const res = await fetch("/api/categories", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ payload: newItem }),
+        body: JSON.stringify({ payload }),
         credentials: "include",
       });
 
@@ -85,9 +101,19 @@ function AddForm() {
     } catch (error: any) {
       console.log(error.message);
       setErrorMessage(error.message);
-    }
 
-    setIsAddModalOn(false);
+      if (uploadedImage?.fileId) {
+        await fetch("/api/imagekit-auth", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fileId: uploadedImage.fileId,
+          }),
+        });
+      }
+    } finally {
+      setIsAddModalOn(false);
+    }
   }
 
   function handleBack() {
@@ -151,6 +177,7 @@ function AddForm() {
             Title:
             <input
               type="text"
+              onChange={(e) => setTitle(e.target.value)}
               name="title"
               required
               autoComplete="off"
@@ -229,7 +256,7 @@ function AddForm() {
             )}
           </div>
 
-          <UploadImagekit />
+          <UploadImagekit ref={imagekitRef} title={title} />
 
           <div className="flex gap-4">
             <button

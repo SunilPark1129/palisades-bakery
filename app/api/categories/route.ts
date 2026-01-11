@@ -59,7 +59,10 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { payload } = body;
 
+    console.log("payload:", payload);
+
     const createdProduct = await Product.create(payload);
+    console.log(createdProduct);
 
     return NextResponse.json({
       success: true,
@@ -133,8 +136,17 @@ export async function PUT(req: Request) {
       return NextResponse.json({ error: "Failed Verify" }, { status: 401 });
 
     const { payload } = await req.json();
-    const { _id, product, category, title, description, price, size, url } =
-      payload;
+    const {
+      _id,
+      product,
+      category,
+      title,
+      description,
+      price,
+      size,
+      url,
+      fileId,
+    } = payload;
 
     if (!payload?._id) {
       return NextResponse.json(
@@ -147,7 +159,7 @@ export async function PUT(req: Request) {
 
     const updatedProduct = await Product.findByIdAndUpdate(
       _id,
-      { _id, product, category, title, description, price, size, url },
+      { _id, product, category, title, description, price, size, url, fileId },
       { new: true, runValidators: true }
     );
 

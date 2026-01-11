@@ -29,9 +29,13 @@ const category = {
 };
 
 function page() {
-  const { id } = useParams();
+  const params = useParams();
 
-  // const { id } = await params;
+  if (!params || typeof params.id !== "string") {
+    return null; // or 에러 처리
+  }
+
+  const id = params.id;
 
   const router = useRouter();
   const [item, setItem] = useState<IProduct | null>(null);
@@ -58,6 +62,7 @@ function page() {
           throw new Error(data.error);
         }
         const data = await res.json();
+        console.log(data);
 
         setItem(data.data);
         setSelectedProduct(data.data.product);

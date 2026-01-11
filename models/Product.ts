@@ -10,6 +10,7 @@ export interface IProduct {
   product: "bread" | "cake" | "cookie" | "pie";
   category: string;
   url: string | StaticImageData;
+  fileId: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -20,6 +21,7 @@ const ProductSchema = new Schema<IProduct>(
       type: String,
       required: true,
       trim: true,
+      unique: true,
     },
     description: {
       type: String,
@@ -43,6 +45,10 @@ const ProductSchema = new Schema<IProduct>(
       required: true,
     },
     url: {
+      type: String,
+      required: true,
+    },
+    fileId: {
       type: String,
       required: true,
     },
