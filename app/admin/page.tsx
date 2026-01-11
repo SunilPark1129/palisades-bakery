@@ -50,8 +50,6 @@ function page({}: Props) {
       setProducts((prev) => prev.filter(({ _id }) => _id !== id));
       setDisplayProducts((prev) => prev.filter(({ _id }) => _id !== id));
 
-      console.log(fileId);
-
       await fetch("/api/imagekit-auth", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },

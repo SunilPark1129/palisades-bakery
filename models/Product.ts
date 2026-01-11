@@ -9,7 +9,7 @@ export interface IProduct {
   price: string[];
   product: "bread" | "cake" | "cookie" | "pie";
   category: string;
-  url: string | StaticImageData;
+  url: string;
   fileId: string;
   createdAt?: Date;
   updatedAt?: Date;

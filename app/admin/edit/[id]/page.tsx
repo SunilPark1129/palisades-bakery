@@ -1,4 +1,8 @@
 "use client";
+import UploadImagekit, {
+  UploadImagekitHandle,
+  UploadResult,
+} from "@/app/_components/imagekit/UploadImagekit";
 import Modal from "@/app/_components/shared/Modal";
 import Trash from "@/app/_components/svg/Trash";
 import { IProduct } from "@/models/Product";
@@ -47,9 +51,13 @@ function page() {
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const [keepPreviewPrice, setKeepPreviewPrice] = useState<boolean>(false);
+  const [keepPreviewPrice, setKeepPreviewPrice] = useState<boolean>(true);
+  const [keepPreviewImage, setKeepPreviewImage] = useState<boolean>(true);
 
   const [newItem, setNewItem] = useState<any>({});
+
+  const imagekitRef = useRef<UploadImagekitHandle>(null);
+  const [uploadedImage, setUploadedImage] = useState<UploadResult>(null);
 
   useEffect(() => {
     async function getProduct() {
@@ -95,7 +103,6 @@ function page() {
       description,
       price,
       size,
-      url: "/images/custome-cake.png",
     };
 
     setNewItem(payload);
@@ -105,12 +112,20 @@ function page() {
   async function handlePost() {
     try {
       setErrorMessage(null);
+      const imageUrl = await imagekitRef.current?.uploadImage();
+      setUploadedImage(imageUrl as UploadResult);
+      const payload = {
+        ...newItem,
+        url: keepPreviewImage ? item?.url : imageUrl?.url,
+        fileId: keepPreviewImage ? item?.fileId : imageUrl?.fileId,
+      };
+
       const res = await fetch("/api/categories", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ payload: newItem }),
+        body: JSON.stringify({ payload }),
         credentials: "include",
       });
 
@@ -118,10 +133,29 @@ function page() {
         const data = await res.json();
         throw new Error(data.error);
       }
+
+      if (!keepPreviewImage) {
+        await fetch("/api/imagekit-auth", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fileId: item?.fileId,
+          }),
+        });
+      }
       router.push("/admin");
     } catch (error: any) {
       setErrorMessage(error.message);
       console.log(error.message);
+      if (uploadedImage?.fileId) {
+        await fetch("/api/imagekit-auth", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fileId: uploadedImage.fileId,
+          }),
+        });
+      }
     }
 
     setIsAddModalOn(false);
@@ -225,11 +259,50 @@ function page() {
             ></textarea>
           </label>
 
+          <label className="flex items-center gap-2">
+            Keep the preview price (전에 사용한 가격 사용하기)
+            <input
+              type="checkbox"
+              defaultChecked={true}
+              onChange={(e) => setKeepPreviewPrice(e.target.checked)}
+            />
+          </label>
+
+          <div
+            className={`${
+              keepPreviewPrice
+                ? "border border-[#f11d1d] bg-[#fff]"
+                : "border border-[transparent] bg-[#e4e4e4] opacity-75 text-[#595959]"
+            }`}
+          >
+            <div>Past Price:</div>
+            {item.size.length === 0 ? (
+              <div className="w-full">
+                <div>{item.price[0]}</div>
+              </div>
+            ) : (
+              <div>
+                {item.size.map((id, idx) => (
+                  <div key={id} className="flex items-center gap-4">
+                    <div className="w-full">
+                      Size:
+                      <div>{item.size[idx]}</div>
+                    </div>
+                    <div className="w-full">
+                      Price:
+                      <div>{item.price[idx]}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
           <div
             className={`flex flex-col gap-2 ${
               !keepPreviewPrice
                 ? "bg-[#fff]"
-                : "bg-[#e4e4e4] text-[#595959] p-2"
+                : "bg-[#d8d8d8] opacity-75 text-[#595959]"
             }`}
           >
             <div className="flex justify-between">
@@ -284,7 +357,7 @@ function page() {
                     </label>
                     <button
                       onClick={() => handleDeleteSize(idx)}
-                      className="cursor-pointer p-1 rounded-full hover:bg-(--clr-accent)"
+                      className="cursor-pointer p-1 rounded-full"
                       disabled={keepPreviewPrice}
                     >
                       <Trash />
@@ -294,41 +367,20 @@ function page() {
               </div>
             )}
           </div>
-          <div
-            className={`${
-              keepPreviewPrice ? "bg-[#fff]" : "bg-[#e4e4e4] text-[#595959] p-2"
-            }`}
-          >
-            <label className="flex items-center gap-2">
-              Keep the preview price (전에 사용한 가격 사용하기)
-              <input
-                type="checkbox"
-                onChange={(e) => setKeepPreviewPrice(e.target.checked)}
-              />
-            </label>
 
-            <div>Past Price:</div>
-            {item.size.length === 0 ? (
-              <div className="w-full">
-                <div>{item.price[0]}</div>
-              </div>
-            ) : (
-              <div>
-                {item.size.map((id, idx) => (
-                  <div key={id} className="flex items-center gap-4">
-                    <div className="w-full">
-                      Size:
-                      <div>{item.size[idx]}</div>
-                    </div>
-                    <div className="w-full">
-                      Price:
-                      <div>{item.price[idx]}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          <label className="flex gap-2 items-center">
+            Keep last image (전에 사용한 이미지 사용하기)
+            <input
+              type="checkbox"
+              defaultChecked={true}
+              onChange={(e) => setKeepPreviewImage(e.target.checked)}
+            />
+          </label>
+          <UploadImagekit
+            keepPreviewImage={keepPreviewImage}
+            previewImage={item.url}
+            ref={imagekitRef}
+          />
 
           <div className="flex gap-4">
             <button

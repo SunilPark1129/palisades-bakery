@@ -82,8 +82,6 @@ function AddForm() {
         fileId: imageUrl?.fileId,
       };
 
-      console.log(payload);
-
       const res = await fetch("/api/categories", {
         method: "POST",
         headers: {
@@ -256,7 +254,11 @@ function AddForm() {
             )}
           </div>
 
-          <UploadImagekit ref={imagekitRef} title={title} />
+          <UploadImagekit
+            ref={imagekitRef}
+            keepPreviewImage={false}
+            previewImage={null}
+          />
 
           <div className="flex gap-4">
             <button
