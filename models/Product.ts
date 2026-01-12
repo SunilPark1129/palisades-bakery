@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-import { StaticImageData } from "next/image";
 
 export interface IProduct {
   _id?: string;

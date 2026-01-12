@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ArrowDown from "../svg/ArrowDown";
 import { IProduct } from "@/models/Product";
 
@@ -94,6 +94,8 @@ function ProductList({ category, data, asideCategories }: Props) {
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: IProduct) => {
+              console.log(entry);
+
               return (
                 <section key={entry._id} className="group">
                   <Link
