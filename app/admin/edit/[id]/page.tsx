@@ -325,6 +325,7 @@ function page() {
                 autoComplete="off"
                 className="px-2 py-1 border border-[#b8b8b8] w-full"
                 placeholder="4.99"
+                pattern="^\d+(\.\d{1,2})?$"
                 readOnly={keepPreviewPrice}
               />
             ) : (
@@ -352,6 +353,7 @@ function page() {
                         autoComplete="off"
                         className="px-2 py-1 border border-[#b8b8b8]"
                         placeholder="4.99"
+                        pattern="^\d+(\.\d{1,2})?$"
                         readOnly={keepPreviewPrice}
                       />
                     </label>
