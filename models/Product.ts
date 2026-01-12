@@ -11,6 +11,7 @@ export interface IProduct {
   category: string;
   url: string;
   fileId: string;
+  order: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -51,6 +52,10 @@ const ProductSchema = new Schema<IProduct>(
     fileId: {
       type: String,
       required: true,
+    },
+    order: {
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true }

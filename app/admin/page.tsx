@@ -172,11 +172,16 @@ function page({}: Props) {
           {displayProducts.map((item) => (
             <div key={item._id} className="flex gap-4">
               <Image
-                src={"/images/custome-cake.png"}
+                src={
+                  item.url.includes(".")
+                    ? `${item.url}?tr=n-card_thumb`
+                    : "/images/custome-cake.png"
+                }
                 alt={item.title}
                 width={100}
                 height={100}
                 loading="lazy"
+                unoptimized
               />
               <div className="flex flex-col gap-2">
                 <div>{item.title}</div>

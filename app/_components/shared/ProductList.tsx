@@ -94,7 +94,6 @@ function ProductList({ category, data, asideCategories }: Props) {
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
             {list.map((entry: IProduct) => {
-              console.log(entry.url);
               return (
                 <section key={entry._id} className="group">
                   <Link
@@ -118,8 +117,8 @@ function ProductList({ category, data, asideCategories }: Props) {
                     </div>
                   </Link>
                   <div className="p-2">
-                    <h2 className="text-[12px]">{entry.title}</h2>
-                    <p className="text-[12px]">
+                    <h2 className="text-[1em]">{entry.title}</h2>
+                    <p className="text-[1em]">
                       $ {Number(entry.price[0]).toFixed(2)}
                     </p>
                   </div>

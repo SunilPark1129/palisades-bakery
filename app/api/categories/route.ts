@@ -9,7 +9,7 @@ export async function GET(req: Request) {
   try {
     await connectDB();
 
-    const products = await Product.find({});
+    const products = await Product.find({}).sort({ order: 1 });
 
     if (products.length === 0) {
       return NextResponse.json(
@@ -59,10 +59,23 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { payload } = body;
 
-    console.log("payload:", payload);
+    const newOrder =
+      typeof payload.order === "number" && payload.order >= 0
+        ? payload.order
+        : 0;
 
-    const createdProduct = await Product.create(payload);
-    console.log(createdProduct);
+    await Product.updateMany(
+      {
+        category: payload.category,
+        order: { $gte: newOrder },
+      },
+      { $inc: { order: 1 } }
+    );
+
+    const createdProduct = await Product.create({
+      ...payload,
+      order: newOrder,
+    });
 
     return NextResponse.json({
       success: true,
@@ -100,18 +113,27 @@ export async function DELETE(req: Request) {
 
     await connectDB();
 
-    const deletedProduct = await Product.findByIdAndDelete(id);
-
-    if (!deletedProduct) {
+    const target = await Product.findById(id);
+    if (!target) {
       return NextResponse.json(
         { error: "Could not find the product id" },
         { status: 404 }
       );
     }
 
+    await Product.findByIdAndDelete(id);
+
+    await Product.updateMany(
+      {
+        category: target.category,
+        order: { $gt: target.order },
+      },
+      { $inc: { order: -1 } }
+    );
+
     return NextResponse.json({
       success: true,
-      data: deletedProduct,
+      data: target,
     });
   } catch (error) {
     return NextResponse.json(
@@ -146,6 +168,7 @@ export async function PUT(req: Request) {
       size,
       url,
       fileId,
+      order: newOrder,
     } = payload;
 
     if (!payload?._id) {
@@ -157,9 +180,51 @@ export async function PUT(req: Request) {
 
     await connectDB();
 
+    const target = await Product.findById(_id);
+    if (!target) {
+      return NextResponse.json(
+        { error: "Could not find the product id" },
+        { status: 404 }
+      );
+    }
+
+    const oldOrder = target.order;
+
+    if (typeof newOrder === "number" && newOrder !== oldOrder) {
+      if (newOrder < oldOrder) {
+        await Product.updateMany(
+          {
+            category: target.category,
+            order: { $gte: newOrder, $lt: oldOrder },
+          },
+          { $inc: { order: 1 } }
+        );
+      }
+
+      if (newOrder > oldOrder) {
+        await Product.updateMany(
+          {
+            category: target.category,
+            order: { $gt: oldOrder, $lte: newOrder },
+          },
+          { $inc: { order: -1 } }
+        );
+      }
+    }
+
     const updatedProduct = await Product.findByIdAndUpdate(
       _id,
-      { _id, product, category, title, description, price, size, url, fileId },
+      {
+        product,
+        category,
+        title,
+        description,
+        price,
+        size,
+        url,
+        fileId,
+        order: typeof newOrder === "number" ? newOrder : target.order,
+      },
       { new: true, runValidators: true }
     );
 

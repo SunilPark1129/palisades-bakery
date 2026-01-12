@@ -94,6 +94,7 @@ function page() {
     const description = formData.get("description");
     const price = keepPreviewPrice ? item?.price : formData.getAll("price");
     const size = keepPreviewPrice ? item?.size : formData.getAll("size");
+    const order = formData.getAll("order");
 
     const payload = {
       _id: item?._id,
@@ -103,6 +104,7 @@ function page() {
       description,
       price,
       size,
+      order: Number(order),
     };
 
     setNewItem(payload);
@@ -369,6 +371,20 @@ function page() {
               </div>
             )}
           </div>
+
+          <label className="flex flex-col gap-2">
+            Order:
+            <input
+              type="text"
+              name="order"
+              required
+              autoComplete="off"
+              placeholder="0"
+              defaultValue={item.order}
+              pattern="[0-9]+"
+              className="px-2 py-1 border w-full border-[#b8b8b8]"
+            />
+          </label>
 
           <label className="flex gap-2 items-center">
             Keep last image (전에 사용한 이미지 사용하기)

@@ -57,6 +57,7 @@ function AddForm() {
     const description = formData.get("description");
     const price = formData.getAll("price");
     const size = formData.getAll("size");
+    const order = formData.getAll("order");
 
     const payload = {
       product,
@@ -65,6 +66,7 @@ function AddForm() {
       description,
       price,
       size,
+      order: Number(order),
     };
 
     setNewItem(payload);
@@ -255,6 +257,20 @@ function AddForm() {
               </div>
             )}
           </div>
+
+          <label className="flex flex-col gap-2">
+            Order:
+            <input
+              type="text"
+              name="order"
+              required
+              autoComplete="off"
+              placeholder="0"
+              defaultValue={0}
+              pattern="[0-9]+"
+              className="px-2 py-1 border w-full border-[#b8b8b8]"
+            />
+          </label>
 
           <UploadImagekit
             ref={imagekitRef}

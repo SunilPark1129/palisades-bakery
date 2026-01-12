@@ -1,6 +1,7 @@
 "use client";
 
 import { upload } from "@imagekit/next";
+import Image from "next/image";
 import {
   useRef,
   useState,
@@ -78,12 +79,13 @@ const UploadImagekit = forwardRef<
       <Activity mode={keepPreviewImage ? "visible" : "hidden"}>
         <div>
           <p>Preview:</p>
-          <img
-            src={previewImage!}
+          <Image
+            src={`${previewImage}?tr=n-card_thumb`}
             alt="Preview"
             width={200}
             height={200}
             className="w-[200px] h-[200px] rounded border border-[#f11d1d] object-cover"
+            unoptimized
           />
         </div>
       </Activity>
