@@ -16,7 +16,7 @@ function PriceDetail({ data }: Props) {
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-xl  max-md:text-lg">$ {price}</p>
+      <p className="text-xl  max-md:text-lg">$ {Number(price).toFixed(2)}</p>
       {data.size.length !== 0 && (
         <div className="flex flex-col gap-2">
           <div>Size:</div>

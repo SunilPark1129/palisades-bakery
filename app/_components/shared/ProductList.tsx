@@ -119,7 +119,9 @@ function ProductList({ category, data, asideCategories }: Props) {
                   </Link>
                   <div className="p-2">
                     <h2 className="text-[12px]">{entry.title}</h2>
-                    <p className="text-[12px]">$ {entry.price[0]}</p>
+                    <p className="text-[12px]">
+                      $ {Number(entry.price[0]).toFixed(2)}
+                    </p>
                   </div>
                 </section>
               );
