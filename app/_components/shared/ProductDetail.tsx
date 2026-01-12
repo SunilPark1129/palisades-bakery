@@ -10,9 +10,7 @@ export default async function ProductDetail({
   id: string;
   category: string;
 }) {
-  const data: IProduct = await fetch(
-    `http://localhost:3000/api/categories/${category}/${id}`
-  )
+  const data: IProduct = await fetch(`http://localhost:3000/api/category/${id}`)
     .then((res) => res.json())
     .then((data) => data.data);
 

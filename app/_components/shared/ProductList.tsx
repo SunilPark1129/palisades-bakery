@@ -31,8 +31,6 @@ function ProductList({ category, data, asideCategories }: Props) {
     setIsMenuOn((prev) => !prev);
   }
 
-  useEffect(() => {}, []);
-
   return (
     <div className="wrapper">
       <main className="flex p-4 pt-0 max-sm:p-2 gap-4">
@@ -111,7 +109,6 @@ function ProductList({ category, data, asideCategories }: Props) {
                             ? `${entry.url}?tr=n-card_thumb`
                             : "/images/custome-cake.png"
                         }
-                        // src={"/images/custome-cake.png"}
                         alt={entry.title}
                         width={500}
                         height={500}
