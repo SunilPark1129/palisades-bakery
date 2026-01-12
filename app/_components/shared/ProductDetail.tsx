@@ -13,7 +13,6 @@ export default async function ProductDetail({
   const data: IProduct = await fetch(`http://localhost:3000/api/category/${id}`)
     .then((res) => res.json())
     .then((data) => data.data);
-  // .then(() => new Promise((res) => setTimeout(res, 5000000)));
 
   return (
     <div className="wrapper">

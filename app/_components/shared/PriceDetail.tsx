@@ -15,30 +15,28 @@ function PriceDetail({ data }: Props) {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <p className="text-xl  max-md:text-lg">$ {price}</p>
-      <div className="flex flex-col gap-2">
-        {data.size && (
-          <>
-            <div>Size:</div>
-            <div className="flex gap-4">
-              {data.size.map((item, idx) => {
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => getProductPrice(idx)}
-                    className={`border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer ${
-                      selectedSize === idx ? "bg-(--clr-accent)" : "bg-none"
-                    }`}
-                  >
-                    {item}
-                  </button>
-                );
-              })}
-            </div>
-          </>
-        )}
-      </div>
+      {data.size.length !== 0 && (
+        <div className="flex flex-col gap-2">
+          <div>Size:</div>
+          <div className="flex gap-4">
+            {data.size.map((item, idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => getProductPrice(idx)}
+                  className={`border border-gray-300 px-4 py-[1px] w-fit rounded-md cursor-pointer ${
+                    selectedSize === idx ? "bg-(--clr-accent)" : "bg-none"
+                  }`}
+                >
+                  {item}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
