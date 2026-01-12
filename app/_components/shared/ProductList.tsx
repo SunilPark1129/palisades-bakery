@@ -95,29 +95,38 @@ function ProductList({ category, data, asideCategories }: Props) {
           )}
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
-            {list.map((entry: IProduct) => (
-              <section key={entry._id} className="group">
-                <Link
-                  href={`http://localhost:3000/${category}/${entry._id}`}
-                  className=""
-                >
-                  <div className="relative w-full aspect-square overflow-hidden">
-                    <Image
-                      // src={entry.url}
-                      src={"/images/custome-cake.png"}
-                      alt={entry.title}
-                      fill
-                      sizes="(max-width: 600px) 100vw, 600px"
-                      className="object-cover group-hover:scale-110 transition-transform"
-                    />
+            {list.map((entry: IProduct) => {
+              console.log(entry.url);
+              return (
+                <section key={entry._id} className="group">
+                  <Link
+                    href={`http://localhost:3000/${category}/${entry._id}`}
+                    className=""
+                  >
+                    <div className="relative w-full aspect-square overflow-hidden">
+                      {/* Work on this later when we have all url */}
+                      <Image
+                        src={
+                          entry.url.includes(".")
+                            ? `${entry.url}?tr=n-card_thumb`
+                            : "/images/custome-cake.png"
+                        }
+                        // src={"/images/custome-cake.png"}
+                        alt={entry.title}
+                        width={500}
+                        height={500}
+                        unoptimized
+                        className="object-cover group-hover:scale-110 transition-transform"
+                      />
+                    </div>
+                  </Link>
+                  <div className="p-2">
+                    <h2 className="text-[12px]">{entry.title}</h2>
+                    <p className="text-[12px]">$ {entry.price[0]}</p>
                   </div>
-                </Link>
-                <div className="p-2">
-                  <h2 className="text-[12px]">{entry.title}</h2>
-                  <p className="text-[12px]">$ {entry.price[0]}</p>
-                </div>
-              </section>
-            ))}
+                </section>
+              );
+            })}
           </div>
         </div>
       </main>
