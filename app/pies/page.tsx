@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 async function page({}: Props) {
-  const res = await fetch(`http://localhost:3000/api/categories/bread`);
+  const res = await fetch(`http://localhost:3000/api/categories/pie`);
   if (!res.ok) {
     const data = await res.json();
     throw new Error(data.error);
