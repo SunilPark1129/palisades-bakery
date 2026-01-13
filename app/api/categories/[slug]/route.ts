@@ -13,7 +13,7 @@ export async function GET(
   try {
     await connectDB();
 
-    const products = await Product.find({ product: slug });
+    const products = await Product.find({ product: slug }).sort({ order: 1 });
 
     if (products.length === 0) {
       return NextResponse.json(

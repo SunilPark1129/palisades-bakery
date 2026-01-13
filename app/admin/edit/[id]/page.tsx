@@ -15,8 +15,6 @@ import React, {
   useState,
 } from "react";
 
-// type Props = { params: Promise<{ id: string }> };
-
 type ProductType = "cake" | "bread" | "cookie" | "pie";
 
 const category = {
@@ -70,7 +68,6 @@ function page() {
           throw new Error(data.error);
         }
         const data = await res.json();
-        console.log(data);
 
         setItem(data.data);
         setSelectedProduct(data.data.product);

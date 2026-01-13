@@ -15,6 +15,7 @@ const productTitles = ["cake", "bread", "cookie", "pie"];
 
 function page({}: Props) {
   const router = useRouter();
+
   const [products, setProducts] = useState<IProduct[]>([]);
   const [displayProducts, setDisplayProducts] = useState<IProduct[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("cake");
@@ -47,8 +48,6 @@ function page({}: Props) {
         body: JSON.stringify({ id }),
         credentials: "include",
       });
-      setProducts((prev) => prev.filter(({ _id }) => _id !== id));
-      setDisplayProducts((prev) => prev.filter(({ _id }) => _id !== id));
 
       await fetch("/api/imagekit-auth", {
         method: "DELETE",
@@ -62,6 +61,16 @@ function page({}: Props) {
         const data = await res.json();
         throw new Error(data.error);
       }
+
+      const fetchRes = await fetch("http://localhost:3000/api/categories/", {
+        cache: "no-store",
+      });
+      const data = await fetchRes.json();
+      const resProducts = data.data as IProduct[];
+      setProducts(resProducts);
+      setDisplayProducts(
+        resProducts.filter((item) => item.product === selectedProduct)
+      );
     } catch (error: any) {
       console.log(error.message);
       setErrorMessage(error.message);
@@ -74,7 +83,9 @@ function page({}: Props) {
       try {
         setLoading(true);
         setErrorMessage("");
-        const res = await fetch(`http://localhost:3000/api/categories/`);
+        const res = await fetch(`http://localhost:3000/api/categories/`, {
+          cache: "no-store",
+        });
         if (!res.ok) {
           const data = await res.json();
           throw new Error(data.error);
@@ -116,6 +127,11 @@ function page({}: Props) {
           regex.test(product.title) && product.product === selectedProduct
       )
     );
+  }
+
+  async function resetOrderHandler() {
+    await fetch("/api/resetorder");
+    router.refresh();
   }
 
   return (
@@ -171,21 +187,25 @@ function page({}: Props) {
         <div className="grid gap-4 sm:grid-cols-2">
           {displayProducts.map((item) => (
             <div key={item._id} className="flex gap-4">
-              <Image
-                src={
-                  item.url.includes(".")
-                    ? `${item.url}?tr=n-card_thumb`
-                    : "/images/custome-cake.png"
-                }
-                alt={item.title}
-                width={100}
-                height={100}
-                loading="lazy"
-                unoptimized
-              />
+              <div className="ww-[150px] h-[150px] shrink-0">
+                <Image
+                  src={
+                    item.url.includes(".")
+                      ? `${item.url}?tr=n-card_thumb`
+                      : "/images/custome-cake.png"
+                  }
+                  alt={item.title}
+                  width={150}
+                  height={150}
+                  loading="lazy"
+                  unoptimized
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="flex flex-col gap-2">
-                <div>{item.title}</div>
-                <div>{item.order}</div>
+                <div>
+                  {item.order}. {item.title}
+                </div>
                 <div className="flex flex-col gap-2">
                   <Link
                     className="cursor-pointer rounded-full flex text-sm items-center gap-2 w-fit"
@@ -203,6 +223,14 @@ function page({}: Props) {
               </div>
             </div>
           ))}
+        </div>
+        <div>
+          <button
+            onClick={resetOrderHandler}
+            className="p-2 border bg-[#ff0a0a] text-white border-[black] cursor-pointer"
+          >
+            Reset Order
+          </button>
         </div>
       </div>
       <Modal isOpen={isDeleteModalOpen} setIsOpen={setIsDeleteModalOpen}>
