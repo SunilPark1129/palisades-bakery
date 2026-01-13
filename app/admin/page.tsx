@@ -185,6 +185,7 @@ function page({}: Props) {
               />
               <div className="flex flex-col gap-2">
                 <div>{item.title}</div>
+                <div>{item.order}</div>
                 <div className="flex flex-col gap-2">
                   <Link
                     className="cursor-pointer rounded-full flex text-sm items-center gap-2 w-fit"
