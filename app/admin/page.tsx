@@ -185,7 +185,7 @@ function page({}: Props) {
         <div>{loading && "Loading..."}</div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {displayProducts.map((item) => (
+          {displayProducts.map((item, idx) => (
             <div key={item._id} className="flex gap-4">
               <div className="ww-[150px] h-[150px] shrink-0">
                 <Image
@@ -197,7 +197,7 @@ function page({}: Props) {
                   alt={item.title}
                   width={150}
                   height={150}
-                  loading="lazy"
+                  loading={idx < 6 ? "eager" : "lazy"}
                   unoptimized
                   className="w-full h-full object-cover"
                 />

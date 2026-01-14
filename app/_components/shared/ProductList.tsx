@@ -93,15 +93,10 @@ function ProductList({ category, data, asideCategories }: Props) {
           )}
 
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] max-[580px]:grid-cols-[repeat(2,1fr)] gap-2">
-            {list.map((entry: IProduct) => {
-              console.log(entry);
-
+            {list.map((entry: IProduct, idx) => {
               return (
                 <section key={entry._id} className="group">
-                  <Link
-                    href={`http://localhost:3000/${category}/${entry._id}`}
-                    className=""
-                  >
+                  <Link href={`http://localhost:3000/${category}/${entry._id}`}>
                     <div className="relative w-full aspect-square overflow-hidden">
                       {/* Work on this later when we have all url */}
                       <Image
@@ -114,6 +109,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                         width={500}
                         height={500}
                         unoptimized
+                        loading={idx < 8 ? "eager" : "lazy"}
                         className="object-cover group-hover:scale-110 transition-transform"
                       />
                     </div>
