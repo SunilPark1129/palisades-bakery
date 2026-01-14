@@ -194,18 +194,16 @@ export async function PUT(req: Request) {
       if (newOrder < oldOrder) {
         await Product.updateMany(
           {
-            category: target.category,
             order: { $gte: newOrder, $lt: oldOrder },
+            _id: { $ne: target._id },
           },
           { $inc: { order: 1 } }
         );
-      }
-
-      if (newOrder > oldOrder) {
+      } else {
         await Product.updateMany(
           {
-            category: target.category,
             order: { $gt: oldOrder, $lte: newOrder },
+            _id: { $ne: target._id },
           },
           { $inc: { order: -1 } }
         );
