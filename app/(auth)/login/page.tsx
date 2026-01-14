@@ -36,7 +36,7 @@ function page() {
   }
 
   return (
-    <div className="wrapper">
+    <div className="wrapper my-auto!">
       <form onSubmit={handleLogin} className="flex justify-center p-4 py-8">
         <LoginForm error={error} />
       </form>

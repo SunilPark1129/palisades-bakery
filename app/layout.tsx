@@ -23,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lora.variable} ${lora.className} antialiased`}>
+      <body
+        className={`${lora.variable} ${lora.className} antialiased min-h-screen flex flex-col`}
+      >
         <Navbar />
         <MainHeader />
         {children}

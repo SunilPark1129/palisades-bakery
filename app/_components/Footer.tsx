@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="mt-16 bg-(--clr-primary) text-(--clr-background)">
+    <footer className="mt-16 bg-(--clr-primary) text-(--clr-background) mt-auto">
       <div className="wrapper">
         <div className="flex flex-col gap-14 items-center px-4 py-16">
           <div className="flex flex-col gap-2 items-center text-center">
