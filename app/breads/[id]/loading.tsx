@@ -2,16 +2,16 @@ function loading() {
   return (
     <div className="wrapper">
       <main className="flex flex-col gap-4 p-4 mb-8 max-md:p-0">
-        <div className="flex gap-2 max-md:px-2 h-[24px] animate-pulse bg-[#c6c6c6]"></div>
+        <div className="flex gap-2 max-md:px-2 max-w-[240px] w-full h-[24px] animate-pulse bg-[#c6c6c6]"></div>
 
         <div className="flex gap-8 max-md:flex-col max-md:gap-4">
-          <div className="relative flex-1 w-full max-w-[900px] aspect-square mb-auto max-md:max-w-full animate-pulse bg-[#c6c6c6]"></div>
+          <div className="relative flex-1 w-full max-w-[480px] aspect-square mb-auto max-md:max-w-full animate-pulse bg-[#c6c6c6]"></div>
 
           <div className="flex flex-col flex-1 gap-8 max-w-xl max-md:px-4 max-md:max-w-full">
-            <div className="flex flex-col gap-4 max-md:gap-2 animate-pulse bg-[#c6c6c6]">
-              <h1 className="h-[24px] max-md:text-xl"></h1>
-              <div className="h-[24px]"></div>
-              <p className="h-[16px]"></p>
+            <div className="flex flex-col gap-4 max-md:gap-2 animate-pulse">
+              <h1 className="h-[28px] max-w-[240px] w-full max-md:text-xl bg-[#c6c6c6]"></h1>
+              <div className="h-[28px] max-w-[60px] w-full bg-[#c6c6c6]"></div>
+              <p className="h-[52px] bg-[#c6c6c6]"></p>
             </div>
 
             <div className="w-full border-b border-b-gray-200 mx-auto"></div>
