@@ -8,20 +8,27 @@ const layout = [
   {
     h3: "Order at least 2 days in advance",
     p: [
-      "  This gives our team time to prepare fresh items in the quantities you need.",
+      "To make sure everything is baked and prepared, please place your order at least 2 days in advance.",
     ],
   },
   {
-    h3: "Place your order by phone or in-person",
-    p: ["Just call or visit to speak with a staff member."],
+    h3: "Place order by phone or in-person",
+    p: ["Give us a call or visit our bakery to speak with a staff member."],
   },
   {
     h3: "Provide basic information",
-    p: ["Items wanted", "Quantity", "Any allergies", "Date & time of pickup"],
+    p: [
+      "Items wanted",
+      "Quantities",
+      "Allergy concerns",
+      "Date & time of pickup",
+    ],
   },
   {
     h3: "Pay in advance",
-    p: ["Once payment is confirmed, the order will be made ready for you."],
+    p: [
+      "Once payment has been confirmed, we will have the order ready for you.",
+    ],
   },
 ];
 
@@ -60,9 +67,10 @@ function page({}: Props) {
               <div className="flex flex-col gap-2">
                 <h2 className="text-[1.4em] italic">Large Orders Made Easy</h2>
                 <p>
-                  Whether you're planning a lunch, gathering, or special event,
-                  our bakery offers flexible group ordering on any item we make
-                  — from breads and cakes to brunch dishes and sandwiches.
+                  Our bakery offers flexible group ordering on any items
+                  available in our store. This ranges from breads and cakes to
+                  brunch dishes and sandwiches. Whatever the occasion, we'll
+                  make sure if fits your event perfectly.
                 </p>
               </div>
             </div>
@@ -101,7 +109,6 @@ function page({}: Props) {
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <h2 className="text-[1.5em] font-bold">Place Your Order Today</h2>
-              <p>We'll help create the perfect bread for your celebration.</p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex w-full flex-col gap-4 justify-center">

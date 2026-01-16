@@ -11,8 +11,8 @@ const layout = [
     ],
   },
   {
-    h3: "Place your order by phone or in-person",
-    p: ["Just call or visit to speak with a staff member."],
+    h3: "Place order by phone or in-person",
+    p: ["Give us a call or visit our bakery to speak with a staff member."],
   },
   {
     h3: "Provide basic information",
@@ -26,7 +26,9 @@ const layout = [
   },
   {
     h3: "Pay in advance",
-    p: ["Once payment is confirmed, the order will be made ready for you."],
+    p: [
+      "Once payment has been confirmed, we will have the order ready for you.",
+    ],
   },
 ];
 
@@ -54,8 +56,8 @@ function page() {
                 Bring Any Design. Celebrate Any Moment
               </h2>
               <p>
-                From birthday celebrations to weddings and milestones, Palisades
-                Park Bakery brings your custom cake ideas to life with fresh
+                From birthday celebrations to weddings and milestones, our
+                bakery brings your custom cake ideas to life with fresh
                 ingredients, any flavor you love, and fully personalized
                 designs.
               </p>
@@ -250,8 +252,7 @@ function page() {
                 </div>
                 <div className="text-[#ff0000] text-sm pt-4">
                   *We make custom cakes in many different flavors. If you're
-                  looking for a particular flavor, please call us to see if it's
-                  available.
+                  looking for a particular flavor, please contact us.
                 </div>
               </section>
               <div className="flex flex-col gap-4">
@@ -309,8 +310,8 @@ function page() {
                   </div>
                 </div>
                 <div className="text-[#ff0000] text-sm pt-4">
-                  *You can call to ask about the cake style or decoration you
-                  want.
+                  *You can contact us to ask about the cake style or decoration
+                  you would like.
                 </div>
               </div>
             </div>
@@ -319,7 +320,6 @@ function page() {
           <section className="flex flex-col gap-4 pt-8">
             <div className="flex flex-col gap-2">
               <h2 className="text-[1.8em] font-bold">Place Your Order Today</h2>
-              <p>We'll help create the perfect cake for your celebration.</p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex w-full flex-col gap-4 justify-center">
