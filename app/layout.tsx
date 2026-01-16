@@ -29,6 +29,7 @@ export default function RootLayout({
         <Navbar />
         <MainHeader />
         {children}
+        <div className="mt-auto"></div>
         <Footer />
       </body>
     </html>

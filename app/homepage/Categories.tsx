@@ -7,7 +7,7 @@ import bake from "./images/i13.jpg";
 function Categories() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col w-full p-4 sm:pb-0 gap-8">
+      <section className="flex flex-col w-full p-4 py-8 gap-8">
         <h2 className="sr-only">Categories</h2>
         <div className="flex w-full items-center">
           <div className="flex flex-col gap-4 w-fit">
