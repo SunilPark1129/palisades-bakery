@@ -2,6 +2,7 @@ import { verifyToken } from "@/lib/auth";
 import connectDB from "@/lib/mongodb";
 import { Product } from "@/models/Product";
 import { User } from "@/models/User";
+import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
@@ -14,7 +15,7 @@ export async function GET(req: Request) {
     if (products.length === 0) {
       return NextResponse.json(
         { success: false, error: "Error code: 404. Cannot find data." },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -22,7 +23,7 @@ export async function GET(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { success: false, error: "Error code: 500. View request failed." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -34,7 +35,7 @@ export async function POST(req: Request) {
   if (!token) {
     return NextResponse.json(
       { error: "Require to login before you continue." },
-      { status: 401 }
+      { status: 401 },
     );
   }
   try {
@@ -44,7 +45,7 @@ export async function POST(req: Request) {
     if (!decoded) {
       return NextResponse.json(
         { error: "Error code: 401. Unauthorized token." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -52,7 +53,7 @@ export async function POST(req: Request) {
     if (!userExists) {
       return NextResponse.json(
         { error: "Error code: 401. User no longer exists." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -69,13 +70,15 @@ export async function POST(req: Request) {
         category: payload.category,
         order: { $gte: newOrder },
       },
-      { $inc: { order: 1 } }
+      { $inc: { order: 1 } },
     );
 
     const createdProduct = await Product.create({
       ...payload,
       order: newOrder,
     });
+
+    revalidateTag("products-list", "max");
 
     return NextResponse.json({
       success: true,
@@ -87,7 +90,7 @@ export async function POST(req: Request) {
       {
         error: "Error code: 500. Error has found while uploading new product.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -99,14 +102,14 @@ export async function DELETE(req: Request) {
     if (!token)
       return NextResponse.json(
         { error: "Require to login before you continue." },
-        { status: 401 }
+        { status: 401 },
       );
 
     const decoded = await verifyToken(token);
     if (!decoded)
       return NextResponse.json(
         { error: "Failed to Verify your authrization." },
-        { status: 401 }
+        { status: 401 },
       );
 
     const { id } = await req.json();
@@ -117,7 +120,7 @@ export async function DELETE(req: Request) {
     if (!target) {
       return NextResponse.json(
         { error: "Could not find the product id" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -128,8 +131,11 @@ export async function DELETE(req: Request) {
         category: target.category,
         order: { $gt: target.order },
       },
-      { $inc: { order: -1 } }
+      { $inc: { order: -1 } },
     );
+
+    revalidateTag(`product-${id}`, "max");
+    revalidateTag("products-list", "max");
 
     return NextResponse.json({
       success: true,
@@ -138,7 +144,7 @@ export async function DELETE(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "error has found while delecting a product" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -150,7 +156,7 @@ export async function PUT(req: Request) {
     if (!token)
       return NextResponse.json(
         { error: "Require to login before you continue." },
-        { status: 401 }
+        { status: 401 },
       );
 
     const decoded = await verifyToken(token);
@@ -174,7 +180,7 @@ export async function PUT(req: Request) {
     if (!payload?._id) {
       return NextResponse.json(
         { error: "Product id is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -184,7 +190,7 @@ export async function PUT(req: Request) {
     if (!target) {
       return NextResponse.json(
         { error: "Could not find the product id" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -197,7 +203,7 @@ export async function PUT(req: Request) {
             order: { $gte: newOrder, $lt: oldOrder },
             _id: { $ne: target._id },
           },
-          { $inc: { order: 1 } }
+          { $inc: { order: 1 } },
         );
       } else {
         await Product.updateMany(
@@ -205,7 +211,7 @@ export async function PUT(req: Request) {
             order: { $gt: oldOrder, $lte: newOrder },
             _id: { $ne: target._id },
           },
-          { $inc: { order: -1 } }
+          { $inc: { order: -1 } },
         );
       }
     }
@@ -223,15 +229,18 @@ export async function PUT(req: Request) {
         fileId,
         order: typeof newOrder === "number" ? newOrder : target.order,
       },
-      { new: true, runValidators: true }
+      { new: true, runValidators: true },
     );
 
     if (!updatedProduct) {
       return NextResponse.json(
         { error: "Could not find the product id" },
-        { status: 404 }
+        { status: 404 },
       );
     }
+
+    revalidateTag(`product-${_id}`, "max");
+    revalidateTag("products-list", "max");
 
     return NextResponse.json({
       success: true,
@@ -240,7 +249,7 @@ export async function PUT(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "error has found while updating a product" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

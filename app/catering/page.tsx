@@ -1,6 +1,7 @@
 import Image from "next/image";
 import t1 from "./images/t1.jpg";
 import CheckSVG from "../_components/svg/CheckSVG";
+import { Metadata } from "next";
 
 type Props = {};
 
@@ -24,6 +25,35 @@ const layout = [
     p: ["Once payment is confirmed, the order will be made ready for you."],
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Catering & Group Orders | Palisades Park Bakery",
+  description:
+    "Plan your event with Palisades Park Bakery! We offer group ordering for breads, cakes, and other baked goods. Perfect for office lunches, gatherings, or special occasions. Call or visit us in New Jersey to place your order.",
+  keywords: [
+    "group order",
+    "catering",
+    "large orders",
+    "bakery",
+    "breads",
+    "cakes",
+    "Palisades Park Bakery",
+  ],
+  openGraph: {
+    title: "Catering & Group Orders | Palisades Park Bakery",
+    description:
+      "Flexible group ordering for breads, cakes, and more. Perfect for office lunches, parties, and special events.",
+    type: "website",
+    images: ["/images/catering-og.jpg"], // OG 이미지 경로
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Catering & Group Orders | Palisades Park Bakery",
+    description:
+      "Plan your event with group orders from Palisades Park Bakery. Call or visit us today in New Jersey.",
+    images: ["/images/catering-og.jpg"],
+  },
+};
 
 function page({}: Props) {
   return (

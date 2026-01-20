@@ -4,16 +4,12 @@ import PriceDetail from "./PriceDetail";
 import { IProduct } from "@/models/Product";
 
 export default async function ProductDetail({
-  id,
+  data,
   category,
 }: {
-  id: string;
+  data: IProduct;
   category: string;
 }) {
-  const data: IProduct = await fetch(`http://localhost:3000/api/category/${id}`)
-    .then((res) => res.json())
-    .then((data) => data.data);
-
   return (
     <div className="wrapper">
       <main className="flex flex-col gap-4 p-4 mb-8 max-md:p-0">

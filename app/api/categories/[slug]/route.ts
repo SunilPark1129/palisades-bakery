@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   req: Request,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
 
@@ -18,7 +18,7 @@ export async function GET(
     if (products.length === 0) {
       return NextResponse.json(
         { success: false, error: "cannot find page" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -26,7 +26,7 @@ export async function GET(
   } catch (error) {
     return NextResponse.json(
       { success: false, error: "view request failed" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
