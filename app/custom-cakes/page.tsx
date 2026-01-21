@@ -1,5 +1,6 @@
 import Image from "next/image";
 import f9 from "../homepage/images/f9.jpg";
+import writing from "./writing.jpg";
 import CheckSVG from "../_components/svg/CheckSVG";
 import { Metadata } from "next";
 
@@ -297,9 +298,11 @@ function page() {
                   </div>
                   <div className="flex flex-col gap-2 items-center">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
+                      // src={
+                      //   "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      // }
+                      // src={"https://images.pexels.com/photos/29192543/pexels-photo-29192543.jpeg"}
+                      src={writing}
                       width={150}
                       height={150}
                       alt="writing on the cake"
