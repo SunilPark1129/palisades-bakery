@@ -19,7 +19,7 @@ export default function Home() {
       <Block />
       <GradientMask />
       <Special />
-      <About />
+      {/* <About /> */}
       <Social />
     </main>
   );

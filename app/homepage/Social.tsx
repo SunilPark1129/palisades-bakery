@@ -31,7 +31,7 @@ function Social({}: Props) {
           <div className="flex flex-col gap-4 my-auto">
             <p className="text-xs uppercase tracking-wider">Follow-Us</p>
             <h2 className="text-[1.8em] leading-tight font-semibold">
-              Follow Your Local Bakery
+              Follow Our Bakery
             </h2>
             <p>See our fresh bakes, daily specials, and behind-the-scenes.</p>
 

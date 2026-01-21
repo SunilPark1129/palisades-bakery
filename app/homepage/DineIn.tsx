@@ -6,22 +6,15 @@ function DineIn() {
     <div className="wrapper">
       <section className="flex p-4 py-16 gap-4 max-[720px]:flex-col">
         <div className="flex flex-col gap-4 mx-auto flex-1 m-auto w-full min-w-[16rem]">
-          <Image
-            src={"/images/dinein.png"}
-            width={100}
-            height={64}
-            alt="food character"
-            className="w-25 h-16 object-contain"
-          />
           <p className="text-xs uppercase tracking-wider">Dine-In</p>
           <h2 className="text-[1.8em] leading-tight font-semibold">
             High Quality Dine-In Meals
           </h2>
           <p className="max-w-120 max-[720px]:max-w-full text-[1.1em]">
-            Enjoy more than just cakes and breads—our café also offers a variety
-            of freshly prepared meals and beverages. From warm dishes to light
-            bites, everything is available for dine-in. Visit our Menu page for
-            the full selection.
+            Our bakery also offers a variety of freshly prepared meals, ranging
+            from brunch menus to light bites. Everything is made fresh daily,
+            perfect for a casual meal with family or friends. Visit our Menu
+            page for the full selection.
           </p>
           <button className="py-1 px-4 border rounded w-fit cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background) text-[1.1em]">
             View Menu

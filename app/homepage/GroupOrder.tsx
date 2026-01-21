@@ -26,10 +26,10 @@ function GroupOrder() {
           </h3>
         </div>
         <p className="text-[1.1em]">
-          Planning an office meeting or a gathering? We prepare assortments of
-          rolls, baguettes, pastries, and sandwich breads in bulk. Tell us the
-          quantity and pickup time, and we'll have everything fresh and ready.
-          Contact us for details.
+          Planning a group event or gathering? We offer bulk orders of most of
+          the items at our bakery, ranging from rolls, pastries, sandwiches, and
+          desserts. Share your quantity and pickup time, and we’ll have
+          everything ready for you. Contact us to get started.
         </p>
         <Link href="/catering" className="text-blue-600 w-fit">
           Read detail

@@ -7,10 +7,10 @@ function About() {
           <p className="max-w-3xl m-auto text-[1.2em]">
             Palisade Park Bakery is located at 325 Broad Ave in Palisadess Park,
             NJ. We take pride in our quality and fresh bread every morning. All
-            of our cakes and breads are handcrafted daily by our in-house
-            professional baker. Along with our baked goods, we also serve coffee
-            and a selection of café-style dishes. We look forward to serving you
-            with even better quality and service everyday.
+            of our cakes and breads are handcrafted daily by our professional
+            baker. Along with our baked goods, we also serve coffee and a
+            selection of brunch menus. We look forward to serving you with even
+            better quality and service everyday.
           </p>
         </header>
       </div>

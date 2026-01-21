@@ -25,10 +25,10 @@ function CustomOrder() {
           <h3 className="font-semibold text-[1.2em]">Custom Cake Orders</h3>
         </div>
         <p className="text-[1.1em]">
-          From birthdays to weddings, we design custom cakes to your taste.
-          Choose the size, flavors, and decorations; our in-house baker crafts
-          everything fresh. Bring a reference photo or simply share your
-          idea—please order in advance so we can make it perfect.
+          We offer custom cakes for birthdays, weddings, and special occasions.
+          Choose your size, flavors, and decorations, and our baker will prepare
+          everything fresh. Feel free to bring a reference photo or simply tell
+          us your idea.
         </p>
         <Link href="/custom-cakes" className="text-blue-600 w-fit">
           Read detail

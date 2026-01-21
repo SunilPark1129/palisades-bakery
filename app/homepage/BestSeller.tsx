@@ -84,7 +84,8 @@ function BestSeller({}: Props) {
             grabCursor
             slidesPerView={3.2}
             breakpoints={{
-              480: { slidesPerView: 1.2 },
+              0: { slidesPerView: 1.2 },
+              480: { slidesPerView: 2.2 },
               768: { slidesPerView: 3.2 },
             }}
             spaceBetween={18}
