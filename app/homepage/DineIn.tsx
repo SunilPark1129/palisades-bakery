@@ -4,7 +4,7 @@ import dineInImg from "./images/bakery-food-img.jpg";
 function DineIn() {
   return (
     <div className="wrapper">
-      <section className="flex p-4 pb-6 gap-4 max-[600px]:flex-col">
+      <section className="flex p-4 py-16 gap-4 max-[720px]:flex-col">
         <div className="flex flex-col gap-4 mx-auto flex-1 m-auto w-full min-w-[16rem]">
           <Image
             src={"/images/dinein.png"}
@@ -17,17 +17,17 @@ function DineIn() {
           <h2 className="text-[1.8em] leading-tight font-semibold">
             High Quality Dine-In Meals
           </h2>
-          <p className="max-w-120 max-[600px]:max-w-full">
+          <p className="max-w-120 max-[720px]:max-w-full text-[1.1em]">
             Enjoy more than just cakes and breads—our café also offers a variety
             of freshly prepared meals and beverages. From warm dishes to light
             bites, everything is available for dine-in. Visit our Menu page for
             the full selection.
           </p>
-          <button className="py-1 px-4 border rounded w-fit cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background)">
+          <button className="py-1 px-4 border rounded w-fit cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background) text-[1.1em]">
             View Menu
           </button>
         </div>
-        <div className="relative w-full sm:max-w-120 m-auto aspect-square max-[600px]:aspect-video">
+        <div className="relative w-full min-[720px]:max-w-140 m-auto aspect-16/11 max-[720px]:aspect-video">
           <Image
             src={
               "https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -36,7 +36,7 @@ function DineIn() {
             sizes="(max-width: 768px) 100vw, 60vw"
             loading="lazy"
             fill
-            className="object-cover"
+            className="object-cover rounded-2xl"
           />
         </div>
       </section>

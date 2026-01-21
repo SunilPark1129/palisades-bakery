@@ -13,13 +13,13 @@ export default function Home() {
     <main className="flex flex-col mb-8">
       <Hero />
       <Categories />
-      <About />
       <BestSeller />
+      <DineIn />
       <GradientMask top />
       <Block />
       <GradientMask />
-      <DineIn />
       <Special />
+      <About />
       <Social />
     </main>
   );

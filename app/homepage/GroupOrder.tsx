@@ -8,7 +8,7 @@ import Link from "next/link";
 function GroupOrder() {
   return (
     <section className="flex flex-row-reverse w-full max-[720px]:flex-col gap-4">
-      <div className="relative w-full max-w-xl min-h-64 max-[720px]:max-w-full aspect-video rounded overflow-hidden">
+      <div className="relative w-full max-w-xl min-h-64 max-[720px]:max-w-full aspect-video rounded-2xl overflow-hidden">
         <Image
           src={groupOrderImg}
           alt="Group & Bulk Orders"
@@ -21,9 +21,11 @@ function GroupOrder() {
       <div className="flex flex-col max-[720px]:p-0 m-auto max-[720px]:max-w-full gap-4 w-full h-auto justify-center max-w-120">
         <div className="flex gap-4 items-center">
           <SVGNumberTwo />
-          <h3 className="font-semibold">Group & Bulk Bread Orders</h3>
+          <h3 className="font-semibold text-[1.2em]">
+            Group & Bulk Bread Orders
+          </h3>
         </div>
-        <p>
+        <p className="text-[1.1em]">
           Planning an office meeting or a gathering? We prepare assortments of
           rolls, baguettes, pastries, and sandwich breads in bulk. Tell us the
           quantity and pickup time, and we'll have everything fresh and ready.

@@ -1,6 +1,6 @@
 function Block() {
   return (
-    <section className="bg-(--clr-background3) py-4">
+    <section className="bg-(--clr-background3) py-8">
       <div className="wrapper">
         <div className="flex flex-col gap-4 p-4 px-8 mx-auto max-w-120">
           <h2 className="text-3xl max-[720px]:text-[1.7em]">
@@ -8,7 +8,7 @@ function Block() {
             <span className="font-semibold">Cookies</span> &{" "}
             <span className="font-semibold">Pies</span>
           </h2>
-          <p>
+          <p className="text-[1.1em]">
             Enjoy our freshly baked, handcrafted cookies made in-house. From
             classic flavors to seasonal specials, each cookie is prepared with
             quality ingredients for the perfect bite.
