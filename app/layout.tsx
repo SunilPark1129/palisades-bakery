@@ -8,10 +8,16 @@ import MainHeader from "./_components/ui/MainHeader";
 const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-lora",
 });
 
+// WORK ON IT LATER WHEN DOMAIN HAS ADDED
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://your-bakery-domain.com"
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Palisades Park Bakery | Fresh Breads, Cakes, Pies & Cookies",
   description:
     "Enjoy freshly baked breads, cakes, pies, and cookies at Palisades Park Bakery. Group orders for events and custom cakes made to order are also available. Visit us in Palisades Park at New Jersey or order online today.",
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lora.variable} ${lora.className} antialiased min-h-screen flex flex-col`}
+        className={`${lora.className} antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
         <MainHeader />

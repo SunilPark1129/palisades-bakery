@@ -90,10 +90,10 @@ function BestSeller({}: Props) {
                     <Image
                       src={item.img}
                       alt={item.title}
-                      priority
-                      width={800}
-                      height={800}
-                      className="absolute w-full h-full object-cover"
+                      priority={idx === 0}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                   <div className="flex flex-col p-4 flex-1 justify-between gap-2">
@@ -115,7 +115,7 @@ function BestSeller({}: Props) {
           width={85}
           height={85}
           alt="drag left image"
-          className="object-contain ml-auto z-10 pointer-events-none select-none animate-pulse"
+          className="object-contain w-auto h-auto ml-auto z-10 pointer-events-none select-none animate-pulse"
         />
       </section>
     </div>

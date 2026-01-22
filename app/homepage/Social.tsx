@@ -13,13 +13,15 @@ function Social({}: Props) {
     <section className="relative">
       <div className="wrapper">
         <div className="flex p-4 justify-center">
-          <Image
-            className="scale-100 max-[600px]:hidden"
-            src="/images/follow-mobile.png"
-            alt="Social Media on Mobile"
-            width={400}
-            height={400}
-          />
+          <div className="relative w-full max-w-100 aspect-9/16 max-[600px]:hidden">
+            <Image
+              src="/images/follow-mobile.png"
+              alt="Social Media on Mobile"
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-contain"
+            />
+          </div>
           <div className="flex flex-col gap-4 my-auto">
             <p className="text-xs uppercase tracking-wider">Follow-Us</p>
             <h2 className="text-[1.8em] leading-tight font-semibold">

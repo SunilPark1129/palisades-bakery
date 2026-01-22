@@ -97,20 +97,14 @@ function ProductList({ category, data, asideCategories }: Props) {
               return (
                 <section key={entry._id} className="group">
                   <Link href={`http://localhost:3000/${category}/${entry._id}`}>
-                    <div className="relative w-full aspect-square overflow-hidden">
-                      {/* Work on this later when we have all url */}
+                    <div className="relative w-full max-w-[400px] aspect-square overflow-hidden">
                       <Image
-                        src={
-                          entry.url.includes(".")
-                            ? `${entry.url}?tr=n-card_thumb`
-                            : "/images/custome-cake.png"
-                        }
+                        src={`${entry.url}?tr=n-card_thumb`}
                         alt={entry.title}
-                        width={500}
-                        height={500}
-                        unoptimized
+                        fill
+                        sizes="(max-width: 400px) 100vw, 400px"
                         loading={idx < 8 ? "eager" : "lazy"}
-                        className="object-cover w-full [@media(hover:hover)]:group-hover:scale-110 transition-transform"
+                        className="object-cover [@media(hover:hover)]:group-hover:scale-110 transition-transform"
                       />
                     </div>
                   </Link>

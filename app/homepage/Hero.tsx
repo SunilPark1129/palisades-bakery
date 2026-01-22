@@ -11,6 +11,7 @@ function Hero() {
           fill
           alt="Palisades Park Bakery Banner"
           priority
+          sizes="100vw"
         />
       </div>
     </section>

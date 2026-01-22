@@ -8,13 +8,12 @@ function Footer() {
       <div className="wrapper">
         <div className="flex flex-col gap-14 items-center px-4 py-16">
           <div className="flex flex-col gap-2 items-center text-center">
-            {/* SPARK - width & height error in Image */}
             <Image
               src="/images/footer-logo.png"
               alt="Palisades Park Bakery Logo"
               className="w-20 aspect-square rounded-full"
-              width={800}
-              height={800}
+              width={120}
+              height={120}
             />
             <div>
               <h2>Palisades Park Bakery</h2>

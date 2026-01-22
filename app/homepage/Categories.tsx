@@ -25,14 +25,16 @@ function Categories() {
                 href={`/${item.title.toLowerCase()}`}
                 className="flex flex-col gap-2 relative w-full group"
               >
-                <Image
-                  src={item.url}
-                  alt={item.title}
-                  width={280}
-                  height={280}
-                  priority
-                  className="aspect-square w-full h-full object-cover group-hover:brightness-110 rounded-2xl"
-                />
+                <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={item.url}
+                    alt={item.title}
+                    fill
+                    priority
+                    sizes="(max-width: 440px) 50vw, (max-width: 800px) 33vw, 20vw"
+                    className="object-cover group-hover:brightness-110 transition-all duration-300"
+                  />
+                </div>
                 <div className="text-center text-[1em] uppercase tracking-wider">
                   {item.title}
                 </div>

@@ -69,7 +69,7 @@ function page({}: Props) {
       const resProducts = data.data as IProduct[];
       setProducts(resProducts);
       setDisplayProducts(
-        resProducts.filter((item) => item.product === selectedProduct)
+        resProducts.filter((item) => item.product === selectedProduct),
       );
     } catch (error: any) {
       console.log(error.message);
@@ -94,7 +94,7 @@ function page({}: Props) {
         const resProducts = data.data as IProduct[];
         setProducts(resProducts);
         setDisplayProducts(
-          resProducts.filter((item) => item.product === selectedProduct)
+          resProducts.filter((item) => item.product === selectedProduct),
         );
       } catch (error: any) {
         console.log(error);
@@ -108,14 +108,14 @@ function page({}: Props) {
 
   useEffect(() => {
     setDisplayProducts(
-      products.filter((item) => item.product === selectedProduct)
+      products.filter((item) => item.product === selectedProduct),
     );
   }, [selectedProduct]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.value.trim() === "") {
       setDisplayProducts(
-        products.filter((item) => item.product === selectedProduct)
+        products.filter((item) => item.product === selectedProduct),
       );
       return;
     }
@@ -124,8 +124,8 @@ function page({}: Props) {
     setDisplayProducts(
       products.filter(
         (product) =>
-          regex.test(product.title) && product.product === selectedProduct
-      )
+          regex.test(product.title) && product.product === selectedProduct,
+      ),
     );
   }
 
@@ -189,11 +189,7 @@ function page({}: Props) {
             <div key={item._id} className="flex gap-4">
               <div className="ww-[150px] h-[150px] shrink-0">
                 <Image
-                  src={
-                    item.url.includes(".")
-                      ? `${item.url}?tr=n-card_thumb`
-                      : "/images/custome-cake.png"
-                  }
+                  src={`${item.url}?tr=n-card_thumb`}
                   alt={item.title}
                   width={150}
                   height={150}

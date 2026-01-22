@@ -64,14 +64,16 @@ function page() {
     <main className="flex flex-col">
       <header className="flex max-h-160 max-[550px]:flex-col max-[550px]:max-h-full">
         <div className="relative felx-1 w-full">
-          {/* SPARK - width & height error in Image */}
-          <Image
-            src="/images/customcake-hero.jpg"
-            alt="Palisades Park Bakery Custom Cake"
-            className="object-cover object-top saturate-80 contrast-80 w-full h-full"
-            width={800}
-            height={800}
-          />
+          <div className="relative w-full h-[500px]">
+            <Image
+              src="/images/customcake-hero.jpg"
+              alt="Palisades Park Bakery Custom Cake"
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-cover object-top saturate-80 contrast-80"
+            />
+          </div>
         </div>
         <div className="p-6 max-[550px]:py-12 bg-(--clr-background4) felx-1 w-full">
           <div className="flex flex-col h-full justify-center gap-4 max-w-100 mx-auto max-[850px]:text-[.9rem]">
@@ -228,6 +230,7 @@ function page() {
                     alt="Strawberry"
                     width={150}
                     height={150}
+                    loading="lazy"
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <Image
@@ -235,6 +238,7 @@ function page() {
                     width={150}
                     height={150}
                     alt="Chocolate"
+                    loading="lazy"
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <Image
@@ -242,6 +246,7 @@ function page() {
                     width={150}
                     height={150}
                     alt="Mango"
+                    loading="lazy"
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <div className="relative">
@@ -287,6 +292,7 @@ function page() {
                       width={150}
                       height={150}
                       alt="colors"
+                      loading="lazy"
                       className="object-cover rounded-full w-32 aspect-square"
                     />
                     <div className="text-sm">color</div>
@@ -297,6 +303,7 @@ function page() {
                       width={150}
                       height={150}
                       alt="Writing on Cake"
+                      loading="lazy"
                       className="object-cover rounded-full w-32 aspect-square"
                     />
                     <div className="text-sm">writing</div>
@@ -307,6 +314,7 @@ function page() {
                       width={150}
                       height={150}
                       alt="birthday candles"
+                      loading="lazy"
                       className="object-cover rounded-full w-32 aspect-square"
                     />
                     <div className="text-sm">decoration</div>
@@ -317,6 +325,7 @@ function page() {
                       width={150}
                       height={150}
                       alt="photos displayed on the wall"
+                      loading="lazy"
                       className="object-cover rounded-full w-32 aspect-square"
                     />
                     <div className="text-sm">printed photos</div>
