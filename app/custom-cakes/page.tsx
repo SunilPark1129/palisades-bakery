@@ -1,6 +1,4 @@
 import Image from "next/image";
-import f9 from "../homepage/images/f9.jpg";
-import writing from "./writing.jpg";
 import CheckSVG from "../_components/svg/CheckSVG";
 import { Metadata } from "next";
 
@@ -66,10 +64,13 @@ function page() {
     <main className="flex flex-col">
       <header className="flex max-h-160 max-[550px]:flex-col max-[550px]:max-h-full">
         <div className="relative felx-1 w-full">
+          {/* SPARK - width & height error in Image */}
           <Image
-            src={f9}
+            src="/images/customcake-hero.jpg"
             alt="Palisades Park Bakery Custom Cake"
             className="object-cover object-top saturate-80 contrast-80 w-full h-full"
+            width={800}
+            height={800}
           />
         </div>
         <div className="p-6 max-[550px]:py-12 bg-(--clr-background4) felx-1 w-full">
@@ -119,10 +120,10 @@ function page() {
               ))}
             </div>
           </section>
+
           <section className="flex flex-col gap-4 sm:gap-8 py-4 rounded-2xl">
             <div className="">
               <h2 className="text-[1.8em] font-bold">Pick Your Styles</h2>
-              {/* <p>Choose your desired custom cake</p> */}
             </div>
             <div className="flex flex-col gap-4 sm:gap-16">
               <section className="flex flex-col gap-4">
@@ -216,36 +217,31 @@ function page() {
                   </div>
                 </div>
               </section>
+
               <section className="flex flex-col gap-4">
                 <h3 className="font-semibold text-lg flex gap-4 items-center">
                   <CheckSVG /> Pick your flavor
                 </h3>
                 <div className="grid grid-cols-4 max-md:m-auto max-md:grid-cols-2 gap-4 sm:gap-8 mr-auto">
                   <Image
-                    src={
-                      "https://images.unsplash.com/photo-1594282241894-4da286138f44?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    }
-                    alt="strawberry"
+                    src="/images/customcake-strawberry.avif"
+                    alt="Strawberry"
                     width={150}
                     height={150}
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <Image
-                    src={
-                      "https://images.unsplash.com/photo-1633782330753-a346e5303840?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    }
+                    src="/images/customcake-chocolate.avif"
                     width={150}
                     height={150}
-                    alt="chocolate"
+                    alt="Chocolate"
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <Image
-                    src={
-                      "https://images.pexels.com/photos/4023132/pexels-photo-4023132.jpeg"
-                    }
+                    src="/images/customcake-mango.jpeg"
                     width={150}
                     height={150}
-                    alt="mango"
+                    alt="Mango"
                     className="object-cover rounded-full w-32 aspect-square m-auto"
                   />
                   <div className="relative">
@@ -279,16 +275,15 @@ function page() {
                   looking for a particular flavor, please contact us.
                 </div>
               </section>
-              <div className="flex flex-col gap-4">
+
+              <section className="flex flex-col gap-4">
                 <h3 className="font-semibold text-lg flex gap-4 items-center">
                   <CheckSVG /> Pick your customization
                 </h3>
                 <div className="grid grid-cols-4 flex-2 max-md:grid-cols-2 gap-4 sm:gap-8 max-md:m-auto mr-auto">
                   <div className="flex flex-col gap-2 items-center">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1552084117-56a987666449?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
+                      src="/images/customcake-color.avif"
                       width={150}
                       height={150}
                       alt="colors"
@@ -298,23 +293,17 @@ function page() {
                   </div>
                   <div className="flex flex-col gap-2 items-center">
                     <Image
-                      // src={
-                      //   "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      // }
-                      // src={"https://images.pexels.com/photos/29192543/pexels-photo-29192543.jpeg"}
-                      src={writing}
+                      src="/images/customcake-writing.jpg"
                       width={150}
                       height={150}
-                      alt="writing on the cake"
+                      alt="Writing on Cake"
                       className="object-cover rounded-full w-32 aspect-square"
                     />
                     <div className="text-sm">writing</div>
                   </div>
                   <div className="flex flex-col gap-2 items-center">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1600566209579-dd9691ed2ff0?q=80&w=814&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
+                      src="/images/customcake-deco.avif"
                       width={150}
                       height={150}
                       alt="birthday candles"
@@ -324,9 +313,7 @@ function page() {
                   </div>
                   <div className="flex flex-col gap-2 items-center">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1684741892149-e741a75f8f71?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
+                      src="/images/customcake-printed.avif"
                       width={150}
                       height={150}
                       alt="photos displayed on the wall"
@@ -339,7 +326,7 @@ function page() {
                   *You can contact us to ask about the cake style or decoration
                   you would like.
                 </div>
-              </div>
+              </section>
             </div>
           </section>
 

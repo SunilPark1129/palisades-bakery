@@ -4,18 +4,9 @@ import {
   SVGInstagram,
   SVGTwitter,
 } from "../_components/svg/social";
-import moibleImage from "./images/mobilefollow.png";
-import f1 from "./images/f1.jpg";
-import f2 from "./images/f2.jpg";
-import f3 from "./images/f3.jpg";
-import f4 from "./images/f4.jpg";
-import f5 from "./images/f5.jpg";
-import f6 from "./images/f6.jpg";
 import Image from "next/image";
 
 type Props = {};
-
-const images = [f1, f2, f3, f4, f5, f6];
 
 function Social({}: Props) {
   return (
@@ -24,9 +15,10 @@ function Social({}: Props) {
         <div className="flex p-4 justify-center">
           <Image
             className="scale-100 max-[600px]:hidden"
-            src={moibleImage}
-            alt="mobile"
+            src="/images/follow-mobile.png"
+            alt="Social Media on Mobile"
             width={400}
+            height={400}
           />
           <div className="flex flex-col gap-4 my-auto">
             <p className="text-xs uppercase tracking-wider">Follow-Us</p>
@@ -40,7 +32,7 @@ function Social({}: Props) {
                 href="https://instagram.com/yourbakery"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center w-full bg-gradient-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
+                className="group flex items-center w-full bg-linear-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
               >
                 Instagram
                 <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">

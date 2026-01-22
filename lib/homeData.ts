@@ -1,29 +1,22 @@
-// import a6 from "./test/a6.png";
-import c2 from "./test/c2.png";
-import b11 from "./test/b11.png";
-import d3 from "./test/d3.png";
-import p1 from "./test/p1.png";
-import dine2 from "./test/dine2.png";
-
 export const homeCategories = [
   {
-    url: c2,
+    url: "/images/categories-cake.png",
     title: "Cakes",
   },
   {
-    url: b11,
+    url: "/images/categories-bread.png",
     title: "Breads",
   },
   {
-    url: d3,
+    url: "/images/categories-cookie.png",
     title: "Cookies",
   },
   {
-    url: p1,
+    url: "/images/categories-pie.png",
     title: "Pies",
   },
   {
-    url: dine2,
+    url: "/images/categories-dinein.png",
     title: "Dine-In",
   },
 ];

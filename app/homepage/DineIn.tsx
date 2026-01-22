@@ -1,5 +1,4 @@
 import Image from "next/image";
-import dineInImg from "./images/bakery-food-img.jpg";
 
 function DineIn() {
   return (
@@ -22,11 +21,8 @@ function DineIn() {
         </div>
         <div className="relative w-full min-[720px]:max-w-140 m-auto aspect-16/11 max-[720px]:aspect-video">
           <Image
-            src={
-              // "https://images.unsplash.com/photo-1447279506476-3faec8071eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              "https://images.pexels.com/photos/4869431/pexels-photo-4869431.jpeg"
-            }
-            alt="Dine-In Menu"
+            src="/images/dinein-eggs.jpeg"
+            alt="Eggs Benedict"
             sizes="(max-width: 768px) 100vw, 60vw"
             loading="lazy"
             fill

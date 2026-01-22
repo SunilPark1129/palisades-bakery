@@ -66,13 +66,11 @@ function page({}: Props) {
   return (
     <div className="wrapper">
       <main className="flex flex-col p-4">
-        <header className="flex mb-8 flex-col md:flex-row gap-4">
+        <header className="flex mb-2 flex-col md:flex-row gap-4">
           <div className="flex flex-1 justify-center gap-4 h-full md:min-w-[20rem]">
             <div className="pb-12">
               <Image
-                src={
-                  "https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg"
-                }
+                src="/images/catering-bread.jpeg"
                 alt="Bread Slices"
                 height={500}
                 width={500}
@@ -82,7 +80,7 @@ function page({}: Props) {
             </div>
             <div className="pt-12">
               <Image
-                src={t1}
+                src="/images/catering-tart.jpg"
                 alt="Fruit Tarts"
                 height={500}
                 width={500}
@@ -92,7 +90,7 @@ function page({}: Props) {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <div className="flex flex-col gap-2 justify-center h-full max-w-140">
+            <div className="flex flex-col gap-2 justify-center h-full">
               <h1 className="text-[2.25em] font-semibold">Catering</h1>
               <div className="flex flex-col gap-2">
                 <h2 className="text-[1.4em] italic">Large Orders Made Easy</h2>

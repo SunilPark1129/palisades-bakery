@@ -2,17 +2,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
-import bread from "../../lib/test/3.png";
-import b4 from "../../lib/test/b4.png";
-import b14 from "../../lib/test/b14.png";
-import b15 from "../../lib/test/b15.png";
-import b18 from "../../lib/test/b18.png";
-import b21 from "../../lib/test/b21.png";
-// import b28 from "../../lib/test/b28.png";
-import b31 from "../../lib/test/b31.png";
-import b39 from "../../lib/test/b39.png";
-
-import heroImg from "./images/i10.jpg";
 
 type Props = {};
 
@@ -20,42 +9,35 @@ function BestSeller({}: Props) {
   const items = [
     {
       title: "Pearl Salt Bread",
-      img: b4,
+      img: "/images/best-saltbread.png",
       price: "3.00",
     },
 
     {
       title: "Koroke",
-      img: b15,
+      img: "/images/best-koroke.png",
       price: "4.00",
     },
     {
-      title: "Apple Turnover",
-      // img: b21,
-      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_183141311_Xg6g2sm6V.png?updatedAt=1768952017549",
-      price: "3.50",
-    },
-    {
       title: "Castella",
-      img: b39,
+      img: "/images/best-castella.png",
       price: "10.00",
     },
     {
+      title: "Apple Turnover",
+      img: "/images/best-turnover.png",
+      price: "3.50",
+    },
+
+    {
       title: "Red Bean Donut",
-      // img: b14,
-      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_190808970_01_AdvAm1F8Y.png?updatedAt=1768954300486",
+      img: "/images/best-redbean.png",
       price: "3.50",
     },
     {
       title: "Pecan Custard",
-      // img: b18,
-      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_201237256_Kwkm_qy5j.png?updatedAt=1768957999016",
+      img: "/images/best-custard.png",
       price: "20.00",
-    },
-    {
-      title: "Lobster Tail Pastry",
-      img: b31,
-      price: "5.50",
     },
   ];
 
@@ -65,10 +47,10 @@ function BestSeller({}: Props) {
         <div className="flex gap-4">
           <div className="relative h-80 flex-1 sm:flex hidden">
             <Image
-              src={heroImg}
+              src="/images/best-hero.jpg"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              alt=""
+              alt="Packaged Sliced Bread"
               className="object-cover rounded-2xl saturate-75 contrast-75"
             />
           </div>

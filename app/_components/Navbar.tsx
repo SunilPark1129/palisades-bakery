@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import logo from "./images/palisades-bakery-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import ArrowDown from "./svg/ArrowDown";
@@ -74,7 +73,7 @@ function Navbar() {
             <div className="flex w-full gap-12 items-center h-full">
               <Link href={"/"}>
                 <Image
-                  src={logo}
+                  src="/images/nav-logo.png"
                   alt="Palisades Park Bakery Logo"
                   priority
                   width={42}

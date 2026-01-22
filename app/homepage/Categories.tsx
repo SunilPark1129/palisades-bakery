@@ -1,8 +1,6 @@
 import { homeCategories } from "@/lib/homeData";
 import Image from "next/image";
 import Link from "next/link";
-// import bake from "./images/bread.jpg";
-import bake from "./images/i13.jpg";
 
 function Categories() {
   return (

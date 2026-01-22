@@ -1,5 +1,4 @@
 import Image from "next/image";
-import logo from "./images/bakery-footer-logo.png";
 import { SVGFacebook, SVGInstagram, SVGTwitter } from "./svg/social";
 import Link from "next/link";
 
@@ -9,10 +8,13 @@ function Footer() {
       <div className="wrapper">
         <div className="flex flex-col gap-14 items-center px-4 py-16">
           <div className="flex flex-col gap-2 items-center text-center">
+            {/* SPARK - width & height error in Image */}
             <Image
-              src={logo}
+              src="/images/footer-logo.png"
               alt="Palisades Park Bakery Logo"
               className="w-20 aspect-square rounded-full"
+              width={800}
+              height={800}
             />
             <div>
               <h2>Palisades Park Bakery</h2>

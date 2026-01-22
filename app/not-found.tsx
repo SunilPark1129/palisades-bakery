@@ -5,9 +5,7 @@ function NotFound() {
   return (
     <div className="flex flex-col items-center gap-8 p-4 my-16">
       <Image
-        src={
-          "https://plus.unsplash.com/premium_photo-1732333561323-6c9dbe677219?q=80&w=747&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        }
+        src="/images/notfound.avif"
         alt="Not Found"
         width={500}
         height={500}
