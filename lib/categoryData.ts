@@ -19,8 +19,8 @@ export const breadCategory = [
 export const cookieCategory = [
   "All",
   "Signature Cookies",
-  "Packaged Cookies",
   "Madelines & Biscotti",
+  "Packaged Cookies",
 ];
 
 export const pieCategory = ["All", "Pies", "Tarts"];
