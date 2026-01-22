@@ -41,7 +41,7 @@ function ProductList({ category, data, asideCategories }: Props) {
               <button
                 onClick={() => getFilteredItems(item)}
                 key={item}
-                className={`flex cursor-pointer ${
+                className={`flex cursor-pointer [@media(hover:hover)]:hover:bg-(--clr-accent) ${
                   selectedCategory === item
                     ? "bg-(--clr-accent) font-semibold"
                     : "bg-none"
@@ -82,7 +82,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                 <button
                   onClick={() => getFilteredItems(item)}
                   key={item}
-                  className={`flex justify-end cursor-pointer px-4 py-2 hover:bg-(--clr-accent) w-full text-sm ${
+                  className={`flex justify-end cursor-pointer px-4 py-2 [@media(hover:hover)]:hover:bg-(--clr-accent) w-full text-sm ${
                     selectedCategory === item ? "hidden" : ""
                   }`}
                 >
@@ -110,7 +110,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                         height={500}
                         unoptimized
                         loading={idx < 8 ? "eager" : "lazy"}
-                        className="object-cover w-full group-hover:scale-110 transition-transform"
+                        className="object-cover w-full [@media(hover:hover)]:group-hover:scale-110 transition-transform"
                       />
                     </div>
                   </Link>
