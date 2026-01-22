@@ -1,5 +1,4 @@
 import Hero from "./homepage/Hero";
-import About from "./homepage/About";
 import Block from "./homepage/Block";
 import DineIn from "./homepage/DineIn";
 import Categories from "./homepage/Categories";
@@ -10,16 +9,17 @@ import GradientMask from "./_components/ui/GradientMask";
 
 export default function Home() {
   return (
-    <main className="flex flex-col mb-8">
+    <main className="flex flex-col gap-10">
       <Hero />
       <Categories />
       <BestSeller />
       <DineIn />
-      <GradientMask top />
-      <Block />
-      <GradientMask />
+      <div className="flex flex-col">
+        <GradientMask top />
+        <Block />
+        <GradientMask />
+      </div>
       <Special />
-      {/* <About /> */}
       <Social />
     </main>
   );

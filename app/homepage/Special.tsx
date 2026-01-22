@@ -6,7 +6,7 @@ type Props = {};
 function Special({}: Props) {
   return (
     <div className="wrapper">
-      <section className="p-4 pb-16 flex flex-col gap-4">
+      <section className="p-4 flex flex-col gap-4">
         <header className="flex flex-col gap-4">
           <p className="text-xs uppercase tracking-wider">Special-Orders</p>
           <div className="flex gap-4 items-center">

@@ -23,29 +23,16 @@ function BestSeller({}: Props) {
       img: b4,
       price: "3.00",
     },
-    {
-      title: "Apple Turnover",
-      img: b21,
-      price: "3.50",
-    },
+
     {
       title: "Koroke",
       img: b15,
       price: "4.00",
     },
     {
-      title: "Pecan Custard",
-      img: b18,
-      price: "20.00",
-    },
-    {
-      title: "Lobster Tail Pastry",
-      img: b31,
-      price: "5.50",
-    },
-    {
-      title: "Red Bean Donut",
-      img: b14,
+      title: "Apple Turnover",
+      // img: b21,
+      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_183141311_Xg6g2sm6V.png?updatedAt=1768952017549",
       price: "3.50",
     },
     {
@@ -53,11 +40,28 @@ function BestSeller({}: Props) {
       img: b39,
       price: "10.00",
     },
+    {
+      title: "Red Bean Donut",
+      // img: b14,
+      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_190808970_01_AdvAm1F8Y.png?updatedAt=1768954300486",
+      price: "3.50",
+    },
+    {
+      title: "Pecan Custard",
+      // img: b18,
+      img: "https://ik.imagekit.io/ol9fa07j0/palisades/KakaoTalk_20260120_201237256_Kwkm_qy5j.png?updatedAt=1768957999016",
+      price: "20.00",
+    },
+    {
+      title: "Lobster Tail Pastry",
+      img: b31,
+      price: "5.50",
+    },
   ];
 
   return (
     <div className="wrapper">
-      <section className="flex flex-col gap-4 max-[860px]:flex-col p-4 py-16">
+      <section className="flex flex-col gap-4 max-[860px]:flex-col p-4">
         <div className="flex gap-4">
           <div className="relative h-80 flex-1 sm:flex hidden">
             <Image

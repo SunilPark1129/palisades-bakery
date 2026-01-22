@@ -7,12 +7,12 @@ import bake from "./images/i13.jpg";
 function Categories() {
   return (
     <div className="wrapper">
-      <section className="flex flex-col w-full p-4 py-16 gap-8">
+      <section className="flex flex-col w-full p-4 gap-8">
         <h2 className="sr-only">Categories</h2>
         <div className="flex w-full items-center">
           <div className="flex flex-col gap-4 w-fit">
             <p className="text-xs uppercase tracking-wider">Categories</p>
-            <p className="text-[2.6em] leading-tight font-semibold text-gray-600">
+            <p className="text-[2em] leading-tight font-semibold text-gray-600">
               What are you Craving Today?
             </p>
             <p className="text-[1.1em]">

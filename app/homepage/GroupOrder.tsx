@@ -1,7 +1,13 @@
 import Image from "next/image";
 // import groupOrderImg from "./images/bakery-group-img.jpg";
-// import groupOrderImg from "./images/f6.jpg";
-import groupOrderImg from "./images/i24.jpg";
+import groupOrderImg from "./images/f6.jpg";
+// import groupOrderImg from "./images/i24.jpg";
+// import groupOrderImg from "./images/p1.jpg";
+// import groupOrderImg from "./images/p_2.jpg";
+// import groupOrderImg from "./images/p3_2.jpg";
+// import groupOrderImg from "./images/p5.jpg";
+// import groupOrderImg from "./images/p5_2.jpg";
+
 import { SVGNumberTwo } from "../_components/svg/Numbers";
 import Link from "next/link";
 
@@ -15,7 +21,7 @@ function GroupOrder() {
           fill
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover saturate-50"
+          className="object-cover saturate-90 contrast-105"
         />
       </div>
       <div className="flex flex-col max-[720px]:p-0 m-auto max-[720px]:max-w-full gap-4 w-full h-auto justify-center max-w-120">
