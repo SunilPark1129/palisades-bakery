@@ -110,7 +110,7 @@ function ProductList({ category, data, asideCategories }: Props) {
                         height={500}
                         unoptimized
                         loading={idx < 8 ? "eager" : "lazy"}
-                        className="object-cover group-hover:scale-110 transition-transform"
+                        className="object-cover w-full group-hover:scale-110 transition-transform"
                       />
                     </div>
                   </Link>
