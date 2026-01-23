@@ -1,9 +1,0 @@
-# Allow all search engines to crawl public pages
-User-agent: *
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-Disallow: /drafts/
-
-# Sitemap
-Sitemap: https://www.palisadesparkbakery.com/sitemap.xml

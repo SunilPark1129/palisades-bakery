@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     "cafe",
     "Palisades Park Bakery",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/shortcut-static-icon.png",
+    apple: "/apple-touch-icon.png",
+  },
   authors: [{ name: "Palisades Park Bakery" }],
   openGraph: {
     title: "Palisades Park Bakery | Fresh Breads & Custom Cakes",
