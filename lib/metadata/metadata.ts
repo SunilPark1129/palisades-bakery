@@ -1,6 +1,4 @@
-// lib/categoryMeta.ts
 import { Metadata } from "next";
-// keywords: ["bakery", "fresh breads", "custom cakes", "pies", "cookies"]
 export const CATEGORY_METADATA: Record<string, Metadata> = {
   breads: {
     title: "Fresh Breads | Palisades Park Bakery",

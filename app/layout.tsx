@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import MainHeader from "./_components/ui/MainHeader";
-import { baseUrl } from "@/lib/config";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -12,7 +11,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL("https://palisadesparkbakerynj.com"),
   title: "Palisades Park Bakery | Fresh Breads, Cakes, Pies & Cookies",
   description:
     "Enjoy freshly baked breads, cakes, pies, and cookies at Palisades Park Bakery. Group orders for events and custom cakes made to order are also available. Visit us in Palisades Park at New Jersey or order online today.",

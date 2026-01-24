@@ -1,5 +1,4 @@
 import Image from "next/image";
-import t1 from "./images/t1.jpg";
 import CheckSVG from "../_components/svg/CheckSVG";
 import { Metadata } from "next";
 
