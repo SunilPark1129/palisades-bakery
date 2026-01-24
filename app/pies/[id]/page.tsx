@@ -2,8 +2,7 @@ import ProductDetail from "@/app/_components/shared/ProductDetail";
 import { IProduct } from "@/models/Product";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import connectDB from "@/lib/mongodb";
-import { Product } from "@/models/Product";
+import { baseUrl } from "@/lib/config";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -11,13 +10,13 @@ type Props = {
 
 async function getProduct(id: string): Promise<IProduct | null> {
   try {
-    await connectDB();
-    const product = await Product.findById(id).lean();
-    if (!product) return null;
-
-    return JSON.parse(JSON.stringify(product)) as IProduct;
+    const res = await fetch(`${baseUrl}/api/products/${id}`, {
+      next: { tags: [`product-${id}`] },
+    });
+    if (!res.ok) return null;
+    const { data } = await res.json();
+    return data;
   } catch (error) {
-    console.error("Error fetching product by ID:", error);
     return null;
   }
 }

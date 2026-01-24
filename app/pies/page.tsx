@@ -14,19 +14,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function page({}: Props) {
   try {
-    await connectDB();
+    const res = await fetch(`${baseUrl}/api/categories/pie`, {
+      next: {
+        tags: ["products-list"],
+      },
+    });
 
-    const products = await Product.find({ product: "pie" })
-      .sort({ order: 1 })
-      .lean();
+    if (!res.ok) {
+      console.error("API Response Error");
+      return (
+        <ProductList category="pies" data={[]} asideCategories={pieCategory} />
+      );
+    }
 
-    const data = JSON.parse(JSON.stringify(products)) as IProduct[];
+    const { data }: { data: IProduct[] } = await res.json();
 
     return (
       <ProductList category="pies" data={data} asideCategories={pieCategory} />
     );
-  } catch (error: any) {
-    console.error("Error loading products:", error);
+  } catch (error) {
+    console.error("Network or Server Error:", error);
     return (
       <ProductList category="pies" data={[]} asideCategories={pieCategory} />
     );

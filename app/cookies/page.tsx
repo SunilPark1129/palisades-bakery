@@ -4,6 +4,7 @@ import { cookieCategory } from "@/lib/categoryData";
 import { IProduct, Product } from "@/models/Product";
 import { CATEGORY_METADATA } from "@/lib/metadata/metadata";
 import connectDB from "@/lib/mongodb";
+import { baseUrl } from "@/lib/config";
 
 type Props = {};
 
@@ -13,13 +14,24 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function page({}: Props) {
   try {
-    await connectDB();
+    const res = await fetch(`${baseUrl}/api/categories/cookie`, {
+      next: {
+        tags: ["products-list"],
+      },
+    });
 
-    const products = await Product.find({ product: "cookie" })
-      .sort({ order: 1 })
-      .lean();
+    if (!res.ok) {
+      console.error("API Response Error");
+      return (
+        <ProductList
+          category="cookies"
+          data={[]}
+          asideCategories={cookieCategory}
+        />
+      );
+    }
 
-    const data = JSON.parse(JSON.stringify(products)) as IProduct[];
+    const { data }: { data: IProduct[] } = await res.json();
 
     return (
       <ProductList
@@ -28,8 +40,8 @@ async function page({}: Props) {
         asideCategories={cookieCategory}
       />
     );
-  } catch (error: any) {
-    console.error("Error loading products:", error);
+  } catch (error) {
+    console.error("Network or Server Error:", error);
     return (
       <ProductList
         category="cookies"
@@ -39,4 +51,5 @@ async function page({}: Props) {
     );
   }
 }
+
 export default page;

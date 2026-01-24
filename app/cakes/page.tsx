@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { cakeCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
-import { IProduct, Product } from "@/models/Product";
+import { IProduct } from "@/models/Product";
 import { CATEGORY_METADATA } from "@/lib/metadata/metadata";
-import connectDB from "@/lib/mongodb";
+import { baseUrl } from "@/lib/config";
 
 type Props = {};
 
@@ -13,13 +13,24 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function page({}: Props) {
   try {
-    await connectDB();
+    const res = await fetch(`${baseUrl}/api/categories/cake`, {
+      next: {
+        tags: ["products-list"],
+      },
+    });
 
-    const products = await Product.find({ product: "cake" })
-      .sort({ order: 1 })
-      .lean();
+    if (!res.ok) {
+      console.error("API Response Error");
+      return (
+        <ProductList
+          category="cakes"
+          data={[]}
+          asideCategories={cakeCategory}
+        />
+      );
+    }
 
-    const data = JSON.parse(JSON.stringify(products)) as IProduct[];
+    const { data }: { data: IProduct[] } = await res.json();
 
     return (
       <ProductList
@@ -29,27 +40,11 @@ async function page({}: Props) {
       />
     );
   } catch (error) {
+    console.error("Network or Server Error:", error);
     return (
       <ProductList category="cakes" data={[]} asideCategories={cakeCategory} />
     );
   }
 }
-
-// async function page({}: Props) {
-//   const res = await fetch(`${baseUrl}/api/categories/cake`, {
-//     next: {
-//       tags: ["products-list"],
-//     },
-//   });
-//   if (!res.ok) {
-//     const data = await res.json();
-//     throw new Error(data.error);
-//   }
-//   const { data }: { data: IProduct[] } = await res.json();
-
-//   return (
-//     <ProductList category="cakes" data={data} asideCategories={cakeCategory} />
-//   );
-// }
 
 export default page;
