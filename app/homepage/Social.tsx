@@ -12,10 +12,10 @@ function Social({}: Props) {
   return (
     <section className="relative">
       <div className="wrapper">
-        <div className="flex p-4 justify-center">
-          <div className="relative w-full max-w-100 aspect-9/16 max-[600px]:hidden">
+        <div className="flex p-4 justify-center md:gap-8">
+          <div className="relative w-full max-w-80 aspect-9/16 max-[600px]:hidden">
             <Image
-              src="/images/follow-mobile.png"
+              src="/images/follow-mobile2.png"
               alt="Social Media on Mobile"
               fill
               sizes="(max-width: 768px) 100vw, 400px"
@@ -23,11 +23,15 @@ function Social({}: Props) {
             />
           </div>
           <div className="flex flex-col gap-4 my-auto">
-            <p className="text-xs uppercase tracking-wider">Follow-Us</p>
-            <h2 className="text-[1.8em] leading-tight font-semibold">
-              Follow Our Bakery
-            </h2>
-            <p>See our fresh bakes, daily specials, and behind-the-scenes.</p>
+            <div className="flex flex-col w-fit">
+              <p className="text-xs uppercase tracking-wider pb-4">Follow-Us</p>
+              <p className="text-[2em] leading-tight font-semibold text-gray-600">
+                Follow Our Bakery
+              </p>
+              <p className="text-[1.1em]">
+                See our fresh bakes, daily specials, and behind-the-scenes.
+              </p>
+            </div>
 
             <div className="flex flex-col items-center w-full gap-2 m-auto">
               <Link

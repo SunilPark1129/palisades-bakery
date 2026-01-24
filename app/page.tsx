@@ -11,15 +11,15 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-10">
       <Hero />
-      <Categories />
       <BestSeller />
-      <DineIn />
+      <Categories />
+      <Special />
       <div className="flex flex-col">
         <GradientMask top />
         <Block />
         <GradientMask />
       </div>
-      <Special />
+      <DineIn />
       <Social />
     </main>
   );

@@ -14,11 +14,6 @@ function BestSeller({}: Props) {
     },
 
     {
-      title: "Koroke",
-      img: "/images/best-koroke.png",
-      price: "4.00",
-    },
-    {
       title: "Castella",
       img: "/images/best-castella.png",
       price: "10.00",
@@ -28,12 +23,17 @@ function BestSeller({}: Props) {
       img: "/images/best-turnover.png",
       price: "3.50",
     },
-
     {
       title: "Red Bean Donut",
       img: "/images/best-redbean.png",
       price: "3.50",
     },
+    {
+      title: "Koroke",
+      img: "/images/best-koroke.png",
+      price: "4.00",
+    },
+
     {
       title: "Pecan Custard",
       img: "/images/best-custard.png",
@@ -45,7 +45,7 @@ function BestSeller({}: Props) {
     <div className="wrapper">
       <section className="flex flex-col gap-4 max-[860px]:flex-col p-4">
         <div className="flex gap-4">
-          <div className="relative h-80 flex-1 sm:flex hidden">
+          {/* <div className="relative h-80 flex-1 sm:flex hidden">
             <Image
               src="/images/best-hero.jpg"
               fill
@@ -53,8 +53,8 @@ function BestSeller({}: Props) {
               alt="Packaged Sliced Bread"
               className="object-cover rounded-2xl saturate-75 contrast-75"
             />
-          </div>
-          <div className="flex flex-col gap-4 flex-1 w-full sm:justify-end sm:items-end text-left sm:text-right sm:p-4">
+          </div> */}
+          <div className="flex flex-col flex-1 w-full">
             <h2 className="text-[2em] leading-tight font-semibold">
               BEST-SELLER
             </h2>
@@ -115,7 +115,7 @@ function BestSeller({}: Props) {
           width={85}
           height={85}
           alt="drag left image"
-          className="object-contain w-auto h-auto ml-auto z-10 pointer-events-none select-none animate-pulse"
+          className="object-contain w-auto h-auto ml-auto -mb-6 z-10 pointer-events-none select-none animate-pulse"
         />
       </section>
     </div>
