@@ -1,4 +1,3 @@
-export const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://palisadesparkbakerynj.com"
-    : "http://localhost:3000";
+export const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
