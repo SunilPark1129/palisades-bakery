@@ -1,4 +1,5 @@
 import ProductDetail from "@/app/_components/shared/ProductDetail";
+import { baseUrl } from "@/app/layout";
 import { IProduct } from "@/models/Product";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -8,10 +9,9 @@ type Props = {
 };
 
 async function getProduct(id: string): Promise<IProduct | null> {
-  const res = await fetch(`http://localhost:3000/api/category/${id}`, {
+  const res = await fetch(`${baseUrl}/api/category/${id}`, {
     next: {
-      tags: [`product-${id}`], // 이 데이터에 고유 태그를 부여
-      // revalidate를 설정하지 않으면 기본적으로 계속 캐시가 적용됨.
+      tags: [`product-${id}`],
     },
   });
   if (!res.ok) return null;

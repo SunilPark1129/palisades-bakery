@@ -11,9 +11,9 @@ const lora = Lora({
 });
 
 // WORK ON IT LATER WHEN DOMAIN HAS ADDED
-const baseUrl =
+export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://your-bakery-domain.com"
+    ? "https://palisadesbakery.com"
     : "http://localhost:3000";
 
 export const metadata: Metadata = {

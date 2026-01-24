@@ -3,6 +3,7 @@ import { breadCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
 import { IProduct } from "@/models/Product";
 import { CATEGORY_METADATA } from "@/lib/metadata/metadata";
+import { baseUrl } from "../layout";
 
 type Props = {};
 
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function page({}: Props) {
-  const res = await fetch(`http://localhost:3000/api/categories/bread`, {
+  const res = await fetch(`${baseUrl}/api/categories/bread`, {
     next: {
       tags: ["products-list"],
     },

@@ -8,6 +8,7 @@ import Alert from "../_components/svg/Alert";
 import Link from "next/link";
 import Modal from "../_components/shared/Modal";
 import Image from "next/image";
+import { baseUrl } from "../layout";
 
 type Props = {};
 type ProductType = "cake" | "bread" | "cookie" | "pie";
@@ -62,7 +63,7 @@ function page({}: Props) {
         throw new Error(data.error);
       }
 
-      const fetchRes = await fetch("http://localhost:3000/api/categories/", {
+      const fetchRes = await fetch(`${baseUrl}/api/categories/`, {
         cache: "no-store",
       });
       const data = await fetchRes.json();
@@ -83,7 +84,7 @@ function page({}: Props) {
       try {
         setLoading(true);
         setErrorMessage("");
-        const res = await fetch(`http://localhost:3000/api/categories/`, {
+        const res = await fetch(`${baseUrl}/api/categories/`, {
           cache: "no-store",
         });
         if (!res.ok) {

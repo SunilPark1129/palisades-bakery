@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ArrowDown from "../svg/ArrowDown";
 import { IProduct } from "@/models/Product";
+import { baseUrl } from "@/app/layout";
 
 type Props = {
   category: string;
@@ -96,7 +97,7 @@ function ProductList({ category, data, asideCategories }: Props) {
             {list.map((entry: IProduct, idx) => {
               return (
                 <section key={entry._id} className="group">
-                  <Link href={`http://localhost:3000/${category}/${entry._id}`}>
+                  <Link href={`${baseUrl}/${category}/${entry._id}`}>
                     <div className="relative w-full max-w-[400px] aspect-square overflow-hidden">
                       <Image
                         src={`${entry.url}?tr=n-card_thumb`}

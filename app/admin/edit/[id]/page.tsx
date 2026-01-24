@@ -5,6 +5,7 @@ import UploadImagekit, {
 } from "@/app/_components/imagekit/UploadImagekit";
 import Modal from "@/app/_components/shared/Modal";
 import Trash from "@/app/_components/svg/Trash";
+import { baseUrl } from "@/app/layout";
 import { IProduct } from "@/models/Product";
 import { useParams, useRouter } from "next/navigation";
 import React, {
@@ -62,7 +63,7 @@ function page() {
       try {
         setLoading(true);
         setErrorMessage(null);
-        const res = await fetch("http://localhost:3000/api/category/" + id);
+        const res = await fetch(`${baseUrl}/api/category/` + id);
         if (!res.ok) {
           const data = await res.json();
           throw new Error(data.error);
