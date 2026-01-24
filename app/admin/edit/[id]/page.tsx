@@ -5,7 +5,7 @@ import UploadImagekit, {
 } from "@/app/_components/imagekit/UploadImagekit";
 import Modal from "@/app/_components/shared/Modal";
 import Trash from "@/app/_components/svg/Trash";
-import { baseUrl } from "@/app/layout";
+import { baseUrl } from "@/lib/config";
 import { IProduct } from "@/models/Product";
 import { useParams, useRouter } from "next/navigation";
 import React, {

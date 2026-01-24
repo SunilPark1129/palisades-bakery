@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/", "/admin/", "/drafts/"],
     },
-    sitemap: "www.palisadesparkbakery.com.xml",
+    sitemap: "www.palisadesparkbakerynj.com.xml",
   };
 }

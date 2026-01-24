@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ArrowDown from "../svg/ArrowDown";
 import { IProduct } from "@/models/Product";
-import { baseUrl } from "@/app/layout";
+import { baseUrl } from "@/lib/config";
 
 type Props = {
   category: string;

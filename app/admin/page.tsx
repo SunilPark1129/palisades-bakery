@@ -8,7 +8,7 @@ import Alert from "../_components/svg/Alert";
 import Link from "next/link";
 import Modal from "../_components/shared/Modal";
 import Image from "next/image";
-import { baseUrl } from "../layout";
+import { baseUrl } from "@/lib/config";
 
 type Props = {};
 type ProductType = "cake" | "bread" | "cookie" | "pie";

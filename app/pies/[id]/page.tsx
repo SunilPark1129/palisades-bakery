@@ -1,5 +1,5 @@
 import ProductDetail from "@/app/_components/shared/ProductDetail";
-import { baseUrl } from "@/app/layout";
+import { baseUrl } from "@/lib/config";
 import { IProduct } from "@/models/Product";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";

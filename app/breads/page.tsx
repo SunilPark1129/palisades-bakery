@@ -3,7 +3,7 @@ import { breadCategory } from "@/lib/categoryData";
 import ProductList from "../_components/shared/ProductList";
 import { IProduct } from "@/models/Product";
 import { CATEGORY_METADATA } from "@/lib/metadata/metadata";
-import { baseUrl } from "../layout";
+import { baseUrl } from "@/lib/config";
 
 type Props = {};
 

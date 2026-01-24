@@ -6,7 +6,7 @@ interface IProduct {
 }
 
 const categories = ["breads", "cakes", "pies", "cookies"];
-const baseUrl = "https://www.palisadesparkbakery.com";
+const baseUrl = "https://palisadesparkbakerynj.com";
 
 async function fetchProducts() {
   try {
