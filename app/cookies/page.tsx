@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import ProductList from "../_components/shared/ProductList";
 import { cookieCategory } from "@/lib/categoryData";
-import { IProduct } from "@/models/Product";
+import { IProduct, Product } from "@/models/Product";
 import { CATEGORY_METADATA } from "@/lib/metadata/metadata";
-import { baseUrl } from "@/lib/config";
+import connectDB from "@/lib/mongodb";
 
 type Props = {};
 
@@ -13,17 +13,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function page({}: Props) {
   try {
-    const res = await fetch(`${baseUrl}/api/categories/cookie`, {
-      next: { tags: ["products-list"] },
-    });
+    await connectDB();
 
-    const result = await res.json();
+    const products = await Product.find({ product: "cookie" })
+      .sort({ order: 1 })
+      .lean();
 
-    if (!res.ok) {
-      throw new Error(result.error || "Failed to fetch products");
-    }
-
-    const { data }: { data: IProduct[] } = result;
+    const data = JSON.parse(JSON.stringify(products)) as IProduct[];
 
     return (
       <ProductList
@@ -33,9 +29,14 @@ async function page({}: Props) {
       />
     );
   } catch (error: any) {
-    console.error("Error fetching bread products:", error);
-    throw error;
+    console.error("Error loading products:", error);
+    return (
+      <ProductList
+        category="cookies"
+        data={[]}
+        asideCategories={cookieCategory}
+      />
+    );
   }
 }
-
 export default page;
