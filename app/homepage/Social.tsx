@@ -35,7 +35,7 @@ function Social({}: Props) {
 
             <div className="flex flex-col items-center w-full gap-2 m-auto">
               <Link
-                href="https://instagram.com/yourbakery"
+                href="https://www.instagram.com/palisadesparkbakery/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center w-full bg-linear-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
@@ -47,7 +47,7 @@ function Social({}: Props) {
               </Link>
 
               <Link
-                href="https://facebook.com/yourbakery"
+                href="https://www.facebook.com/palisadesparkbakery/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center w-full bg-[#1877F2] text-white rounded justify-center"
@@ -59,7 +59,7 @@ function Social({}: Props) {
               </Link>
 
               <Link
-                href="https://twitter.com/yourbakery"
+                href="https://x.com/palparkbakery"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center w-full bg-[#1DA1F2] text-white rounded justify-center"

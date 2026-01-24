@@ -39,7 +39,7 @@ function Footer() {
               <h3 className="font-semibold">Follow Us</h3>
               <div className="flex gap-1">
                 <Link
-                  href="https://twitter.com/yourbakery"
+                  href="https://www.instagram.com/palisadesparkbakery/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
@@ -47,7 +47,7 @@ function Footer() {
                   <SVGInstagram />
                 </Link>
                 <Link
-                  href="https://twitter.com/yourbakery"
+                  href="https://www.facebook.com/palisadesparkbakery/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
@@ -55,7 +55,7 @@ function Footer() {
                   <SVGFacebook />
                 </Link>
                 <Link
-                  href="https://twitter.com/yourbakery"
+                  href="https://x.com/palparkbakery"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
