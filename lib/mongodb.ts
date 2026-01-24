@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI!;
+const MONGODB_URI = process.env.MONGODB_URI_PRODUCT || process.env.MONGODB_URI!;
 
 if (!MONGODB_URI) {
   throw new Error("URL environment is needed");
@@ -44,7 +44,7 @@ async function connectDB() {
     cached.conn = await cached.promise;
     console.log(
       "MongoDB connected to:",
-      cached?.conn?.connection?.db?.databaseName
+      cached?.conn?.connection?.db?.databaseName,
     );
   } catch (e) {
     cached.promise = null;
