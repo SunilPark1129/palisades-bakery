@@ -107,7 +107,7 @@ function BestSeller({}: Props) {
                       {item.title}
                     </h3>
                     <div className="mt-auto"></div>
-                    <Link href={`/${item.link}`} className="text-[1em]">
+                    <Link href={`${item.link}`} className="text-[1em]">
                       See Detail
                     </Link>
                   </div>
