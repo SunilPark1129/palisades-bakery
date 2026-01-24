@@ -10,33 +10,39 @@ function BestSeller({}: Props) {
     {
       title: "Pearl Salt Bread",
       img: "/images/best-saltbread.png",
+      link: "/breads/693eef969fb801d4f98d4237",
       price: "3.00",
     },
 
     {
       title: "Castella",
       img: "/images/best-castella.png",
+      link: "/breads/693eef969fb801d4f98d4242",
       price: "10.00",
     },
     {
       title: "Apple Turnover",
       img: "/images/best-turnover.png",
+      link: "/breads/693eef969fb801d4f98d422c",
       price: "3.50",
     },
     {
       title: "Red Bean Donut",
       img: "/images/best-redbean.png",
+      link: "/breads/69656fef03f41272a3f36eca",
       price: "3.50",
     },
     {
       title: "Koroke",
       img: "/images/best-koroke.png",
+      link: "/breads/693eef969fb801d4f98d4249",
       price: "4.00",
     },
 
     {
       title: "Pecan Custard",
       img: "/images/best-custard.png",
+      link: "/breads/693eef969fb801d4f98d4240",
       price: "20.00",
     },
   ];
@@ -101,7 +107,7 @@ function BestSeller({}: Props) {
                       {item.title}
                     </h3>
                     <div className="mt-auto"></div>
-                    <Link href={"/"} className="text-[1em]">
+                    <Link href={`/${item.link}`} className="text-[1em]">
                       See Detail
                     </Link>
                   </div>
