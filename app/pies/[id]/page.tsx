@@ -10,7 +10,7 @@ type Props = {
 
 async function getProduct(id: string): Promise<IProduct | null> {
   try {
-    const res = await fetch(`${baseUrl}/api/products/${id}`, {
+    const res = await fetch(`${baseUrl}/api/category/${id}`, {
       next: { tags: [`product-${id}`] },
     });
     if (!res.ok) return null;
