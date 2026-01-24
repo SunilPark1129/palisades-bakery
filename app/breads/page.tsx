@@ -12,24 +12,30 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function page({}: Props) {
-  const res = await fetch(`${baseUrl}/api/categories/bread`, {
-    next: {
-      tags: ["products-list"],
-    },
-  });
-  if (!res.ok) {
-    const data = await res.json();
-    throw new Error(data.error);
-  }
-  const { data }: { data: IProduct[] } = await res.json();
+  try {
+    const res = await fetch(`${baseUrl}/api/categories/bread`, {
+      next: { tags: ["products-list"] },
+    });
 
-  return (
-    <ProductList
-      category="breads"
-      data={data}
-      asideCategories={breadCategory}
-    />
-  );
+    const result = await res.json();
+
+    if (!res.ok) {
+      throw new Error(result.error || "Failed to fetch products");
+    }
+
+    const { data }: { data: IProduct[] } = result;
+
+    return (
+      <ProductList
+        category="breads"
+        data={data}
+        asideCategories={breadCategory}
+      />
+    );
+  } catch (error: any) {
+    console.error("Error fetching bread products:", error);
+    throw error;
+  }
 }
 
 export default page;

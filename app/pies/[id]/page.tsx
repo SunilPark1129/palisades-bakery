@@ -9,14 +9,23 @@ type Props = {
 };
 
 async function getProduct(id: string): Promise<IProduct | null> {
-  const res = await fetch(`${baseUrl}/api/category/${id}`, {
-    next: {
-      tags: [`product-${id}`],
-    },
-  });
-  if (!res.ok) return null;
-  const { data } = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${baseUrl}/api/category/${id}`, {
+      next: {
+        tags: [`product-${id}`],
+      },
+    });
+
+    if (!res.ok) {
+      return null;
+    }
+
+    const { data } = await res.json();
+    return data ?? null;
+  } catch (error) {
+    console.error("Failed to fetch product:", error);
+    return null;
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
