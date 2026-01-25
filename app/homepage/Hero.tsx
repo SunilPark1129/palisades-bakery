@@ -13,6 +13,7 @@ function Hero() {
           sizes="(max-width: 768px) 100vw,
           (max-width: 1280px) 90vw,
           1335px"
+          fetchPriority="high"
         />
       </div>
     </section>
