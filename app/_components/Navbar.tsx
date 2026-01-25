@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowDown from "./svg/ArrowDown";
-import MobileMenu from "./svg/MobileMenu";
+import dynamic from "next/dynamic";
+const ArrowDown = dynamic(() => import("./svg/ArrowDown"));
+const MobileMenu = dynamic(() => import("./svg/MobileMenu"));
 
 const navLinks = [
   { label: "Dine-In", path: "/dine-in" },

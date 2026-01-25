@@ -1,9 +1,6 @@
-import React from "react";
 import AddForm from "./AddForm";
 
-type Props = {};
-
-function page({}: Props) {
+function page() {
   return (
     <div>
       <AddForm />

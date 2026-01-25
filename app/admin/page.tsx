@@ -2,13 +2,14 @@
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 import { IProduct } from "@/models/Product";
-import Trash from "../_components/svg/Trash";
-import Edit from "../_components/svg/Edit";
-import Alert from "../_components/svg/Alert";
-import Link from "next/link";
-import Modal from "../_components/shared/Modal";
-import Image from "next/image";
 import { baseUrl } from "@/lib/config";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import Image from "next/image";
+const Modal = dynamic(() => import("../_components/shared/Modal"));
+const Alert = dynamic(() => import("../_components/svg/Alert"));
+const Edit = dynamic(() => import("../_components/svg/Edit"));
+const Trash = dynamic(() => import("../_components/svg/Trash"));
 
 type Props = {};
 type ProductType = "cake" | "bread" | "cookie" | "pie";

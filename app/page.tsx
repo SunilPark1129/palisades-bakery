@@ -1,11 +1,13 @@
 import Hero from "./homepage/Hero";
-import Block from "./homepage/Block";
-import DineIn from "./homepage/DineIn";
-import Categories from "./homepage/Categories";
 import BestSeller from "./homepage/BestSeller";
-import Social from "./homepage/Social";
-import Special from "./homepage/Special";
-import GradientMask from "./_components/ui/GradientMask";
+import dynamic from "next/dynamic";
+
+const Categories = dynamic(() => import("./homepage/Categories"));
+const Special = dynamic(() => import("./homepage/Special"));
+const Block = dynamic(() => import("./homepage/Block"));
+const DineIn = dynamic(() => import("./homepage/DineIn"));
+const Social = dynamic(() => import("./homepage/Social"));
+const GradientMask = dynamic(() => import("./_components/ui/GradientMask"));
 
 export default function Home() {
   return (

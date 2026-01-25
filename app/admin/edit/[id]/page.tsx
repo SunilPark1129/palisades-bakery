@@ -1,10 +1,5 @@
 "use client";
-import UploadImagekit, {
-  UploadImagekitHandle,
-  UploadResult,
-} from "@/app/_components/imagekit/UploadImagekit";
-import Modal from "@/app/_components/shared/Modal";
-import Trash from "@/app/_components/svg/Trash";
+import dynamic from "next/dynamic";
 import { baseUrl } from "@/lib/config";
 import { IProduct } from "@/models/Product";
 import { useParams, useRouter } from "next/navigation";
@@ -15,6 +10,17 @@ import React, {
   useRef,
   useState,
 } from "react";
+
+const Modal = dynamic(() => import("@/app/_components/shared/Modal"));
+const Trash = dynamic(() => import("../../../_components/svg/Trash"));
+import type {
+  UploadImagekitHandle,
+  UploadResult,
+} from "@/app/_components/imagekit/UploadImagekit";
+
+const UploadImagekit = dynamic(
+  () => import("@/app/_components/imagekit/UploadImagekit"),
+);
 
 type ProductType = "cake" | "bread" | "cookie" | "pie";
 

@@ -1,6 +1,16 @@
 import Image from "next/image";
-import { SVGFacebook, SVGInstagram, SVGTwitter } from "./svg/social";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const SVGFacebook = dynamic(() =>
+  import("./svg/social").then((mod) => mod.SVGFacebook),
+);
+const SVGInstagram = dynamic(() =>
+  import("./svg/social").then((mod) => mod.SVGInstagram),
+);
+const SVGTwitter = dynamic(() =>
+  import("./svg/social").then((mod) => mod.SVGTwitter),
+);
 
 function Footer() {
   return (

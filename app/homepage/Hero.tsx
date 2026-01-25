@@ -1,5 +1,4 @@
 import Image from "next/image";
-import heroImg from "./images/hero.jpg";
 
 function Hero() {
   return (
@@ -11,7 +10,9 @@ function Hero() {
           fill
           alt="Palisades Park Bakery Banner"
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw,
+          (max-width: 1280px) 90vw,
+          1335px"
         />
       </div>
     </section>

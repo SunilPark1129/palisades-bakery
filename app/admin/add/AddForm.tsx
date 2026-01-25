@@ -1,22 +1,17 @@
 "use client";
-import { IProduct } from "@/models/Product";
-import React, {
-  ChangeEvent,
-  Dispatch,
-  FormEvent,
-  SetStateAction,
-  useRef,
-  useState,
-} from "react";
-import Trash from "../../_components/svg/Trash";
+import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Modal from "@/app/_components/shared/Modal";
-import UploadImagekit, {
+import dynamic from "next/dynamic";
+
+import type {
   UploadImagekitHandle,
   UploadResult,
 } from "@/app/_components/imagekit/UploadImagekit";
-
-type AddFormProperty = {};
+const Modal = dynamic(() => import("@/app/_components/shared/Modal"));
+const Trash = dynamic(() => import("../../_components/svg/Trash"));
+const UploadImagekit = dynamic(
+  () => import("@/app/_components/imagekit/UploadImagekit"),
+);
 
 const category = {
   cake: ["Whole Cakes", "Slice Cakes", "Roll Cakes", "Mini Cakes", "Cupcakes"],
@@ -39,7 +34,6 @@ function AddForm() {
   const [isAddModalOn, setIsAddModalOn] = useState<boolean>(false);
   const [sizeCount, setSizeCount] = useState<number[]>([]);
   const sizeIdRef = useRef(1);
-  const [title, setTitle] = useState<string>("");
 
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -177,7 +171,6 @@ function AddForm() {
             Title:
             <input
               type="text"
-              onChange={(e) => setTitle(e.target.value)}
               name="title"
               required
               autoComplete="off"
