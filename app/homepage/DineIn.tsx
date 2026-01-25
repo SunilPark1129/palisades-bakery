@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function DineIn() {
   return (
@@ -15,9 +16,12 @@ function DineIn() {
             perfect for a casual meal with family or friends. Visit our Menu
             page for the full selection.
           </p>
-          <button className="py-1 px-4 border rounded w-fit cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background) text-[1.1em]">
+          <Link
+            href={"/dine-in"}
+            className="py-1 px-4 border rounded w-fit cursor-pointer hover:bg-(--clr-primary) hover:text-(--clr-background) text-[1.1em]"
+          >
             View Menu
-          </button>
+          </Link>
         </div>
         <div className="relative w-full min-[720px]:max-w-140 m-auto aspect-16/11 max-[720px]:aspect-video">
           <Image
