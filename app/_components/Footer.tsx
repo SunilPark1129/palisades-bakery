@@ -53,6 +53,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
+                  aria-label="Palisades Park Bakery Instagram"
                 >
                   <SVGInstagram />
                 </Link>
@@ -61,6 +62,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
+                  aria-label="Palisades Park Bakery Facebook"
                 >
                   <SVGFacebook />
                 </Link>
@@ -69,6 +71,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
+                  aria-label="Palisades Park Bakery Twitter"
                 >
                   <SVGTwitter />
                 </Link>

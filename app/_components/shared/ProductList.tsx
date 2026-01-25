@@ -97,7 +97,10 @@ function ProductList({ category, data, asideCategories }: Props) {
             {list.map((entry: IProduct, idx) => {
               return (
                 <section key={entry._id} className="group">
-                  <Link href={`${baseUrl}/${category}/${entry._id}`}>
+                  <Link
+                    href={`${baseUrl}/${category}/${entry._id}`}
+                    className="group block"
+                  >
                     <div className="relative w-full max-w-[400px] aspect-square overflow-hidden">
                       <Image
                         src={`${entry.url}?tr=n-card_thumb`}
@@ -108,13 +111,13 @@ function ProductList({ category, data, asideCategories }: Props) {
                         className="object-cover [@media(hover:hover)]:group-hover:scale-110 transition-transform"
                       />
                     </div>
+                    <div className="p-2">
+                      <h2 className="text-[1em]">{entry.title}</h2>
+                      <p className="text-[1em]">
+                        $ {Number(entry.price[0]).toFixed(2)}
+                      </p>
+                    </div>
                   </Link>
-                  <div className="p-2">
-                    <h2 className="text-[1em]">{entry.title}</h2>
-                    <p className="text-[1em]">
-                      $ {Number(entry.price[0]).toFixed(2)}
-                    </p>
-                  </div>
                 </section>
               );
             })}

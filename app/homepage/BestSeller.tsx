@@ -107,7 +107,11 @@ function BestSeller({}: Props) {
                       {item.title}
                     </h3>
                     <div className="mt-auto"></div>
-                    <Link href={`${item.link}`} className="text-[1em]">
+                    <Link
+                      href={`${item.link}`}
+                      className="text-[1em]"
+                      aria-label={`See details for ${item.title}`}
+                    >
                       See Detail
                     </Link>
                   </div>
@@ -120,7 +124,8 @@ function BestSeller({}: Props) {
           src={"/images/dragleft3.png"}
           width={85}
           height={85}
-          alt="drag left image"
+          alt="Drag left to see more best-selling items"
+          aria-hidden
           className="object-contain w-auto h-auto ml-auto -mb-6 z-10 pointer-events-none select-none animate-pulse"
         />
       </section>

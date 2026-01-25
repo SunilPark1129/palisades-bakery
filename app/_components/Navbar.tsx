@@ -83,7 +83,7 @@ function Navbar() {
               </Link>
 
               <ul className="flex gap-6 h-full items-center max-[600px]:hidden">
-                <div className="relative h-full flex items-center">
+                <li className="relative h-full flex items-center">
                   <button
                     onClick={handleMenuClick}
                     className="flex gap-1 items-center cursor-pointer"
@@ -108,7 +108,7 @@ function Navbar() {
                       </ul>
                     </div>
                   )}
-                </div>
+                </li>
                 {navLinks.map((links) => {
                   return (
                     <li key={links.label}>

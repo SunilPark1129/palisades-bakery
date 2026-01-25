@@ -38,7 +38,8 @@ function Social({}: Props) {
                 href="https://www.instagram.com/palisadesparkbakery/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center w-full bg-linear-to-r from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white rounded justify-center"
+                aria-label="Visit Palisades Park Bakery on Instagram (opens in new tab)"
+                className="group flex items-center w-full bg-linear-to-r from-[#dbb753] via-[#a4225d] to-[#333a87] text-white rounded justify-center text-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Instagram
                 <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
@@ -50,7 +51,8 @@ function Social({}: Props) {
                 href="https://www.facebook.com/palisadesparkbakery/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center w-full bg-[#1877F2] text-white rounded justify-center"
+                aria-label="Visit Palisades Park Bakery on Facebook (opens in new tab)"
+                className="group flex items-center w-full bg-[#254e84] text-white rounded justify-center text-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Facebook
                 <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
@@ -62,7 +64,8 @@ function Social({}: Props) {
                 href="https://x.com/palparkbakery"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center w-full bg-[#1DA1F2] text-white rounded justify-center"
+                aria-label="Visit Palisades Park Bakery on Twitter (opens in new tab)"
+                className="group flex items-center w-full bg-[#377aa4] text-white rounded justify-center text-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Twitter
                 <div className="h-12 w-12 flex items-center justify-center transition-transform group-hover:-translate-y-1">
