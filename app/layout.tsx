@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Palisades Park Bakery",
   ],
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.png?v=2",
     shortcut: "/shortcut-static-icon.png",
     apple: "/apple-touch-icon.png",
   },
