@@ -18,7 +18,7 @@ function Categories() {
             </p>
           </div>
         </div>
-        <ul className="grid grid-cols-5 gap-4 w-full max-[800px]:grid-cols-3 max-[440px]:grid-cols-2 max-[440px]:gap-2">
+        <ul className="grid grid-cols-3 gap-4 w-full max-[600px]:grid-cols-2 max-[440px]:gap-2">
           {homeCategories.map((item) => (
             <li key={item.title}>
               <Link
@@ -31,7 +31,7 @@ function Categories() {
                     alt={item.title}
                     fill
                     priority
-                    sizes="(max-width: 440px) 50vw, (max-width: 800px) 33vw, 20vw"
+                    sizes="(max-width: 460px) 50vw, (max-width: 6000px) 50vw, 40vw"
                     className="object-cover group-hover:brightness-110 transition-all duration-300"
                   />
                 </div>

@@ -5,8 +5,8 @@ function Hero() {
     <section className="flex flex-col">
       <div className="w-full aspect-video max-h-200 min-h-85 relative">
         <Image
-          className="object-cover contrast-75 saturate-120"
-          src="/images/main-hero.jpg"
+          className="object-cover"
+          src="/images/main-hero-img.png"
           fill
           alt="Palisades Park Bakery Banner"
           priority

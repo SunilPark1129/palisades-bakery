@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     description:
       "Fresh breads available for group orders and custom cakes made to order. Discover our bakery in New Jersey.",
     type: "website",
-    images: ["/images/main-hero-og.jpg"],
+    images: ["/images/main-hero-img-og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Palisades Park Bakery | Fresh Breads & Custom Cakes",
     description:
       "Fresh breads available for group orders and custom cakes made to order.",
-    images: ["/images/main-hero-og.jpg"],
+    images: ["/images/main-hero-img-og.png"],
   },
 };
 

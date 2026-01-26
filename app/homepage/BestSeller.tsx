@@ -70,15 +70,14 @@ function BestSeller({}: Props) {
           </div>
         </div>
 
-        <div className="relative w-full flex-1 rounded-2xl -my-2">
+        <div className="relative w-full flex-1 rounded-2xl -my-2 max-h-[430px] overflow-hidden">
           <div className="absolute w-full h-full z-20 pointer-events-none"></div>
           <Swiper
             grabCursor
-            slidesPerView={3.2}
+            slidesPerView={2.2}
             breakpoints={{
               0: { slidesPerView: 1.2 },
-              480: { slidesPerView: 2.2 },
-              768: { slidesPerView: 3.2 },
+              600: { slidesPerView: 2.2 },
             }}
             spaceBetween={18}
             pagination={{
@@ -88,11 +87,11 @@ function BestSeller({}: Props) {
           >
             {items.map((item, idx) => (
               <SwiperSlide key={idx} className="h-auto! flex! py-4">
-                <div className="swiper-shadow relative flex flex-col bg-[#f5f5f0] rounded-2xl transition-shadow overflow-hidden w-full">
+                <div className="relative flex flex-col overflow-hidden w-full">
                   <div className="relative w-full aspect-7/4 shrink-0">
-                    <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-[1em] uppercase bg-[#f5f5f0] rounded-tl-sm">
+                    {/* <div className="absolute right-0 bottom-0 z-10 py-0.5 px-2 text-[1em] uppercase bg-[#f5f5f0] rounded-tl-sm">
                       Best
-                    </div>
+                    </div> */}
                     <Image
                       src={item.img}
                       alt={item.title}
@@ -103,13 +102,13 @@ function BestSeller({}: Props) {
                     />
                   </div>
                   <div className="flex flex-col p-4 flex-1 justify-between gap-2">
-                    <h3 className="sm:text-[1.1em] font-semibold line-clamp-2">
+                    <h3 className="sm:text-[1.2em] font-semibold line-clamp-2">
                       {item.title}
                     </h3>
                     <div className="mt-auto"></div>
                     <Link
                       href={`${item.link}`}
-                      className="text-[1em]"
+                      className="text-[1em] underline w-fit"
                       aria-label={`See details for ${item.title}`}
                     >
                       See Detail

@@ -10,14 +10,14 @@ export const CATEGORY_METADATA: Record<string, Metadata> = {
       description:
         "Explore freshly baked breads made daily at Palisades Park Bakery.",
       type: "website",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
     twitter: {
       card: "summary_large_image",
       title: "Breads | Palisades Park Bakery",
       description:
         "Explore freshly baked breads made daily at Palisades Park Bakery.",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
   },
 
@@ -31,14 +31,14 @@ export const CATEGORY_METADATA: Record<string, Metadata> = {
       description:
         "Order beautifully crafted cakes for any celebration at Palisades Park Bakery.",
       type: "website",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
     twitter: {
       card: "summary_large_image",
       title: "Cakes | Palisades Park Bakery",
       description:
         "Order beautifully crafted cakes for any celebration at Palisades Park Bakery.",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
   },
 
@@ -52,14 +52,14 @@ export const CATEGORY_METADATA: Record<string, Metadata> = {
       description:
         "Taste our classic and seasonal homemade pies, baked fresh daily.",
       type: "website",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
     twitter: {
       card: "summary_large_image",
       title: "Pies | Palisades Park Bakery",
       description:
         "Taste our classic and seasonal homemade pies, baked fresh daily.",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
   },
 
@@ -77,13 +77,13 @@ export const CATEGORY_METADATA: Record<string, Metadata> = {
       title: "Cookies | Palisades Park Bakery",
       description: "Enjoy freshly baked cookies from Palisades Park Bakery.",
       type: "website",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
     twitter: {
       card: "summary_large_image",
       title: "Cookies | Palisades Park Bakery",
       description: "Enjoy freshly baked cookies from Palisades Park Bakery.",
-      images: ["/images/main-hero-og.jpg"],
+      images: ["/images/main-hero-img-og.png"],
     },
   },
 };
