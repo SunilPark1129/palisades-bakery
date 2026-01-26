@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import MainHeader from "./_components/ui/MainHeader";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -64,6 +65,7 @@ export default function RootLayout({
         <div className="mt-auto"></div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
     </html>
   );
 }
