@@ -7,7 +7,7 @@ function DineIn() {
       <section className="flex p-4 gap-4 max-[720px]:flex-col">
         <div className="flex flex-col gap-4 mx-auto flex-1 m-auto w-full min-w-[16rem]">
           <p className="text-xs uppercase tracking-wider">Dine-In</p>
-          <h2 className="text-[1.8em] leading-tight font-semibold">
+          <h2 className="text-[1.8em] leading-tight font-semibold text-gray-600">
             High Quality Dine-In Meals
           </h2>
           <p className="max-w-120 max-[720px]:max-w-full text-[1.1em]">
