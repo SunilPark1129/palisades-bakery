@@ -1,5 +1,6 @@
 import connectDB from "@/lib/mongodb";
 import { Product } from "@/models/Product";
+import { revalidateTag } from "next/cache";
 
 export async function GET(req: Request) {
   await connectDB();
@@ -14,6 +15,8 @@ export async function GET(req: Request) {
   }));
 
   await Product.bulkWrite(ops);
+
+  revalidateTag("products-list", "max");
 
   console.log("All products updated with order!");
   return Response.json({
