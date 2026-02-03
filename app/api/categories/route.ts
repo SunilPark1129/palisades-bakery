@@ -60,14 +60,10 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { payload } = body;
 
-    const newOrder =
-      typeof payload.order === "number" && payload.order >= 0
-        ? payload.order
-        : 0;
+    const newOrder = typeof payload.order === "number" ? payload.order : 0;
 
     await Product.updateMany(
       {
-        category: payload.category,
         order: { $gte: newOrder },
       },
       { $inc: { order: 1 } },
@@ -128,7 +124,6 @@ export async function DELETE(req: Request) {
 
     await Product.updateMany(
       {
-        category: target.category,
         order: { $gt: target.order },
       },
       { $inc: { order: -1 } },

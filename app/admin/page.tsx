@@ -222,14 +222,14 @@ function page({}: Props) {
             </div>
           ))}
         </div>
-        <div>
+        {/* <div>
           <button
             onClick={resetOrderHandler}
             className="p-2 border bg-[#ff0a0a] text-white border-[black] cursor-pointer"
           >
             Reset Order
           </button>
-        </div>
+        </div> */}
       </div>
       <Modal isOpen={isDeleteModalOpen} setIsOpen={setIsDeleteModalOpen}>
         <Alert />
