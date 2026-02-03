@@ -16,7 +16,7 @@ function Special({}: Props) {
               Make Custom Order
             </p>
             <p className="text-[1.1em]">
-              See what services we can offer to make your special day.
+              See what services we can offer for you.
             </p>
           </div>
         </header>

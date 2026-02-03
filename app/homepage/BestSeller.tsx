@@ -61,11 +61,11 @@ function BestSeller({}: Props) {
             />
           </div> */}
           <div className="flex flex-col flex-1 w-full">
-            <h2 className="text-[2em] leading-tight font-semibold">
+            <h2 className="text-[2em] leading-tight font-semibold text-gray-600">
               BEST-SELLER
             </h2>
-            <p className="text-gray-600 text-[1.1em]">
-              Discover the treats that bring smiles to our customers every day.
+            <p className="text-[1.1em]">
+              Try our most loved treats and daily favorites.
             </p>
           </div>
         </div>
